@@ -1,4 +1,4 @@
-// `include "definitions.v"
+`timescale 	1ns				/ 100ps
 `include "tester.v"
 // Para la temporización se usan los valores máximos a diferentes niveles de tensión
 // y a temperatura ambiente (25 grados C)
@@ -64,7 +64,7 @@ module mux_2a1(
 
    wire               nand0_nand2, nand1_nand2, sn0;
 
-   nand_ti #(PwrC) n0(sn0, s0, s0);
+   not_ti #(PwrC) n0(sn0, s0);
 
    nand_ti #(PwrC) nand0(nand0_nand2, sn0, iA);
    nand_ti #(PwrC) nand1(nand1_nand2, s0, iB);
@@ -93,12 +93,12 @@ module ff_d (
 
 
    always @(posedge CLK) begin
-      if (~ENB) begin
-         Q <= #15 Q;
-         Qn <= #15 Qn;
+      if (ENB == 0) begin
+         Q <= #5 Q;
+         Qn <= #5 Qn;
       end else begin
-         Q <= #15 D;
-         Qn <= #15 ~D;
+         Q <= #5 D;
+         Qn <= #5 ~D;
       end
 
    end

@@ -43,7 +43,7 @@ module tester(
       D = 1'b0;
       SEL = 1'b0;
 
-      repeat(4) #10 CLK = ~CLK;
+      repeat(2) #10 CLK = ~CLK;
       ENB = 1'b1;
       forever #10 CLK = ~CLK;
    end
@@ -54,24 +54,20 @@ module tester(
         $display(,,"PwrCntr[%d]: %d", dir, Contador);
      end
       @(posedge ENB);
-      // Pruebas básicas a compuertas
-      repeat (4) begin
-         @(posedge CLK);
-         {iA, iB} <= {iA, iB} + 1;
-      end
-      iA = 0;
-
-      // Pruebas MUX
-      repeat (4) begin
-         @(posedge CLK);
-         {SEL, iA} <= {SEL, iA} + 1;
-      end
-
-      // ENB = 1'b1;
+      // Pruebas básicas a compuertas y mux
       repeat (10) begin
          @(posedge CLK);
-         D = ~D;
+         {SEL, iA, iB} <= {SEL, iA, iB} + 1;
+         #1 D = ~D;
       end
+      // iA = 0;
+      // iB = 0;
+      //
+      // // ENB = 1'b1;
+      // repeat (10) begin
+      //    @(posedge CLK);
+      //
+      // end
    //    $finish;
    //
    // end
