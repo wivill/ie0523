@@ -63,11 +63,4 @@ module testbench;
                       dato
                       );
 
-   // SUM8 #(1) sumadorRizado (oprA,
-   //                          oprB,
-   //                          1'b0,
-   //                          Suma,
-   //                          llevo
-   //                          );
-
 endmodule

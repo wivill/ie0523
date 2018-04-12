@@ -1,5 +1,5 @@
 // `include "definitions.v"
-// `include "library_tb.v"
+`include "tester.v"
 // Para la temporización se usan los valores máximos a diferentes niveles de tensión
 // y a temperatura ambiente (25 grados C)
 
@@ -16,9 +16,9 @@ module nand_ti(
 
    nand #(8:8:9, 8:8:9) nand_gate(oNand, iA, iB);
 
-   // always @(posedge oNand) begin
-   //    library_tb.m1.PwrCntr[PwrC] = library_tb.m1.PwrCntr[PwrC] + 1;
-   // end
+   always @(posedge oNand) begin
+      testbench.m1.PwrCntr[PwrC] = testbench.m1.PwrCntr[PwrC] + 1;
+   end
 
 endmodule // nand_ti
 
@@ -32,9 +32,9 @@ module nor_ti(
 
    nor #(8:8:9, 8:8:9) nor_gate(oNor, iA, iB);
 
-   // always @(posedge oNor) begin
-   //    library_tb.m1.PwrCntr[PwrC] = library_tb.m1.PwrCntr[PwrC] + 1;
-   // end
+   always @(posedge oNor) begin
+      testbench.m1.PwrCntr[PwrC] = testbench.m1.PwrCntr[PwrC] + 1;
+   end
 
 endmodule // nor_ti
 
@@ -47,9 +47,9 @@ module not_ti(
 
    not #(8:8:9, 8:8:9) not_gate(oNot, iA);
 
-   // always @(posedge oNot) begin
-   //    library_tb.m1.PwrCntr[PwrC] = library_tb.m1.PwrCntr[PwrC] + 1;
-   // end
+   always @(posedge oNot) begin
+      testbench.m1.PwrCntr[PwrC] = testbench.m1.PwrCntr[PwrC] + 1;
+   end
 
 endmodule // not_ti
 
@@ -71,9 +71,9 @@ module mux_2a1(
 
    nand_ti #(PwrC) nand2(oMux, nand0_nand2, nand1_nand2);
 
-   // always @(posedge oMux) begin
-   //    library_tb.m1.PwrCntr[PwrC] = library_tb.m1.PwrCntr[PwrC] + 1;
-   // end
+   always @(posedge oMux) begin
+      testbench.m1.PwrCntr[PwrC] = testbench.m1.PwrCntr[PwrC] + 1;
+   end
 
 endmodule // mux_2a1
 
@@ -103,9 +103,9 @@ module ff_d (
 
    end
 
-   // always @(posedge Q) begin
-   //    library_tb.m1.PwrCntr[PwrC] = library_tb.m1.PwrCntr[PwrC] + 1;
-   // end
+   always @(posedge Q) begin
+      testbench.m1.PwrCntr[PwrC] = testbench.m1.PwrCntr[PwrC] + 1;
+   end
 
    // always @ ( posedge D or negedge D ) begin
    //     time_a = $realtime;
@@ -153,5 +153,63 @@ module memTrans (dir, LE, dato);
       if (~LE) //escritura
         PwrCntr[dir] = dato;
    end
+
+endmodule
+
+
+module testbench;
+
+   wire iA, iB, D, s0, ENB, CLK, oNand, oNor, oNot, oMux, Q, Qn;
+   wire [31:0] dato;
+   wire [`Ndir:0] dir;
+   // wire [7:0]  Suma;
+   // wire        llevo;
+   parameter PwrC = 0;
+
+
+   nand_ti #(PwrC) nand0(.iA       (iA),
+                      .iB       (iB),
+                      .oNand (oNand)
+                      );
+
+   nor_ti  #(PwrC) nor0( .iA     (iA),
+                      .iB     (iB),
+                      .oNor (oNor)
+                      );
+
+   not_ti  #(PwrC) not0( .iA     (iA),
+                      .oNot (oNot)
+                      );
+
+   mux_2a1 #(PwrC) mux0( .iA     (iA),
+                      .iB     (iB),
+                      .oMux   (oMux)
+                      );
+
+   ff_d    #(PwrC) ffd0( .D      (D),
+                      .ENB    (ENB),
+                      .CLK    (CLK),
+                      .Q      (Q),
+                      .Qn     (Qn)
+                      );
+
+   tester     letest(.iA       (iA),
+                     .iB       (iB),
+                     .D        (D),
+                     .SEL      (s0),
+                     .ENB      (ENB),
+                     .NAND     (oNand),
+                     .NOT      (oNot),
+                     .NOR      (oNor),
+                     .MUX      (oMux),
+                     .Q        (Q),
+                     .Qn       (Qn),
+                     .CLK      (CLK)
+                     );
+
+   memTrans        m1(dir,
+                      LE,
+                      dato
+                      );
 
 endmodule

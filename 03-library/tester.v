@@ -16,11 +16,11 @@ module tester(
                 );
 
    // reg                     CLK;
-   reg [7:0]               oprA, oprB;
+   // reg [7:0]               oprA, oprB;
    reg [31:0]              Contador;
    reg [`Ndir:0]           dir;
    reg                     LE;
-   integer                 semilla;
+   // integer                 semilla;
 
    assign dato = (~LE)? Contador : 32'bz;
 
@@ -31,6 +31,11 @@ module tester(
    end
 
    initial begin
+      #1 LE = 0;
+      Contador = 0;
+      for (dir = 0; dir <= `NumPwrCntr; dir = dir + 1)
+        #1 Contador = 0;
+      #1 LE = 1;
       CLK = 1'b0;
       ENB = 1'b0;
       iA = 1'b0;
@@ -44,6 +49,10 @@ module tester(
    end
 
    initial begin
+     for (dir=0; dir<=`NumPwrCntr; dir=dir+1) begin
+        #1 Contador = dato;
+        $display(,,"PwrCntr[%d]: %d", dir, Contador);
+     end
       @(posedge ENB);
       // Pruebas básicas a compuertas
       repeat (4) begin
@@ -58,42 +67,19 @@ module tester(
          {SEL, iA} <= {SEL, iA} + 1;
       end
 
-      //Pruebas FFD
-      // ENB = 1'b0
-      // D = 1'b0;
-      // repeat (10) @(posedge CLK) D = ~D;
-
-
       // ENB = 1'b1;
       repeat (10) begin
          @(posedge CLK);
          D = ~D;
       end
-      $finish;
-
-   // end
+   //    $finish;
    //
+   // end
+   // //
    // initial begin
-      // #1 LE = 0;
-      // Contador = 0;
-      // for (dir = 0; dir <= `NumPwrCntr; dir = dir + 1)
-      //   #1 Contador = 0;
-      // semilla = 0;
-      // #50
-      // oprA = $random(semilla);
-      // oprB = $random(semilla);
-      // repeat (500) begin
-      //    #20
-      //    oprB = $random(semilla);
-      //    oprA = $random(semilla);
-      // end
-      // #10 LE = 1;
-      // for (dir=0; dir<=`NumPwrCntr; dir=dir+1)
-      //   begin
-      //      #1 Contador = dato;
-      //      $display(,,"PwrCntr[%d]: %d", dir, Contador);
-      //   end
-      // #1 $finish;
+
+
+      #1 $finish;
    end
 
 endmodule // tester
