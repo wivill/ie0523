@@ -197,7 +197,7 @@ module testbench;
                         .iA     (iA),
                         .iB     (iB),
                         .s0     (s0)
-                       );
+                      );
 
    ff_d    #(PwrC) ffd0( .D      (D),
                       .ENB    (ENB),
