@@ -2,5 +2,7 @@ read_verilog registro.v
 hierarchy -check -top registro
 proc; opt; fsm; opt; memory; opt
 techmap; opt
+abc -liberty cmos_cells.lib
+show -lib cmos_cells.v
 clean
 write_verilog synth.v
