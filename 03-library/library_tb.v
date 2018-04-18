@@ -5,8 +5,8 @@
 `include "library.v"
 `include "tester.v"
 
-`define NumPwrCntr 2
-`define Ndir 1
+`define NumPwrCntr 4
+`define Ndir 2
 
 module testbench;
 
@@ -18,26 +18,27 @@ module testbench;
    parameter PwrC = 0;
 
 
-   nand_ti #(PwrC) nand0(.iA       (iA),
+   nand_ti #(0) nand0(.iA       (iA),
                       .iB       (iB),
                       .oNand (oNand)
                       );
 
-   nor_ti  #(PwrC) nor0( .iA     (iA),
+   nor_ti  #(1) nor0( .iA     (iA),
                       .iB     (iB),
                       .oNor (oNor)
                       );
 
-   not_ti  #(PwrC) not0( .iA     (iA),
+   not_ti  #(2) not0( .iA     (iA),
                       .oNot (oNot)
                       );
 
-   mux_2a1 #(PwrC) mux0( .iA     (iA),
-                      .iB     (iB),
-                      .oMux   (oMux)
-                      );
+   mux_2a1 #(3) mux0(.oMux   (oMux),
+                        .iA     (iA),
+                        .iB     (iB),
+                        .s0     (s0)
+                       );
 
-   ff_d    #(PwrC) ffd0( .D      (D),
+   ff_d    #(4) ffd0( .D      (D),
                       .ENB    (ENB),
                       .CLK    (CLK),
                       .Q      (Q),

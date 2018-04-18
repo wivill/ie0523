@@ -3,8 +3,8 @@
 // Para la temporización se usan los valores máximos a diferentes niveles de tensión
 // y a temperatura ambiente (25 grados C)
 
-`define NumPwrCntr 2
-`define Ndir 1
+`define NumPwrCntr 4
+`define Ndir 2
 
 module nand_ti(
                output oNand,
@@ -16,8 +16,9 @@ module nand_ti(
 
    nand #(8:8:9, 8:8:9) nand_gate(oNand, iA, iB);
 
-   always @(posedge oNand) begin
-      testbench.m1.PwrCntr[PwrC] = testbench.m1.PwrCntr[PwrC] + 1;
+   always @(posedge oNand or negedge oNand) begin
+      m1.PwrCntr[PwrC] = m1.PwrCntr[PwrC] + 1;
+      // $display("PwrCntr[%d]: %d", PwrC, m1.PwrCntr[PwrC]);
    end
 
 endmodule // nand_ti
@@ -32,8 +33,9 @@ module nor_ti(
 
    nor #(8:8:9, 8:8:9) nor_gate(oNor, iA, iB);
 
-   always @(posedge oNor) begin
-      testbench.m1.PwrCntr[PwrC] = testbench.m1.PwrCntr[PwrC] + 1;
+   always @(posedge oNor or negedge oNor) begin
+      m1.PwrCntr[PwrC] = m1.PwrCntr[PwrC] + 1;
+      // $display("PwrCntr[%d]: %d", PwrC, m1.PwrCntr[PwrC]);
    end
 
 endmodule // nor_ti
@@ -47,8 +49,9 @@ module not_ti(
 
    not #(8:8:9, 8:8:9) not_gate(oNot, iA);
 
-   always @(posedge oNot) begin
-      testbench.m1.PwrCntr[PwrC] = testbench.m1.PwrCntr[PwrC] + 1;
+   always @(posedge oNot or negedge oNot) begin
+      m1.PwrCntr[PwrC] = m1.PwrCntr[PwrC] + 1;
+      // $display("PwrCntr[%d]: %d", PwrC, m1.PwrCntr[PwrC]);
    end
 
 endmodule // not_ti
@@ -83,8 +86,9 @@ module mux_2a1(
    //
    // nand nand2(oMux, nand0_nand2, nand1_nand2);
 
-   always @(posedge oMux) begin
-      testbench.m1.PwrCntr[PwrC] = testbench.m1.PwrCntr[PwrC] + 1;
+   always @(posedge oMux or negedge oMux) begin
+      m1.PwrCntr[PwrC] = m1.PwrCntr[PwrC] + 1;
+      // $display("PwrCntr[%d]: %d", PwrC, m1.PwrCntr[PwrC]);
    end
 
 endmodule // mux_2a1
@@ -100,7 +104,7 @@ module ff_d (
 
    real time_a;
    real time_b;
-   real delta_ab;
+   // real delta_ab;
    integer exep = 0;
 
 
@@ -115,41 +119,42 @@ module ff_d (
 
    end
 
-   always @(posedge Q) begin
-      testbench.m1.PwrCntr[PwrC] = testbench.m1.PwrCntr[PwrC] + 1;
+   always @(posedge Q or negedge Q) begin
+      m1.PwrCntr[PwrC] = m1.PwrCntr[PwrC] + 1;
+      // $display("PwrCntr[%d]: %d", PwrC, m1.PwrCntr[PwrC]);
    end
 
-   // always @ ( posedge D or negedge D ) begin
-   //     time_a = $realtime;
- 		//    $display("flanco: %d",time_b);
- 		//    $display("cambio: %d",time_a);
- 		//    $display("delta: %d",time_b-time_a);
- 		//    if (time_a != 0 && time_b != 0 ) begin
- 		// 	     if ((0 <= (time_b-time_a))&&((time_b-time_a) < 20)&&(exep == 0)) begin
- 		// 		       $display("Delta %d, Se ha violado el tiempo de septup del flip-flop en el tiempo %d, con el flanco %d se va a proceder en forma de exepcion",delta_ab,time_a,time_b);
- 		// 		       exep <= 1;
- 		// 	     end else if ((-15.0 < (time_b-time_a))&& ((time_b-time_a) < 0) && (exep == 0)) begin
- 		// 		       $display("Delta %d, Se ha violado el tiempo de hold del flip-flop %d, con el flanco %d, se va proceder en forma de exepcion", delta_ab,time_a,time_b);
- 		// 		       exep <= 1;
- 		// 	     end
- 		//    end
- 	 // end
-   //
- 	 // always @ (posedge CLK) begin
- 		//    time_b = $realtime;
- 		//    $display("flanco: %d",time_b);
- 		//    $display("cambio: %d",time_a);
- 		//    $display("delta: %d",time_b-time_a);
- 		//    if (time_a != 0 && time_b !=0 ) begin
- 		// 	     if ((0 <= (time_b-time_a))&&((time_b-time_a) < 20)&&(exep == 0)) begin
- 		// 		       $display("Delta %d, Se ha violado el tiempo de septup del flip-flop en el tiempo %d, con el flanco %d se va a proceder en forma de exepcion",delta_ab,time_a,time_b);
- 		// 		       exep <= 1;
- 		// 	     end else if ((-15.0 < (time_b-time_a))&& ((time_b-time_a) < 0) && (exep == 0)) begin
- 		// 		       $display("Delta %d, Se ha violado el tiempo de hold del flip-flop %d, con el flanco %d, se va proceder en forma de exepcion", delta_ab,time_a,time_b);
- 		// 		       exep <= 1;
- 		// 	     end
- 	 //     end
-   // end
+   always @ (posedge D or negedge D) begin
+       time_a = $realtime;
+ 		   $display("flanco: %d",time_b);
+ 		   $display("cambio: %d",time_a);
+ 		   // $display("delta: %d",time_b-time_a);
+ 		   if (time_a != 0 && time_b != 0 ) begin
+ 			     if ((0 <= (time_b-time_a))&&((time_b-time_a) < 20)&&(exep == 0)) begin
+ 				       $display("D. Violación en tsetup en %d, con flanco %d. Captura de excepción.", time_a, time_b);
+ 				       exep <= 1;
+ 			     end else if ((-15.0 < (time_b-time_a))&& ((time_b-time_a) < 0) && (exep == 0)) begin
+ 				       $display("D. Violación en thold en %d, con flanco %d. Captura de excepción.", time_a, time_b);
+ 				       exep <= 1;
+ 			     end
+ 		   end
+ 	 end
+
+ 	 always @ (posedge CLK) begin
+ 		   time_b = $realtime;
+ 		   $display("flanco: %d",time_b);
+ 		   $display("cambio: %d",time_a);
+ 		   // $display("delta: %d",time_b-time_a);
+ 		   if (time_a != 0 && time_b !=0 ) begin
+ 			     if ((0 <= (time_b - time_a)) && ((time_b - time_a) < 20) && (exep == 0)) begin
+ 				       $display("CLK. Violación en tsetup en %d, con flanco %d. Captura de excepción.", time_a, time_b);
+ 				       exep <= 1;
+ 			     end else if ((-15.0 < (time_b - time_a)) && ((time_b - time_a) < 0) && (exep == 0)) begin
+ 				       $display("CLK. Violación en tsetup en %d, con flanco %d. Captura de excepción.", time_a, time_b);
+ 				       exep <= 1;
+ 			     end
+ 	     end
+   end
 
 endmodule // ff_d_cond
 
@@ -159,7 +164,7 @@ module memTrans (dir, LE, dato);
    inout [31:0]    dato;
    reg [31:0]      PwrCntr [`NumPwrCntr:0];
    //Control de E/S del puerto de datos
-   assign dato = (LE)? PwrCntr[dir] : 32'bz;
+   assign dato = (LE) ? PwrCntr[dir] : 32'bz;
    //Ciclo de escritura para la memoria
    always @(dir or negedge LE or dato) begin
       if (~LE) //escritura
@@ -168,38 +173,38 @@ module memTrans (dir, LE, dato);
 
 endmodule
 
-
 module testbench;
 
    wire iA, iB, D, s0, ENB, CLK, oNand, oNor, oNot, oMux, Q, Qn;
    wire [31:0] dato;
    wire [`Ndir:0] dir;
+   wire LE;
    // wire [7:0]  Suma;
    // wire        llevo;
    parameter PwrC = 0;
 
 
-   nand_ti #(PwrC) nand0(.iA       (iA),
+   nand_ti #(0) nand0(.iA       (iA),
                       .iB       (iB),
                       .oNand (oNand)
                       );
 
-   nor_ti  #(PwrC) nor0( .iA     (iA),
+   nor_ti  #(1) nor0( .iA     (iA),
                       .iB     (iB),
                       .oNor (oNor)
                       );
 
-   not_ti  #(PwrC) not0( .iA     (iA),
+   not_ti  #(2) not0( .iA     (iA),
                       .oNot (oNot)
                       );
 
-   mux_2a1 #(PwrC) mux0(.oMux   (oMux),
+   mux_2a1 #(3) mux0(.oMux   (oMux),
                         .iA     (iA),
                         .iB     (iB),
                         .s0     (s0)
                        );
 
-   ff_d    #(PwrC) ffd0( .D      (D),
+   ff_d    #(4) ffd0( .D      (D),
                       .ENB    (ENB),
                       .CLK    (CLK),
                       .Q      (Q),

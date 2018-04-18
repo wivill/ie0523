@@ -1,5 +1,5 @@
-`define NumPwrCntr 2
-`define Ndir 1
+`define NumPwrCntr 4
+`define Ndir 2
 module tester(
                 input      NOT,
                 input      NAND,
@@ -20,6 +20,7 @@ module tester(
    reg [31:0]              Contador;
    reg [`Ndir:0]           dir;
    reg                     LE;
+   wire [31:0]             dato;
    // integer                 semilla;
 
    assign dato = (~LE)? Contador : 32'bz;
@@ -32,27 +33,27 @@ module tester(
 
    initial begin
       #1 LE = 0;
-      Contador = 0;
-      for (dir = 0; dir <= `NumPwrCntr; dir = dir + 1)
-        #1 Contador = 0;
-      #1 LE = 1;
       CLK = 1'b0;
       ENB = 1'b0;
       iA = 1'b0;
       iB = 1'b0;
       D = 1'b0;
       SEL = 1'b0;
-
+      #1
+      Contador = 0;
+      for (dir = 0; dir <= `NumPwrCntr; dir = dir + 1) begin
+        $display("Inicializando contador %d", dir);
+        Contador = 0;
+        $display("Contador %d: %d ",dir, Contador);
+      end
+      // #1 LE = 1;
+      LE = 1;
       repeat(2) #10 CLK = ~CLK;
       ENB = 1'b1;
       forever #10 CLK = ~CLK;
    end
 
    initial begin
-     for (dir=0; dir<=`NumPwrCntr; dir=dir+1) begin
-        #1 Contador = dato;
-        $display(,,"PwrCntr[%d]: %d", dir, Contador);
-     end
       @(posedge ENB);
       // Pruebas básicas a compuertas y mux
       repeat (10) begin
@@ -60,21 +61,12 @@ module tester(
          {SEL, iA, iB} <= {SEL, iA, iB} + 1;
          #1 D = ~D;
       end
-      // iA = 0;
-      // iB = 0;
-      //
-      // // ENB = 1'b1;
-      // repeat (10) begin
-      //    @(posedge CLK);
-      //
-      // end
-   //    $finish;
-   //
-   // end
-   // //
-   // initial begin
 
-
+      // Imprime contadores
+      for (dir = 0; dir <= `NumPwrCntr; dir = dir + 1) begin
+        Contador = dato;
+        $display(,,"PwrCntr[%d]: %d", dir, Contador);
+      end
       #1 $finish;
    end
 
