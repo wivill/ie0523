@@ -15,14 +15,12 @@ module tester(
                 output reg CLK
                 );
 
-   // reg                     CLK;
-   // reg [7:0]               oprA, oprB;
    reg [31:0]              Contador;
    reg [`Ndir:0]           dir;
    reg                     LE;
    wire [31:0]             dato;
-   // integer                 semilla;
 
+   // Instancia de memoria la hago en el tester para que funcione
    memTrans        m1(dir,
                       LE,
                       dato
@@ -36,7 +34,7 @@ module tester(
    end
 
    initial begin
-      #1 LE = 0;
+      #1 LE = 0; // Habilita escritura
       CLK = 1'b0;
       ENB = 1'b0;
       iA = 1'b0;
@@ -50,8 +48,7 @@ module tester(
         #1 Contador = 0;
         $display("Contador %d: %d ",dir, Contador);
       end
-      // #1 LE = 1;
-      // LE = 1;
+
       repeat(2) #10 CLK = ~CLK;
       ENB = 1'b1;
       forever #10 CLK = ~CLK;
@@ -67,8 +64,9 @@ module tester(
       end
 
       // Imprime contadores
+      #10 LE = 1; // Si no pongo esto, reinicia los contadores y pierdo el dato
       for (dir = 0; dir <= `NumPwrCntr; dir = dir + 1) begin
-        Contador = dato;
+        #1 Contador = dato;
         $display(,,"PwrCntr[%d]: %d", dir, Contador);
       end
       #1 $finish;
