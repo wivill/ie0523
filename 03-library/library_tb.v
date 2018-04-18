@@ -59,9 +59,9 @@ module testbench;
                      .CLK      (CLK)
                      );
 
-   memTrans        m1(dir,
-                      LE,
-                      dato
-                      );
+   // memTrans        m1(dir,
+   //                    LE,
+   //                    dato
+   //                    );
 
 endmodule

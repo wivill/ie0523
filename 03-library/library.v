@@ -1,5 +1,5 @@
 `timescale 	1ns				/ 100ps
-`include "tester.v"
+// `include "letest.v"
 // Para la temporización se usan los valores máximos a diferentes niveles de tensión
 // y a temperatura ambiente (25 grados C)
 
@@ -17,8 +17,9 @@ module nand_ti(
    nand #(8:8:9, 8:8:9) nand_gate(oNand, iA, iB);
 
    always @(posedge oNand or negedge oNand) begin
-      m1.PwrCntr[PwrC] = m1.PwrCntr[PwrC] + 1;
-      // $display("PwrCntr[%d]: %d", PwrC, m1.PwrCntr[PwrC]);
+      $display("NAND PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
+      letest.m1.PwrCntr[PwrC] = letest.m1.PwrCntr[PwrC] + 1;
+      $display("NAND PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
    end
 
 endmodule // nand_ti
@@ -34,8 +35,9 @@ module nor_ti(
    nor #(8:8:9, 8:8:9) nor_gate(oNor, iA, iB);
 
    always @(posedge oNor or negedge oNor) begin
-      m1.PwrCntr[PwrC] = m1.PwrCntr[PwrC] + 1;
-      // $display("PwrCntr[%d]: %d", PwrC, m1.PwrCntr[PwrC]);
+      $display("NOR PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
+      letest.m1.PwrCntr[PwrC] = letest.m1.PwrCntr[PwrC] + 1;
+      $display("NOR PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
    end
 
 endmodule // nor_ti
@@ -50,8 +52,9 @@ module not_ti(
    not #(8:8:9, 8:8:9) not_gate(oNot, iA);
 
    always @(posedge oNot or negedge oNot) begin
-      m1.PwrCntr[PwrC] = m1.PwrCntr[PwrC] + 1;
-      // $display("PwrCntr[%d]: %d", PwrC, m1.PwrCntr[PwrC]);
+      $display("NOT PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
+      letest.m1.PwrCntr[PwrC] = letest.m1.PwrCntr[PwrC] + 1;
+      $display("NOT PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
    end
 
 endmodule // not_ti
@@ -87,8 +90,9 @@ module mux_2a1(
    // nand nand2(oMux, nand0_nand2, nand1_nand2);
 
    always @(posedge oMux or negedge oMux) begin
-      m1.PwrCntr[PwrC] = m1.PwrCntr[PwrC] + 1;
-      // $display("PwrCntr[%d]: %d", PwrC, m1.PwrCntr[PwrC]);
+      $display("MUX PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
+      letest.m1.PwrCntr[PwrC] = letest.m1.PwrCntr[PwrC] + 1;
+      $display("MUX PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
    end
 
 endmodule // mux_2a1
@@ -120,8 +124,9 @@ module ff_d (
    end
 
    always @(posedge Q or negedge Q) begin
-      m1.PwrCntr[PwrC] = m1.PwrCntr[PwrC] + 1;
-      // $display("PwrCntr[%d]: %d", PwrC, m1.PwrCntr[PwrC]);
+      $display("FFD PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
+      letest.m1.PwrCntr[PwrC] = letest.m1.PwrCntr[PwrC] + 1;
+      $display("FFD PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
    end
 
    always @ (posedge D or negedge D) begin
@@ -171,63 +176,67 @@ module memTrans (dir, LE, dato);
         PwrCntr[dir] = dato;
    end
 
-endmodule
-
-module testbench;
-
-   wire iA, iB, D, s0, ENB, CLK, oNand, oNor, oNot, oMux, Q, Qn;
-   wire [31:0] dato;
-   wire [`Ndir:0] dir;
-   wire LE;
-   // wire [7:0]  Suma;
-   // wire        llevo;
-   parameter PwrC = 0;
-
-
-   nand_ti #(0) nand0(.iA       (iA),
-                      .iB       (iB),
-                      .oNand (oNand)
-                      );
-
-   nor_ti  #(1) nor0( .iA     (iA),
-                      .iB     (iB),
-                      .oNor (oNor)
-                      );
-
-   not_ti  #(2) not0( .iA     (iA),
-                      .oNot (oNot)
-                      );
-
-   mux_2a1 #(3) mux0(.oMux   (oMux),
-                        .iA     (iA),
-                        .iB     (iB),
-                        .s0     (s0)
-                       );
-
-   ff_d    #(4) ffd0( .D      (D),
-                      .ENB    (ENB),
-                      .CLK    (CLK),
-                      .Q      (Q),
-                      .Qn     (Qn)
-                      );
-
-   tester     letest(.iA       (iA),
-                     .iB       (iB),
-                     .D        (D),
-                     .SEL      (s0),
-                     .ENB      (ENB),
-                     .NAND     (oNand),
-                     .NOT      (oNot),
-                     .NOR      (oNor),
-                     .MUX      (oMux),
-                     .Q        (Q),
-                     .Qn       (Qn),
-                     .CLK      (CLK)
-                     );
-
-   memTrans        m1(dir,
-                      LE,
-                      dato
-                      );
+   // initial begin
+   //    $display("PwrCntr[2]: %d", PwrCntr[2]);
+   // end
 
 endmodule
+
+// module testbench;
+//
+//    wire iA, iB, D, s0, ENB, CLK, oNand, oNor, oNot, oMux, Q, Qn;
+//    wire [31:0] dato;
+//    wire [`Ndir:0] dir;
+//    wire LE;
+//    // wire [7:0]  Suma;
+//    // wire        llevo;
+//    parameter PwrC = 0;
+//
+//
+//    nand_ti #(0) nand0(.iA       (iA),
+//                       .iB       (iB),
+//                       .oNand (oNand)
+//                       );
+//
+//    nor_ti  #(1) nor0( .iA     (iA),
+//                       .iB     (iB),
+//                       .oNor (oNor)
+//                       );
+//
+//    not_ti  #(2) not0( .iA     (iA),
+//                       .oNot (oNot)
+//                       );
+//
+//    mux_2a1 #(3) mux0(.oMux   (oMux),
+//                         .iA     (iA),
+//                         .iB     (iB),
+//                         .s0     (s0)
+//                        );
+//
+//    ff_d    #(4) ffd0( .D      (D),
+//                       .ENB    (ENB),
+//                       .CLK    (CLK),
+//                       .Q      (Q),
+//                       .Qn     (Qn)
+//                       );
+//
+//    letest     letest(.iA       (iA),
+//                      .iB       (iB),
+//                      .D        (D),
+//                      .SEL      (s0),
+//                      .ENB      (ENB),
+//                      .NAND     (oNand),
+//                      .NOT      (oNot),
+//                      .NOR      (oNor),
+//                      .MUX      (oMux),
+//                      .Q        (Q),
+//                      .Qn       (Qn),
+//                      .CLK      (CLK)
+//                      );
+//
+//    memTrans        m1(dir,
+//                       LE,
+//                       dato
+//                       );
+//
+// endmodule

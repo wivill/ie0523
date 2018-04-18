@@ -23,8 +23,12 @@ module tester(
    wire [31:0]             dato;
    // integer                 semilla;
 
-   assign dato = (~LE)? Contador : 32'bz;
+   memTrans        m1(dir,
+                      LE,
+                      dato
+                      );
 
+   assign dato = (~LE)? Contador : 32'bz;
 
    initial begin
       $dumpfile("library.vcd");
@@ -43,11 +47,11 @@ module tester(
       Contador = 0;
       for (dir = 0; dir <= `NumPwrCntr; dir = dir + 1) begin
         $display("Inicializando contador %d", dir);
-        Contador = 0;
+        #1 Contador = 0;
         $display("Contador %d: %d ",dir, Contador);
       end
       // #1 LE = 1;
-      LE = 1;
+      // LE = 1;
       repeat(2) #10 CLK = ~CLK;
       ENB = 1'b1;
       forever #10 CLK = ~CLK;
