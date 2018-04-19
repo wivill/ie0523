@@ -1,67 +1,58 @@
 `timescale 	1ns				/ 100ps
-// escala	unidad temporal (valor de "#1") / precisi�n
+// escala	unidad temporal (valor de "#1") / precisión
 // includes de archivos de verilog
 // Pueden omitirse y llamarse desde el testbench
-// `include "library.v"
+`include "registro_struct.v"
+`include "registro_cond.v"
 `include "tester.v"
-
-`define NumPwrCntr 4
-`define Ndir 2
 
 module testbench;
 
-   wire iA, iB, D, s0, ENB, CLK, oNand, oNor, oNot, oMux, Q, Qn;
+   // Wires para alambrar módulos
+   wire ENB_tb, CLK_tb, DIR_tb, S_IN_tb, S_OUTstruct_tb, S_OUTcond_tb;
+   wire [3:0] Qcond_tb;
+   wire [3:0] Qstruct_tb;
+   wire [3:0] Qnstruct_tb;
+   wire [3:0] D_tb;
+   wire [1:0] MODO_tb;
+
+   // Wires para contadores
    wire [31:0] dato;
    wire [`Ndir:0] dir;
-   // wire [7:0]  Suma;
-   // wire        llevo;
+
    parameter PwrC = 0;
 
-
-   nand_ti #(0) nand0(.iA       (iA),
-                      .iB       (iB),
-                      .oNand (oNand)
+   tester     letest( .Qcond        (Qcond_tb),
+                      .Qstruct      (Qstruct_tb),
+                      .S_OUTcond    (S_OUTcond_tb),
+                      .S_OUTstruct  (S_OUTstruct_tb),
+                      .MODO         (MODO_tb),
+                      .DIR          (DIR_tb),
+                      .D            (D_tb),
+                      .S_IN         (S_IN_tb),
+                      .ENB          (ENB_tb),
+                      .CLK          (CLK_tb)
                       );
 
-   nor_ti  #(1) nor0( .iA     (iA),
-                      .iB     (iB),
-                      .oNor (oNor)
-                      );
+  registro_struct    r_struct(  .Q          (Qstruct_tb),
+                                .Qn         (Qnstruct_tb),
+                                .S_OUT      (S_OUTstruct_tb),
+                                .D          (D_tb),
+                                .MODO       (MODO_tb),
+                                .CLK        (CLK_tb),
+                                .ENB        (ENB_tb),
+                                .DIR        (DIR_tb),
+                                .S_IN       (S_IN_tb)
+                                );
 
-   not_ti  #(2) not0( .iA     (iA),
-                      .oNot (oNot)
-                      );
-
-   mux_2a1 #(3) mux0(.oMux   (oMux),
-                        .iA     (iA),
-                        .iB     (iB),
-                        .s0     (s0)
-                       );
-
-   ff_d    #(4) ffd0( .D      (D),
-                      .ENB    (ENB),
-                      .CLK    (CLK),
-                      .Q      (Q),
-                      .Qn     (Qn)
-                      );
-
-   tester     letest(.iA       (iA),
-                     .iB       (iB),
-                     .D        (D),
-                     .SEL      (s0),
-                     .ENB      (ENB),
-                     .NAND     (oNand),
-                     .NOT      (oNot),
-                     .NOR      (oNor),
-                     .MUX      (oMux),
-                     .Q        (Q),
-                     .Qn       (Qn),
-                     .CLK      (CLK)
-                     );
-
-   // memTrans        m1(dir,
-   //                    LE,
-   //                    dato
-   //                    );
+  registro_cond #(4, 0) r_cond(   .Q        (Qcond_tb),
+                                  .S_OUT    (S_OUTcond_tb),
+                                  .D        (D_tb),
+                                  .MODO     (MODO_tb),
+                                  .CLK      (CLK_tb),
+                                  .ENB      (ENB_tb),
+                                  .DIR      (DIR_tb),
+                                  .S_IN     (S_IN_tb)
+                              );
 
 endmodule

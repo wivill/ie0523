@@ -1,1 +1,1 @@
-library_tb.v
+registro_tb.v

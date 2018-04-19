@@ -1,13 +1,13 @@
 `include "definitions.v"
 
-module registro #(parameter WIDTH = 4)
+module registro_cond #(parameter WIDTH = 4, parameter PwrC = 0)
 (
 output  reg   [WIDTH-1 : 0] Q,
 output  reg                 S_OUT,
 
 input   wire  [WIDTH-1 : 0] D,
 input   wire  [1 : 0]       MODO,
-input   wire                CLK, ENB, DIR, S_IN, ITER
+input   wire                CLK, ENB, DIR, S_IN
 );
 
 always @ (posedge CLK) begin
@@ -30,20 +30,11 @@ always @ (posedge CLK) begin
       `CYCLE:
       begin
         if (DIR == 0) begin
-          if (ITER == 0) begin
-            S_OUT <= 0;
             Q[WIDTH - 1 : 0] <= {Q[WIDTH - 2 : 0], Q[WIDTH - 1]};
-          end else begin
-            S_OUT <= Q[WIDTH - 1];
-            Q[WIDTH - 1 : 0] <= {Q[WIDTH - 2 : 0], S_IN};
-          end
-        end else begin
-          if (ITER == 0) begin
             S_OUT <= 0;
+        end else begin
             Q[WIDTH - 1 : 0] <= {Q[0], Q[WIDTH - 1 : 1]};
-          end else begin
-
-          end
+            S_OUT <= 0;
         end
       end
     //------------------------------------------------------
@@ -65,5 +56,11 @@ always @ (posedge CLK) begin
 
 
 end //end always
+
+always @(posedge Q or negedge Q) begin
+  $display("Reg_cond PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
+  letest.m1.PwrCntr[PwrC] = letest.m1.PwrCntr[PwrC] + 1;
+  $display("Reg_cond PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
+end
 
 endmodule

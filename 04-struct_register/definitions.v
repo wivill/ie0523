@@ -8,4 +8,7 @@
 `define CYCLE  2'd1
 `define LOAD   2'd2
 
+`define NumPwrCntr 2
+`define Ndir 1
+
 `endif

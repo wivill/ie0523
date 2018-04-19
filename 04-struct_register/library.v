@@ -2,9 +2,7 @@
 // `include "letest.v"
 // Para la temporización se usan los valores máximos a diferentes niveles de tensión
 // y a temperatura ambiente (25 grados C)
-
-`define NumPwrCntr 4
-`define Ndir 2
+`include "definitions.v"
 
 module nand_ti(
                output oNand,
@@ -16,11 +14,11 @@ module nand_ti(
 
    nand #(8:8:9, 8:8:9) nand_gate(oNand, iA, iB);
 
-   always @(posedge oNand or negedge oNand) begin
-      $display("NAND PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
-      letest.m1.PwrCntr[PwrC] = letest.m1.PwrCntr[PwrC] + 1;
-      $display("NAND PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
-   end
+   // always @(posedge oNand or negedge oNand) begin
+   //    $display("NAND PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
+   //    letest.m1.PwrCntr[PwrC] = letest.m1.PwrCntr[PwrC] + 1;
+   //    $display("NAND PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
+   // end
 
 endmodule // nand_ti
 
@@ -34,11 +32,11 @@ module nor_ti(
 
    nor #(8:8:9, 8:8:9) nor_gate(oNor, iA, iB);
 
-   always @(posedge oNor or negedge oNor) begin
-      $display("NOR PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
-      letest.m1.PwrCntr[PwrC] = letest.m1.PwrCntr[PwrC] + 1;
-      $display("NOR PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
-   end
+   // always @(posedge oNor or negedge oNor) begin
+   //    $display("NOR PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
+   //    letest.m1.PwrCntr[PwrC] = letest.m1.PwrCntr[PwrC] + 1;
+   //    $display("NOR PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
+   // end
 
 endmodule // nor_ti
 
@@ -51,11 +49,11 @@ module not_ti(
 
    not #(8:8:9, 8:8:9) not_gate(oNot, iA);
 
-   always @(posedge oNot or negedge oNot) begin
-      $display("NOT PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
-      letest.m1.PwrCntr[PwrC] = letest.m1.PwrCntr[PwrC] + 1;
-      $display("NOT PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
-   end
+   // always @(posedge oNot or negedge oNot) begin
+   //    $display("NOT PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
+   //    letest.m1.PwrCntr[PwrC] = letest.m1.PwrCntr[PwrC] + 1;
+   //    $display("NOT PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
+   // end
 
 endmodule // not_ti
 
@@ -202,6 +200,12 @@ module mid_mux( output oD,
                           MODO1
                           );
 
+  always @(posedge oD or negedge oD) begin
+    $display("mid_mux PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
+    letest.m1.PwrCntr[PwrC] = letest.m1.PwrCntr[PwrC] + 1;
+    $display("mid_mux PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
+  end
+
 endmodule // mid_mux
 
 module left_mux(  output oD,
@@ -220,12 +224,12 @@ module left_mux(  output oD,
 
   mux_2a1 #(PwrC) mMODO0( mMODO0_o__mDIR_A,
                           S_IN,
-                          Q_circ,
+                          Qcirc,
                           MODO0
                           );
 
   mux_2a1 #(PwrC) mDIR(   mDIR_o__mMODO1_A,
-                          Q_right,
+                          Qright,
                           mMODO0_o__mDIR_A,
                           DIR
                           );
@@ -236,7 +240,7 @@ module left_mux(  output oD,
                           MODO1
                           );
 
-  always @(posedge oNot or negedge oNot) begin
+  always @(posedge oD or negedge oD) begin
     $display("left_mux PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
     letest.m1.PwrCntr[PwrC] = letest.m1.PwrCntr[PwrC] + 1;
     $display("left_mux PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
@@ -260,13 +264,13 @@ module right_mux( output oD,
 
   mux_2a1 #(PwrC) mMODO0( mMODO0_o__mDIR_A,
                           S_IN,
-                          Q_circ,
+                          Qcirc,
                           MODO0
                           );
 
   mux_2a1 #(PwrC) mDIR(   mDIR_o__mMODO1_A,
                           mMODO0_o__mDIR_A,
-                          Q_left,
+                          Qleft,
                           DIR
                           );
 
@@ -276,7 +280,7 @@ module right_mux( output oD,
                           MODO1
                           );
 
-  always @(posedge oNot or negedge oNot) begin
+  always @(posedge oD or negedge oD) begin
     $display("right_mux PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
     letest.m1.PwrCntr[PwrC] = letest.m1.PwrCntr[PwrC] + 1;
     $display("right_mux PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);

@@ -6,7 +6,7 @@
 ###########################################################
 
 SRC=files.txt
-EXE=library
+EXE=registros
 YOS=yoscript.txt
 
 all:
