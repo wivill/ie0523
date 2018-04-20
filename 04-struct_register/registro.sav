@@ -1,0 +1,33 @@
+[*]
+[*] GTKWave Analyzer v3.3.89 (w)1999-2018 BSI
+[*] Fri Apr 20 23:39:47 2018
+[*]
+[dumpfile] "/home/wivill/git/ie0523/04-struct_register/registros.vcd"
+[dumpfile_mtime] "Fri Apr 20 23:37:51 2018"
+[dumpfile_size] 2348
+[savefile] "/home/wivill/git/ie0523/04-struct_register/registro.sav"
+[timestart] 0
+[size] 1366 697
+[pos] -44 -44
+*-18.972292 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] testbench.
+[sst_width] 213
+[signals_width] 114
+[sst_expanded] 1
+[sst_vpaned_height] 187
+@28
+testbench.letest.CLK
+testbench.letest.ENB
+testbench.letest.DIR
+testbench.letest.MODO[1:0]
+@22
+testbench.letest.D[3:0]
+testbench.letest.Qcond[3:0]
+testbench.letest.Qstruct[3:0]
+@28
+testbench.letest.S_IN
+testbench.letest.S_OUTcond
+@29
+testbench.letest.S_OUTstruct
+[pattern_trace] 1
+[pattern_trace] 0

@@ -20,7 +20,7 @@ yosys:
 
 wave:
 #	gtkwave ${EXE}.vcd --script=signal_list.csh &
-	gtkwave ${EXE}.vcd &
+	gtkwave ${EXE}.vcd registro.sav &
 
 clean:
 	rm -rf ${EXE} ${EXE}.vcd synth.v
