@@ -4,6 +4,7 @@ module tester(
                 input      [3:0]  Qstruct,
                 input             S_OUTcond,
                 input             S_OUTstruct,
+                input             S_OUTnstruct,
                 output reg [1:0]  MODO,
                 output reg        DIR,
                 output reg [3:0]  D,
@@ -48,9 +49,9 @@ module tester(
         $display("Contador %d: %d ",dir, Contador);
       end
 
-      repeat(2) #20 CLK = ~CLK;
+      repeat(2) #30 CLK = ~CLK;
       ENB = 1'b1;
-      forever #20 CLK = ~CLK;
+      forever #30 CLK = ~CLK;
     end
 
     initial begin

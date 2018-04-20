@@ -1,5 +1,5 @@
 En este directorio se encuentra el código verilog para sintetizar
-y probar un registro desplazante de N bits. Para poder verificar
+y probar un registro desplazante de 4 bits. Para poder verificar
 su funcionamiento, basta con utilizar el Makefile proporcionado.
 
 Las opciones disponibles son las siguientes:
@@ -18,9 +18,3 @@ make yosys	sintetiza el .v usando la receta provista por
 
 make clean	limpia el directorio de ejecutables y otros
 		residuos.
-
-make 32		compila el módulo con el test bench de pruebas
-		de 32 bits.
-
-make 32v2	compila el módulo con el test bench de pruebas
-		de 32 bits usando el parámetro WIDTH=32

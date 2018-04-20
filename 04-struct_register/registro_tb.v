@@ -9,7 +9,7 @@
 module testbench;
 
    // Wires para alambrar módulos
-   wire ENB_tb, CLK_tb, DIR_tb, S_IN_tb, S_OUTstruct_tb, S_OUTcond_tb;
+   wire ENB_tb, CLK_tb, DIR_tb, S_IN_tb, S_OUTstruct_tb, S_OUTnstruct_tb, S_OUTcond_tb;
    wire [3:0] Qcond_tb;
    wire [3:0] Qstruct_tb;
    wire [3:0] Qnstruct_tb;
@@ -26,6 +26,7 @@ module testbench;
                       .Qstruct      (Qstruct_tb),
                       .S_OUTcond    (S_OUTcond_tb),
                       .S_OUTstruct  (S_OUTstruct_tb),
+                      .S_OUTnstruct (S_OUTnstruct_tb),
                       .MODO         (MODO_tb),
                       .DIR          (DIR_tb),
                       .D            (D_tb),
@@ -37,6 +38,7 @@ module testbench;
   registro_struct    r_struct(  .Q          (Qstruct_tb),
                                 .Qn         (Qnstruct_tb),
                                 .S_OUT      (S_OUTstruct_tb),
+                                .S_OUTn     (S_OUTnstruct_tb),
                                 .D          (D_tb),
                                 .MODO       (MODO_tb),
                                 .CLK        (CLK_tb),

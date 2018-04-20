@@ -19,6 +19,7 @@ yosys:
 	yosys -s ${YOS}
 
 wave:
+#	gtkwave ${EXE}.vcd --script=signal_list.csh &
 	gtkwave ${EXE}.vcd &
 
 clean:

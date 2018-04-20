@@ -112,11 +112,11 @@ module ff_d (
 
    always @(posedge CLK) begin
       if (ENB == 0) begin
-         Q <= #5 Q;
-         Qn <= #5 Qn;
+         Q <= #15 Q;
+         Qn <= #15 Qn;
       end else begin
-         Q <= #5 D;
-         Qn <= #5 ~D;
+         Q <= #15 D;
+         Qn <= #15 ~D;
       end
 
    end
@@ -248,42 +248,42 @@ module left_mux(  output oD,
 
 endmodule // mid_mux
 
-module right_mux( output oD,
-                  input S_IN,
-                  input Qcirc,
-                  input Qleft,
-                  input D,
-                  input DIR,
-                  input MODO1,
-                  input MODO0
-                  );
-
-  parameter PwrC = 0;
-
-  wire  mMODO0_o__mDIR_A, mDIR_o__mMODO1_A;
-
-  mux_2a1 #(PwrC) mMODO0( mMODO0_o__mDIR_A,
-                          S_IN,
-                          Qcirc,
-                          MODO0
-                          );
-
-  mux_2a1 #(PwrC) mDIR(   mDIR_o__mMODO1_A,
-                          mMODO0_o__mDIR_A,
-                          Qleft,
-                          DIR
-                          );
-
-  mux_2a1 #(PwrC) mMODO1( oD,
-                          mDIR_o__mMODO1_A,
-                          D,
-                          MODO1
-                          );
-
-  always @(posedge oD or negedge oD) begin
-    $display("right_mux PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
-    letest.m1.PwrCntr[PwrC] = letest.m1.PwrCntr[PwrC] + 1;
-    $display("right_mux PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
-  end
-
-endmodule
+// module right_mux( output oD,
+//                   input S_IN,
+//                   input Qcirc,
+//                   input Qleft,
+//                   input D,
+//                   input DIR,
+//                   input MODO1,
+//                   input MODO0
+//                   );
+//
+//   parameter PwrC = 0;
+//
+//   wire  mMODO0_o__mDIR_A, mDIR_o__mMODO1_A;
+//
+//   mux_2a1 #(PwrC) mMODO0( mMODO0_o__mDIR_A,
+//                           S_IN,
+//                           Qcirc,
+//                           MODO0
+//                           );
+//
+//   mux_2a1 #(PwrC) mDIR(   mDIR_o__mMODO1_A,
+//                           mMODO0_o__mDIR_A,
+//                           Qleft,
+//                           DIR
+//                           );
+//
+//   mux_2a1 #(PwrC) mMODO1( oD,
+//                           mDIR_o__mMODO1_A,
+//                           D,
+//                           MODO1
+//                           );
+//
+//   always @(posedge oD or negedge oD) begin
+//     $display("right_mux PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
+//     letest.m1.PwrCntr[PwrC] = letest.m1.PwrCntr[PwrC] + 1;
+//     $display("right_mux PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
+//   end
+//
+// endmodule
