@@ -10,10 +10,10 @@ EXE=registros
 YOS=yoscript.txt
 
 all:
-	iverilog -o ${EXE} -c ${SRC} -Ttyp
+	iverilog -o ${EXE}.exe -c ${SRC} -Ttyp
 
 run:
-	vvp ${EXE}
+	vvp ${EXE}.exe
 
 yosys:
 	yosys -s ${YOS}
@@ -23,4 +23,4 @@ wave:
 	gtkwave ${EXE}.vcd registro.sav &
 
 clean:
-	rm -rf ${EXE} ${EXE}.vcd synth.v
+	rm -rf ${EXE}.exe ${EXE}.vcd synth.v

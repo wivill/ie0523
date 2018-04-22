@@ -5,6 +5,7 @@
 `include "registro_struct.v"
 `include "registro_cond.v"
 `include "tester.v"
+`include "verifier.v"
 
 module testbench;
 
@@ -56,5 +57,11 @@ module testbench;
                                   .DIR      (DIR_tb),
                                   .S_IN     (S_IN_tb)
                               );
+
+  verifier          leverifier(   .Qcond        (Qcond_tb),
+                                  .Qstruct      (Qstruct_tb),
+                                  .S_OUTcond    (S_OUTcond_tb),
+                                  .S_OUTstruct  (S_OUTstruct_tb)
+                                  );
 
 endmodule

@@ -44,9 +44,9 @@ module tester(
       #1
       Contador = 0;
       for (dir = 0; dir <= `NumPwrCntr; dir = dir + 1) begin
-        $display("Inicializando contador %d", dir);
+        // $display("Inicializando contador %d", dir);
         #1 Contador = 0;
-        $display("Contador %d: %d ",dir, Contador);
+        // $display("Contador %d: %d ",dir, Contador);
       end
 
       repeat(2) #30 CLK = ~CLK;
@@ -93,7 +93,7 @@ module tester(
       #10 LE = 1; // Si no pongo esto, reinicia los contadores y pierdo el dato
       for (dir = 0; dir <= `NumPwrCntr; dir = dir + 1) begin
         #1 Contador = dato;
-        $display(,,"PwrCntr[%d]: %d", dir, Contador);
+        // $display(,,"PwrCntr[%d]: %d", dir, Contador);
       end
       #1 $finish;
    end

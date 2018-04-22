@@ -88,9 +88,9 @@ module mux_2a1(
    // nand nand2(oMux, nand0_nand2, nand1_nand2);
 
    always @(posedge oMux or negedge oMux) begin
-      $display("MUX PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
+      // $display("MUX PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
       letest.m1.PwrCntr[PwrC] = letest.m1.PwrCntr[PwrC] + 1;
-      $display("MUX PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
+      // $display("MUX PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
    end
 
 endmodule // mux_2a1
@@ -122,15 +122,15 @@ module ff_d (
    end
 
    always @(posedge Q or negedge Q) begin
-      $display("FFD PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
+      // $display("FFD PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
       letest.m1.PwrCntr[PwrC] = letest.m1.PwrCntr[PwrC] + 1;
-      $display("FFD PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
+      // $display("FFD PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
    end
 
    always @ (posedge D or negedge D) begin
        time_a = $realtime;
- 		   $display("flanco: %d",time_b);
- 		   $display("cambio: %d",time_a);
+ 		   // $display("flanco: %d",time_b);
+ 		   // $display("cambio: %d",time_a);
  		   // $display("delta: %d",time_b-time_a);
  		   if (time_a != 0 && time_b != 0 ) begin
  			     if ((0 <= (time_b-time_a))&&((time_b-time_a) < 20)&&(exep == 0)) begin
@@ -145,8 +145,8 @@ module ff_d (
 
  	 always @ (posedge CLK) begin
  		   time_b = $realtime;
- 		   $display("flanco: %d",time_b);
- 		   $display("cambio: %d",time_a);
+ 		   // $display("flanco: %d",time_b);
+ 		   // $display("cambio: %d",time_a);
  		   // $display("delta: %d",time_b-time_a);
  		   if (time_a != 0 && time_b !=0 ) begin
  			     if ((0 <= (time_b - time_a)) && ((time_b - time_a) < 20) && (exep == 0)) begin
@@ -201,9 +201,9 @@ module mid_mux( output oD,
                           );
 
   always @(posedge oD or negedge oD) begin
-    $display("mid_mux PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
+    // $display("mid_mux PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
     letest.m1.PwrCntr[PwrC] = letest.m1.PwrCntr[PwrC] + 1;
-    $display("mid_mux PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
+    // $display("mid_mux PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
   end
 
 endmodule // mid_mux
@@ -241,9 +241,9 @@ module left_mux(  output oD,
                           );
 
   always @(posedge oD or negedge oD) begin
-    $display("left_mux PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
+    // $display("left_mux PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
     letest.m1.PwrCntr[PwrC] = letest.m1.PwrCntr[PwrC] + 1;
-    $display("left_mux PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
+    // $display("left_mux PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
   end
 
 endmodule // mid_mux
