@@ -25,6 +25,9 @@ min:
 run:
 	vvp ${EXE}.exe
 
+yosysA:
+	yosys -s yoscriptA.txt
+
 yosys:
 	yosys -s ${YOS}
 
@@ -33,4 +36,4 @@ wave:
 	gtkwave ${EXE}.vcd registro.sav &
 
 clean:
-	rm -rf ${EXE}.exe ${EXE}.vcd synth.v
+	rm -rf ${EXE}.exe ${EXE}.vcd synth.v synthA.v

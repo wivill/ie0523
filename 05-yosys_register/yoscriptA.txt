@@ -1,0 +1,6 @@
+read_verilog registro_4yosys.v
+hierarchy -check -top registro_4yosys
+proc; opt; fsm; opt; memory; opt
+techmap; opt
+clean
+write_verilog synthA.v
