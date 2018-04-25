@@ -1,6 +1,6 @@
 `include "definitions.v"
 
-module registro_4yosys #(parameter WIDTH = 4, parameter PwrC = 0)
+module registro_yos #(parameter WIDTH = 4, parameter PwrC = 0)
 (
 output  reg   [WIDTH-1 : 0] Q,
 output  reg                 S_OUT,
@@ -57,10 +57,10 @@ always @ (posedge CLK) begin
 
 end //end always
 
-// always @(posedge Q or negedge Q) begin
-//   $display("Reg_cond PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
-//   letest.m1.PwrCntr[PwrC] = letest.m1.PwrCntr[PwrC] + 1;
-//   $display("Reg_cond PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
-// end
+//always @(posedge Q or negedge Q) begin
+//  $display("Reg_yos PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
+  letest.m1.PwrCntr[PwrC] = letest.m1.PwrCntr[PwrC] + 1;
+//  $display("Reg_yos PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
+//end // end counter
 
 endmodule

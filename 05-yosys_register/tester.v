@@ -2,9 +2,11 @@
 module tester(
                 input      [3:0]  Qcond,
                 input      [3:0]  Qstruct,
+                input      [3:0]  Qyos,
                 input             S_OUTcond,
                 input             S_OUTstruct,
                 input             S_OUTnstruct,
+                input             S_OUTyos,
                 output reg [1:0]  MODO,
                 output reg        DIR,
                 output reg [3:0]  D,
@@ -29,8 +31,8 @@ module tester(
    initial begin
       $dumpfile("registros.vcd");
       $dumpvars(1, tester);
-      $monitor("At time %t, Qcond = %h (%0d), S_OUTcond = %h (%0d), Qstruct = %h (%0d), S_OUTstruct = %h (%0d)",
-               $time, Qcond, Qcond, S_OUTcond, S_OUTcond, Qstruct, Qstruct, S_OUTstruct, S_OUTstruct);
+      $monitor("At time %t, Qcond = %h, S_OUTcond = %h, Qstruct = %h, S_OUTstruct = %h",
+               $time, Qcond, S_OUTcond, Qstruct, S_OUTstruct, Qyos, S_OUTyos);
    end
 
    initial begin

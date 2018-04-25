@@ -11,7 +11,9 @@
 module testbench;
 
    // Wires para alambrar módulos
-   wire ENB_tb, CLK_tb, DIR_tb, S_IN_tb, S_OUTstruct_tb, S_OUTnstruct_tb, S_OUTcond_tb, S_OUTyos_tb;
+   wire ENB_tb, CLK_tb, DIR_tb, S_IN_tb;
+   wire S_OUTstruct_tb, S_OUTnstruct_tb, S_OUTcond_tb;
+   wire S_OUTyosA_tb, S_OUTyos_tb;
    wire [3:0] Qcond_tb;
    wire [3:0] Qstruct_tb;
    wire [3:0] Qnstruct_tb;
@@ -27,9 +29,11 @@ module testbench;
 
    tester     letest( .Qcond        (Qcond_tb),
                       .Qstruct      (Qstruct_tb),
+                      .Qyos         (Qyos_tb),
                       .S_OUTcond    (S_OUTcond_tb),
                       .S_OUTstruct  (S_OUTstruct_tb),
                       .S_OUTnstruct (S_OUTnstruct_tb),
+                      .S_OUTyos     (S_OUTyos_tb),
                       .MODO         (MODO_tb),
                       .DIR          (DIR_tb),
                       .D            (D_tb),

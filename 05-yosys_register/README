@@ -18,5 +18,8 @@ make wave	abre el .vcd para su visualización.
 make yosys	sintetiza el .v usando la receta provista por
 		el archivo yoscript.txt
 
+make yosysA	sintetiza el .v usando la receta provista por
+		el archivo yoscriptA.txt
+
 make clean	limpia el directorio de ejecutables y otros
 		residuos.

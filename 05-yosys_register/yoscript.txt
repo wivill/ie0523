@@ -1,5 +1,5 @@
-read_verilog registro_4yosys.v
-hierarchy -check -top registro_4yosys
+read_verilog registro_cond.v
+hierarchy -check -top registro_cond
 proc; opt; fsm; opt; memory; opt
 techmap; opt
 abc -liberty cmos_cells.lib
