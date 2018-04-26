@@ -4,8 +4,7 @@
 // y a temperatura ambiente (25 grados C)
 `include "definitions.v"
 
-module nand_ti(
-               output oNand,
+module nand_ti(output oNand,
                input  iA,
                input  iB
                );
@@ -22,8 +21,7 @@ module nand_ti(
 
 endmodule // nand_ti
 
-module nor_ti(
-              output oNor,
+module nor_ti(output oNor,
               input  iA,
               input  iB
               );
@@ -40,8 +38,7 @@ module nor_ti(
 
 endmodule // nor_ti
 
-module not_ti(
-              output oNot,
+module not_ti(output oNot,
               input  iA
               );
 
@@ -57,8 +54,7 @@ module not_ti(
 
 endmodule // not_ti
 
-module mux_2a1(
-               output oMux,
+module mux_2a1(output oMux,
                input  iA,
                input  iB,
                input  s0
@@ -66,7 +62,7 @@ module mux_2a1(
 
    parameter PwrC = 0;
 
-   wire               nand0_nand2, nand1_nand2, sn0;
+   wire      nand0_nand2, nand1_nand2, sn0;
 
    // Mux con assign y tiempos de hojas de datos
    assign #(10:11:12, 10:11:12) oMux = (s0) ? iB : iA;
@@ -95,20 +91,18 @@ module mux_2a1(
 
 endmodule // mux_2a1
 
-module ff_d (
-                  output reg Q,
-                  output reg Qn,
-                  input wire D,
-                  input wire CLK,
-                  input wire ENB
-                  );
+module ff_d ( output reg Q,
+              output reg Qn,
+              input wire D,
+              input wire CLK,
+              input wire ENB
+              );
+
    parameter PwrC = 0;
 
    real time_a;
    real time_b;
-   // real delta_ab;
    integer exep = 0;
-
 
    always @(posedge CLK) begin
       if (ENB == 0) begin
@@ -118,7 +112,6 @@ module ff_d (
          Q <= #15 D;
          Qn <= #15 ~D;
       end
-
    end
 
    always @(posedge Q or negedge Q) begin
@@ -173,7 +166,6 @@ module memTrans (dir, LE, dato);
       if (~LE) //escritura
         PwrCntr[dir] = dato;
    end
-
 endmodule
 
 module mid_mux( output oD,

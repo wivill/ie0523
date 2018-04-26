@@ -58,9 +58,9 @@ always @ (posedge CLK) begin
 end //end always
 
 always @(posedge Q or negedge Q) begin
-  $display("Reg_cond PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
+  // $display("Reg_cond PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
   letest.m1.PwrCntr[PwrC] = letest.m1.PwrCntr[PwrC] + 1;
-  $display("Reg_cond PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
+  // $display("Reg_cond PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
 end
 
 endmodule

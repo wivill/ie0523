@@ -11,7 +11,7 @@ make compile	compila y genera un ejecutable usando los .v en
 
 make run	ejecuta el binario generado por make, así como
 		el .vcd para su posterior visualización con
-		gtkwave
+		gtkwave. Genera un archivo results.txt con los mensajes de ejecución
 
 make wave	abre el .vcd para su visualización.
 

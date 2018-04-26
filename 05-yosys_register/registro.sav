@@ -1,18 +1,27 @@
 [*]
 [*] GTKWave Analyzer v3.3.89 (w)1999-2018 BSI
-[*] Fri Apr 20 23:39:47 2018
+[*] Thu Apr 26 06:48:43 2018
 [*]
-[dumpfile] "/home/wivill/git/ie0523/04-struct_register/registros.vcd"
-[dumpfile_mtime] "Fri Apr 20 23:37:51 2018"
-[dumpfile_size] 2348
-[savefile] "/home/wivill/git/ie0523/04-struct_register/registro.sav"
+[dumpfile] "/home/wivill/git/ie0523/05-yosys_register/registros.vcd"
+[dumpfile_mtime] "Thu Apr 26 06:28:17 2018"
+[dumpfile_size] 3241
+[savefile] "/home/wivill/git/ie0523/05-yosys_register/registro.sav"
 [timestart] 0
 [size] 1366 697
-[pos] -44 -44
-*-18.972292 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[pos] -1 -1
+*-18.993092 758000 68000 398000 1118000 1478000 1838000 2198000 638000 653000 758000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[markername] AENB/LOAD
+[markername] BPUSH L
+[markername] CLOAD
+[markername] DCYCLE L
+[markername] ELOAD
+[markername] FCYCLE R
+[markername] GT1
+[markername] HT2
+[markername] IPUSH R
 [treeopen] testbench.
 [sst_width] 213
-[signals_width] 114
+[signals_width] 126
 [sst_expanded] 1
 [sst_vpaned_height] 187
 @28
@@ -24,10 +33,16 @@ testbench.letest.MODO[1:0]
 testbench.letest.D[3:0]
 testbench.letest.Qcond[3:0]
 testbench.letest.Qstruct[3:0]
+testbench.letest.QA[3:0]
+testbench.letest.Qyos[3:0]
+testbench.letest.Qdelay[3:0]
 @28
 testbench.letest.S_IN
 testbench.letest.S_OUTcond
-@29
 testbench.letest.S_OUTstruct
+testbench.letest.S_OUTA
+testbench.letest.S_OUTyos
+@29
+testbench.letest.S_OUTdelay
 [pattern_trace] 1
 [pattern_trace] 0
