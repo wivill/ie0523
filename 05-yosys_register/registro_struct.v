@@ -26,7 +26,6 @@ module registro_struct (  output  wire  [3:0] Q,
   wire ommux_s_out;
   wire nand_msout;
   wire nMODO0, nMODO1;
-  // wire not_msout;
 
   assign gnd = 1'b0;
 
@@ -84,16 +83,6 @@ module registro_struct (  output  wire  [3:0] Q,
                           .MODO1    (MODO[1])
                           );
 
-  // right_mux #(PwrC) right(  .oD       (oD_Q0),
-  //                           .S_IN     (S_IN),
-  //                           .Qcirc    (Q[3]),
-  //                           .Qleft    (Q[1]),
-  //                           .D        (D[0]),
-  //                           .DIR      (DIR),
-  //                           .MODO1    (MODO[1]),
-  //                           .MODO0    (MODO[0])
-  //                           );
-
   left_mux #(PwrC) right( .oD       (oD_Q0),
                           .S_IN     (S_IN),
                           .Qcirc    (Q[3]),
@@ -108,13 +97,6 @@ module registro_struct (  output  wire  [3:0] Q,
                             .iA       (DIR)
                             );
 
-  // sout_mux #(PwrC) to_sout( .oD     (ommux_s_out),
-  //                           .Q3     (Q[3]),
-  //                           .Q0     (Q[0]),
-  //                           .DIR    (DIR),
-  //                           .MODO0  (MODO[0])
-  //                           );
-
   not_ti #(PwrC) not_MODO1( .oNot     (nMODO1),
                             .iA       (MODO[1])
                             );
@@ -127,10 +109,6 @@ module registro_struct (  output  wire  [3:0] Q,
                             .iA     (nMODO0),
                             .iB     (nMODO1)
                             );
-
-  // not_ti #(PwrC) not_sout(    .oNot     (not_msout),
-  //                             .iA       (nand_not_msout)
-  //                             );
 
   mid_mux #(PwrC) to_sout(  .oD       (ommux_s_out),
                             .Qleft    (Q[0]),
