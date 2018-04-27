@@ -12,7 +12,7 @@ YOS=yoscript.txt
 all: yosysA yosys yosys_delay compile run wave
 
 compile:
-	iverilog -o ${EXE}.exe -c ${SRC} -Ttyp
+	iverilog -o ${EXE}.exe -c ${SRC} -Tmin
 
 typical: compile
 

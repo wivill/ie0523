@@ -4,8 +4,8 @@ At time                    0
 Qcond = x, Qstruct = x, QA = x, Qyos = x, Qdelay = x
 S_OUTcond = x, S_OUTstruct = x, S_OUTA = x, S_OUTyos = x, S_OUTdelay = x
 
-CLK. Violación en tsetup en 34, con flanco 40. Captura de excepción.
-CLK. Violación en tsetup en 99, con flanco 104. Captura de excepción.
+CLK. Violación en tsetup en 31, con flanco 40. Captura de excepción.
+CLK. Violación en tsetup en 98, con flanco 104. Captura de excepción.
 
 At time                 1040
 Qcond = d, Qstruct = x, QA = d, Qyos = d, Qdelay = x
@@ -21,8 +21,8 @@ At time                 1830
 Qcond = d, Qstruct = d, QA = d, Qyos = d, Qdelay = d
 S_OUTcond = 0, S_OUTstruct = 0, S_OUTA = 0, S_OUTyos = 0, S_OUTdelay = 0
 
-D. Violación en thold en 435, con flanco 424. Captura de excepción.
-D. Violación en thold en 435, con flanco 424. Captura de excepción.
+D. Violación en thold en 434, con flanco 424. Captura de excepción.
+D. Violación en thold en 434, con flanco 424. Captura de excepción.
 
 At time                 4880
 Qcond = a, Qstruct = d, QA = a, Qyos = a, Qdelay = d
@@ -188,7 +188,7 @@ At time                19600
 Qcond = a, Qstruct = 5, QA = a, Qyos = a, Qdelay = 5
 S_OUTcond = 0, S_OUTstruct = 0, S_OUTA = 0, S_OUTyos = 0, S_OUTdelay = 0
 
-D. Violación en thold en 1971, con flanco 1960. Captura de excepción.
+D. Violación en thold en 1970, con flanco 1960. Captura de excepción.
 
 At time                19750
 Qcond = a, Qstruct = a, QA = a, Qyos = a, Qdelay = a
@@ -259,8 +259,14 @@ At time                27280
 Qcond = 9, Qstruct = 3, QA = 9, Qyos = 9, Qdelay = 3
 S_OUTcond = 0, S_OUTstruct = 0, S_OUTA = 0, S_OUTyos = 0, S_OUTdelay = 0
 
+  PwrCntr[0]:          0
+  PwrCntr[1]:        298
+  PwrCntr[2]:         13
+  PwrCntr[3]:        541
+  PwrCntr[4]:        566
 
 At time                27430
 Qcond = 9, Qstruct = 9, QA = 9, Qyos = 9, Qdelay = 9
 S_OUTcond = 0, S_OUTstruct = 0, S_OUTA = 0, S_OUTyos = 0, S_OUTdelay = 0
 
+  PwrCntr[5]:          0

@@ -107,7 +107,7 @@ module tester(
       #10 LE = 1; // Si no pongo esto, reinicia los contadores y pierdo el dato
       for (dir = 0; dir <= `NumPwrCntr; dir = dir + 1) begin
         #1 Contador = dato;
-        // $display(,,"PwrCntr[%d]: %d", dir, Contador);
+        $display(,,"PwrCntr[%d]: %d", dir, Contador);
       end
       #1 $finish;
    end

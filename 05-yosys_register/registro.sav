@@ -1,15 +1,15 @@
 [*]
 [*] GTKWave Analyzer v3.3.89 (w)1999-2018 BSI
-[*] Fri Apr 27 21:01:30 2018
+[*] Fri Apr 27 21:13:13 2018
 [*]
 [dumpfile] "/home/wivill/git/ie0523/05-yosys_register/registros.vcd"
-[dumpfile_mtime] "Fri Apr 27 20:54:56 2018"
+[dumpfile_mtime] "Fri Apr 27 21:12:48 2018"
 [dumpfile_size] 3228
 [savefile] "/home/wivill/git/ie0523/05-yosys_register/registro.sav"
 [timestart] 0
 [size] 1366 697
 [pos] -1 -1
-*-16.085325 2344000 72000 424000 1192000 1576000 1960000 2344000 616000 631000 808000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-19.085325 2344000 72000 424000 1192000 1576000 1960000 2344000 616000 631000 808000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [markername] AENB/LOAD
 [markername] BPUSH L
 [markername] CLOAD
