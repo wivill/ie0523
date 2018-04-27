@@ -14,13 +14,31 @@ module nand_ti(
 
    nand #(8:8:9, 8:8:9) nand_gate(oNand, iA, iB);
 
-   // always @(posedge oNand or negedge oNand) begin
+   always @(posedge oNand or negedge oNand) begin
+   //    $display("NAND PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
+      letest.m1.PwrCntr[PwrC] = letest.m1.PwrCntr[PwrC] + 1;
+   //    $display("NAND PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
+   end
+
+endmodule // nand_ti
+
+module and_ti(
+               output oAnd,
+               input  iA,
+               input  iB
+               );
+
+   parameter PwrC = 0;
+
+   and #(8:8:9, 8:8:9) and_gate(oAnd, iA, iB);
+
+   // always @(posedge oAnd or negedge oAnd) begin
    //    $display("NAND PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
    //    letest.m1.PwrCntr[PwrC] = letest.m1.PwrCntr[PwrC] + 1;
    //    $display("NAND PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
    // end
 
-endmodule // nand_ti
+endmodule // and_ti
 
 module nor_ti(
               output oNor,
@@ -66,7 +84,7 @@ module mux_2a1(
 
    parameter PwrC = 0;
 
-   wire               nand0_nand2, nand1_nand2, sn0;
+   // wire               nand0_nand2, nand1_nand2, sn0;
 
    // Mux con assign y tiempos de hojas de datos
    assign #(10:11:12, 10:11:12) oMux = (s0) ? iB : iA;
@@ -247,6 +265,38 @@ module left_mux(  output oD,
   end
 
 endmodule // mid_mux
+
+// module sout_mux(output  oD,
+//                 input   Q3,
+//                 input   Q0,
+//                 input   DIR,
+//                 input   MODO0
+//                 );
+//
+//   parameter PwrC = 0;
+//
+//   wire mDIR_o_mMODO0_A;
+//   wire gnd = 0;
+//
+//   mux_2a1 #(PwrC) mDIR( mDIR_o_mMODO0_A,
+//                         Q3,
+//                         Q0,
+//                         DIR
+//                         );
+//
+//   mux_2a1 #(PwrC) mMODO0( oD,
+//                           mDIR_o_mMODO0_A,
+//                           gnd,
+//                           MODO0
+//                           );
+//
+//   always @(posedge oD or negedge oD) begin
+//     // $display("mid_mux PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
+//     letest.m1.PwrCntr[PwrC] = letest.m1.PwrCntr[PwrC] + 1;
+//     // $display("mid_mux PwrCntr[%d]: %d", PwrC, letest.m1.PwrCntr[PwrC]);
+//   end
+//
+// endmodule // sout_mux
 
 // module right_mux( output oD,
 //                   input S_IN,

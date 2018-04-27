@@ -4,283 +4,263 @@ At time                    0
 Qcond = x, Qstruct = x, QA = x, Qyos = x, Qdelay = x
 S_OUTcond = x, S_OUTstruct = x, S_OUTA = x, S_OUTyos = x, S_OUTdelay = x
 
-CLK. Violación en tsetup en 34, con flanco 38. Captura de excepción.
-CLK. Violación en tsetup en 79, con flanco 98. Captura de excepción.
-CLK. Violación en tsetup en 79, con flanco 98. Captura de excepción.
-CLK. Violación en tsetup en 79, con flanco 98. Captura de excepción.
+CLK. Violación en tsetup en 34, con flanco 40. Captura de excepción.
+CLK. Violación en tsetup en 99, con flanco 104. Captura de excepción.
 
-At time                  980
-Qcond = d, Qstruct = x, QA = d, Qyos = d, Qdelay = X
+At time                 1040
+Qcond = d, Qstruct = x, QA = d, Qyos = d, Qdelay = x
 S_OUTcond = 0, S_OUTstruct = x, S_OUTA = 0, S_OUTyos = 0, S_OUTdelay = x
 
 
-At time                 1130
+At time                 1190
 Qcond = d, Qstruct = d, QA = d, Qyos = d, Qdelay = X
-S_OUTcond = 0, S_OUTstruct = x, S_OUTA = 0, S_OUTyos = 0, S_OUTdelay = x
+S_OUTcond = 0, S_OUTstruct = 0, S_OUTA = 0, S_OUTyos = 0, S_OUTdelay = x
 
 
-At time                 1580
+At time                 1830
 Qcond = d, Qstruct = d, QA = d, Qyos = d, Qdelay = d
-S_OUTcond = 0, S_OUTstruct = x, S_OUTA = 0, S_OUTyos = 0, S_OUTdelay = 0
+S_OUTcond = 0, S_OUTstruct = 0, S_OUTA = 0, S_OUTyos = 0, S_OUTdelay = 0
 
-##############################
-Error de salida en T =                 1730, S_OUTstruct = 1, S_OUTcond = 0, S_OUTyos = 0, S_OUTyosA = 0, S_OUTdelay = 0.
-##############################
+D. Violación en thold en 435, con flanco 424. Captura de excepción.
+D. Violación en thold en 435, con flanco 424. Captura de excepción.
 
-At time                 1730
-Qcond = d, Qstruct = d, QA = d, Qyos = d, Qdelay = d
-S_OUTcond = 0, S_OUTstruct = 1, S_OUTA = 0, S_OUTyos = 0, S_OUTdelay = 0
-
-
-At time                 4580
-Qcond = a, Qstruct = d, QA = a, Qyos = a, Qdelay = a
-S_OUTcond = 1, S_OUTstruct = 1, S_OUTA = 1, S_OUTyos = 1, S_OUTdelay = 1
+At time                 4880
+Qcond = a, Qstruct = d, QA = a, Qyos = a, Qdelay = d
+S_OUTcond = 1, S_OUTstruct = 0, S_OUTA = 1, S_OUTyos = 1, S_OUTdelay = 0
 
 
-At time                 4730
+At time                 5030
 Qcond = a, Qstruct = a, QA = a, Qyos = a, Qdelay = a
 S_OUTcond = 1, S_OUTstruct = 1, S_OUTA = 1, S_OUTyos = 1, S_OUTdelay = 1
 
 
-At time                 5180
-Qcond = 4, Qstruct = a, QA = 4, Qyos = 4, Qdelay = 4
+At time                 5520
+Qcond = 4, Qstruct = a, QA = 4, Qyos = 4, Qdelay = a
 S_OUTcond = 1, S_OUTstruct = 1, S_OUTA = 1, S_OUTyos = 1, S_OUTdelay = 1
 
 
-At time                 5330
+At time                 5670
 Qcond = 4, Qstruct = 4, QA = 4, Qyos = 4, Qdelay = 4
 S_OUTcond = 1, S_OUTstruct = 1, S_OUTA = 1, S_OUTyos = 1, S_OUTdelay = 1
 
 
-At time                 5780
-Qcond = 8, Qstruct = 4, QA = 8, Qyos = 8, Qdelay = 8
-S_OUTcond = 0, S_OUTstruct = 1, S_OUTA = 0, S_OUTyos = 0, S_OUTdelay = 0
+At time                 6160
+Qcond = 8, Qstruct = 4, QA = 8, Qyos = 8, Qdelay = 4
+S_OUTcond = 0, S_OUTstruct = 1, S_OUTA = 0, S_OUTyos = 0, S_OUTdelay = 1
 
 
-At time                 5930
+At time                 6310
 Qcond = 8, Qstruct = 8, QA = 8, Qyos = 8, Qdelay = 8
 S_OUTcond = 0, S_OUTstruct = 0, S_OUTA = 0, S_OUTyos = 0, S_OUTdelay = 0
 
 
-At time                 6380
-Qcond = 0, Qstruct = 8, QA = 0, Qyos = 0, Qdelay = 0
-S_OUTcond = 1, S_OUTstruct = 0, S_OUTA = 1, S_OUTyos = 1, S_OUTdelay = 1
+At time                 6800
+Qcond = 0, Qstruct = 8, QA = 0, Qyos = 0, Qdelay = 8
+S_OUTcond = 1, S_OUTstruct = 0, S_OUTA = 1, S_OUTyos = 1, S_OUTdelay = 0
 
 
-At time                 6530
+At time                 6950
 Qcond = 0, Qstruct = 0, QA = 0, Qyos = 0, Qdelay = 0
 S_OUTcond = 1, S_OUTstruct = 1, S_OUTA = 1, S_OUTyos = 1, S_OUTdelay = 1
 
 
-At time                 6980
+At time                 7440
 Qcond = 0, Qstruct = 0, QA = 0, Qyos = 0, Qdelay = 0
-S_OUTcond = 0, S_OUTstruct = 1, S_OUTA = 0, S_OUTyos = 0, S_OUTdelay = 0
+S_OUTcond = 0, S_OUTstruct = 1, S_OUTA = 0, S_OUTyos = 0, S_OUTdelay = 1
 
 
-At time                 7130
+At time                 7590
 Qcond = 0, Qstruct = 0, QA = 0, Qyos = 0, Qdelay = 0
 S_OUTcond = 0, S_OUTstruct = 0, S_OUTA = 0, S_OUTyos = 0, S_OUTdelay = 0
 
 
-At time                 8180
-Qcond = 8, Qstruct = 0, QA = 8, Qyos = 8, Qdelay = 8
+At time                 8720
+Qcond = 8, Qstruct = 0, QA = 8, Qyos = 8, Qdelay = 0
 S_OUTcond = 0, S_OUTstruct = 0, S_OUTA = 0, S_OUTyos = 0, S_OUTdelay = 0
 
 
-At time                 8330
+At time                 8870
 Qcond = 8, Qstruct = 8, QA = 8, Qyos = 8, Qdelay = 8
 S_OUTcond = 0, S_OUTstruct = 0, S_OUTA = 0, S_OUTyos = 0, S_OUTdelay = 0
 
 
-At time                 8780
-Qcond = c, Qstruct = 8, QA = c, Qyos = c, Qdelay = c
+At time                 9360
+Qcond = c, Qstruct = 8, QA = c, Qyos = c, Qdelay = 8
 S_OUTcond = 0, S_OUTstruct = 0, S_OUTA = 0, S_OUTyos = 0, S_OUTdelay = 0
 
 
-At time                 8930
+At time                 9510
 Qcond = c, Qstruct = c, QA = c, Qyos = c, Qdelay = c
 S_OUTcond = 0, S_OUTstruct = 0, S_OUTA = 0, S_OUTyos = 0, S_OUTdelay = 0
 
 
-At time                 9380
-Qcond = e, Qstruct = c, QA = e, Qyos = e, Qdelay = e
+At time                10000
+Qcond = e, Qstruct = c, QA = e, Qyos = e, Qdelay = c
 S_OUTcond = 0, S_OUTstruct = 0, S_OUTA = 0, S_OUTyos = 0, S_OUTdelay = 0
 
 
-At time                 9530
+At time                10150
 Qcond = e, Qstruct = e, QA = e, Qyos = e, Qdelay = e
 S_OUTcond = 0, S_OUTstruct = 0, S_OUTA = 0, S_OUTyos = 0, S_OUTdelay = 0
 
 
-At time                 9980
-Qcond = f, Qstruct = e, QA = f, Qyos = f, Qdelay = f
+At time                10640
+Qcond = f, Qstruct = e, QA = f, Qyos = f, Qdelay = e
 S_OUTcond = 0, S_OUTstruct = 0, S_OUTA = 0, S_OUTyos = 0, S_OUTdelay = 0
 
 
-At time                10130
+At time                10790
 Qcond = f, Qstruct = f, QA = f, Qyos = f, Qdelay = f
 S_OUTcond = 0, S_OUTstruct = 0, S_OUTA = 0, S_OUTyos = 0, S_OUTdelay = 0
 
 
-At time                10580
+At time                11280
 Qcond = f, Qstruct = f, QA = f, Qyos = f, Qdelay = f
-S_OUTcond = 1, S_OUTstruct = 0, S_OUTA = 1, S_OUTyos = 1, S_OUTdelay = 1
+S_OUTcond = 1, S_OUTstruct = 0, S_OUTA = 1, S_OUTyos = 1, S_OUTdelay = 0
 
 
-At time                10730
+At time                11430
 Qcond = f, Qstruct = f, QA = f, Qyos = f, Qdelay = f
 S_OUTcond = 1, S_OUTstruct = 1, S_OUTA = 1, S_OUTyos = 1, S_OUTdelay = 1
 
 
-At time                11780
-Qcond = a, Qstruct = f, QA = a, Qyos = a, Qdelay = a
-S_OUTcond = 0, S_OUTstruct = 1, S_OUTA = 0, S_OUTyos = 0, S_OUTdelay = 0
+At time                12560
+Qcond = a, Qstruct = f, QA = a, Qyos = a, Qdelay = f
+S_OUTcond = 0, S_OUTstruct = 1, S_OUTA = 0, S_OUTyos = 0, S_OUTdelay = 1
 
 
-At time                11930
-Qcond = a, Qstruct = a, QA = a, Qyos = a, Qdelay = a
-S_OUTcond = 0, S_OUTstruct = 1, S_OUTA = 0, S_OUTyos = 0, S_OUTdelay = 0
-
-
-At time                12530
+At time                12710
 Qcond = a, Qstruct = a, QA = a, Qyos = a, Qdelay = a
 S_OUTcond = 0, S_OUTstruct = 0, S_OUTA = 0, S_OUTyos = 0, S_OUTdelay = 0
 
 
-At time                15380
-Qcond = 5, Qstruct = a, QA = 5, Qyos = 5, Qdelay = 5
+At time                16400
+Qcond = 5, Qstruct = a, QA = 5, Qyos = 5, Qdelay = a
 S_OUTcond = 0, S_OUTstruct = 0, S_OUTA = 0, S_OUTyos = 0, S_OUTdelay = 0
 
 
-At time                15530
+At time                16550
 Qcond = 5, Qstruct = 5, QA = 5, Qyos = 5, Qdelay = 5
 S_OUTcond = 0, S_OUTstruct = 0, S_OUTA = 0, S_OUTyos = 0, S_OUTdelay = 0
 
 
-At time                15980
-Qcond = a, Qstruct = 5, QA = a, Qyos = a, Qdelay = a
+At time                17040
+Qcond = a, Qstruct = 5, QA = a, Qyos = a, Qdelay = 5
 S_OUTcond = 0, S_OUTstruct = 0, S_OUTA = 0, S_OUTyos = 0, S_OUTdelay = 0
 
 
-At time                16130
+At time                17190
 Qcond = a, Qstruct = a, QA = a, Qyos = a, Qdelay = a
 S_OUTcond = 0, S_OUTstruct = 0, S_OUTA = 0, S_OUTyos = 0, S_OUTdelay = 0
 
 
-At time                16580
-Qcond = 5, Qstruct = a, QA = 5, Qyos = 5, Qdelay = 5
+At time                17680
+Qcond = 5, Qstruct = a, QA = 5, Qyos = 5, Qdelay = a
 S_OUTcond = 0, S_OUTstruct = 0, S_OUTA = 0, S_OUTyos = 0, S_OUTdelay = 0
 
 
-At time                16730
+At time                17830
 Qcond = 5, Qstruct = 5, QA = 5, Qyos = 5, Qdelay = 5
 S_OUTcond = 0, S_OUTstruct = 0, S_OUTA = 0, S_OUTyos = 0, S_OUTdelay = 0
 
 
-At time                17180
-Qcond = a, Qstruct = 5, QA = a, Qyos = a, Qdelay = a
+At time                18320
+Qcond = a, Qstruct = 5, QA = a, Qyos = a, Qdelay = 5
 S_OUTcond = 0, S_OUTstruct = 0, S_OUTA = 0, S_OUTyos = 0, S_OUTdelay = 0
 
 
-At time                17330
+At time                18470
 Qcond = a, Qstruct = a, QA = a, Qyos = a, Qdelay = a
 S_OUTcond = 0, S_OUTstruct = 0, S_OUTA = 0, S_OUTyos = 0, S_OUTdelay = 0
 
 
-At time                17780
-Qcond = 5, Qstruct = a, QA = 5, Qyos = 5, Qdelay = 5
+At time                18960
+Qcond = 5, Qstruct = a, QA = 5, Qyos = 5, Qdelay = a
 S_OUTcond = 0, S_OUTstruct = 0, S_OUTA = 0, S_OUTyos = 0, S_OUTdelay = 0
 
 
-At time                17930
+At time                19110
 Qcond = 5, Qstruct = 5, QA = 5, Qyos = 5, Qdelay = 5
 S_OUTcond = 0, S_OUTstruct = 0, S_OUTA = 0, S_OUTyos = 0, S_OUTdelay = 0
 
 
-At time                18380
-Qcond = a, Qstruct = 5, QA = a, Qyos = a, Qdelay = a
+At time                19600
+Qcond = a, Qstruct = 5, QA = a, Qyos = a, Qdelay = 5
 S_OUTcond = 0, S_OUTstruct = 0, S_OUTA = 0, S_OUTyos = 0, S_OUTdelay = 0
 
+D. Violación en thold en 1971, con flanco 1960. Captura de excepción.
 
-At time                18530
+At time                19750
 Qcond = a, Qstruct = a, QA = a, Qyos = a, Qdelay = a
 S_OUTcond = 0, S_OUTstruct = 0, S_OUTA = 0, S_OUTyos = 0, S_OUTdelay = 0
 
 
-At time                18980
-Qcond = 6, Qstruct = a, QA = 6, Qyos = 6, Qdelay = 6
+At time                20240
+Qcond = 6, Qstruct = a, QA = 6, Qyos = 6, Qdelay = a
 S_OUTcond = 0, S_OUTstruct = 0, S_OUTA = 0, S_OUTyos = 0, S_OUTdelay = 0
 
-##############################
-Error de salida en T =                19130, S_OUTstruct = 1, S_OUTcond = 0, S_OUTyos = 0, S_OUTyosA = 0, S_OUTdelay = 0.
-##############################
 
-At time                19130
-Qcond = 6, Qstruct = 6, QA = 6, Qyos = 6, Qdelay = 6
-S_OUTcond = 0, S_OUTstruct = 1, S_OUTA = 0, S_OUTyos = 0, S_OUTdelay = 0
-
-
-At time                19730
+At time                20390
 Qcond = 6, Qstruct = 6, QA = 6, Qyos = 6, Qdelay = 6
 S_OUTcond = 0, S_OUTstruct = 0, S_OUTA = 0, S_OUTyos = 0, S_OUTdelay = 0
 
 
-At time                22580
-Qcond = 3, Qstruct = 6, QA = 3, Qyos = 3, Qdelay = 3
+At time                24080
+Qcond = 3, Qstruct = 6, QA = 3, Qyos = 3, Qdelay = 6
 S_OUTcond = 0, S_OUTstruct = 0, S_OUTA = 0, S_OUTyos = 0, S_OUTdelay = 0
 
 
-At time                22730
+At time                24230
 Qcond = 3, Qstruct = 3, QA = 3, Qyos = 3, Qdelay = 3
 S_OUTcond = 0, S_OUTstruct = 0, S_OUTA = 0, S_OUTyos = 0, S_OUTdelay = 0
 
 
-At time                23180
-Qcond = 9, Qstruct = 3, QA = 9, Qyos = 9, Qdelay = 9
+At time                24720
+Qcond = 9, Qstruct = 3, QA = 9, Qyos = 9, Qdelay = 3
 S_OUTcond = 0, S_OUTstruct = 0, S_OUTA = 0, S_OUTyos = 0, S_OUTdelay = 0
 
 
-At time                23330
+At time                24870
 Qcond = 9, Qstruct = 9, QA = 9, Qyos = 9, Qdelay = 9
 S_OUTcond = 0, S_OUTstruct = 0, S_OUTA = 0, S_OUTyos = 0, S_OUTdelay = 0
 
 
-At time                23780
-Qcond = c, Qstruct = 9, QA = c, Qyos = c, Qdelay = c
+At time                25360
+Qcond = c, Qstruct = 9, QA = c, Qyos = c, Qdelay = 9
 S_OUTcond = 0, S_OUTstruct = 0, S_OUTA = 0, S_OUTyos = 0, S_OUTdelay = 0
 
 
-At time                23930
+At time                25510
 Qcond = c, Qstruct = c, QA = c, Qyos = c, Qdelay = c
 S_OUTcond = 0, S_OUTstruct = 0, S_OUTA = 0, S_OUTyos = 0, S_OUTdelay = 0
 
 
-At time                24380
-Qcond = 6, Qstruct = c, QA = 6, Qyos = 6, Qdelay = 6
+At time                26000
+Qcond = 6, Qstruct = c, QA = 6, Qyos = 6, Qdelay = c
 S_OUTcond = 0, S_OUTstruct = 0, S_OUTA = 0, S_OUTyos = 0, S_OUTdelay = 0
 
 
-At time                24530
+At time                26150
 Qcond = 6, Qstruct = 6, QA = 6, Qyos = 6, Qdelay = 6
 S_OUTcond = 0, S_OUTstruct = 0, S_OUTA = 0, S_OUTyos = 0, S_OUTdelay = 0
 
 
-At time                24980
-Qcond = 3, Qstruct = 6, QA = 3, Qyos = 3, Qdelay = 3
+At time                26640
+Qcond = 3, Qstruct = 6, QA = 3, Qyos = 3, Qdelay = 6
 S_OUTcond = 0, S_OUTstruct = 0, S_OUTA = 0, S_OUTyos = 0, S_OUTdelay = 0
 
 
-At time                25130
+At time                26790
 Qcond = 3, Qstruct = 3, QA = 3, Qyos = 3, Qdelay = 3
 S_OUTcond = 0, S_OUTstruct = 0, S_OUTA = 0, S_OUTyos = 0, S_OUTdelay = 0
 
 
-At time                25580
-Qcond = 9, Qstruct = 3, QA = 9, Qyos = 9, Qdelay = 9
+At time                27280
+Qcond = 9, Qstruct = 3, QA = 9, Qyos = 9, Qdelay = 3
 S_OUTcond = 0, S_OUTstruct = 0, S_OUTA = 0, S_OUTyos = 0, S_OUTdelay = 0
 
 
-At time                25730
+At time                27430
 Qcond = 9, Qstruct = 9, QA = 9, Qyos = 9, Qdelay = 9
 S_OUTcond = 0, S_OUTstruct = 0, S_OUTA = 0, S_OUTyos = 0, S_OUTdelay = 0
 

@@ -72,6 +72,7 @@ yosys_delay:
 	sed -i 's#NOR#NOR_delay#' synth_delay.v
 	sed -i 's#DFF#DFF_delay#' synth_delay.v
 	sed -i 's#DFFSR#DFFSR_delay#' synth_delay.v
+	sed -i 's/<=/<= #15 /' synth_delay.v
 
 wave:
 #	gtkwave ${EXE}.vcd --script=signal_list.csh &

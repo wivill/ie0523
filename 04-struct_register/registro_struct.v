@@ -24,6 +24,9 @@ module registro_struct (  output  wire  [3:0] Q,
 
   // Para alambrar mid mux al FFD que maneja S_OUT
   wire ommux_s_out;
+  wire nand_msout;
+  wire nMODO0, nMODO1;
+  // wire not_msout;
 
   assign gnd = 1'b0;
 
@@ -105,16 +108,36 @@ module registro_struct (  output  wire  [3:0] Q,
                             .iA       (DIR)
                             );
 
-  not_ti #(PwrC) not_M0(    .oNot     (m0_msout),
+  // sout_mux #(PwrC) to_sout( .oD     (ommux_s_out),
+  //                           .Q3     (Q[3]),
+  //                           .Q0     (Q[0]),
+  //                           .DIR    (DIR),
+  //                           .MODO0  (MODO[0])
+  //                           );
+
+  not_ti #(PwrC) not_MODO1( .oNot     (nMODO1),
+                            .iA       (MODO[1])
+                            );
+
+  not_ti #(PwrC) not_MODO0( .oNot     (nMODO0),
                             .iA       (MODO[0])
                             );
+
+  nand_ti #(PwrC) nand_sout(.oNand  (nand_msout),
+                            .iA     (nMODO0),
+                            .iB     (nMODO1)
+                            );
+
+  // not_ti #(PwrC) not_sout(    .oNot     (not_msout),
+  //                             .iA       (nand_not_msout)
+  //                             );
 
   mid_mux #(PwrC) to_sout(  .oD       (ommux_s_out),
                             .Qleft    (Q[0]),
                             .Qright   (Q[3]),
                             .D        (gnd),
                             .DIR      (DIR),
-                            .MODO1    (MODO[0])
+                            .MODO1    (nand_msout)
                             );
 
   ff_d #(PwrC) s_out(  .Q    (S_OUT),

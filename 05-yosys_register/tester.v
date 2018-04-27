@@ -57,9 +57,15 @@ module tester(
         // $display("Contador %d: %d ",dir, Contador);
       end
 
-      repeat(2) #30 CLK = ~CLK;
+      // Prueba a frecuencia original 30
+      // repeat(2) #30 CLK = ~CLK;
+      // ENB = 1'b1;
+      // forever #30 CLK = ~CLK;
+
+      // Prueba a frecuencia sin falla 32
+      repeat(2) #32 CLK = ~CLK;
       ENB = 1'b1;
-      forever #30 CLK = ~CLK;
+      forever #32 CLK = ~CLK;
     end
 
     initial begin
