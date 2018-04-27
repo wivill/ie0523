@@ -3,6 +3,6 @@ hierarchy -check -top registro_cond
 proc; opt; fsm; opt; memory; opt
 techmap; opt
 abc -liberty cmos_cells.lib
-show -lib cmos_cells.v
+show -lib cmos_cells.v -prefix synth -format eps
 clean
 write_verilog -noattr synth.v

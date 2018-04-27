@@ -12,7 +12,7 @@ YOS=yoscript.txt
 all: yosysA yosys yosys_delay compile run wave
 
 compile:
-	iverilog -o ${EXE}.exe -c ${SRC} -Tmin
+	iverilog -o ${EXE}.exe -c ${SRC} -Ttyp
 
 typical: compile
 
@@ -79,4 +79,5 @@ wave:
 	gtkwave ${EXE}.vcd registro.sav &
 
 clean:
-	rm -rf ${EXE}.exe ${EXE}.vcd synth.v synthA.v synth_delay.v
+	rm -rf ${EXE}.exe ${EXE}.vcd synth.v synthA.v synth_delay.v 
+	rm -rf synth.eps synthA.eps synth_delay.eps *.dot
