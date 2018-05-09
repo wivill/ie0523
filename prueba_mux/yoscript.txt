@@ -1,6 +1,0 @@
-read_verilog registro.v
-hierarchy -check -top registro
-proc; opt; fsm; opt; memory; opt
-techmap; opt
-clean
-write_verilog synth.v
