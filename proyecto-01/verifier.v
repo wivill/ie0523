@@ -17,7 +17,6 @@ module verifier(  input      [3:0]  Qcond,
       $display("##############################\nError de salida en T = %t, Qstruct = %d, Qcond = %d, Qyos = %d, QA = %d, Qdelay = %d.\n##############################", $time, Qstruct, Qcond, Qyos, QA, Qdelay);
     end // if
   end
-  //comentario de prueba
 
   always @ (posedge S_OUTstruct or negedge S_OUTstruct) begin
     if (S_OUTstruct != S_OUTcond) begin
