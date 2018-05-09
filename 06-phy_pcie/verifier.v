@@ -23,7 +23,7 @@ module verifier(  input      [3:0]  Qcond,
       $display("##############################\nError de salida en T = %t, S_OUTstruct = %d, S_OUTcond = %d, S_OUTyos = %d, S_OUTyosA = %d, S_OUTdelay = %d.\n##############################", $time, S_OUTstruct, S_OUTcond, S_OUTyos, S_OUTyosA, S_OUTdelay);
     end // if
   end // end
-
+// comentario de prueba
   // always @ (posedge S_OUTyos or negedge S_OUTyos) begin
   //   if (S_OUTstruct != S_OUTcond) begin
   //     $display("Error de salida en T = %t, S_OUTstruct = %d, S_OUTcond = %d.", $time, S_OUTstruct, S_OUTcond);
