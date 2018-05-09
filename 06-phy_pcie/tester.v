@@ -31,7 +31,7 @@ module tester(
                       );
 
    assign dato = (~LE)? Contador : 32'bz;
-
+//prueba
    initial begin
       $dumpfile("registros.vcd");
       $dumpvars(1, tester);
