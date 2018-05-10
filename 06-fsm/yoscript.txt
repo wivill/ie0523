@@ -1,5 +1,5 @@
-read_verilog registro_cond.v
-hierarchy -check -top registro_cond
+read_verilog ascensor_cond.v
+hierarchy -check -top ascensor_cond
 proc; opt; fsm; opt; memory; opt
 techmap; opt
 abc -liberty cmos_cells.lib

@@ -1,7 +1,0 @@
-read_verilog registro_cond.v
-hierarchy -check -top registro_cond
-proc; opt; fsm; opt; memory; opt
-techmap; opt
-show -prefix synthA -format eps
-clean
-write_verilog synthA.v
