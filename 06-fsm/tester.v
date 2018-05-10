@@ -11,24 +11,11 @@ module tester(  output reg CLK,
                 input      bott_lim_delay
                 );
 
-   // reg  [31:0]              Contador;
-   // reg  [`Ndir:0]           dir;
-   // reg                      LE;
-   // wire [31:0]              dato;
-
-   // Instancia de memoria la hago en el tester para que funcione
-   memTrans        m1(dir,
-                      LE,
-                      dato
-                      );
-
-   assign dato = (~LE)? Contador : 32'bz;
-
    initial begin
-      $dumpfile("registros.vcd");
+      $dumpfile("fsm.vcd");
       $dumpvars(1, tester);
-      $monitor("\nAt time %t\nQcond = %h, Qstruct = %h, QA = %h, Qyos = %h, Qdelay = %h\nS_OUTcond = %h, S_OUTstruct = %h, S_OUTA = %h, S_OUTyos = %h, S_OUTdelay = %h\n",
-               $time, Qcond, Qstruct, QA, Qyos, Qdelay, S_OUTcond, S_OUTstruct, S_OUTA, S_OUTyos, S_OUTdelay);
+      $monitor("\nAt time %t\ntop_lim_cond = %h, top_lim_struct = %h, top_lim_delay = %h\nbott_lim_cond = %h, bott_lim_struct = %h, bott_lim_delay = %h\n",
+               $time, top_lim_cond, top_lim_struct, top_lim_delay, bott_lim_cond, bott_lim_struct, bott_lim_delay);
    end
 
    initial begin
