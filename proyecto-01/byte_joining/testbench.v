@@ -16,7 +16,7 @@ module Testbench; // Testbench
   wire [7:0] Lane_2;
   wire [7:0] Lane_3;
   wire clk250k;
-	wire [1:0] crt_3;
+	wire [1:0] ctr_3;
 
 	// Nombres de los modulos mas las equivalencias de sus puertos globales
 
@@ -28,14 +28,14 @@ module Testbench; // Testbench
 					.ctr_3		(ctr_3),
 					.clk250k		(clk250k)
 	);
-	tester	tester_(	.byte_joining_desc_cond,		(byte_joining_desc_cond), // se esta instanciando un modulo de tipo registro4bit_conductual que se va a llamar b4r_conductual
+	tester	tester_(	.byte_joining_desc_cond		(byte_joining_desc_cond), // se esta instanciando un modulo de tipo registro4bit_conductual que se va a llamar b4r_conductual
 					.Lane_0		(Lane_0),
           .Lane_1		(Lane_1),
           .Lane_2		(Lane_2),
           .Lane_3		(Lane_3),
 					.ctr_3		(ctr_3),
 					.clk250k		(clk250k)
-					
+
 	);
 
 endmodule

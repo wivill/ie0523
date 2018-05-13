@@ -1,27 +1,27 @@
 module mux4a1 (
-  input In0,In1,In2,In3;
-  input [1:0] Sel;
-  output out;
+  input [7:0] In0, In1, In2, In3,
+  input [1:0] Sel,
+  output reg [7:0] outmux
   );
   always @ ( * ) begin
     case (Sel)
-      2'b00: out = In0;
-      2'b01: out = In1;
-      2'b10: out = In2;
-      2'b11: out = In3;
+      2'b00: outmux = In0;
+      2'b01: outmux = In1;
+      2'b10: outmux = In2;
+      2'b11: outmux = In3;
     endcase
   end
 
 endmodule //mux4a1
 
 module byte_joining_conductual (
-  input [7:0] Lane_0; //Entrada para la Linea 0 que viene de la etapa de serie a paralelo
-  input [7:0] Lane_1; //Entrada para la Linea 1 que viene de la etapa de serie a paralelo
-  input [7:0] Lane_2; //Entrada para la Linea 1 que viene de la etapa de serie a paralelo
-  input [7:0] Lane_3; //Entrada para la Linea 1 que viene de la etapa de serie a paralelo
-  input [1:0] ctr_3; // Bus de selecion para el multiplexor que distribuye los datos de cada linea a la salida
-  input clk250k; //Señal de reloj de los flops que guardan el dato que viene de la etapa de serie paralelo
-  output [7:0] out;
+  input [7:0] Lane_0, //Entrada para la Linea 0 que viene de la etapa de serie a paralelo
+  input [7:0] Lane_1, //Entrada para la Linea 1 que viene de la etapa de serie a paralelo
+  input [7:0] Lane_2, //Entrada para la Linea 1 que viene de la etapa de serie a paralelo
+  input [7:0] Lane_3, //Entrada para la Linea 1 que viene de la etapa de serie a paralelo
+  input [1:0] ctr_3, // Bus de selecion para el multiplexor que distribuye los datos de cada linea a la salida
+  input clk250k, //Señal de reloj de los flops que guardan el dato que viene de la etapa de serie paralelo
+  output [7:0] out
   );
 
   reg [7:0] L0; //registro que contiene el dato mas reciente de la linea 0 de la etapa serie a paralelo.
@@ -41,7 +41,7 @@ module byte_joining_conductual (
               .In1 (L1),
               .In2 (L2),
               .In3 (L3),
-              .out (out),
+              .outmux (out),
               .Sel (ctr_3)
     );
 

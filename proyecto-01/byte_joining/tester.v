@@ -1,11 +1,11 @@
 module tester( // Modulo que genera señales y realiza las pruebas
 	input [7:0] byte_joining_desc_cond,
-	output reg [1:0] crt_3;
-	output reg [7:0] Lane_0;
-  output reg [7:0] Lane_1;
-  output reg [7:0] Lane_2;
-  output reg [7:0] Lane_3;
-	output reg clk250k;
+	output reg [1:0] ctr_3,
+	output reg [7:0] Lane_0,
+  output reg [7:0] Lane_1,
+  output reg [7:0] Lane_2,
+  output reg [7:0] Lane_3,
+	output reg clk250k
 	);
 	//-----------Registros para el el verificador automatico--------------
 	//--------------------------------------------------------------------
@@ -26,12 +26,14 @@ module tester( // Modulo que genera señales y realiza las pruebas
 	initial begin
 		$dumpfile("bytejoining.vcd");	// Nombre de archivo del "dump"
 		$dumpvars;			// Directiva para "dumpear" variables
-		clk1Mhz;
+		clk1Mhz <= 1;
 		clk250k <= 1 ; // se le asigna el valor inicial del reloj
 		Lane_0 <= 8'b00000000;
 		Lane_1 <= 8'b00000001;
 		Lane_2 <= 8'b00000010;
     Lane_3 <= 8'b00000100;
+		ctr_3 <=2'b11;
+
 
 
 		// #1 LE = 0;
@@ -59,11 +61,12 @@ module tester( // Modulo que genera señales y realiza las pruebas
 	end
 
 	always	#2000 clk250k 	<= ~clk250k;	// señal de reloj de 250kHz
+	always 	#500 clk1Mhz <= ~clk1Mhz; //señal de reloj de 1Mhz
   always @ (posedge clk1Mhz) begin
-    if (crt_3 == 2'b11) begin
-      crt_3 <= 0;
+    if (ctr_3 == 2'b11) begin
+      ctr_3 <= 2'b00;
     end else begin
-      crt_3 <= crt_3 + 1;
+      ctr_3 <= ctr_3 + 1;
     end
   end
 
