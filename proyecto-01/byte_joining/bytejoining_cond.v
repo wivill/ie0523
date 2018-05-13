@@ -14,7 +14,7 @@ module mux4a1 (
 
 endmodule //mux4a1
 
-module byte_joining (
+module byte_joining_conductual (
   input [7:0] Lane_0; //Entrada para la Linea 0 que viene de la etapa de serie a paralelo
   input [7:0] Lane_1; //Entrada para la Linea 1 que viene de la etapa de serie a paralelo
   input [7:0] Lane_2; //Entrada para la Linea 1 que viene de la etapa de serie a paralelo
