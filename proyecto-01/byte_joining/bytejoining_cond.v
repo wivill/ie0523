@@ -3,7 +3,7 @@ module mux4a1 (
   input [1:0] Sel,
   output reg [7:0] outmux
   );
-  always @ ( * ) begin
+  always @ ( Sel ) begin
     case (Sel)
       2'b00: outmux = In0;
       2'b01: outmux = In1;
