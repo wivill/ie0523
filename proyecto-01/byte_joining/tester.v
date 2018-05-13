@@ -60,9 +60,10 @@ module tester( // Modulo que genera señales y realiza las pruebas
 
 	always	#2000 clk250k 	<= ~clk250k;	// señal de reloj de 250kHz
   always @ (posedge clk1Mhz) begin
-    crt_3 <= crt_3 + 1;
     if (crt_3 == 2'b11) begin
       crt_3 <= 0;
+    end else begin
+      crt_3 <= crt_3 + 1;
     end
   end
 
