@@ -1,4 +1,4 @@
-module mux_ps2( input [2:0] sel,
+module mux_p2s( input [2:0] sel,
                 input [7:0] data_in,
                 output reg  data_out
   );
