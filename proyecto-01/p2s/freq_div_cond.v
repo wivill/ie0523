@@ -1,8 +1,8 @@
-module freq_div(  input       CLK,
-                  input       reset,
-                  output reg  CLK_2,
-                  output reg  CLK_4,
-                  output reg  CLK_8
+module freq_div_cond( input       CLK,
+                      input       reset,
+                      output reg  CLK_2,
+                      output reg  CLK_4,
+                      output reg  CLK_8
   );
 
   // wire CLK_2_to_CLK_4, CLK_4_to_CLK_8;

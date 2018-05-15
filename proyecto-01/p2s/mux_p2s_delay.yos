@@ -1,8 +1,8 @@
-read_verilog registro_cond.v
-hierarchy -check -top registro_cond
+read_verilog mux_p2s_cond.v
+hierarchy -check -top mux_p2s_cond
 proc; opt; fsm; opt; memory; opt
 techmap; opt
 abc -liberty cmos_cells.lib
 show -lib cmos_cells_delay.v -prefix synth_delay -format eps
 clean
-write_verilog -noattr synth_delay.v
+write_verilog -noattr mux_p2s_synth_delay.v
