@@ -3,6 +3,7 @@
 // includes de archivos de verilog
 // Pueden omitirse y llamarse desde el testbench
 // `include "verificador.v"
+//hola
 `include "sintetizado.v"
 `include "cmos_cells.v"
 `include "bytejoining_cond.v"
