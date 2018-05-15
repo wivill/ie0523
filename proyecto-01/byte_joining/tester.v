@@ -1,5 +1,6 @@
 module tester( // Modulo que genera señales y realiza las pruebas
 	input [7:0] byte_joining_desc_cond,
+	input [7:0] byte_joining_desc_estruc,
 	output reg [1:0] ctr_3,
 	output reg [7:0] Lane_0,
   output reg [7:0] Lane_1,

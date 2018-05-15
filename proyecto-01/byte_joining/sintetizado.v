@@ -2,7 +2,7 @@
 
 (* top =  1  *)
 (* src = "bytejoining_cond.v:17" *)
-module byte_joining_conductual(Lane_0, Lane_1, Lane_2, Lane_3, ctr_3, clk250k, out);
+module byte_joining_estructural(Lane_0, Lane_1, Lane_2, Lane_3, ctr_3, clk250k, out);
   (* src = "bytejoining_cond.v:27" *)
   wire [7:0] L0;
   (* src = "bytejoining_cond.v:28" *)
