@@ -13,14 +13,14 @@ module tester( // Modulo que genera señales y realiza las pruebas
 
 
 	//------------------Conexiones de la memoria--------------------------
-	// reg [31:0] Contador;
-	// reg [2:0] dir;
-	// reg LE;
-	// wire [31:0] dato;
-	// //Conexion a la memoria de contadores de transicion
-	// memTrans m1 (dir, LE, dato);
-	// //Control de E/S del puerto de dato de la memoria de contadores
-	// assign dato = (~LE)? Contador : 32'bz;
+	reg [31:0] Contador;
+	reg [2:0] dir;
+	reg LE;
+	wire [31:0] dato;
+	//Conexion a la memoria de contadores de transicion
+	memTrans m1 (dir, LE, dato);
+	//Control de E/S del puerto de dato de la memoria de contadores
+	assign dato = (~LE)? Contador : 32'bz;
 	//--------------------------------------------------------------------
   reg clk1Mhz; //señal de reloj con la que se cambian las entradas de seleccion del mux
 
@@ -37,11 +37,11 @@ module tester( // Modulo que genera señales y realiza las pruebas
 
 
 
-		// #1 LE = 0;
-		// Contador = 0;
-		// for (dir=0; dir<=5; dir=dir+1) begin
-		// 	#1 Contador = 0;
-		// end
+		#1 LE = 0;
+		Contador = 0;
+		for (dir=0; dir<=5; dir=dir+1) begin
+			#1 Contador = 0;
+		end
 
 		@(posedge clk250k);
 		@(posedge clk250k);
@@ -53,11 +53,11 @@ module tester( // Modulo que genera señales y realiza las pruebas
       Lane_2 <= Lane_2 + 1;
       Lane_3 <= Lane_3 + 1;
 		end
-		// #100 LE=1;
-		// for (dir=0; dir<= 5; dir=dir+1) begin
-		// 	#1 Contador = dato;
-		// 	$display("PwrCntr[%d]: %d", dir, Contador);
-		// end
+		# LE = 1;
+		for (dir=0; dir<= 5; dir=dir+1) begin
+			#1 Contador = dato;
+		 	$display("PwrCntr[%d]: %d", dir, Contador);
+		end
 		$finish;
 	end
 

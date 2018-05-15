@@ -186,7 +186,7 @@ module byte_joining_estructural(Lane_0, Lane_1, Lane_2, Lane_3, ctr_3, clk250k, 
     .Q(L3[7])
   );
   (* src = "bytejoining_cond.v:40" *)
-  mux4a1 mux (
+  mux4a1sin mux (
     .In0(L0),
     .In1(L1),
     .In2(L2),
@@ -197,7 +197,7 @@ module byte_joining_estructural(Lane_0, Lane_1, Lane_2, Lane_3, ctr_3, clk250k, 
 endmodule
 
 (* src = "bytejoining_cond.v:1" *)
-module mux4a1(In0, In1, In2, In3, Sel, outmux);
+module mux4a1sin(In0, In1, In2, In3, Sel, outmux);
   wire _000_;
   wire _001_;
   wire _002_;
