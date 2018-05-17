@@ -6,10 +6,15 @@
 ###########################################################
 
 SRC=files.txt
-EXE=registros
-YOS=yoscript.txt
+EXE=p2s
+MUXYOS=mux_p2s.yos
+FFDYOS=ffd_p2s.yos
+MUXYOSD=mux_p2s_delay.yos
+FFDYOSD=ffd_p2s_delay.yos
+CLKYOS=freq_div.yos
+CLKYOSD=freq_div_delay.yos
 
-all: yosysA yosys yosys_delay compile run wave
+all: synth synth_delay compile run wave
 
 compile:
 	iverilog -o ${EXE}.exe -c ${SRC} -Ttyp
@@ -25,59 +30,55 @@ min:
 run:
 	vvp ${EXE}.exe > results.txt
 
-yosysA:
-	sed -i 's#always @(#//always @(#' registro_cond.v
-	# sed -i 's#  $display#//  $display#' registro_cond.v
-	sed -i 's#letest.m1#//letest.m1#' registro_cond.v
-	sed -i 's#end // end counter#//end // end counter#' registro_cond.v
-	yosys -s yoscriptA.txt
-	# sed -i '1s;^;`include "cmos_cells.v";' synthA.v
-	sed -i 's/_cond/_A/' synthA.v
-	sed -i 's#//always @(#always @(#' registro_cond.v
-	# sed -i 's#//  $display#  $display#' registro_cond.v
-	sed -i 's#//letest.m1#letest.m1#' registro_cond.v
-	sed -i 's#//end // end counter#end // end counter#' registro_cond.v
-	sed -i 's#endmodule#\nparameter PwrC = 2;\nalways @(posedge Q or negedge Q) begin\n  letest.m1.PwrCntr[PwrC] = letest.m1.PwrCntr[PwrC] + 1;\nend // end counter\nendmodule#' synthA.v
+synth:
+	yosys -s ${MUXYOS}
+	sed -i '1s;^;`include "cmos_cells.v"\n;' mux_p2s_synth.v
+	sed -i 's/_cond/_synth/' mux_p2s_synth.v
+	yosys -s ${FFDYOS}
+	sed -i '1s;^;`include "cmos_cells.v"\n;' ffd_p2s_synth.v
+	sed -i 's/_cond/_synth/' ffd_p2s_synth.v
+	yosys -s ${CLKYOS}
+	sed -i '1s;^;`include "cmos_cells.v"\n;' freq_div_synth.v
+	sed -i 's/_cond/_synth/' freq_div_synth.v
 
-yosys:
-	sed -i 's#always @(#//always @(#' registro_cond.v
-	# sed -i 's#  $display#//  $display#' registro_cond.v
-	sed -i 's#letest.m1#//letest.m1#' registro_cond.v
-	sed -i 's#end // end counter#//end // end counter#' registro_cond.v
-	yosys -s ${YOS}
-	sed -i '1s;^;`include "cmos_cells.v"\n;' synth.v
-	sed -i 's/_cond/_yosys/' synth.v
-	sed -i 's#//always @(#always @(#' registro_cond.v
-	# sed -i 's#//  $display#  $display#' registro_cond.v
-	sed -i 's#//letest.m1#letest.m1#' registro_cond.v
-	sed -i 's#//end // end counter#end // end counter#' registro_cond.v
-	sed -i 's#endmodule#\nparameter PwrC = 3;\nalways @(posedge Q or negedge Q) begin\n  letest.m1.PwrCntr[PwrC] = letest.m1.PwrCntr[PwrC] + 1;\nend // end counter\nendmodule#' synth.v
-
-yosys_delay:
-	sed -i 's#always @(#//always @(#' registro_cond.v
-	# sed -i 's#  $display#//  $display#' registro_cond.v
-	sed -i 's#letest.m1#//letest.m1#' registro_cond.v
-	sed -i 's#end // end counter#//end // end counter#' registro_cond.v
-	yosys -s yoscript_delay.txt
-	sed -i '1s;^;`include "cmos_cells_delay.v"\n;' synth_delay.v
-	sed -i 's/_cond/_yosys_delay/' synth_delay.v
-	sed -i 's#//always @(#always @(#' registro_cond.v
-	# sed -i 's#//  $display#  $display#' registro_cond.v
-	sed -i 's#//letest.m1#letest.m1#' registro_cond.v
-	sed -i 's#//end // end counter#end // end counter#' registro_cond.v
-	sed -i 's#endmodule#\nparameter PwrC = 4;\nalways @(posedge Q or negedge Q) begin\n  letest.m1.PwrCntr[PwrC] = letest.m1.PwrCntr[PwrC] + 1;\nend // end counter\nendmodule#' synth_delay.v
-	sed -i 's#BUF#BUF_delay#' synth_delay.v
-	sed -i 's#NOT#NOT_delay#' synth_delay.v
-	sed -i 's#NAND#NAND_delay#' synth_delay.v
-	sed -i 's#NOR#NOR_delay#' synth_delay.v
-	sed -i 's#DFF#DFF_delay#' synth_delay.v
-	sed -i 's#DFFSR#DFFSR_delay#' synth_delay.v
-	sed -i 's/<=/<= #15 /' synth_delay.v
+synth_delay:
+	yosys -s ${MUXYOSD}
+	sed -i '1s;^;`include "cmos_cells_delay.v"\n;' mux_p2s_synth_delay.v
+	sed -i 's/_cond/_synth_delay/' mux_p2s_synth_delay.v
+	yosys -s ${FFDYOSD}
+	sed -i '1s;^;`include "cmos_cells_delay.v"\n;' ffd_p2s_synth_delay.v
+	sed -i 's/_cond/_synth_delay/' ffd_p2s_synth_delay.v
+	yosys -s ${CLKYOSD}
+	sed -i '1s;^;`include "cmos_cells_delay.v"\n;' freq_div_synth_delay.v
+	sed -i 's/_cond/_synth_delay/' freq_div_synth_delay.v
+	sed -i 's#BUF#BUF_delay#' mux_p2s_synth_delay.v
+	sed -i 's#NOT#NOT_delay#' mux_p2s_synth_delay.v
+	sed -i 's#NAND#NAND_delay#' mux_p2s_synth_delay.v
+	sed -i 's#NOR#NOR_delay#' mux_p2s_synth_delay.v
+	sed -i 's#DFF#DFF_delay#' mux_p2s_synth_delay.v
+	sed -i 's#DFFSR#DFFSR_delay#' mux_p2s_synth_delay.v
+	sed -i 's/<=/<= #15 /' mux_p2s_synth_delay.v
+	#
+	sed -i 's#BUF#BUF_delay#' ffd_p2s_synth_delay.v
+	sed -i 's#NOT#NOT_delay#' ffd_p2s_synth_delay.v
+	sed -i 's#NAND#NAND_delay#' ffd_p2s_synth_delay.v
+	sed -i 's#NOR#NOR_delay#' ffd_p2s_synth_delay.v
+	sed -i 's#DFF#DFF_delay#' ffd_p2s_synth_delay.v
+	sed -i 's#DFFSR#DFFSR_delay#' ffd_p2s_synth_delay.v
+	sed -i 's/<=/<= #15 /' ffd_p2s_synth_delay.v
+	#
+	sed -i 's#BUF#BUF_delay#' freq_div_synth_delay.v
+	sed -i 's#NOT#NOT_delay#' freq_div_synth_delay.v
+	sed -i 's#NAND#NAND_delay#' freq_div_synth_delay.v
+	sed -i 's#NOR#NOR_delay#' freq_div_synth_delay.v
+	sed -i 's#DFF#DFF_delay#' freq_div_synth_delay.v
+	sed -i 's#DFFSR#DFFSR_delay#' freq_div_synth_delay.v
+	sed -i 's/<=/<= #15 /' freq_div_synth_delay.v
 
 wave:
 #	gtkwave ${EXE}.vcd --script=signal_list.csh &
-	gtkwave ${EXE}.vcd registro.sav &
+	gtkwave ${EXE}.vcd p2s.sav &
 
 clean:
-	rm -rf ${EXE}.exe ${EXE}.vcd synth.v synthA.v synth_delay.v 
-	rm -rf synth.eps synthA.eps synth_delay.eps *.dot
+	rm -rf ${EXE}.exe ${EXE}.vcd ffd_p2s_synth.v ffd_p2s_synth_delay.v mux_p2s_synth.v mux_p2s_synth_delay.v freq_div_synth.v freq_div_synth_delay.v
+	rm -rf *.eps *.dot

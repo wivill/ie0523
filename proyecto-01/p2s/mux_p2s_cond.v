@@ -1,7 +1,7 @@
-module mux_ps2( input [2:0] sel,
-                input [7:0] data_in,
-                output reg  data_out
-  );
+module mux_p2s_cond(input [2:0] sel,
+                    input [7:0] data_in,
+                    output reg  data_out
+                    );                
 
   always @ (sel or data_in) begin
     case (sel)

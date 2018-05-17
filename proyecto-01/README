@@ -1,5 +1,5 @@
 En este directorio se encuentra el código verilog para sintetizar
-y probar un registro desplazante de 4 bits. Para poder verificar
+y probar la capa física del PCIE. Para poder verificar
 su funcionamiento, basta con utilizar el Makefile proporcionado.
 
 Las opciones disponibles son las siguientes:
@@ -15,11 +15,11 @@ make run	ejecuta el binario generado por make, así como
 
 make wave	abre el .vcd para su visualización.
 
-make yosys	sintetiza el .v usando la receta provista por
-		el archivo yoscript.txt
+make synth	sintetiza el .v usando la receta provista por
+		el archivo synth.yos
 
-make yosysA	sintetiza el .v usando la receta provista por
-		el archivo yoscriptA.txt
+make synth_delay	sintetiza el .v usando la receta provista por
+			el archivo synth_delay.yos
 
 make clean	limpia el directorio de ejecutables y otros
 		residuos.
