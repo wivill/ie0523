@@ -7,9 +7,10 @@
 
 SRC=files.txt
 EXE=fsm
-YOS=yoscript.txt
+SYNTH=synth.yos
+SYNTHD=synth_delay.yos
 
-all: yosysA yosys yosys_delay compile run wave
+all: synth synth_delay compile run wave
 
 compile:
 	iverilog -o ${EXE}.exe -c ${SRC} -Ttyp
@@ -25,29 +26,29 @@ min:
 run:
 	vvp ${EXE}.exe > results.txt
 
-yosys:
+synth:
 	# sed -i 's#always @(#//always @(#' ascensor_cond.v
 	# # sed -i 's#  $display#//  $display#' registro_cond.v
 	# sed -i 's#letest.m1#//letest.m1#' ascensor_cond.v
 	# sed -i 's#end // end counter#//end // end counter#' ascensor_cond.v
-	yosys -s ${YOS}
+	yosys -s ${SYNTH}
 	sed -i '1s;^;`include "cmos_cells.v"\n;' synth.v
-	sed -i 's/_cond/_yosys/' synth.v
-	sed -i 's#//always @(#always @(#' ascensor_cond.v
+	sed -i 's/_cond/_synth/' synth.v
+	# sed -i 's#//always @(#always @(#' ascensor_cond.v
 	# sed -i 's#//  $display#  $display#' registro_cond.v
 	# sed -i 's#//letest.m1#letest.m1#' ascensor_cond.v
 	# sed -i 's#//end // end counter#end // end counter#' ascensor_cond.v
 	# sed -i 's#endmodule#\nparameter PwrC = 3;\nalways @(posedge Q or negedge Q) begin\n  letest.m1.PwrCntr[PwrC] = letest.m1.PwrCntr[PwrC] + 1;\nend // end counter\nendmodule#' synth.v
 
-yosys_delay:
+synth_delay:
 	# sed -i 's#always @(#//always @(#' ascensor_cond.v
 	# # sed -i 's#  $display#//  $display#' registro_cond.v
 	# sed -i 's#letest.m1#//letest.m1#' ascensor_cond.v
 	# sed -i 's#end // end counter#//end // end counter#' ascensor_cond.v
-	yosys -s yoscript_delay.txt
+	yosys -s ${SYNTHD}
 	sed -i '1s;^;`include "cmos_cells_delay.v"\n;' synth_delay.v
-	sed -i 's/_cond/_yosys_delay/' synth_delay.v
-	sed -i 's#//always @(#always @(#' ascensor_cond.v
+	sed -i 's/_cond/_synth_delay/' synth_delay.v
+	# sed -i 's#//always @(#always @(#' ascensor_cond.v
 	# sed -i 's#//  $display#  $display#' registro_cond.v
 	# sed -i 's#//letest.m1#letest.m1#' ascensor_cond.v
 	# sed -i 's#//end // end counter#end // end counter#' ascensor_cond.v
@@ -66,4 +67,4 @@ wave:
 
 clean:
 	rm -rf ${EXE}.exe ${EXE}.vcd synth.v synth_delay.v
-	rm -rf synth.eps synthA.eps synth_delay.eps *.dot
+	rm -rf synth.eps synth_delay.eps *.dot
