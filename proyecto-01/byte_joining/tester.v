@@ -53,7 +53,8 @@ module tester( // Modulo que genera señales y realiza las pruebas
       Lane_2 <= Lane_2 + 1;
       Lane_3 <= Lane_3 + 1;
 		end
-		# LE = 1;
+
+		#100 LE = 1;
 		for (dir=0; dir<= 5; dir=dir+1) begin
 			#1 Contador = dato;
 		 	$display("PwrCntr[%d]: %d", dir, Contador);
