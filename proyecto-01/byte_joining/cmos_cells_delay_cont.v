@@ -4,8 +4,8 @@ input A;
 output Y;
 assign Y = A;
 // 	always @(posedge Y) begin
-// 	probador_.m1.PwrCntr[0] = probador_.m1.PwrCntr[0] + 1;
-// // 	//$display("PwrCntr[%d]: %d",PwrC,probador_.m1.PwrCntr[PwrC]);
+// 	tester_.m1.PwrCntr[0] = tester_.m1.PwrCntr[0] + 1;
+// // 	//$display("PwrCntr[%d]: %d",PwrC,tester_.m1.PwrCntr[PwrC]);
 //  	end
 endmodule
 
@@ -14,8 +14,8 @@ input A;
 output Y;
 assign #(1:1:4,1:1:4) Y = ~A;
 always @(posedge Y) begin
-	probador_.m1.PwrCntr[0] = probador_.m1.PwrCntr[0] + 1;
-	//$display("PwrCntr[%d]: %d",PwrC,probador_.m1.PwrCntr[PwrC]);
+	tester_.m1.PwrCntr[0] =  tester_.m1.PwrCntr[0] + 1;
+	//$display("PwrCntr[%d]: %d",PwrC,tester_.m1.PwrCntr[PwrC]);
 end
 endmodule
 
@@ -24,8 +24,8 @@ input A, B;
 output Y;
 assign #(11:11:22,7:7:15) Y = ~(A & B);
 always @(posedge Y) begin
-	probador_.m1.PwrCntr[0] = probador_.m1.PwrCntr[0] + 1;
-	//$display("PwrCntr[%d]: %d",PwrC,probador_.m1.PwrCntr[PwrC]);
+	tester_.m1.PwrCntr[0] = tester_.m1.PwrCntr[0] + 1;
+	//$display("PwrCntr[%d]: %d",PwrC,tester_.m1.PwrCntr[PwrC]);
 end
 endmodule
 
@@ -34,8 +34,8 @@ input A, B;
 output Y;
 assign #(8:8:11,8:8:11) Y = ~(A | B);
 always @(posedge Y) begin
-	probador_.m1.PwrCntr[0] = probador_.m1.PwrCntr[0] + 1;
-	//$display("PwrCntr[%d]: %d",PwrC,probador_.m1.PwrCntr[PwrC]);
+	tester_.m1.PwrCntr[0] = tester_.m1.PwrCntr[0] + 1;
+	//$display("PwrCntr[%d]: %d",PwrC,tester_.m1.PwrCntr[PwrC]);
 end
 endmodule
 
@@ -83,8 +83,8 @@ end
 always @(posedge C)
 	#14 Q <= D;
 always @(posedge Q) begin
-	probador_.m1.PwrCntr[0] = probador_.m1.PwrCntr[0] + 1;
-	//$display("PwrCntr[%d]: %d",PwrC,probador_.m1.PwrCntr[PwrC]);
+	tester_.m1.PwrCntr[0] = tester_.m1.PwrCntr[0] + 1;
+	//$display("PwrCntr[%d]: %d",PwrC,tester_.m1.PwrCntr[PwrC]);
 end
 endmodule
 
@@ -99,7 +99,7 @@ always @(posedge C, posedge S, posedge R)
 	else
 		#14 Q <= D;
 // always @(posedge Q) begin
-// 	probador_.m1.PwrCntr[0] = probador_.m1.PwrCntr[0] + 1;
-// 	//$display("PwrCntr[%d]: %d",PwrC,probador_.m1.PwrCntr[PwrC]);
+// 	tester_.m1.PwrCntr[0] = tester_.m1.PwrCntr[0] + 1;
+// 	//$display("PwrCntr[%d]: %d",PwrC,tester_.m1.PwrCntr[PwrC]);
 // end
 endmodule

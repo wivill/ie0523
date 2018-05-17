@@ -5,11 +5,12 @@
 // `include "verificador.v"
 //hola
 `include "sintetizado.v"
+`include "memoria.v"
 // `include "cmos_cells.v"
 `include "cmos_cells_delay_cont.v"
 `include "bytejoining_cond.v"
 `include "tester.v"
-`include "memoria.v"
+
 
 
 module Testbench; // Testbench
