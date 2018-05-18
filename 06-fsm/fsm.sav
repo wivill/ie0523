@@ -1,48 +1,38 @@
 [*]
 [*] GTKWave Analyzer v3.3.89 (w)1999-2018 BSI
-[*] Fri Apr 27 21:13:13 2018
+[*] Fri May 18 20:39:06 2018
 [*]
-[dumpfile] "/home/wivill/git/ie0523/05-yosys_register/registros.vcd"
-[dumpfile_mtime] "Fri Apr 27 21:12:48 2018"
-[dumpfile_size] 3228
-[savefile] "/home/wivill/git/ie0523/05-yosys_register/registro.sav"
+[dumpfile] "/home/wivill/git/ie0523/06-fsm/fsm.vcd"
+[dumpfile_mtime] "Fri May 18 20:38:50 2018"
+[dumpfile_size] 1715
+[savefile] "/home/wivill/git/ie0523/06-fsm/fsm.sav"
 [timestart] 0
 [size] 1366 697
 [pos] -1 -1
-*-19.085325 2344000 72000 424000 1192000 1576000 1960000 2344000 616000 631000 808000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
-[markername] AENB/LOAD
-[markername] BPUSH L
-[markername] CLOAD
-[markername] DCYCLE L
-[markername] ELOAD
-[markername] FCYCLE R
-[markername] GT1
-[markername] HT2
-[markername] IPUSH R
+*-20.881586 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] testbench.
 [sst_width] 213
-[signals_width] 126
+[signals_width] 232
 [sst_expanded] 1
 [sst_vpaned_height] 187
 @28
 testbench.letest.CLK
-testbench.letest.ENB
-testbench.letest.DIR
-testbench.letest.MODO[1:0]
+testbench.letest.go_down
+testbench.letest.go_up
+testbench.letest.halt
+testbench.letest.bott_lim_cond
+testbench.letest.bott_lim_synth
+testbench.letest.bott_lim_synth_delay
+testbench.letest.top_lim_cond
+testbench.letest.top_lim_synth
+testbench.letest.top_lim_synth_delay
 @22
-testbench.letest.D[3:0]
-testbench.letest.Qcond[3:0]
-testbench.letest.Qstruct[3:0]
-testbench.letest.QA[3:0]
-testbench.letest.Qyos[3:0]
-testbench.letest.Qdelay[3:0]
-@28
-testbench.letest.S_IN
-testbench.letest.S_OUTcond
-testbench.letest.S_OUTstruct
-testbench.letest.S_OUTA
-testbench.letest.S_OUTyos
-@29
-testbench.letest.S_OUTdelay
+testbench.letest.estado_cond[4:0]
+testbench.letest.estado_synth[4:0]
+testbench.letest.estado_synth_delay[4:0]
+testbench.letest.prox_estado_cond[4:0]
+testbench.letest.prox_estado_synth[4:0]
+@23
+testbench.letest.prox_estado_synth_delay[4:0]
 [pattern_trace] 1
 [pattern_trace] 0
