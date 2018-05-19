@@ -11,7 +11,7 @@ module byte_striping (
   input wire controlMuxCLK
   );
 
-  always @ ( posedge byteStripingCLK ) begin //Durante cada flanco positivo del
+  always @ ( posedge controlMuxCLK ) begin //Durante cada flanco positivo del
     stripedLane0[6] <= byteStripingIN[0];    //reloj del byte striping se carga
     stripedLane1[6] <= byteStripingIN[1];    //el que debe ser el primer bit al
     stripedLane2[6] <= byteStripingIN[2];    //final de cada lane y con cada
@@ -50,10 +50,6 @@ module byte_striping (
     stripedLane3[0] <= stripedLane3[2];
 
   end                                        //moviendo al inicio del lane
-
-  always @ ( posedge byteStripingCLK ) begin
-
-  end
 
 
 

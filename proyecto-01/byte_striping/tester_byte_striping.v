@@ -20,20 +20,6 @@ module tester_byte_striping (
     #0
     byteStripingIN = 8'b00010001;
     #8
-    byteStripingIN = 8'b00010001;
-    #8
-    byteStripingIN = 8'b00010001;
-    #8
-    byteStripingIN = 8'b00010001;
-    #8
-    byteStripingIN = 8'b10001000;
-    #8
-    byteStripingIN = 8'b10001000;
-    #8
-    byteStripingIN = 8'b10001000;
-    #8
-    byteStripingIN = 8'b10001000;
-    #8
     $finish;
   end
 
@@ -41,7 +27,7 @@ module tester_byte_striping (
   always #0.5 controlMuxCLK <= ~controlMuxCLK;
 
   initial byteStripingCLK <=1;
-  always #4 byteStripingCLK <= ~byteStripingCLK;
+  always #2 byteStripingCLK <= ~byteStripingCLK;
 
 
 
