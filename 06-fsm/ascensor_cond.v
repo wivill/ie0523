@@ -4,6 +4,7 @@ module ascensor_cond( input       CLK,
                       input       go_down,
                       input       go_up,
                       input       halt,
+                      input       reset,
                       output reg  top_lim,
                       output reg  bott_lim,
                       output reg [4:0] estado,
@@ -11,7 +12,8 @@ module ascensor_cond( input       CLK,
                       );
 
   always @(posedge CLK) begin
-    estado <= prox_estado;
+    if (~reset) estado <= `IDLE;
+    else  estado <= prox_estado;
   end
 
   always @(*) begin
@@ -19,7 +21,7 @@ module ascensor_cond( input       CLK,
     bott_lim = 1'b0;
     prox_estado = estado;
     case (estado)
-    
+
       `IDLE: begin
         if (halt) begin
           prox_estado = `IDLE;

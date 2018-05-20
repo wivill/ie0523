@@ -3,6 +3,7 @@ module tester(  output reg CLK,
                 output reg go_down,
                 output reg go_up,
                 output reg halt,
+                output reg reset,
                 input      top_lim_cond,
                 input      bott_lim_cond,
                 input      top_lim_synth,
@@ -25,14 +26,16 @@ module tester(  output reg CLK,
    end
 
    initial begin
+      reset = 1'b0;
       CLK = 1'b0;
       go_down = 1'b0;
       go_up = 1'b0;
       halt = 1'b1;
       repeat(2) #100 CLK = ~CLK;
+      reset = 1'b1;
       halt = 1'b0;
       forever #100 CLK = ~CLK;
-    end
+   end
 
     initial begin
       @(negedge halt);

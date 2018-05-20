@@ -1,22 +1,25 @@
 [*]
 [*] GTKWave Analyzer v3.3.89 (w)1999-2018 BSI
-[*] Sun May 20 01:58:02 2018
+[*] Sun May 20 16:29:32 2018
 [*]
 [dumpfile] "/home/wivill/git/ie0523/06-fsm/fsm.vcd"
-[dumpfile_mtime] "Sun May 20 01:57:48 2018"
-[dumpfile_size] 2721
+[dumpfile_mtime] "Sun May 20 16:28:10 2018"
+[dumpfile_size] 2949
 [savefile] "/home/wivill/git/ie0523/06-fsm/fsm.sav"
 [timestart] 0
-[size] 1920 1038
-[pos] 1365 -342
-*-20.390350 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[size] 1366 697
+[pos] 1365 0
+*-21.071898 200000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] testbench.
 [sst_width] 213
-[signals_width] 254
+[signals_width] 232
 [sst_expanded] 1
 [sst_vpaned_height] 307
 @28
 testbench.letest.CLK
+@29
+testbench.letest.reset
+@28
 testbench.letest.go_down
 testbench.letest.go_up
 testbench.letest.halt
@@ -32,7 +35,6 @@ testbench.letest.estado_synth[4:0]
 testbench.letest.estado_synth_delay[4:0]
 testbench.letest.prox_estado_cond[4:0]
 testbench.letest.prox_estado_synth[4:0]
-@23
 testbench.letest.prox_estado_synth_delay[4:0]
 [pattern_trace] 1
 [pattern_trace] 0

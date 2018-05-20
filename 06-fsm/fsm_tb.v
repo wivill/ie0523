@@ -11,7 +11,7 @@
 module testbench;
 
    // Wires para alambrar módulos
-   wire CLK_tb, go_up_tb, go_down_tb, halt_tb;
+   wire CLK_tb, go_up_tb, go_down_tb, halt_tb, reset_tb;
    wire top_lim_synth_tb, top_lim_cond_tb, top_lim_synth_delay_tb;
    wire bott_lim_synth_tb, bott_lim_cond_tb, bott_lim_synth_delay_tb;
    wire [4:0] estado_cond_tb, prox_estado_cond_tb;
@@ -22,6 +22,7 @@ module testbench;
                       .go_down                 (go_down_tb),
                       .go_up                   (go_up_tb),
                       .halt                    (halt_tb),
+                      .reset                   (reset_tb),
                       .top_lim_cond            (top_lim_cond_tb),
                       .bott_lim_cond           (bott_lim_cond_tb),
                       .top_lim_synth           (top_lim_synth_tb),
@@ -40,6 +41,7 @@ module testbench;
                                   .go_down     (go_down_tb),
                                   .go_up       (go_up_tb),
                                   .halt        (halt_tb),
+                                  .reset       (reset_tb),
                                   .top_lim     (top_lim_cond_tb),
                                   .bott_lim    (bott_lim_cond_tb),
                                   .estado      (estado_cond_tb),
@@ -50,6 +52,7 @@ module testbench;
                                   .go_down     (go_down_tb),
                                   .go_up       (go_up_tb),
                                   .halt        (halt_tb),
+                                  .reset       (reset_tb),
                                   .top_lim     (top_lim_synth_tb),
                                   .bott_lim    (bott_lim_synth_tb),
                                   .estado      (estado_synth_tb),
@@ -60,6 +63,7 @@ module testbench;
                                       .go_down      (go_down_tb),
                                       .go_up        (go_up_tb),
                                       .halt         (halt_tb),
+                                      .reset        (reset_tb),
                                       .top_lim      (top_lim_synth_delay_tb),
                                       .bott_lim     (bott_lim_synth_delay_tb),
                                       .estado       (estado_synth_delay_tb),
