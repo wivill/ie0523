@@ -1,7 +1,259 @@
 VCD info: dumpfile fsm.vcd opened for output.
 
 At time                    0
-top_lim_cond = x, top_lim_synth = 0, top_lim_synth_delay = 0
-bott_lim_cond = x, bott_lim_synth = 0, bott_lim_synth_delay = 0
-estado_cond = xx, prox_estado_cond = xx, estado_synth = 00, prox_estado_synth = 00, estado_synth_delay = 00, prox_estado_synth_delay = 00
+top_lim_cond = 0, top_lim_synth = x, top_lim_synth_delay = x
+bott_lim_cond = 0, bott_lim_synth = x, bott_lim_synth_delay = x
+estado_cond = xx, prox_estado_cond = 01, estado_synth = xx, prox_estado_synth = xx, estado_synth_delay = xx, prox_estado_synth_delay = xx
+
+
+At time                 1000
+top_lim_cond = 0, top_lim_synth = x, top_lim_synth_delay = x
+bott_lim_cond = 0, bott_lim_synth = x, bott_lim_synth_delay = x
+estado_cond = 01, prox_estado_cond = 01, estado_synth = xx, prox_estado_synth = xx, estado_synth_delay = xx, prox_estado_synth_delay = xx
+
+
+At time                 2000
+top_lim_cond = 0, top_lim_synth = x, top_lim_synth_delay = x
+bott_lim_cond = 0, bott_lim_synth = x, bott_lim_synth_delay = x
+estado_cond = 01, prox_estado_cond = 08, estado_synth = xx, prox_estado_synth = xX, estado_synth_delay = xx, prox_estado_synth_delay = xx
+
+
+At time                 2160
+top_lim_cond = 0, top_lim_synth = x, top_lim_synth_delay = x
+bott_lim_cond = 0, bott_lim_synth = x, bott_lim_synth_delay = 0
+estado_cond = 01, prox_estado_cond = 08, estado_synth = xx, prox_estado_synth = xX, estado_synth_delay = xx, prox_estado_synth_delay = xx
+
+
+At time                 2240
+top_lim_cond = 0, top_lim_synth = x, top_lim_synth_delay = x
+bott_lim_cond = 0, bott_lim_synth = x, bott_lim_synth_delay = x
+estado_cond = 01, prox_estado_cond = 08, estado_synth = xx, prox_estado_synth = xX, estado_synth_delay = xx, prox_estado_synth_delay = xX
+
+
+At time                 3000
+top_lim_cond = 0, top_lim_synth = 0, top_lim_synth_delay = x
+bott_lim_cond = 1, bott_lim_synth = x, bott_lim_synth_delay = x
+estado_cond = 08, prox_estado_cond = 10, estado_synth = xX, prox_estado_synth = xX, estado_synth_delay = xx, prox_estado_synth_delay = xX
+
+
+At time                 3150
+top_lim_cond = 0, top_lim_synth = 0, top_lim_synth_delay = x
+bott_lim_cond = 1, bott_lim_synth = x, bott_lim_synth_delay = x
+estado_cond = 08, prox_estado_cond = 10, estado_synth = xX, prox_estado_synth = xX, estado_synth_delay = xX, prox_estado_synth_delay = xX
+
+
+At time                 3470
+top_lim_cond = 0, top_lim_synth = 0, top_lim_synth_delay = 0
+bott_lim_cond = 1, bott_lim_synth = x, bott_lim_synth_delay = x
+estado_cond = 08, prox_estado_cond = 10, estado_synth = xX, prox_estado_synth = xX, estado_synth_delay = xX, prox_estado_synth_delay = xX
+
+
+At time                 5000
+top_lim_cond = 0, top_lim_synth = 0, top_lim_synth_delay = 0
+bott_lim_cond = 1, bott_lim_synth = x, bott_lim_synth_delay = x
+estado_cond = 10, prox_estado_cond = 10, estado_synth = xX, prox_estado_synth = xX, estado_synth_delay = xX, prox_estado_synth_delay = xX
+
+
+At time                 5150
+top_lim_cond = 0, top_lim_synth = 0, top_lim_synth_delay = 0
+bott_lim_cond = 1, bott_lim_synth = x, bott_lim_synth_delay = x
+estado_cond = 10, prox_estado_cond = 10, estado_synth = xX, prox_estado_synth = xX, estado_synth_delay = xX, prox_estado_synth_delay = xX
+
+
+At time                25000
+top_lim_cond = 0, top_lim_synth = 0, top_lim_synth_delay = 0
+bott_lim_cond = 0, bott_lim_synth = x, bott_lim_synth_delay = x
+estado_cond = 10, prox_estado_cond = 02, estado_synth = xX, prox_estado_synth = xX, estado_synth_delay = xX, prox_estado_synth_delay = xX
+
+
+At time                25240
+top_lim_cond = 0, top_lim_synth = 0, top_lim_synth_delay = 0
+bott_lim_cond = 0, bott_lim_synth = x, bott_lim_synth_delay = x
+estado_cond = 10, prox_estado_cond = 02, estado_synth = xX, prox_estado_synth = xX, estado_synth_delay = xX, prox_estado_synth_delay = xX
+
+
+At time                25320
+top_lim_cond = 0, top_lim_synth = 0, top_lim_synth_delay = 0
+bott_lim_cond = 0, bott_lim_synth = x, bott_lim_synth_delay = x
+estado_cond = 10, prox_estado_cond = 02, estado_synth = xX, prox_estado_synth = xX, estado_synth_delay = xX, prox_estado_synth_delay = xX
+
+
+At time                27000
+top_lim_cond = 1, top_lim_synth = x, top_lim_synth_delay = 0
+bott_lim_cond = 0, bott_lim_synth = 0, bott_lim_synth_delay = x
+estado_cond = 02, prox_estado_cond = 04, estado_synth = xX, prox_estado_synth = 0X, estado_synth_delay = xX, prox_estado_synth_delay = xX
+
+
+At time                27150
+top_lim_cond = 1, top_lim_synth = x, top_lim_synth_delay = 0
+bott_lim_cond = 0, bott_lim_synth = 0, bott_lim_synth_delay = x
+estado_cond = 02, prox_estado_cond = 04, estado_synth = xX, prox_estado_synth = 0X, estado_synth_delay = xX, prox_estado_synth_delay = xX
+
+
+At time                27470
+top_lim_cond = 1, top_lim_synth = x, top_lim_synth_delay = x
+bott_lim_cond = 0, bott_lim_synth = 0, bott_lim_synth_delay = x
+estado_cond = 02, prox_estado_cond = 04, estado_synth = xX, prox_estado_synth = 0X, estado_synth_delay = xX, prox_estado_synth_delay = xX
+
+
+At time                27630
+top_lim_cond = 1, top_lim_synth = x, top_lim_synth_delay = x
+bott_lim_cond = 0, bott_lim_synth = 0, bott_lim_synth_delay = 0
+estado_cond = 02, prox_estado_cond = 04, estado_synth = xX, prox_estado_synth = 0X, estado_synth_delay = xX, prox_estado_synth_delay = 0X
+
+
+At time                29000
+top_lim_cond = 1, top_lim_synth = x, top_lim_synth_delay = x
+bott_lim_cond = 0, bott_lim_synth = 0, bott_lim_synth_delay = 0
+estado_cond = 04, prox_estado_cond = 04, estado_synth = 0X, prox_estado_synth = 0X, estado_synth_delay = xX, prox_estado_synth_delay = 0X
+
+
+At time                29150
+top_lim_cond = 1, top_lim_synth = x, top_lim_synth_delay = x
+bott_lim_cond = 0, bott_lim_synth = 0, bott_lim_synth_delay = 0
+estado_cond = 04, prox_estado_cond = 04, estado_synth = 0X, prox_estado_synth = 0X, estado_synth_delay = 0X, prox_estado_synth_delay = 0X
+
+
+At time                37000
+top_lim_cond = 0, top_lim_synth = x, top_lim_synth_delay = x
+bott_lim_cond = 0, bott_lim_synth = 0, bott_lim_synth_delay = 0
+estado_cond = 04, prox_estado_cond = 08, estado_synth = 0X, prox_estado_synth = 0X, estado_synth_delay = 0X, prox_estado_synth_delay = 0X
+
+
+At time                37160
+top_lim_cond = 0, top_lim_synth = x, top_lim_synth_delay = x
+bott_lim_cond = 0, bott_lim_synth = 0, bott_lim_synth_delay = 0
+estado_cond = 04, prox_estado_cond = 08, estado_synth = 0X, prox_estado_synth = 0X, estado_synth_delay = 0X, prox_estado_synth_delay = 0x
+
+
+At time                37240
+top_lim_cond = 0, top_lim_synth = x, top_lim_synth_delay = x
+bott_lim_cond = 0, bott_lim_synth = 0, bott_lim_synth_delay = 0
+estado_cond = 04, prox_estado_cond = 08, estado_synth = 0X, prox_estado_synth = 0X, estado_synth_delay = 0X, prox_estado_synth_delay = 0X
+
+
+At time                39000
+top_lim_cond = 0, top_lim_synth = 0, top_lim_synth_delay = x
+bott_lim_cond = 1, bott_lim_synth = x, bott_lim_synth_delay = 0
+estado_cond = 08, prox_estado_cond = 10, estado_synth = 0X, prox_estado_synth = xX, estado_synth_delay = 0X, prox_estado_synth_delay = 0X
+
+
+At time                39150
+top_lim_cond = 0, top_lim_synth = 0, top_lim_synth_delay = x
+bott_lim_cond = 1, bott_lim_synth = x, bott_lim_synth_delay = 0
+estado_cond = 08, prox_estado_cond = 10, estado_synth = 0X, prox_estado_synth = xX, estado_synth_delay = 0X, prox_estado_synth_delay = 0X
+
+
+At time                39470
+top_lim_cond = 0, top_lim_synth = 0, top_lim_synth_delay = 0
+bott_lim_cond = 1, bott_lim_synth = x, bott_lim_synth_delay = 0
+estado_cond = 08, prox_estado_cond = 10, estado_synth = 0X, prox_estado_synth = xX, estado_synth_delay = 0X, prox_estado_synth_delay = 0X
+
+
+At time                39630
+top_lim_cond = 0, top_lim_synth = 0, top_lim_synth_delay = 0
+bott_lim_cond = 1, bott_lim_synth = x, bott_lim_synth_delay = x
+estado_cond = 08, prox_estado_cond = 10, estado_synth = 0X, prox_estado_synth = xX, estado_synth_delay = 0X, prox_estado_synth_delay = xX
+
+
+At time                41000
+top_lim_cond = 0, top_lim_synth = 0, top_lim_synth_delay = 0
+bott_lim_cond = 1, bott_lim_synth = x, bott_lim_synth_delay = x
+estado_cond = 10, prox_estado_cond = 10, estado_synth = xX, prox_estado_synth = xX, estado_synth_delay = 0X, prox_estado_synth_delay = xX
+
+
+At time                41150
+top_lim_cond = 0, top_lim_synth = 0, top_lim_synth_delay = 0
+bott_lim_cond = 1, bott_lim_synth = x, bott_lim_synth_delay = x
+estado_cond = 10, prox_estado_cond = 10, estado_synth = xX, prox_estado_synth = xX, estado_synth_delay = xX, prox_estado_synth_delay = xX
+
+
+At time                49000
+top_lim_cond = 0, top_lim_synth = x, top_lim_synth_delay = 0
+bott_lim_cond = 1, bott_lim_synth = x, bott_lim_synth_delay = x
+estado_cond = 10, prox_estado_cond = 10, estado_synth = xX, prox_estado_synth = xX, estado_synth_delay = xX, prox_estado_synth_delay = xX
+
+
+At time                49240
+top_lim_cond = 0, top_lim_synth = x, top_lim_synth_delay = 0
+bott_lim_cond = 1, bott_lim_synth = x, bott_lim_synth_delay = x
+estado_cond = 10, prox_estado_cond = 10, estado_synth = xX, prox_estado_synth = xX, estado_synth_delay = xX, prox_estado_synth_delay = xX
+
+
+At time                49320
+top_lim_cond = 0, top_lim_synth = x, top_lim_synth_delay = x
+bott_lim_cond = 1, bott_lim_synth = x, bott_lim_synth_delay = x
+estado_cond = 10, prox_estado_cond = 10, estado_synth = xX, prox_estado_synth = xX, estado_synth_delay = xX, prox_estado_synth_delay = xX
+
+
+At time                51000
+top_lim_cond = 0, top_lim_synth = 0, top_lim_synth_delay = x
+bott_lim_cond = 1, bott_lim_synth = x, bott_lim_synth_delay = x
+estado_cond = 10, prox_estado_cond = 10, estado_synth = xX, prox_estado_synth = xX, estado_synth_delay = xX, prox_estado_synth_delay = xX
+
+
+At time                51150
+top_lim_cond = 0, top_lim_synth = 0, top_lim_synth_delay = x
+bott_lim_cond = 1, bott_lim_synth = x, bott_lim_synth_delay = x
+estado_cond = 10, prox_estado_cond = 10, estado_synth = xX, prox_estado_synth = xX, estado_synth_delay = xX, prox_estado_synth_delay = xX
+
+
+At time                51630
+top_lim_cond = 0, top_lim_synth = 0, top_lim_synth_delay = 0
+bott_lim_cond = 1, bott_lim_synth = x, bott_lim_synth_delay = x
+estado_cond = 10, prox_estado_cond = 10, estado_synth = xX, prox_estado_synth = xX, estado_synth_delay = xX, prox_estado_synth_delay = xX
+
+
+At time                61000
+top_lim_cond = 0, top_lim_synth = 0, top_lim_synth_delay = 0
+bott_lim_cond = 0, bott_lim_synth = 0, bott_lim_synth_delay = x
+estado_cond = 10, prox_estado_cond = 02, estado_synth = xX, prox_estado_synth = 0X, estado_synth_delay = xX, prox_estado_synth_delay = xX
+
+
+At time                61320
+top_lim_cond = 0, top_lim_synth = 0, top_lim_synth_delay = 0
+bott_lim_cond = 0, bott_lim_synth = 0, bott_lim_synth_delay = 0
+estado_cond = 10, prox_estado_cond = 02, estado_synth = xX, prox_estado_synth = 0X, estado_synth_delay = xX, prox_estado_synth_delay = 0X
+
+
+At time                63000
+top_lim_cond = 0, top_lim_synth = 0, top_lim_synth_delay = 0
+bott_lim_cond = 1, bott_lim_synth = x, bott_lim_synth_delay = 0
+estado_cond = 02, prox_estado_cond = 01, estado_synth = 0X, prox_estado_synth = 0X, estado_synth_delay = xX, prox_estado_synth_delay = 0X
+
+
+At time                63150
+top_lim_cond = 0, top_lim_synth = 0, top_lim_synth_delay = 0
+bott_lim_cond = 1, bott_lim_synth = x, bott_lim_synth_delay = 0
+estado_cond = 02, prox_estado_cond = 01, estado_synth = 0X, prox_estado_synth = 0X, estado_synth_delay = 0X, prox_estado_synth_delay = 0X
+
+
+At time                63470
+top_lim_cond = 0, top_lim_synth = 0, top_lim_synth_delay = 0
+bott_lim_cond = 1, bott_lim_synth = x, bott_lim_synth_delay = x
+estado_cond = 02, prox_estado_cond = 01, estado_synth = 0X, prox_estado_synth = 0X, estado_synth_delay = 0X, prox_estado_synth_delay = 0X
+
+
+At time                65000
+top_lim_cond = 0, top_lim_synth = 0, top_lim_synth_delay = 0
+bott_lim_cond = 0, bott_lim_synth = 0, bott_lim_synth_delay = x
+estado_cond = 01, prox_estado_cond = 01, estado_synth = 0X, prox_estado_synth = 0X, estado_synth_delay = 0X, prox_estado_synth_delay = 0X
+
+
+At time                65150
+top_lim_cond = 0, top_lim_synth = 0, top_lim_synth_delay = 0
+bott_lim_cond = 0, bott_lim_synth = 0, bott_lim_synth_delay = x
+estado_cond = 01, prox_estado_cond = 01, estado_synth = 0X, prox_estado_synth = 0X, estado_synth_delay = 0X, prox_estado_synth_delay = 0X
+
+
+At time                65470
+top_lim_cond = 0, top_lim_synth = 0, top_lim_synth_delay = 0
+bott_lim_cond = 0, bott_lim_synth = 0, bott_lim_synth_delay = 0
+estado_cond = 01, prox_estado_cond = 01, estado_synth = 0X, prox_estado_synth = 0X, estado_synth_delay = 0X, prox_estado_synth_delay = 0X
+
+
+At time                85000
+top_lim_cond = 0, top_lim_synth = 0, top_lim_synth_delay = 0
+bott_lim_cond = 0, bott_lim_synth = 0, bott_lim_synth_delay = 0
+estado_cond = 01, prox_estado_cond = 08, estado_synth = 0X, prox_estado_synth = 0X, estado_synth_delay = 0X, prox_estado_synth_delay = 0X
 

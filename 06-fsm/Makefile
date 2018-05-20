@@ -34,6 +34,8 @@ synth:
 	yosys -s ${SYNTH}
 	sed -i '1s;^;`include "cmos_cells.v"\n;' synth.v
 	sed -i 's/_cond/_synth/' synth.v
+	# sed -i 's#\$_##' synth.v
+	# sed -i 's#\$_##' synth.v
 	# sed -i 's#//always @(#always @(#' ascensor_cond.v
 	# sed -i 's#//  $display#  $display#' registro_cond.v
 	# sed -i 's#//letest.m1#letest.m1#' ascensor_cond.v
@@ -60,8 +62,10 @@ synth_delay:
 	sed -i 's#DFF#DFF_delay#' synth_delay.v
 	sed -i 's#DFFSR#DFFSR_delay#' synth_delay.v
 	sed -i 's#dlatch#dlatch_delay#' synth_delay.v
-	sed -i 's#_DLATCH_P_#_DLATCH_P_delay#' synth_delay.v
-	sed -i 's#_DLATCH_N_#_DLATCH_N_delay#' synth_delay.v
+	# sed -i 's#\$_##' synth_delay.v
+	# sed -i 's#\$_##' synth_delay.v
+	sed -i 's#DLATCH_P_#DLATCH_P_delay#' synth_delay.v
+	# sed -i 's#DLATCH_N_#DLATCH_N_delay#' synth_delay.v
 	sed -i 's/<=/<= #15 /' synth_delay.v
 
 wave:
