@@ -25,19 +25,16 @@ module tester(  output reg CLK,
    end
 
    initial begin
-      // #1 LE = 0; // Habilita escritura
       CLK = 1'b0;
       go_down = 1'b0;
       go_up = 1'b0;
       halt = 1'b1;
-      // Prueba a frecuencia sin falla 32
       repeat(2) #100 CLK = ~CLK;
       halt = 1'b0;
       forever #100 CLK = ~CLK;
     end
 
     initial begin
-      // Carga de datos
       @(negedge halt);
       go_down = 1'b1;
       repeat(6) @(posedge CLK);
@@ -58,6 +55,10 @@ module tester(  output reg CLK,
       go_up = 1'b0;
       repeat(6) @(posedge CLK);
       halt = 1'b0;
+      go_down = 1'b1;
+      go_up = 1'b1;
+      repeat(6) @(posedge CLK);
+      halt = 1'b1;
       #10 $finish;
    end
 

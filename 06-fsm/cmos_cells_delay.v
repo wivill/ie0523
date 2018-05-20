@@ -12,7 +12,7 @@ endmodule
 module NOT_delay(A, Y);
 input A;
 output Y;
-parameter PwrC = 4;
+// parameter PwrC = 4;
 // always @(posedge Y or negedge Y) begin
 //   letest.m1.PwrCntr[PwrC] = letest.m1.PwrCntr[PwrC] + 1;
 // end // end counter
@@ -22,7 +22,7 @@ endmodule
 module NAND_delay(A, B, Y);
 input A, B;
 output Y;
-parameter PwrC = 4;
+// parameter PwrC = 4;
 // always @(posedge Y or negedge Y) begin
 //   letest.m1.PwrCntr[PwrC] = letest.m1.PwrCntr[PwrC] + 1;
 // end // end counter
@@ -32,7 +32,7 @@ endmodule
 module NOR_delay(A, B, Y);
 input A, B;
 output Y;
-parameter PwrC = 4;
+// parameter PwrC = 4;
 // always @(posedge Y or negedge Y) begin
 //   letest.m1.PwrCntr[PwrC] = letest.m1.PwrCntr[PwrC] + 1;
 // end // end counter

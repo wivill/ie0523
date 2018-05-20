@@ -257,3 +257,45 @@ top_lim_cond = 0, top_lim_synth = 0, top_lim_synth_delay = 0
 bott_lim_cond = 0, bott_lim_synth = 0, bott_lim_synth_delay = 0
 estado_cond = 01, prox_estado_cond = 08, estado_synth = 0X, prox_estado_synth = 0X, estado_synth_delay = 0X, prox_estado_synth_delay = 0X
 
+
+At time                85240
+top_lim_cond = 0, top_lim_synth = 0, top_lim_synth_delay = 0
+bott_lim_cond = 0, bott_lim_synth = 0, bott_lim_synth_delay = 0
+estado_cond = 01, prox_estado_cond = 08, estado_synth = 0X, prox_estado_synth = 0X, estado_synth_delay = 0X, prox_estado_synth_delay = 0X
+
+
+At time                87000
+top_lim_cond = 0, top_lim_synth = 0, top_lim_synth_delay = 0
+bott_lim_cond = 1, bott_lim_synth = x, bott_lim_synth_delay = 0
+estado_cond = 08, prox_estado_cond = 10, estado_synth = 0X, prox_estado_synth = xX, estado_synth_delay = 0X, prox_estado_synth_delay = 0X
+
+
+At time                87150
+top_lim_cond = 0, top_lim_synth = 0, top_lim_synth_delay = 0
+bott_lim_cond = 1, bott_lim_synth = x, bott_lim_synth_delay = 0
+estado_cond = 08, prox_estado_cond = 10, estado_synth = 0X, prox_estado_synth = xX, estado_synth_delay = 0X, prox_estado_synth_delay = 0X
+
+
+At time                87630
+top_lim_cond = 0, top_lim_synth = 0, top_lim_synth_delay = 0
+bott_lim_cond = 1, bott_lim_synth = x, bott_lim_synth_delay = x
+estado_cond = 08, prox_estado_cond = 10, estado_synth = 0X, prox_estado_synth = xX, estado_synth_delay = 0X, prox_estado_synth_delay = xX
+
+
+At time                89000
+top_lim_cond = 0, top_lim_synth = 0, top_lim_synth_delay = 0
+bott_lim_cond = 1, bott_lim_synth = x, bott_lim_synth_delay = x
+estado_cond = 10, prox_estado_cond = 10, estado_synth = xX, prox_estado_synth = xX, estado_synth_delay = 0X, prox_estado_synth_delay = xX
+
+
+At time                89150
+top_lim_cond = 0, top_lim_synth = 0, top_lim_synth_delay = 0
+bott_lim_cond = 1, bott_lim_synth = x, bott_lim_synth_delay = x
+estado_cond = 10, prox_estado_cond = 10, estado_synth = xX, prox_estado_synth = xX, estado_synth_delay = xX, prox_estado_synth_delay = xX
+
+
+At time                97000
+top_lim_cond = 0, top_lim_synth = x, top_lim_synth_delay = 0
+bott_lim_cond = 1, bott_lim_synth = x, bott_lim_synth_delay = x
+estado_cond = 10, prox_estado_cond = 10, estado_synth = xX, prox_estado_synth = xX, estado_synth_delay = xX, prox_estado_synth_delay = xX
+
