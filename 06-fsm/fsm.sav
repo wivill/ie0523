@@ -1,20 +1,20 @@
 [*]
 [*] GTKWave Analyzer v3.3.89 (w)1999-2018 BSI
-[*] Fri May 18 20:39:06 2018
+[*] Sun May 20 01:58:02 2018
 [*]
 [dumpfile] "/home/wivill/git/ie0523/06-fsm/fsm.vcd"
-[dumpfile_mtime] "Fri May 18 20:38:50 2018"
-[dumpfile_size] 1715
+[dumpfile_mtime] "Sun May 20 01:57:48 2018"
+[dumpfile_size] 2721
 [savefile] "/home/wivill/git/ie0523/06-fsm/fsm.sav"
 [timestart] 0
-[size] 1366 697
-[pos] -1 -1
-*-20.881586 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[size] 1920 1038
+[pos] 1365 -342
+*-20.390350 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] testbench.
 [sst_width] 213
-[signals_width] 232
+[signals_width] 254
 [sst_expanded] 1
-[sst_vpaned_height] 187
+[sst_vpaned_height] 307
 @28
 testbench.letest.CLK
 testbench.letest.go_down
