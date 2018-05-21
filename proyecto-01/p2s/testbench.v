@@ -10,6 +10,8 @@
 `include "mux_p2s_synth_delay.v"
 `include "ffd_p2s_synth_delay.v"
 `include "freq_div_synth_delay.v"
+`include "cmos_cells.v"
+`include "cmos_cells_delay.v"
 
 module testbench;
 
@@ -25,8 +27,8 @@ module testbench;
   wire [7:0]  Q0_synth_tb, Q1_synth_tb, Q2_synth_tb, Q3_synth_tb;
   wire [3:0]  data_out_synth_tb;
   // sintetizados con delay
-  wire [7:0]  Q0_delay_tb, Q1_delay_tb, Q2_delay_tb, Q3_delay_tb;
-  wire [3:0]  data_out_delay_tb;
+  wire [7:0]  Q0_synth_delay_tb, Q1_synth_delay_tb, Q2_synth_delay_tb, Q3_synth_delay_tb;
+  wire [3:0]  data_out_synth_delay_tb;
 
   tester_p2s  letest_p2s( .CLK_div  (CLK_div_tb),
                           .Q0_cond  (Q0_cond_tb),
@@ -146,47 +148,47 @@ ffd_p2s_synth ffd_lane0_synth[7:0]( .CLK (CLK_tb),
                                     );
 // Sintetizado con delay/////////////////////////////////
 mux_p2s_synth_delay mux_lane3_synth_delay(  .sel      (sel_tb),
-                                            .data_in  (Q3_delay_tb),
-                                            .data_out (data_out_delay_tb[3])
+                                            .data_in  (Q3_synth_delay_tb),
+                                            .data_out (data_out_synth_delay_tb[3])
                                             );
 
 mux_p2s_synth_delay mux_lane2_synth_delay(  .sel      (sel_tb),
-                                            .data_in  (Q2_delay_tb),
-                                            .data_out (data_out_delay_tb[2])
+                                            .data_in  (Q2_synth_delay_tb),
+                                            .data_out (data_out_synth_delay_tb[2])
                                             );
 
 mux_p2s_synth_delay mux_lane1_synth_delay(  .sel      (sel_tb),
-                                            .data_in  (Q1_delay_tb),
-                                            .data_out (data_out_delay_tb[1])
+                                            .data_in  (Q1_synth_delay_tb),
+                                            .data_out (data_out_synth_delay_tb[1])
                                             );
 
 mux_p2s_synth_delay mux_lane0_synth_delay(  .sel      (sel_tb),
-                                            .data_in  (Q0_delay_tb),
-                                            .data_out (data_out_delay_tb[0])
+                                            .data_in  (Q0_synth_delay_tb),
+                                            .data_out (data_out_synth_delay_tb[0])
                                             );
 
 ffd_p2s_synth_delay ffd_lane3_synth_delay[7:0]( .CLK (CLK_tb),
                                                 .D   (D3_tb),
                                                 .ENB (ENB_tb),
-                                                .Q   (Q3_delay_tb)
+                                                .Q   (Q3_synth_delay_tb)
                                                 );
 
 ffd_p2s_synth_delay ffd_lane2_synth_delay[7:0]( .CLK (CLK_tb),
                                                 .D   (D2_tb),
                                                 .ENB (ENB_tb),
-                                                .Q   (Q2_delay_tb)
+                                                .Q   (Q2_synth_delay_tb)
                                                 );
 
 ffd_p2s_synth_delay ffd_lane1_synth_delay[7:0]( .CLK (CLK_tb),
                                                 .D   (D1_tb),
                                                 .ENB (ENB_tb),
-                                                .Q   (Q1_delay_tb)
+                                                .Q   (Q1_synth_delay_tb)
                                                 );
 
 ffd_p2s_synth_delay ffd_lane0_synth_delay[7:0]( .CLK (CLK_tb),
                                                 .D   (D0_tb),
                                                 .ENB (ENB_tb),
-                                                .Q   (Q0_delay_tb)
+                                                .Q   (Q0_synth_delay_tb)
                                                 );
 
 // Divisor de frecuencias

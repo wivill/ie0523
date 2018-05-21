@@ -32,24 +32,24 @@ run:
 
 synth:
 	yosys -s ${MUXYOS}
-	sed -i '1s;^;`include "cmos_cells.v"\n;' mux_p2s_synth.v
+	# sed -i '1s;^;`include "cmos_cells.v"\n;' mux_p2s_synth.v
 	sed -i 's/_cond/_synth/' mux_p2s_synth.v
 	yosys -s ${FFDYOS}
-	sed -i '1s;^;`include "cmos_cells.v"\n;' ffd_p2s_synth.v
+	# sed -i '1s;^;`include "cmos_cells.v"\n;' ffd_p2s_synth.v
 	sed -i 's/_cond/_synth/' ffd_p2s_synth.v
 	yosys -s ${CLKYOS}
-	sed -i '1s;^;`include "cmos_cells.v"\n;' freq_div_synth.v
+	# sed -i '1s;^;`include "cmos_cells.v"\n;' freq_div_synth.v
 	sed -i 's/_cond/_synth/' freq_div_synth.v
 
 synth_delay:
 	yosys -s ${MUXYOSD}
-	sed -i '1s;^;`include "cmos_cells_delay.v"\n;' mux_p2s_synth_delay.v
+	# sed -i '1s;^;`include "cmos_cells_delay.v"\n;' mux_p2s_synth_delay.v
 	sed -i 's/_cond/_synth_delay/' mux_p2s_synth_delay.v
 	yosys -s ${FFDYOSD}
-	sed -i '1s;^;`include "cmos_cells_delay.v"\n;' ffd_p2s_synth_delay.v
+	# sed -i '1s;^;`include "cmos_cells_delay.v"\n;' ffd_p2s_synth_delay.v
 	sed -i 's/_cond/_synth_delay/' ffd_p2s_synth_delay.v
 	yosys -s ${CLKYOSD}
-	sed -i '1s;^;`include "cmos_cells_delay.v"\n;' freq_div_synth_delay.v
+	# sed -i '1s;^;`include "cmos_cells_delay.v"\n;' freq_div_synth_delay.v
 	sed -i 's/_cond/_synth_delay/' freq_div_synth_delay.v
 	sed -i 's#BUF#BUF_delay#' mux_p2s_synth_delay.v
 	sed -i 's#NOT#NOT_delay#' mux_p2s_synth_delay.v
@@ -76,7 +76,6 @@ synth_delay:
 	sed -i 's/<=/<= #15 /' freq_div_synth_delay.v
 
 wave:
-#	gtkwave ${EXE}.vcd --script=signal_list.csh &
 	gtkwave ${EXE}.vcd p2s.sav &
 
 clean:

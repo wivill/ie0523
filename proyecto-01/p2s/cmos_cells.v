@@ -13,30 +13,30 @@ module NOT(A, Y);
 input A;
 output Y;
 assign Y = ~A;
-parameter PwrC = 3;
-always @(posedge Y or negedge Y) begin
-  letest.m1.PwrCntr[PwrC] = letest.m1.PwrCntr[PwrC] + 1;
-end // end counter
+// parameter PwrC = 3;
+// always @(posedge Y or negedge Y) begin
+//   letest.m1.PwrCntr[PwrC] = letest.m1.PwrCntr[PwrC] + 1;
+// end // end counter
 endmodule
 
 module NAND(A, B, Y);
 input A, B;
 output Y;
 assign Y = ~(A & B);
-parameter PwrC = 3;
-always @(posedge Y or negedge Y) begin
-  letest.m1.PwrCntr[PwrC] = letest.m1.PwrCntr[PwrC] + 1;
-end // end counter
+// parameter PwrC = 3;
+// always @(posedge Y or negedge Y) begin
+//   letest.m1.PwrCntr[PwrC] = letest.m1.PwrCntr[PwrC] + 1;
+// end // end counter
 endmodule
 
 module NOR(A, B, Y);
 input A, B;
 output Y;
 assign Y = ~(A | B);
-parameter PwrC = 3;
-always @(posedge Y or negedge Y) begin
-  letest.m1.PwrCntr[PwrC] = letest.m1.PwrCntr[PwrC] + 1;
-end // end counter
+// parameter PwrC = 3;
+// always @(posedge Y or negedge Y) begin
+//   letest.m1.PwrCntr[PwrC] = letest.m1.PwrCntr[PwrC] + 1;
+// end // end counter
 endmodule
 
 module DFF(C, D, Q);

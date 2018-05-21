@@ -30,7 +30,8 @@ module tester_p2s(  input       [2:0] CLK_div,
 
   // Facilita asignación de valores
   always @ (*) begin
-    D = {D3, D2, D1, D0};
+    // D = {D3, D2, D1, D0};
+    {D3, D2, D1, D0} = D;
   end
 
   initial begin
