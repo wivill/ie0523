@@ -19,7 +19,9 @@ module testbench;
   wire [7:0]  Q0_cond_tb, Q1_cond_tb, Q2_cond_tb, Q3_cond_tb;
   wire [7:0]  P0_cond_tb, P1_cond_tb, P2_cond_tb, P3_cond_tb;
   wire        ENB_tb, reset_tb, CLK_tb;
-  wire [3:0]  s_in_tb;
+  wire [3:0]  S_IN_tb;
+  wire [1:0]  MODO_tb;
+  wire        DIR_tb;
 
   // Para sintetizados
   wire [7:0]  Q0_synth_tb, Q1_synth_tb, Q2_synth_tb, Q3_synth_tb;
@@ -58,37 +60,47 @@ module testbench;
                           .CLK      (CLK_tb),
                           .ENB      (ENB_tb),
                           .reset    (reset_tb),
-                          .s_in     (s_in_tb)
+                          .S_IN     (S_IN_tb),
+                          .MODO     (MODO_tb),
+                          .DIR      (DIR_tb)
                           );
 
   // Conductual///////////////////////////////////////////
 
   s2p_cond #(8) reg_lane3(  .CLK    (CLK_tb),
-                            .CLK_8  (CLK_div_tb[2]),
+                            // .CLK_8  (CLK_div_tb[2]),
                             .ENB    (ENB_tb),
-                            .s_in   (s_in_tb[3]),
-                            .p_out  (P3_cond_tb)
+                            .S_IN   (S_IN_tb[3]),
+                            .Q      (P3_cond_tb),
+                            .MODO   (MODO_tb),
+                            .DIR    (DIR_tb)
                             );
 
   s2p_cond #(8) reg_lane2(  .CLK    (CLK_tb),
-                            .CLK_8  (CLK_div_tb[2]),
+                            // .CLK_8  (CLK_div_tb[2]),
                             .ENB    (ENB_tb),
-                            .s_in   (s_in_tb[2]),
-                            .p_out  (P2_cond_tb)
+                            .S_IN   (S_IN_tb[2]),
+                            .Q      (P2_cond_tb),
+                            .MODO   (MODO_tb),
+                            .DIR    (DIR_tb)
                             );
 
   s2p_cond #(8) reg_lane1(  .CLK    (CLK_tb),
-                            .CLK_8  (CLK_div_tb[2]),
+                            // .CLK_8  (CLK_div_tb[2]),
                             .ENB    (ENB_tb),
-                            .s_in   (s_in_tb[1]),
-                            .p_out  (P1_cond_tb)
+                            .S_IN   (S_IN_tb[1]),
+                            .Q      (P1_cond_tb),
+                            .MODO   (MODO_tb),
+                            .DIR    (DIR_tb)
                             );
 
   s2p_cond #(8) reg_lane0(  .CLK    (CLK_tb),
-                            .CLK_8  (CLK_div_tb[2]),
+                            // .CLK_8  (CLK_div_tb[2]),
                             .ENB    (ENB_tb),
-                            .s_in   (s_in_tb[0]),
-                            .p_out  (P0_cond_tb)
+                            .S_IN   (S_IN_tb[0]),
+                            .Q      (P0_cond_tb),
+                            .MODO   (MODO_tb),
+                            .DIR    (DIR_tb)
                             );
 
   ffd_s2p_cond ffd_lane3[7:0]( .CLK (CLK_div_tb[2]),
@@ -109,7 +121,7 @@ module testbench;
                                .Q   (Q1_cond_tb)
                                );
 
-  ffd_s2p_cond ffd_lane0[7:0]( .CLK (CLK_tb),
+  ffd_s2p_cond ffd_lane0[7:0]( .CLK (CLK_div_tb[2]),
                                .D   (P0_cond_tb),
                                .ENB (ENB_tb),
                                .Q   (Q0_cond_tb)
@@ -117,32 +129,40 @@ module testbench;
 
   // Sintetizado///////////////////////////////////////////
 
-  s2p_synth #(8) reg_lane3_synth(  .CLK    (CLK_tb),
-                            .CLK_8  (CLK_div_tb[2]),
-                            .ENB    (ENB_tb),
-                            .s_in   (s_in_tb[3]),
-                            .p_out  (P3_synth_tb)
-                            );
+  s2p_synth #(8) reg_lane3_synth( .CLK    (CLK_tb),
+                                  // .CLK_8  (CLK_div_tb[2]),
+                                  .ENB    (ENB_tb),
+                                  .S_IN   (S_IN_tb[3]),
+                                  .Q      (P3_synth_tb),
+                                  .MODO   (MODO_tb),
+                                  .DIR    (DIR_tb)
+                                  );
 
-  s2p_synth #(8) reg_lane2_synth(  .CLK    (CLK_tb),
-                            .CLK_8  (CLK_div_tb[2]),
-                            .ENB    (ENB_tb),
-                            .s_in   (s_in_tb[2]),
-                            .p_out  (P2_synth_tb)
-                            );
+  s2p_synth #(8) reg_lane2_synth( .CLK    (CLK_tb),
+                                  // .CLK_8  (CLK_div_tb[2]),
+                                  .ENB    (ENB_tb),
+                                  .S_IN   (S_IN_tb[2]),
+                                  .Q      (P2_synth_tb),
+                                  .MODO   (MODO_tb),
+                                  .DIR    (DIR_tb)
+                                  );
 
-  s2p_synth #(8) reg_lane1_synth(  .CLK    (CLK_tb),
-                            .CLK_8  (CLK_div_tb[2]),
-                            .ENB    (ENB_tb),
-                            .s_in   (s_in_tb[1]),
-                            .p_out  (P1_synth_tb)
-                            );
+  s2p_synth #(8) reg_lane1_synth( .CLK    (CLK_tb),
+                                  // .CLK_8  (CLK_div_tb[2]),
+                                  .ENB    (ENB_tb),
+                                  .S_IN   (S_IN_tb[1]),
+                                  .Q      (P1_synth_tb),
+                                  .MODO   (MODO_tb),
+                                  .DIR    (DIR_tb)
+                                  );
 
-  s2p_synth #(8) reg_lane0_synth(  .CLK    (CLK_tb),
-                            .CLK_8  (CLK_div_tb[2]),
-                            .ENB    (ENB_tb),
-                            .s_in   (s_in_tb[0]),
-                            .p_out  (P0_synth_tb)
+  s2p_synth #(8) reg_lane0_synth( .CLK    (CLK_tb),
+                                  // .CLK_8  (CLK_div_tb[2]),
+                                  .ENB    (ENB_tb),
+                                  .S_IN   (S_IN_tb[0]),
+                                  .Q      (P0_synth_tb),
+                                  .MODO   (MODO_tb),
+                                  .DIR    (DIR_tb)
                             );
 
   ffd_s2p_synth ffd_lane3_synth[7:0]( .CLK (CLK_div_tb[2]),
@@ -170,33 +190,41 @@ module testbench;
                                       );
   // Sintetizado con delay/////////////////////////////////
 
-  s2p_synth_delay #(8) reg_lane3_synth_delay(  .CLK    (CLK_tb),
-                            .CLK_8  (CLK_div_tb[2]),
-                            .ENB    (ENB_tb),
-                            .s_in   (s_in_tb[3]),
-                            .p_out  (P3_synth_delay_tb)
-                            );
+  s2p_synth_delay #(8) reg_lane3_synth_delay( .CLK    (CLK_tb),
+                                              // .CLK_8  (CLK_div_tb[2]),
+                                              .ENB    (ENB_tb),
+                                              .S_IN   (S_IN_tb[3]),
+                                              .Q      (P3_synth_delay_tb),
+                                              .MODO   (MODO_tb),
+                                              .DIR    (DIR_tb)
+                                              );
 
-  s2p_synth_delay #(8) reg_lane2_synth_delay(  .CLK    (CLK_tb),
-                            .CLK_8  (CLK_div_tb[2]),
-                            .ENB    (ENB_tb),
-                            .s_in   (s_in_tb[2]),
-                            .p_out  (P2_synth_delay_tb)
-                            );
+  s2p_synth_delay #(8) reg_lane2_synth_delay( .CLK    (CLK_tb),
+                                              // .CLK_8  (CLK_div_tb[2]),
+                                              .ENB    (ENB_tb),
+                                              .S_IN   (S_IN_tb[2]),
+                                              .Q      (P2_synth_delay_tb),
+                                              .MODO   (MODO_tb),
+                                              .DIR    (DIR_tb)
+                                              );
 
-  s2p_synth_delay #(8) reg_lane1_synth_delay(  .CLK    (CLK_tb),
-                            .CLK_8  (CLK_div_tb[2]),
-                            .ENB    (ENB_tb),
-                            .s_in   (s_in_tb[1]),
-                            .p_out  (P1_synth_delay_tb)
-                            );
+  s2p_synth_delay #(8) reg_lane1_synth_delay( .CLK    (CLK_tb),
+                                              // .CLK_8  (CLK_div_tb[2]),
+                                              .ENB    (ENB_tb),
+                                              .S_IN   (S_IN_tb[1]),
+                                              .Q      (P1_synth_delay_tb),
+                                              .MODO   (MODO_tb),
+                                              .DIR    (DIR_tb)
+                                              );
 
-  s2p_synth_delay #(8) reg_lane0_synth_delay(  .CLK    (CLK_tb),
-                            .CLK_8  (CLK_div_tb[2]),
-                            .ENB    (ENB_tb),
-                            .s_in   (s_in_tb[0]),
-                            .p_out  (P0_synth_delay_tb)
-                            );
+  s2p_synth_delay #(8) reg_lane0_synth_delay( .CLK    (CLK_tb),
+                                              // .CLK_8  (CLK_div_tb[2]),
+                                              .ENB    (ENB_tb),
+                                              .S_IN   (S_IN_tb[0]),
+                                              .Q      (P0_synth_delay_tb),
+                                              .MODO   (MODO_tb),
+                                              .DIR    (DIR_tb)
+                                              );
 
   ffd_s2p_synth_delay ffd_lane3_synth_delay[7:0]( .CLK (CLK_div_tb[2]),
                                                   .D   (P3_synth_delay_tb),

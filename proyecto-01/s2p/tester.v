@@ -26,7 +26,9 @@ module tester_s2p(  input       [2:0] CLK_div,
                     output reg        CLK,
                     output reg        ENB,
                     output reg        reset,
-                    output reg  [3:0] s_in
+                    output reg  [3:0] S_IN,
+                    output reg  [1:0] MODO,
+                    output reg        DIR
   );
 
   initial begin
@@ -40,7 +42,9 @@ module tester_s2p(  input       [2:0] CLK_div,
     CLK = 1'b0;
     ENB = 1'b0;
     reset = 1'b0;
-    s_in = 4'b0;
+    S_IN = 4'b0;
+    MODO = 2'b00;
+    DIR = 1'b0;
     #500
     repeat(2) #500 CLK = ~CLK;
     ENB = 1'b1;
@@ -49,7 +53,7 @@ module tester_s2p(  input       [2:0] CLK_div,
   end
 
   always @ (posedge CLK) begin
-    s_in = s_in + 1;
+    S_IN = S_IN + 1;
   end
 
   initial begin
