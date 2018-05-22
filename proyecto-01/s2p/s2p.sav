@@ -1,0 +1,40 @@
+[*]
+[*] GTKWave Analyzer v3.3.89 (w)1999-2018 BSI
+[*] Tue May 22 00:55:20 2018
+[*]
+[dumpfile] "/home/wivill/git/ie0523/proyecto-01/s2p/s2p.vcd"
+[dumpfile_mtime] "Tue May 22 00:55:01 2018"
+[dumpfile_size] 6288
+[savefile] "/home/wivill/git/ie0523/proyecto-01/s2p/s2p.sav"
+[timestart] 0
+[size] 1366 697
+[pos] -1 -1
+*-22.638037 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] testbench.
+[sst_width] 213
+[signals_width] 121
+[sst_expanded] 1
+[sst_vpaned_height] 297
+@800028
+testbench.letest_s2p.CLK_div[2:0]
+@28
+(0)testbench.letest_s2p.CLK_div[2:0]
+(1)testbench.letest_s2p.CLK_div[2:0]
+(2)testbench.letest_s2p.CLK_div[2:0]
+testbench.letest_s2p.CLK
+testbench.letest_s2p.ENB
+@22
+testbench.letest_s2p.s_in[3:0]
+testbench.letest_s2p.Q0_cond[7:0]
+testbench.letest_s2p.Q1_cond[7:0]
+testbench.letest_s2p.Q2_cond[7:0]
+testbench.letest_s2p.Q3_cond[7:0]
+testbench.letest_s2p.P0_cond[7:0]
+testbench.letest_s2p.P1_cond[7:0]
+testbench.letest_s2p.P2_cond[7:0]
+@23
+testbench.letest_s2p.P3_cond[7:0]
+@1001200
+-group_end
+[pattern_trace] 1
+[pattern_trace] 0
