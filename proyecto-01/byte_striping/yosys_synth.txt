@@ -1,0 +1,7 @@
+read_verilog byte_striping_struct.v
+hierarchy -check -top byte_striping_struct
+proc; opt; fsm; opt; memory; opt
+techmap; opt
+show -prefix yosys_synth -format eps
+clean
+write_verilog yosys_synth.v
