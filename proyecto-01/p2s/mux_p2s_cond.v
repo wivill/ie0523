@@ -1,7 +1,7 @@
 module mux_p2s_cond(input [2:0] sel,
                     input [7:0] data_in,
                     output reg  data_out
-                    );                
+                    );
 
   always @ (sel or data_in) begin
     case (sel)
@@ -13,6 +13,7 @@ module mux_p2s_cond(input [2:0] sel,
       3'b101: data_out = data_in[5];
       3'b110: data_out = data_in[6];
       3'b111: data_out = data_in[7];
+      default: data_out = 1'b0;
     endcase
   end
 

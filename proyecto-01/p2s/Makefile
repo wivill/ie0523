@@ -79,5 +79,4 @@ wave:
 	gtkwave ${EXE}.vcd p2s.sav &
 
 clean:
-	rm -rf ${EXE}.exe ${EXE}.vcd ffd_p2s_synth.v ffd_p2s_synth_delay.v mux_p2s_synth.v mux_p2s_synth_delay.v freq_div_synth.v freq_div_synth_delay.v
-	rm -rf *.eps *.dot
+	rm -rf ${EXE}.exe ${EXE}.vcd *.eps *.dot

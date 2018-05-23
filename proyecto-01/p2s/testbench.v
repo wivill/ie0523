@@ -21,7 +21,7 @@ module testbench;
   wire [3:0]  data_out_cond_tb;
   wire [2:0]  sel_tb;
   // wire [31:0] D_tb;
-  wire        ENB_tb, reset_tb, CLK_tb;
+  wire        ENB_tb, reset_tb, CLK_tb, valid_cond_tb;
 
   // Para sintetizados
   wire [7:0]  Q0_synth_tb, Q1_synth_tb, Q2_synth_tb, Q3_synth_tb;
@@ -78,27 +78,39 @@ module testbench;
                            .data_out (data_out_cond_tb[0])
                            );
 
-  ffd_p2s_cond ffd_lane3[7:0]( .CLK (CLK_tb),
-                               .D   (D3_tb),
+  ffd_p2s_cond ffd_valid     ( .CLK (CLK_tb),
+                               .D   (D0_tb[7]),
                                .ENB (ENB_tb),
-                               .Q   (Q3_cond_tb)
+                               .valid_in (valid_cond_tb),
+                               .Q   (Q0_cond_tb[7]),
+                               .valid_out (valid_cond_tb)
+                               );
+
+  ffd_p2s_cond ffd_lane3[6:0]( .CLK (CLK_tb),
+                               .D   (D3_tb[6:0]),
+                               .ENB (ENB_tb),
+                               .valid_in (valid_cond_tb),
+                               .Q   (Q3_cond_tb[6:0])
                                );
 
   ffd_p2s_cond ffd_lane2[7:0]( .CLK (CLK_tb),
                                .D   (D2_tb),
                                .ENB (ENB_tb),
+                               .valid_in (valid_cond_tb),
                                .Q   (Q2_cond_tb)
                                );
 
   ffd_p2s_cond ffd_lane1[7:0]( .CLK (CLK_tb),
                                .D   (D1_tb),
                                .ENB (ENB_tb),
+                               .valid_in (valid_cond_tb),
                                .Q   (Q1_cond_tb)
                                );
 
   ffd_p2s_cond ffd_lane0[7:0]( .CLK (CLK_tb),
                                .D   (D0_tb),
                                .ENB (ENB_tb),
+                               .valid_in (valid_cond_tb),
                                .Q   (Q0_cond_tb)
                                );
 
@@ -123,27 +135,39 @@ mux_p2s_synth mux_lane0_synth(  .sel      (sel_tb),
                                 .data_out (data_out_synth_tb[0])
                                 );
 
-ffd_p2s_synth ffd_lane3_synth[7:0]( .CLK (CLK_tb),
-                                    .D   (D3_tb),
+ffd_p2s_cond ffd_valid_synth( .CLK (CLK_tb),
+                              .D   (D0_tb[7]),
+                              .ENB (ENB_tb),
+                              .valid_in (valid_synth_tb),
+                              .Q   (Q0_synth_tb[7]),
+                              .valid_out (valid_synth_tb)
+                              );
+
+ffd_p2s_synth ffd_lane3_synth[6:0]( .CLK (CLK_tb),
+                                    .D   (D3_tb[6:0]),
                                     .ENB (ENB_tb),
-                                    .Q   (Q3_synth_tb)
+                                    .valid_in (valid_synth_tb),
+                                    .Q   (Q3_synth_tb[6:0])
                                     );
 
 ffd_p2s_synth ffd_lane2_synth[7:0]( .CLK (CLK_tb),
                                     .D   (D2_tb),
                                     .ENB (ENB_tb),
+                                    .valid_in (valid_synth_tb),
                                     .Q   (Q2_synth_tb)
                                     );
 
 ffd_p2s_synth ffd_lane1_synth[7:0]( .CLK (CLK_tb),
                                     .D   (D1_tb),
                                     .ENB (ENB_tb),
+                                    .valid_in (valid_synth_tb),
                                     .Q   (Q1_synth_tb)
                                     );
 
 ffd_p2s_synth ffd_lane0_synth[7:0]( .CLK (CLK_tb),
                                     .D   (D0_tb),
                                     .ENB (ENB_tb),
+                                    .valid_in (valid_synth_tb),
                                     .Q   (Q0_synth_tb)
                                     );
 // Sintetizado con delay/////////////////////////////////
@@ -167,27 +191,39 @@ mux_p2s_synth_delay mux_lane0_synth_delay(  .sel      (sel_tb),
                                             .data_out (data_out_synth_delay_tb[0])
                                             );
 
-ffd_p2s_synth_delay ffd_lane3_synth_delay[7:0]( .CLK (CLK_tb),
-                                                .D   (D3_tb),
+ffd_p2s_cond ffd_valid_synth_delay( .CLK (CLK_tb),
+                                    .D   (D3_tb[7]),
+                                    .ENB (ENB_tb),
+                                    .valid_in (valid_synth_delay_tb),
+                                    .Q   (Q3_cond_tb[7]),
+                                    .valid_out (valid_synth_delay_tb)
+                                    );
+
+ffd_p2s_synth_delay ffd_lane3_synth_delay[6:0]( .CLK (CLK_tb),
+                                                .D   (D3_tb[6:0]),
                                                 .ENB (ENB_tb),
-                                                .Q   (Q3_synth_delay_tb)
+                                                .valid_in (valid_synth_delay_tb),
+                                                .Q   (Q3_synth_delay_tb[6:0])
                                                 );
 
 ffd_p2s_synth_delay ffd_lane2_synth_delay[7:0]( .CLK (CLK_tb),
                                                 .D   (D2_tb),
                                                 .ENB (ENB_tb),
+                                                .valid_in (valid_synth_delay_tb),
                                                 .Q   (Q2_synth_delay_tb)
                                                 );
 
 ffd_p2s_synth_delay ffd_lane1_synth_delay[7:0]( .CLK (CLK_tb),
                                                 .D   (D1_tb),
                                                 .ENB (ENB_tb),
+                                                .valid_in (valid_synth_delay_tb),
                                                 .Q   (Q1_synth_delay_tb)
                                                 );
 
 ffd_p2s_synth_delay ffd_lane0_synth_delay[7:0]( .CLK (CLK_tb),
                                                 .D   (D0_tb),
                                                 .ENB (ENB_tb),
+                                                .valid_in (valid_synth_delay_tb),
                                                 .Q   (Q0_synth_delay_tb)
                                                 );
 

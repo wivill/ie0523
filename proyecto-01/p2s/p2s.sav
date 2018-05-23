@@ -1,28 +1,20 @@
 [*]
 [*] GTKWave Analyzer v3.3.89 (w)1999-2018 BSI
-[*] Mon May 21 20:34:06 2018
+[*] Wed May 23 16:07:36 2018
 [*]
 [dumpfile] "/home/wivill/git/ie0523/proyecto-01/p2s/p2s.vcd"
-[dumpfile_mtime] "Mon May 21 20:27:24 2018"
-[dumpfile_size] 8397
+[dumpfile_mtime] "Wed May 23 16:04:52 2018"
+[dumpfile_size] 149202
 [savefile] "/home/wivill/git/ie0523/proyecto-01/p2s/p2s.sav"
 [timestart] 0
-[size] 1920 1009
+[size] 1366 697
 [pos] -1 -1
-*-23.142101 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-23.142101 22950000 9500000 10500000 11500000 12500000 13500000 14500000 15500000 16500000 17500000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] testbench.
 [sst_width] 213
 [signals_width] 161
 [sst_expanded] 1
 [sst_vpaned_height] 297
-@800028
-testbench.letest_p2s.CLK_div[2:0]
-@28
-(0)testbench.letest_p2s.CLK_div[2:0]
-(1)testbench.letest_p2s.CLK_div[2:0]
-(2)testbench.letest_p2s.CLK_div[2:0]
-@1001200
--group_end
 @28
 testbench.letest_p2s.CLK
 @22
@@ -30,51 +22,25 @@ testbench.letest_p2s.D0[7:0]
 testbench.letest_p2s.D1[7:0]
 testbench.letest_p2s.D2[7:0]
 testbench.letest_p2s.D3[7:0]
-@c00022
-testbench.letest_p2s.D[31:0]
-@28
-(0)testbench.letest_p2s.D[31:0]
-(1)testbench.letest_p2s.D[31:0]
-(2)testbench.letest_p2s.D[31:0]
-(3)testbench.letest_p2s.D[31:0]
-(4)testbench.letest_p2s.D[31:0]
-(5)testbench.letest_p2s.D[31:0]
-(6)testbench.letest_p2s.D[31:0]
-(7)testbench.letest_p2s.D[31:0]
-(8)testbench.letest_p2s.D[31:0]
-(9)testbench.letest_p2s.D[31:0]
-(10)testbench.letest_p2s.D[31:0]
-(11)testbench.letest_p2s.D[31:0]
-(12)testbench.letest_p2s.D[31:0]
-(13)testbench.letest_p2s.D[31:0]
-(14)testbench.letest_p2s.D[31:0]
-(15)testbench.letest_p2s.D[31:0]
-(16)testbench.letest_p2s.D[31:0]
-(17)testbench.letest_p2s.D[31:0]
-(18)testbench.letest_p2s.D[31:0]
-(19)testbench.letest_p2s.D[31:0]
-(20)testbench.letest_p2s.D[31:0]
-(21)testbench.letest_p2s.D[31:0]
-(22)testbench.letest_p2s.D[31:0]
-(23)testbench.letest_p2s.D[31:0]
-(24)testbench.letest_p2s.D[31:0]
-(25)testbench.letest_p2s.D[31:0]
-(26)testbench.letest_p2s.D[31:0]
-(27)testbench.letest_p2s.D[31:0]
-(28)testbench.letest_p2s.D[31:0]
-(29)testbench.letest_p2s.D[31:0]
-(30)testbench.letest_p2s.D[31:0]
-(31)testbench.letest_p2s.D[31:0]
-@1401200
--group_end
-@22
+@800022
 testbench.letest_p2s.Q0_cond[7:0]
-testbench.letest_p2s.Q1_cond[7:0]
-testbench.letest_p2s.Q2_cond[7:0]
-@23
-testbench.letest_p2s.Q3_cond[7:0]
-@22
+@28
+(0)testbench.letest_p2s.Q0_cond[7:0]
+(1)testbench.letest_p2s.Q0_cond[7:0]
+(2)testbench.letest_p2s.Q0_cond[7:0]
+(3)testbench.letest_p2s.Q0_cond[7:0]
+(4)testbench.letest_p2s.Q0_cond[7:0]
+(5)testbench.letest_p2s.Q0_cond[7:0]
+(6)testbench.letest_p2s.Q0_cond[7:0]
+(7)testbench.letest_p2s.Q0_cond[7:0]
+@1001200
+-group_end
+@800022
 testbench.letest_p2s.data_out_cond[3:0]
+@28
+(3)testbench.letest_p2s.data_out_cond[3:0]
+@1001200
+-group_end
 @28
 testbench.letest_p2s.ENB
 testbench.letest_p2s.reset
