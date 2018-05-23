@@ -36,7 +36,8 @@ module tester_p2s(  input       [2:0] CLK_div,
 
   initial begin
     $dumpfile("p2s.vcd");
-    $dumpvars(1, tester_p2s);
+    // $dumpvars(1, tester_p2s);
+    $dumpvars;
     $monitor("\nAt time %t\nCLK = %h, CLK_2 = %h, CLK_4 = %h, CLK_8 = %h, sel = %h\ndata_out_cond = %h, Q0_cond = %h, Q1_cond = %h, Q2_cond = %h, Q3_cond = %h,\ndata_out_synth = %h, Q0_synth = %h, Q1_synth = %h, Q2_synth = %h, Q3_synth = %h\ndata_out_synth_delay = %h, Q0_synth_delay = %h, Q1_synth_delay = %h, Q2_synth_delay = %h, Q3_synth_delay = %h",
              $time, CLK, CLK_div[0], CLK_div[1], CLK_div[2], sel, data_out_cond, Q0_cond, Q1_cond, Q2_cond, Q3_cond, data_out_synth, Q0_synth, Q1_synth, Q2_synth, Q3_synth, data_out_synth_delay, Q0_synth_delay, Q1_synth_delay, Q2_synth_delay, Q3_synth_delay);
   end

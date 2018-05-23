@@ -33,7 +33,7 @@ module tester_s2p(  input       [2:0] CLK_div,
 
   initial begin
     $dumpfile("s2p.vcd");
-    $dumpvars(1, tester_s2p);
+    $dumpvars;
     $monitor("\nAt time %t\nCLK = %h, CLK_2 = %h, CLK_4 = %h, CLK_8 = %h, sel = %h\nQ0_cond = %h, Q1_cond = %h, Q2_cond = %h, Q3_cond = %h,\nQ0_synth = %h, Q1_synth = %h, Q2_synth = %h, Q3_synth = %h\nQ0_synth_delay = %h, Q1_synth_delay = %h, Q2_synth_delay = %h, Q3_synth_delay = %h",
              $time, CLK, CLK_div[0], CLK_div[1], CLK_div[2], Q0_cond, Q1_cond, Q2_cond, Q3_cond, Q0_synth, Q1_synth, Q2_synth, Q3_synth, Q0_synth_delay, Q1_synth_delay, Q2_synth_delay, Q3_synth_delay);
   end
