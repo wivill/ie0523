@@ -46,10 +46,11 @@ module tester_p2s(  input       [2:0] CLK_div,
     CLK = 1'b0;
     ENB = 1'b0;
     reset = 1'b0;
-    sel = 3'b0;
-    // data_in = 32'b0;
+    // ENB = 1'b1;
+    // reset = 1'b1;
+    sel = 3'b111;
     D = 32'b0;
-    #500
+    // #500
     repeat(2) #500 CLK = ~CLK;
     ENB = 1'b1;
     reset = 1'b1;
@@ -57,38 +58,40 @@ module tester_p2s(  input       [2:0] CLK_div,
   end
 
   always @ (posedge CLK) begin
-    sel = sel + 1;
+    if (ENB) begin
+      sel = sel + 1;
+    end
   end
 
   initial begin
     @(posedge ENB)
     D = 32'h01234567;
-    repeat(6) @(posedge CLK);
+    repeat(8) @(posedge CLK);
     D = 32'h89ABCDEF;
-    repeat(6) @(posedge CLK);
+    repeat(8) @(posedge CLK);
     D = 32'h81A3C5E7;
-    repeat(6) @(posedge CLK);
+    repeat(8) @(posedge CLK);
     D = 32'h092B4D6F;
-    repeat(6) @(posedge CLK);
+    repeat(8) @(posedge CLK);
     D = 32'h00000000;
-    repeat(6) @(posedge CLK);
+    repeat(8) @(posedge CLK);
     D = 32'hFFFFFFFF;
-    repeat(6) @(posedge CLK);
+    repeat(8) @(posedge CLK);
     D = 32'hAAAAAAAA;
-    repeat(6) @(posedge CLK);
+    repeat(8) @(posedge CLK);
     D = 32'h55555555;
-    repeat(6) @(posedge CLK);
+    repeat(8) @(posedge CLK);
     D = 32'hFEDCBA98;
-    repeat(6) @(posedge CLK);
+    repeat(8) @(posedge CLK);
     ENB = 1'b0;
     D = 32'hFEDCBA98;
-    repeat(6) @(posedge CLK);
+    repeat(8) @(posedge CLK);
     ENB = 1'b1;
     D = 32'hFEDCBA98;
-    repeat(6) @(posedge CLK);
+    repeat(8) @(posedge CLK);
     reset = 1'b0;
     D = 32'hFEDCBA98;
-    repeat(6) @(posedge CLK);
+    repeat(8) @(posedge CLK);
     reset = 1'b1;
     D = 32'hFEDCBA98;
     #500 $finish;
