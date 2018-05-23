@@ -87,9 +87,6 @@ module tester_byte_striping (
   initial clk250k <=0;
   always #2 clk250k <= ~clk250k;
 
-  initial conteo = 2'b00;
-
-  always #0.5 conteo <= conteo + 1;
 
 
 
