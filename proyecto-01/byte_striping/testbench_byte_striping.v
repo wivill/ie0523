@@ -1,4 +1,6 @@
 `timescale 1us / 100ns
+`include "tester_byte_striping.v"
+`include "byte_striping_conduct.v"
 
 module testbench;
   wire [7:0] lane0, lane1, lane2, lane3, entradaBS;
