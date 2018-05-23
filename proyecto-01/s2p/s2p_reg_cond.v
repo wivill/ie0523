@@ -1,6 +1,6 @@
 `include "definitions.v"
 
-module s2p_cond #(parameter WIDTH = 8)
+module s2p_reg_cond #(parameter WIDTH = 8)
 (
 input   wire  [WIDTH-1 : 0] D,
 input   wire  [1 : 0]       MODO,

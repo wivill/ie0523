@@ -3,13 +3,13 @@
 `include "tester.v"
 `include "ffd_s2p_cond.v"
 `include "freq_div_cond.v"
-`include "s2p_cond.v"
+`include "s2p_reg_cond.v"
 `include "ffd_s2p_synth.v"
 `include "freq_div_synth.v"
-`include "s2p_synth.v"
+`include "s2p_reg_synth.v"
 `include "ffd_s2p_synth_delay.v"
 `include "freq_div_synth_delay.v"
-`include "s2p_synth_delay.v"
+`include "s2p_reg_synth_delay.v"
 `include "cmos_cells.v"
 `include "cmos_cells_delay.v"
 
@@ -67,7 +67,7 @@ module testbench;
 
   // Conductual///////////////////////////////////////////
 
-  s2p_cond #(8) reg_lane3(  .CLK    (CLK_tb),
+  s2p_reg_cond #(8) reg_lane3(  .CLK    (CLK_tb),
                             // .CLK_8  (CLK_div_tb[2]),
                             .ENB    (ENB_tb),
                             .S_IN   (S_IN_tb[3]),
@@ -76,7 +76,7 @@ module testbench;
                             .DIR    (DIR_tb)
                             );
 
-  s2p_cond #(8) reg_lane2(  .CLK    (CLK_tb),
+  s2p_reg_cond #(8) reg_lane2(  .CLK    (CLK_tb),
                             // .CLK_8  (CLK_div_tb[2]),
                             .ENB    (ENB_tb),
                             .S_IN   (S_IN_tb[2]),
@@ -85,7 +85,7 @@ module testbench;
                             .DIR    (DIR_tb)
                             );
 
-  s2p_cond #(8) reg_lane1(  .CLK    (CLK_tb),
+  s2p_reg_cond #(8) reg_lane1(  .CLK    (CLK_tb),
                             // .CLK_8  (CLK_div_tb[2]),
                             .ENB    (ENB_tb),
                             .S_IN   (S_IN_tb[1]),
@@ -94,7 +94,7 @@ module testbench;
                             .DIR    (DIR_tb)
                             );
 
-  s2p_cond #(8) reg_lane0(  .CLK    (CLK_tb),
+  s2p_reg_cond #(8) reg_lane0(  .CLK    (CLK_tb),
                             // .CLK_8  (CLK_div_tb[2]),
                             .ENB    (ENB_tb),
                             .S_IN   (S_IN_tb[0]),
@@ -129,7 +129,7 @@ module testbench;
 
   // Sintetizado///////////////////////////////////////////
 
-  s2p_synth #(8) reg_lane3_synth( .CLK    (CLK_tb),
+  s2p_reg_synth #(8) reg_lane3_synth( .CLK    (CLK_tb),
                                   // .CLK_8  (CLK_div_tb[2]),
                                   .ENB    (ENB_tb),
                                   .S_IN   (S_IN_tb[3]),
@@ -138,7 +138,7 @@ module testbench;
                                   .DIR    (DIR_tb)
                                   );
 
-  s2p_synth #(8) reg_lane2_synth( .CLK    (CLK_tb),
+  s2p_reg_synth #(8) reg_lane2_synth( .CLK    (CLK_tb),
                                   // .CLK_8  (CLK_div_tb[2]),
                                   .ENB    (ENB_tb),
                                   .S_IN   (S_IN_tb[2]),
@@ -147,7 +147,7 @@ module testbench;
                                   .DIR    (DIR_tb)
                                   );
 
-  s2p_synth #(8) reg_lane1_synth( .CLK    (CLK_tb),
+  s2p_reg_synth #(8) reg_lane1_synth( .CLK    (CLK_tb),
                                   // .CLK_8  (CLK_div_tb[2]),
                                   .ENB    (ENB_tb),
                                   .S_IN   (S_IN_tb[1]),
@@ -156,7 +156,7 @@ module testbench;
                                   .DIR    (DIR_tb)
                                   );
 
-  s2p_synth #(8) reg_lane0_synth( .CLK    (CLK_tb),
+  s2p_reg_synth #(8) reg_lane0_synth( .CLK    (CLK_tb),
                                   // .CLK_8  (CLK_div_tb[2]),
                                   .ENB    (ENB_tb),
                                   .S_IN   (S_IN_tb[0]),
@@ -190,7 +190,7 @@ module testbench;
                                       );
   // Sintetizado con delay/////////////////////////////////
 
-  s2p_synth_delay #(8) reg_lane3_synth_delay( .CLK    (CLK_tb),
+  s2p_reg_synth_delay #(8) reg_lane3_synth_delay( .CLK    (CLK_tb),
                                               // .CLK_8  (CLK_div_tb[2]),
                                               .ENB    (ENB_tb),
                                               .S_IN   (S_IN_tb[3]),
@@ -199,7 +199,7 @@ module testbench;
                                               .DIR    (DIR_tb)
                                               );
 
-  s2p_synth_delay #(8) reg_lane2_synth_delay( .CLK    (CLK_tb),
+  s2p_reg_synth_delay #(8) reg_lane2_synth_delay( .CLK    (CLK_tb),
                                               // .CLK_8  (CLK_div_tb[2]),
                                               .ENB    (ENB_tb),
                                               .S_IN   (S_IN_tb[2]),
@@ -208,7 +208,7 @@ module testbench;
                                               .DIR    (DIR_tb)
                                               );
 
-  s2p_synth_delay #(8) reg_lane1_synth_delay( .CLK    (CLK_tb),
+  s2p_reg_synth_delay #(8) reg_lane1_synth_delay( .CLK    (CLK_tb),
                                               // .CLK_8  (CLK_div_tb[2]),
                                               .ENB    (ENB_tb),
                                               .S_IN   (S_IN_tb[1]),
@@ -217,7 +217,7 @@ module testbench;
                                               .DIR    (DIR_tb)
                                               );
 
-  s2p_synth_delay #(8) reg_lane0_synth_delay( .CLK    (CLK_tb),
+  s2p_reg_synth_delay #(8) reg_lane0_synth_delay( .CLK    (CLK_tb),
                                               // .CLK_8  (CLK_div_tb[2]),
                                               .ENB    (ENB_tb),
                                               .S_IN   (S_IN_tb[0]),
