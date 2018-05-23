@@ -28,4 +28,4 @@ wave:
 	gtkwave pruebaByteStripping.vcd
 
 clean:
-	rm -rf out pruebaByteStripping.vcd yosys_cmos_synth_delay.v yosys_cmos_synth.v *.dot *.eps yosys_synth.v
+	rm -rf out pruebaByteStripping.vcd yosys_cmos_synth_delay.v yosys_cmos_synth.v *.dot *.eps yosys_synth.v yosys_cmos_synth_delay
