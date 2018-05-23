@@ -12,6 +12,7 @@ module tester_byte_striping (
   output reg lane3VLD,
   output reg clk250k,
   output reg clk1Mhz,
+  output reg conteo,
   output reg reset
   );
 
@@ -20,10 +21,14 @@ module tester_byte_striping (
     $dumpvars;
 
     #0
-    reset = 0;
     reset = 1;
+    lane0VLD = 1'b0;
+    lane1VLD = 1'b0;
+    lane2VLD = 1'b0;
+    lane3VLD = 1'b0;
 
     #1
+    reset = 0;
     lane0VLD = 1'b1;
     lane1VLD = 1'b0;
     lane2VLD = 1'b0;
@@ -82,8 +87,9 @@ module tester_byte_striping (
   initial clk250k <=0;
   always #2 clk250k <= ~clk250k;
 
+  initial conteo = 2'b00;
 
-
+  always #0.5 conteo <= conteo + 1;
 
 
 

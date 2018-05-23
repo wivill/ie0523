@@ -5,7 +5,8 @@ module testbench;
   wire [7:0] lane0c, lane1c, lane2c, lane3c;
   wire lane0valid, lane1valid, lane2valid, lane3valid;
   wire validBS, relojMUX, relojBS;
-  wire [1:0] counts, countc, reset;
+  wire [1:0] counts, countc;
+  wire reset;
 
   byte_striping_conduct BS_conduct(
     .stripedLane0 (lane0c),
@@ -20,7 +21,8 @@ module testbench;
     .lane3VLD (validlane3),
     .clk250k  (relojBS),
     .clk1Mhz  (relojMUX),
-    .contador (countc)
+    .counter (countc),
+    .reset (reset)
     );
 
   byte_striping_struct BS_struct(
@@ -36,9 +38,9 @@ module testbench;
     .lane3VLD (validlane3),
     .clk250k  (relojBS),
     .clk1Mhz  (relojMUX),
-    .contador (counts),
+    .counter (counts),
     .reset (reset)
-      );
+    );
 
   tester_byte_striping BS_tester(
     .stripedLane0 (lane0),
@@ -52,7 +54,8 @@ module testbench;
     .lane2VLD (validlane2),
     .lane3VLD (validlane3),
     .clk250k  (relojBS),
-    .clk1Mhz  (relojMUX)
+    .clk1Mhz  (relojMUX),
+    .reset (reset)
     );
 
 

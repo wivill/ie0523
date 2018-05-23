@@ -1,24 +1,31 @@
-make all:
+yosys:
+	yosys -s yosys_synth.txt
+	iverilog -o out testbench_byte_striping.v byte_striping_conduct.v yosys_synth.v tester_byte_striping.v
+	vvp out
+
+
+cmos:
 	yosys -s yosys_cmos_synth.txt
-	iverilog -o out testbench_byte_striping.v byte_striping_conduct.v yosys_cmos_synth.v tester_byte_striping.v
+	iverilog -o out testbench_byte_striping.v byte_striping_conduct.v yosys_cmos_synth.v tester_byte_striping.v cmos_cells.v
 	vvp out
 
-make ttyp:
+ttyp:
 	yosys -s yosys_cmos_synth_delay.txt
-	iverilog -o out testbench_byte_striping.v byte_striping_conduct.v yosys_cmos_synth_delay.v tester_byte_striping.v cmos_cells_delay.v -Ttyp
+	iverilog -o out testbench_byte_striping.v tester_byte_striping.v byte_striping_conduct.v yosys_cmos_synth_delay.v cmos_cells_delay.v -Ttyp
 	vvp out
 
-make tmax:
+tmax:
 	yosys -s yosys_cmos_synth_delay.txt
-	iverilog -o out testbench_byte_striping.v byte_striping_conduct.v yosys_cmos_synth_delay.v tester_byte_striping.v -Tmax
+	iverilog -o out testbench_byte_striping.v tester_byte_striping.v byte_striping_conduct.v yosys_cmos_synth_delay.v cmos_cells_delay.v -Ttyp
 	vvp out
 
-make tmin:
+tmin:
 	yosys -s yosys_cmos_synth_delay.txt
-	iverilog -o out testbench_byte_striping.v byte_striping_conduct.v yosys_cmos_synth_delay.v tester_byte_striping.v -Tmin
+	iverilog -o out testbench_byte_striping.v tester_byte_striping.v byte_striping_conduct.v yosys_cmos_synth_delay.v cmos_cells_delay.v -Ttyp
 	vvp out
 
-make wave:
+wave:
 	gtkwave pruebaByteStripping.vcd
-make clean:
-	rm -rf out pruebaByteStripping.vcd yosys_cmos_synth_delay.v yosys_cmos_synth.v *.dot *.eps
+
+clean:
+	rm -rf out pruebaByteStripping.vcd yosys_cmos_synth_delay.v yosys_cmos_synth.v *.dot *.eps yosys_synth.v

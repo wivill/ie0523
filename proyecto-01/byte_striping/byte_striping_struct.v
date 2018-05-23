@@ -16,34 +16,35 @@ module byte_striping_struct (
   input wire reset
   );
 
-  always @ ( posedge reset ) begin
-    counter = 2'b00;
-  end
-
   always @ ( posedge clk1Mhz ) begin
+    if (reset) begin
+      counter <= 2'b00;
+    end else begin
+      counter <= counter + 1;
+    end
 
     case (counter)
       2'b00: if (lane0VLD) begin
         stripedLane0 <= byteStripingIN;
         byteStripingVLD <=0;
-        counter <= 2'b01;
+        // counter <= 2'b01;
       end
       2'b01: if (lane1VLD) begin
         stripedLane1 <= byteStripingIN;
-        counter <= 2'b10;
         byteStripingVLD <=0;
+        // counter <= 2'b10;
       end
       2'b10: if (lane2VLD) begin
         stripedLane2 <= byteStripingIN;
-        counter <= 2'b11;
         byteStripingVLD <=0;
+        // counter <= 2'b11;
       end
       2'b11: if (lane3VLD) begin
         stripedLane3 <= byteStripingIN;
-        counter <= 2'b00;
         byteStripingVLD <=1;
+        // counter <= 2'b00;
       end
-      default: counter <= 2'b00;
+      default: byteStripingVLD <=0;
     endcase
   end
 
