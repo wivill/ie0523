@@ -7,7 +7,7 @@ module s2p_cond(    input [1:0]  IN_CLK_s2p, //0->2MHz, 1->250KHz
                     input [1:0]  IN_MODO_s2p,
                     input        IN_DIR_s2p,
                     input        IN_ENB_s2p,
-                    input        IN_RESET_s2p,
+                    // input        IN_RESET_s2p,
                     output [7:0] OUT_LANE3_s2p,
                     output [7:0] OUT_LANE2_s2p,
                     output [7:0] OUT_LANE1_s2p,
