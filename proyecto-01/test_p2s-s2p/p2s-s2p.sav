@@ -1,18 +1,20 @@
 [*]
 [*] GTKWave Analyzer v3.3.89 (w)1999-2018 BSI
-[*] Sat May 26 01:17:27 2018
+[*] Sat May 26 01:25:32 2018
 [*]
 [dumpfile] "/home/wivill/git/ie0523/proyecto-01/test_p2s-s2p/p2s-s2p.vcd"
-[dumpfile_mtime] "Sat May 26 01:13:15 2018"
-[dumpfile_size] 27755
+[dumpfile_mtime] "Sat May 26 01:21:45 2018"
+[dumpfile_size] 27904
 [savefile] "/home/wivill/git/ie0523/proyecto-01/test_p2s-s2p/p2s-s2p.sav"
 [timestart] 0
 [size] 1366 697
-[pos] -51 -1
-*-13.888980 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[pos] -1 -1
+*-23.854744 25630000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] testbench.
+[treeopen] testbench.letest_cond.
+[treeopen] testbench.low_tx_rx_cond.
 [sst_width] 213
-[signals_width] 144
+[signals_width] 176
 [sst_expanded] 1
 [sst_vpaned_height] 187
 @800028
@@ -20,9 +22,7 @@ testbench.low_tx_rx_cond.CLK_RX[1:0]
 @28
 (0)testbench.low_tx_rx_cond.CLK_RX[1:0]
 (1)testbench.low_tx_rx_cond.CLK_RX[1:0]
-@29
 testbench.low_tx_rx_cond.MODO_RX[1:0]
-@28
 testbench.low_tx_rx_cond.IN_ENB_RX
 testbench.low_tx_rx_cond.IN_ENB_TX
 @1001200
