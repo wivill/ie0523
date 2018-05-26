@@ -1,0 +1,54 @@
+[*]
+[*] GTKWave Analyzer v3.3.89 (w)1999-2018 BSI
+[*] Sat May 26 01:17:27 2018
+[*]
+[dumpfile] "/home/wivill/git/ie0523/proyecto-01/test_p2s-s2p/p2s-s2p.vcd"
+[dumpfile_mtime] "Sat May 26 01:13:15 2018"
+[dumpfile_size] 27755
+[savefile] "/home/wivill/git/ie0523/proyecto-01/test_p2s-s2p/p2s-s2p.sav"
+[timestart] 0
+[size] 1366 697
+[pos] -51 -1
+*-13.888980 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] testbench.
+[sst_width] 213
+[signals_width] 144
+[sst_expanded] 1
+[sst_vpaned_height] 187
+@800028
+testbench.low_tx_rx_cond.CLK_RX[1:0]
+@28
+(0)testbench.low_tx_rx_cond.CLK_RX[1:0]
+(1)testbench.low_tx_rx_cond.CLK_RX[1:0]
+@29
+testbench.low_tx_rx_cond.MODO_RX[1:0]
+@28
+testbench.low_tx_rx_cond.IN_ENB_RX
+testbench.low_tx_rx_cond.IN_ENB_TX
+@1001200
+-group_end
+@28
+testbench.low_tx_rx_cond.IN_VALID_TX
+testbench.low_tx_rx_cond.IN_RESET_RX
+testbench.low_tx_rx_cond.IN_RESET_TX
+@22
+testbench.low_tx_rx_cond.IN_LANE0[7:0]
+testbench.low_tx_rx_cond.IN_LANE1[7:0]
+testbench.low_tx_rx_cond.IN_LANE2[7:0]
+testbench.low_tx_rx_cond.IN_LANE3[7:0]
+@800022
+testbench.low_tx_rx_cond.LANE[3:0]
+@28
+(0)testbench.low_tx_rx_cond.LANE[3:0]
+(1)testbench.low_tx_rx_cond.LANE[3:0]
+(2)testbench.low_tx_rx_cond.LANE[3:0]
+(3)testbench.low_tx_rx_cond.LANE[3:0]
+@1001200
+-group_end
+@22
+testbench.low_tx_rx_cond.OUT_LANE0[7:0]
+testbench.low_tx_rx_cond.OUT_LANE1[7:0]
+testbench.low_tx_rx_cond.OUT_LANE2[7:0]
+testbench.low_tx_rx_cond.OUT_LANE3[7:0]
+[pattern_trace] 1
+[pattern_trace] 0

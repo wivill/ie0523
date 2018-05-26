@@ -1,5 +1,5 @@
 `include "../s2p/s2p_reg_cond.v"
-`include "../s2p/freq_div_cond.v"
+// `include "../s2p/freq_div_cond.v"
 `include "../s2p/ffd_s2p_cond.v"
 
 module s2p_cond(    input [1:0]  IN_CLK_s2p, //0->2MHz, 1->250KHz

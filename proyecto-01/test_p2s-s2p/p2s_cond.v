@@ -1,6 +1,6 @@
 `include "../p2s/ffd_p2s_cond.v"
 `include "../p2s/mux_p2s_cond.v"
-`include "../p2s/freq_div_cond.v"
+// `include "../p2s/freq_div_cond.v"
 
 module p2s_cond(  input        IN_CLK_p2s, //2MHz
                   input [7:0]  IN_LANE3_p2s,

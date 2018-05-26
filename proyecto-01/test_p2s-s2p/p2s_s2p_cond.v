@@ -1,5 +1,5 @@
-`include "p2s.v"
-`include "s2p.v"
+`include "p2s_cond.v"
+`include "s2p_cond.v"
 
 module p2s_s2p_cond(  input         IN_CLK_2MHz,
                       input         IN_CLK_250KHz,
@@ -8,10 +8,10 @@ module p2s_s2p_cond(  input         IN_CLK_2MHz,
                       input   [7:0] IN_LANE1,
                       input   [7:0] IN_LANE0,
                       input   [2:0] IN_CTR_TX,
-                      input   [2:0] IN_CTR_RX,
                       input         IN_ENB_TX,
                       input         IN_RESET_TX,
                       input         IN_VALID_TX,
+                      input   [2:0] IN_CTR_RX,
                       input         IN_ENB_RX,
                       input         IN_RESET_RX,
                       output  [7:0] OUT_LANE3,
@@ -20,8 +20,8 @@ module p2s_s2p_cond(  input         IN_CLK_2MHz,
                       output  [7:0] OUT_LANE0
   );
 
-  wire MODO_RX = `PUSH;
-  wire DIR_RX = `LEFT;
+  wire [1:0]  MODO_RX = `PUSH;
+  wire        DIR_RX = `LEFT;
   wire [3:0]  LANE;
   wire [1:0]  CLK_RX = {IN_CLK_250KHz, IN_CLK_2MHz};
 
