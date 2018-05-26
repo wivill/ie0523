@@ -25,6 +25,9 @@ module p2s_s2p_cond(  input         IN_CLK_2MHz,
   wire [3:0]  LANE;
   wire [1:0]  CLK_RX = {IN_CLK_250KHz, IN_CLK_2MHz};
 
+  assign MODO_RX = `PUSH;
+  assign DIR_RX = `LEFT;
+
   p2s_cond    low_tx_cond ( .IN_CLK_p2s   (IN_CLK_2MHz),
                             .IN_LANE3_p2s (IN_LANE3),
                             .IN_LANE2_p2s (IN_LANE2),
