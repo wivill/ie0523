@@ -1,0 +1,8 @@
+read_verilog pcie_cond.v
+hierarchy -check -top pcie_cond
+proc; opt; fsm; opt; memory; opt
+techmap; opt
+abc -liberty cmos_cells.lib
+show -lib cmos_cells_delay.v -prefix synth_delay -format ps
+clean
+write_verilog -noattr pcie_synth_delay.v

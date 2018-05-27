@@ -5,7 +5,7 @@
 
 module testbench;
 
-  wire [7:0]  IN_COM_tb, IN_PAD_tb, IN_SKP_tb, IN_STP_tb, IN_SDP_tb, IN_END_tb, IN_EDB_tb, IN_FTS_tb, IN_IDL_tb, IN_TLP_tb,
+  wire [7:0]  IN_COM_tb, IN_PAD_tb, IN_SKP_tb, IN_STP_tb, IN_SDP_tb, IN_END_tb, IN_EDB_tb, IN_FTS_tb, IN_IDL_tb, IN_TLP_tb;
   wire [3:0]  IN_CTRL_tb;
   wire        CLK_tb;
   wire        ENB_tb;
@@ -28,7 +28,7 @@ module testbench;
                         .CLK_2MHz     (CLK_tb),
                         .IN_CTRL      (IN_CTRL_tb),
                         .ENB          (ENB_tb),
-                        .reset        (reset_tb),
+                        .reset        (reset_tb)
   );
 
   pcie_cond cond  ( .IN_COM       (IN_COM_tb),
@@ -41,7 +41,7 @@ module testbench;
                     .IN_FTS       (IN_FTS_tb),
                     .IN_IDL       (IN_IDL_tb),
                     .IN_TLP       (IN_TLP_tb),
-                    .IN_CTRL      (IN_CTRL_tb)
+                    .IN_CTRL      (IN_CTRL_tb),
                     .IN_CLK_2MHz  (CLK_tb),
                     .IN_RESET_CLK (reset_tb),
                     .IN_ENB_TX_RX (ENB_tb),

@@ -1,7 +1,7 @@
 `include "multiplexer/multiplexer_cond.v"
 `include "freq_div_cond.v"
 `include "byte_striping/byte_striping_cond.v"
-`include "p2s_s2p/p2s_s2p_cond.v"
+`include "p2s_s2p_cond.v"
 `include "byte_joining/byte_joining_cond.v"
 `include "ctr3_cond.v"
 
@@ -72,7 +72,7 @@ module pcie_cond( input [7:0]   IN_COM, IN_PAD, IN_SKP, IN_STP, IN_SDP, IN_END, 
                               .OUT_LANE3      (S2P_LANE3),
                               .OUT_LANE2      (S2P_LANE2),
                               .OUT_LANE1      (S2P_LANE1),
-                              .OUT_LANE0      (S2P_LANE0),
+                              .OUT_LANE0      (S2P_LANE0)
   );
 
   wire [7:0]  BJ_OUT;

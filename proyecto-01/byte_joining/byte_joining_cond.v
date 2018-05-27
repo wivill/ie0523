@@ -1,4 +1,4 @@
-module mux4a1 (
+module mux4a1_cond (
   input [7:0] In0, In1, In2, In3,
   input [1:0] Sel,
   output reg [7:0] outmux
@@ -37,7 +37,7 @@ module byte_joining_cond (
     L3 <= Lane_3;
   end
 
-  mux4a1 mux( .In0 (L0),  // se intancia el mux 4 a 1 que distribuye los datos de los canales
+  mux4a1_cond mux_cond( .In0 (L0),  // se intancia el mux 4 a 1 que distribuye los datos de los canales
               .In1 (L1),
               .In2 (L2),
               .In3 (L3),
