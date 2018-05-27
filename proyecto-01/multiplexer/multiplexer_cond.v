@@ -1,7 +1,4 @@
 module multiplexer_cond (
-  output reg [7:0] muxOUT,
-  output reg muxVLD,
-
   input wire [7:0] TLP,
   input wire [7:0] COM,
   input wire [7:0] PAD,
@@ -14,7 +11,10 @@ module multiplexer_cond (
   input wire [7:0] IDL,
 
   input wire [3:0] muxCTRL,
-  input wire muxCLK          // 1 Mhz
+  input wire muxCLK,          // 1 Mhz
+
+  output reg [7:0] muxOUT,
+  output reg muxVLD
   );
 
 
