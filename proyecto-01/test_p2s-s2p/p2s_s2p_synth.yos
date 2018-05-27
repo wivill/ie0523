@@ -1,0 +1,8 @@
+read_verilog p2s_s2p_cond.v
+hierarchy -check -top p2s_s2p_cond
+proc; opt; fsm; opt; memory; opt
+techmap; opt
+abc -liberty cmos_cells.lib
+show -lib cmos_cells.v -prefix synth -format ps
+clean
+write_verilog -noattr p2s_s2p_synth.v

@@ -20,7 +20,7 @@ module p2s_s2p_cond(  input         IN_CLK_2MHz,
   );
 
   wire [1:0]  MODO_RX = `PUSH;
-  wire        DIR_RX = `LEFT;
+  wire        DIR_RX = `RIGHT;
   wire [3:0]  LANE;
   wire [1:0]  CLK_RX = {IN_CLK_250KHz, IN_CLK_2MHz};
 
