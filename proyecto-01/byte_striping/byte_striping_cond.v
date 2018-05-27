@@ -6,10 +6,7 @@ module byte_striping_cond (
   output reg byteStripingVLD,
 
   input wire [7:0] byteStripingIN,
-  input wire lane0VLD,
-  input wire lane1VLD,
-  input wire lane2VLD,
-  input wire lane3VLD,
+  input wire laneVLD,
   input wire clk250k,
   input wire clk1Mhz,
   output reg [1:0] counter,
@@ -24,22 +21,22 @@ module byte_striping_cond (
     end
 
     case (counter)
-      2'b00: if (lane0VLD) begin
+      2'b00: if (laneVLD) begin
         stripedLane0 <= byteStripingIN;
         byteStripingVLD <=0;
         // counter <= 2'b01;
       end
-      2'b01: if (lane1VLD) begin
+      2'b01: if (laneVLD) begin
         stripedLane1 <= byteStripingIN;
         byteStripingVLD <=0;
         // counter <= 2'b10;
       end
-      2'b10: if (lane2VLD) begin
+      2'b10: if (laneVLD) begin
         stripedLane2 <= byteStripingIN;
         byteStripingVLD <=0;
         // counter <= 2'b11;
       end
-      2'b11: if (lane3VLD) begin
+      2'b11: if (laneVLD) begin
         stripedLane3 <= byteStripingIN;
         byteStripingVLD <=1;
         // counter <= 2'b00;
