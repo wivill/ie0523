@@ -9,7 +9,7 @@ module p2s_cond(  input        IN_CLK_p2s, //2MHz
                   input [7:0]  IN_LANE0_p2s,
                   input [2:0]  IN_CTR_p2s,
                   input        IN_ENB_p2s,
-                  input        IN_RESET_p2s,
+                  // input        IN_RESET_p2s,
                   input        IN_VALID_BS,
                   output [3:0] OUT_LANE_p2s
   );

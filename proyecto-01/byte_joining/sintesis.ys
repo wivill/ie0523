@@ -1,5 +1,5 @@
-read_verilog bytejoining_cond.v
-hierarchy -check -top byte_joining_conductual
+read_verilog byte_joining_cond.v
+hierarchy -check -top byte_joining_cond
 proc;
 opt;
 fsm;
