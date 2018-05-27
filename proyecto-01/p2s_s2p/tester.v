@@ -21,7 +21,7 @@ module tester_s2p(  output reg          CLK_2MHz,
                               );
 
   initial begin
-    $dumpfile("p2s-s2p.vcd");
+    $dumpfile("p2s_s2p.vcd");
     $dumpvars;
   end
 

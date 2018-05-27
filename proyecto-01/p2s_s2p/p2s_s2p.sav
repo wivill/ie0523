@@ -1,15 +1,15 @@
 [*]
 [*] GTKWave Analyzer v3.3.89 (w)1999-2018 BSI
-[*] Sun May 27 17:53:34 2018
+[*] Sun May 27 19:24:10 2018
 [*]
-[dumpfile] "/home/wivill/git/ie0523/proyecto-01/test_p2s-s2p/p2s-s2p.vcd"
-[dumpfile_mtime] "Sun May 27 17:50:52 2018"
-[dumpfile_size] 45045
-[savefile] "/home/wivill/git/ie0523/proyecto-01/test_p2s-s2p/p2s-s2p.sav"
+[dumpfile] "/home/wivill/git/ie0523/proyecto-01/test_p2s-s2p/p2s_s2p.vcd"
+[dumpfile_mtime] "Sun May 27 18:25:29 2018"
+[dumpfile_size] 44123
+[savefile] "/home/wivill/git/ie0523/proyecto-01/test_p2s-s2p/p2s_s2p.sav"
 [timestart] 0
 [size] 1366 697
 [pos] -1 -1
-*-22.854744 25630000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-22.854744 6250000 18000000 26000000 10000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] testbench.
 [treeopen] testbench.letest_cond.
 [treeopen] testbench.low_tx_rx_cond.
@@ -32,7 +32,7 @@ testbench.low_tx_rx_cond.IN_ENB_TX
 testbench.low_tx_rx_cond.IN_VALID_TX
 testbench.low_tx_rx_cond.IN_RESET_RX
 testbench.low_tx_rx_cond.IN_RESET_TX
-@c00022
+@c00023
 testbench.low_tx_rx_cond.IN_LANE0[7:0]
 @28
 (0)testbench.low_tx_rx_cond.IN_LANE0[7:0]
@@ -43,9 +43,9 @@ testbench.low_tx_rx_cond.IN_LANE0[7:0]
 (5)testbench.low_tx_rx_cond.IN_LANE0[7:0]
 (6)testbench.low_tx_rx_cond.IN_LANE0[7:0]
 (7)testbench.low_tx_rx_cond.IN_LANE0[7:0]
-@1401200
+@1401201
 -group_end
-@800022
+@c00022
 testbench.low_tx_rx_cond.IN_LANE1[7:0]
 @28
 (0)testbench.low_tx_rx_cond.IN_LANE1[7:0]
@@ -56,7 +56,7 @@ testbench.low_tx_rx_cond.IN_LANE1[7:0]
 (5)testbench.low_tx_rx_cond.IN_LANE1[7:0]
 (6)testbench.low_tx_rx_cond.IN_LANE1[7:0]
 (7)testbench.low_tx_rx_cond.IN_LANE1[7:0]
-@1001200
+@1401200
 -group_end
 @22
 testbench.low_tx_rx_cond.IN_LANE2[7:0]
@@ -68,9 +68,6 @@ testbench.low_tx_rx_cond.LANE[3:0]
 (1)testbench.low_tx_rx_cond.LANE[3:0]
 (2)testbench.low_tx_rx_cond.LANE[3:0]
 (3)testbench.low_tx_rx_cond.LANE[3:0]
-@29
-testbench.low_tx_rx_cond.IN_CTR_TX[2:0]
-@28
 testbench.low_tx_rx_cond.low_tx_cond.ffd_valid.valid_out
 @1001200
 -group_end
@@ -78,12 +75,18 @@ testbench.low_tx_rx_cond.low_tx_cond.ffd_valid.valid_out
 testbench.low_tx_rx_cond.OUT_LANE0[7:0]
 testbench.low_tx_rx_cond.OUT_LANE1[7:0]
 testbench.low_tx_rx_cond.OUT_LANE2[7:0]
+@c00022
 testbench.low_tx_rx_cond.OUT_LANE3[7:0]
 @28
-testbench.letest_cond.CTR[2:0]
-testbench.low_tx_rx_cond.low_tx_cond.ffd_lane3[6].valid_in
-testbench.low_tx_rx_cond.low_tx_cond.ffd_lane3[6].D
-testbench.low_tx_rx_cond.low_tx_cond.ffd_lane3[6].Q
-testbench.low_tx_rx_cond.low_tx_cond.ffd_valid.valid_in
+(0)testbench.low_tx_rx_cond.OUT_LANE3[7:0]
+(1)testbench.low_tx_rx_cond.OUT_LANE3[7:0]
+(2)testbench.low_tx_rx_cond.OUT_LANE3[7:0]
+(3)testbench.low_tx_rx_cond.OUT_LANE3[7:0]
+(4)testbench.low_tx_rx_cond.OUT_LANE3[7:0]
+(5)testbench.low_tx_rx_cond.OUT_LANE3[7:0]
+(6)testbench.low_tx_rx_cond.OUT_LANE3[7:0]
+(7)testbench.low_tx_rx_cond.OUT_LANE3[7:0]
+@1401200
+-group_end
 [pattern_trace] 1
 [pattern_trace] 0

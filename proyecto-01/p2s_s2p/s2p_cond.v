@@ -18,7 +18,7 @@ module s2p_cond(    input [1:0]  IN_CLK_s2p, //0->2MHz, 1->250KHz
 
   // Conductual///////////////////////////////////////////
 
-  s2p_reg_cond #(8) reg_lane3(  .CLK    (IN_CLK_s2p[0]),
+  s2p_reg_cond  reg_lane3(  .CLK    (IN_CLK_s2p[0]),
                             .ENB    (IN_ENB_s2p),
                             .S_IN   (IN_LANE_s2p[3]),
                             .Q      (P3_cond_s2p),
@@ -26,7 +26,7 @@ module s2p_cond(    input [1:0]  IN_CLK_s2p, //0->2MHz, 1->250KHz
                             .DIR    (IN_DIR_s2p)
                             );
 
-  s2p_reg_cond #(8) reg_lane2(  .CLK    (IN_CLK_s2p[0]),
+  s2p_reg_cond  reg_lane2(  .CLK    (IN_CLK_s2p[0]),
                             .ENB    (IN_ENB_s2p),
                             .S_IN   (IN_LANE_s2p[2]),
                             .Q      (P2_cond_s2p),
@@ -34,7 +34,7 @@ module s2p_cond(    input [1:0]  IN_CLK_s2p, //0->2MHz, 1->250KHz
                             .DIR    (IN_DIR_s2p)
                             );
 
-  s2p_reg_cond #(8) reg_lane1(  .CLK    (IN_CLK_s2p[0]),
+  s2p_reg_cond  reg_lane1(  .CLK    (IN_CLK_s2p[0]),
                             .ENB    (IN_ENB_s2p),
                             .S_IN   (IN_LANE_s2p[1]),
                             .Q      (P1_cond_s2p),
@@ -42,7 +42,7 @@ module s2p_cond(    input [1:0]  IN_CLK_s2p, //0->2MHz, 1->250KHz
                             .DIR    (IN_DIR_s2p)
                             );
 
-  s2p_reg_cond #(8) reg_lane0(  .CLK    (IN_CLK_s2p[0]),
+  s2p_reg_cond  reg_lane0(  .CLK    (IN_CLK_s2p[0]),
                             .ENB    (IN_ENB_s2p),
                             .S_IN   (IN_LANE_s2p[0]),
                             .Q      (P0_cond_s2p),
