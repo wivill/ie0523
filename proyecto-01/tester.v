@@ -1,6 +1,6 @@
 `timescale 1ns / 100ps
 
-module tester(  output reg  [7:0]   IN_COM, IN_PAD, IN_SKP, IN_STP, IN_SDP, IN_END, IN_EDB, IN_FTS, IN_IDL, IN_TLP,
+module tester(      output reg  [7:0]   IN_COM, IN_PAD, IN_SKP, IN_STP, IN_SDP, IN_END, IN_EDB, IN_FTS, IN_IDL, IN_TLP,
                     output reg          CLK_2MHz,
                     output reg  [3:0]   IN_CTRL,
                     output reg          ENB,
@@ -27,22 +27,133 @@ module tester(  output reg  [7:0]   IN_COM, IN_PAD, IN_SKP, IN_STP, IN_SDP, IN_E
   initial begin
     @(posedge ENB)
     // repeat(8) @(posedge CLK_2MHz);
-    DATO = 32'h01234567;
-    repeat(8) @(posedge CLK_2MHz);
-    DATO = 32'h89ABCDEF;
-    repeat(8) @(posedge CLK_2MHz);
-    DATO = 32'h092B4D6F;
-    repeat(8) @(posedge CLK_2MHz);
-    DATO = 32'h81A3C5E7;
-    repeat(8) @(posedge CLK_2MHz);
-    DATO = 32'h76543210;
-    repeat(8) @(posedge CLK_2MHz);
-    DATO = 32'hFEDCBA98;
-    repeat(8) @(posedge CLK_2MHz);
-    DATO = 32'hF6D4B290;
-    repeat(8) @(posedge CLK_2MHz);
-    DATO = 32'h7E5C3A18;
-    repeat(8) @(posedge CLK_2MHz);
+    #1000
+    IN_CTRL = 0;      // Agarra un TLP
+    IN_TLP = 8'hFF;
+    IN_COM = 8'h0A;
+    IN_PAD = 8'h0A;
+    IN_SKP = 8'h0A;
+    IN_STP = 8'h0A;
+    IN_SDP = 8'h0A;
+    IN_END = 8'h0A;
+    IN_EDB = 8'h0A;
+    IN_FTS = 8'h0A;
+    IN_IDL = 8'h0A;
+
+    #1000
+    IN_CTRL = 1;      // Agarra un COM
+    IN_TLP = 8'h0A;
+    IN_COM = 8'hF2;
+    IN_PAD = 8'h0A;
+    IN_SKP = 8'h0A;
+    IN_STP = 8'h0A;
+    IN_SDP = 8'h0A;
+    IN_END = 8'h0A;
+    IN_EDB = 8'h0A;
+    IN_FTS = 8'h0A;
+    IN_IDL = 8'h0A;
+
+    #1000
+    IN_CTRL = 2;      // Agarra un PAD
+    IN_TLP = 8'h0A;
+    IN_COM = 8'h0A;
+    IN_PAD = 8'hC7;
+    IN_SKP = 8'h0A;
+    IN_STP = 8'h0A;
+    IN_SDP = 8'h0A;
+    IN_END = 8'h0A;
+    IN_EDB = 8'h0A;
+    IN_FTS = 8'h0A;
+    IN_IDL = 8'h0A;
+
+    #1000
+    IN_CTRL = 3;     // Agarra un TLP
+    IN_TLP = 8'h0A;
+    IN_COM = 8'h0A;
+    IN_PAD = 8'h0A;
+    IN_SKP = 8'hAC;
+    IN_STP = 8'h0A;
+    IN_SDP = 8'h0A;
+    IN_END = 8'h0A;
+    IN_EDB = 8'h0A;
+    IN_FTS = 8'h0A;
+    IN_IDL = 8'h0A;
+
+    #1000
+    IN_CTRL = 4;     // Agarra un STP
+    IN_TLP = 8'h0A;
+    IN_COM = 8'h0A;
+    IN_PAD = 8'h0A;
+    IN_SKP = 8'h0A;
+    IN_STP = 8'hAA;
+    IN_SDP = 8'h0A;
+    IN_END = 8'h0A;
+    IN_EDB = 8'h0A;
+    IN_FTS = 8'h0A;
+    IN_IDL = 8'h0A;
+
+    #1000
+    IN_CTRL = 5;     // Agarra un SDP
+    IN_TLP = 8'h0A;
+    IN_COM = 8'h0A;
+    IN_PAD = 8'h0A;
+    IN_SKP = 8'h0A;
+    IN_STP = 8'h0A;
+    IN_SDP = 8'hE5;
+    IN_END = 8'h0A;
+    IN_EDB = 8'h0A;
+    IN_FTS = 8'h0A;
+    IN_IDL = 8'h0A;
+
+    #1000
+    IN_CTRL = 6;     // Agarra un END
+    IN_TLP = 8'h0A;
+    IN_COM = 8'h0A;
+    IN_PAD = 8'h0A;
+    IN_SKP = 8'h0A;
+    IN_STP = 8'h0A;
+    IN_SDP = 8'h0A;
+    IN_END = 8'hF6;
+    IN_EDB = 8'h0A;
+    IN_FTS = 8'h0A;
+    IN_IDL = 8'h0A;
+
+    #1000
+    IN_CTRL = 7;     // Agarra un EDB
+    IN_TLP = 8'h0A;
+    IN_COM = 8'h0A;
+    IN_PAD = 8'h0A;
+    IN_SKP = 8'h0A;
+    IN_STP = 8'h0A;
+    IN_SDP = 8'h0A;
+    IN_END = 8'h0A;
+    IN_EDB = 8'hDF;
+    IN_FTS = 8'h0A;
+    IN_IDL = 8'h0A;
+    #1000
+    IN_CTRL = 8;     // Agarra un FTS
+    IN_TLP = 8'h0A;
+    IN_COM = 8'h0A;
+    IN_PAD = 8'h0A;
+    IN_SKP = 8'h0A;
+    IN_STP = 8'h0A;
+    IN_SDP = 8'h0A;
+    IN_END = 8'h0A;
+    IN_EDB = 8'h0A;
+    IN_FTS = 8'h0A;
+    IN_IDL = 8'h0A;
+    #1000
+    IN_CTRL = 8;     // Agarra un FTS
+    IN_TLP = 8'h0A;
+    IN_COM = 8'h0A;
+    IN_PAD = 8'h0A;
+    IN_SKP = 8'h0A;
+    IN_STP = 8'h0A;
+    IN_SDP = 8'h0A;
+    IN_END = 8'h0A;
+    IN_EDB = 8'h0A;
+    IN_FTS = 8'h0A;
+    IN_IDL = 8'hAE;
     #500 $finish;
   end
 
