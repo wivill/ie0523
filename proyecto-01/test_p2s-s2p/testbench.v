@@ -6,7 +6,7 @@ module testbench;
   wire [3:0]  CLK_tb;
   wire        ENB_tb;
   wire        reset_tb;
-  wire [2:0]  CTR_tb;
+  // wire [2:0]  CTR_tb;
   wire [31:0] DATO_tb;
   wire [31:0] OUT_tb;
   wire        VALID_tb;
@@ -19,6 +19,7 @@ module testbench;
                                   .CLK_250KHz   (CLK_tb[3]),
                                   .ENB          (ENB_tb),
                                   .reset        (reset_tb),
+                                  // .CTR          (CTR_tb),
                                   .DATO         (DATO_tb),
                                   .VALID        (VALID_tb)
     );
@@ -31,11 +32,10 @@ module testbench;
                                   .IN_LANE2         (DATO_tb[23:16]),
                                   .IN_LANE1         (DATO_tb[15:8]),
                                   .IN_LANE0         (DATO_tb[7:0]),
-                                  .IN_CTR_TX        (CTR_tb),
+                                  // .IN_CTR_TX        (CTR_tb),
                                   .IN_ENB_TX        (ENB_tb),
                                   .IN_RESET_TX      (reset_tb),
                                   .IN_VALID_TX      (VALID_tb),
-                                  .IN_CTR_RX        (CTR_tb),
                                   .IN_ENB_RX        (ENB_tb),
                                   .IN_RESET_RX      (reset_tb),
                                   .OUT_LANE3        (OUT_tb[31:24]),

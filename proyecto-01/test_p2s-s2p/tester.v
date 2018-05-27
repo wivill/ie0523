@@ -8,7 +8,7 @@ module tester_s2p(  output reg          CLK_2MHz,
                     output              CLK_250KHz,
                     output reg          ENB,
                     output reg          reset,
-                    output reg  [2:0]   CTR,
+                    // output reg  [2:0]   CTR,
                     output reg  [31:0]  DATO,
                     output reg          VALID
                     );
@@ -29,7 +29,7 @@ module tester_s2p(  output reg          CLK_2MHz,
     CLK_2MHz = 1'b0;
     ENB = 1'b0;
     reset = 1'b0;
-    CTR = 3'b111;
+    // CTR = 3'b110;
     #500
     repeat(2) #500 CLK_2MHz = ~CLK_2MHz;
     ENB = 1'b1;
@@ -38,9 +38,9 @@ module tester_s2p(  output reg          CLK_2MHz,
     forever #500 CLK_2MHz = ~CLK_2MHz;
   end
 
-  always @ (posedge CLK_2MHz) begin
-    CTR = CTR + 1;
-  end
+  // always @ (posedge CLK_2MHz) begin
+  //   CTR = CTR + 1;
+  // end
 
   initial begin
     @(posedge ENB)
