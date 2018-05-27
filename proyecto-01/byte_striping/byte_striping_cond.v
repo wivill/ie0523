@@ -14,7 +14,7 @@ module byte_striping_cond (
   );
 
   always @ ( posedge clk1Mhz ) begin
-    if (reset) begin
+    if (~reset) begin
       counter <= 2'b00;
     end else begin
       counter <= counter + 1;
