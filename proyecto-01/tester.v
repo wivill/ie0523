@@ -1,11 +1,11 @@
 `timescale 1ns / 100ps
 
 module tester(  output reg  [7:0]   IN_COM, IN_PAD, IN_SKP, IN_STP, IN_SDP, IN_END, IN_EDB, IN_FTS, IN_IDL, IN_TLP,
-                    output reg          CLK_2MHz,
-                    output reg  [3:0]   IN_CTRL,
-                    output reg          ENB,
-                    output reg          reset
-                    );
+                output reg          CLK_2MHz,
+                output reg  [3:0]   IN_CTRL,
+                output reg          ENB,
+                output reg          reset
+  );
 
   initial begin
     $dumpfile("pcie.vcd");
