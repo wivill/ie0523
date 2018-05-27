@@ -20,53 +20,53 @@ module multiplexer_cond (
 
   always @ ( posedge muxCLK ) begin
     case(muxCTRL)
-      4'b0000: begin
+      4'b0000:  begin
+                  muxOUT <= TLP;
+                  muxVLD <= 1'b1;
+                end
+
+      4'b0001: begin
                  muxOUT <= COM;
                  muxVLD <= 1'b1;
                end
 
-      4'b0001: begin
+      4'b0010: begin
                  muxOUT <= PAD;
                  muxVLD <= 1'b1;
                end
 
-      4'b0010: begin
+      4'b0011: begin
                  muxOUT <= SKP;
                  muxVLD <= 1'b1;
               end
 
-      4'b0011: begin
+      4'b0100: begin
                  muxOUT <= STP;
                 muxVLD <= 1'b1;
                end
 
-      4'b0100: begin
+      4'b0101: begin
                  muxOUT <= SDP;
                  muxVLD <= 1'b1;
                end
 
-      4'b0101: begin
+      4'b0110: begin
                  muxOUT <= END;
                  muxVLD <= 1'b1;
                end
 
-      4'b0110: begin
+      4'b0111: begin
                  muxOUT <= EDB;
                  muxVLD <= 1'b1;
                end
 
-      4'b0111: begin
+      4'b1000: begin
                  muxOUT <= FTS;
                  muxVLD <= 1'b1;
                end
 
-      4'b1000: begin
-                 muxOUT <= IDL;
-                 muxVLD <= 1'b1;
-               end
-
       4'b1001: begin
-                 muxOUT <= TLP;
+                 muxOUT <= IDL;
                  muxVLD <= 1'b1;
                end
 
