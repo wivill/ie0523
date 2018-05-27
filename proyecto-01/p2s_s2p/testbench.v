@@ -1,7 +1,7 @@
 `include "tester.v"
-`include "p2s_s2p_cond.v"
-`include "p2s_s2p_synth.v"
-`include "p2s_s2p_synth_delay.v"
+`include "pcie_cond.v"
+`include "pcie_synth.v"
+`include "pcie_synth_delay.v"
 
 module testbench;
 
