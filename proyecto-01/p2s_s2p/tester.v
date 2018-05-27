@@ -28,7 +28,7 @@ module tester_s2p(  output reg  [7:0]   IN_COM, IN_PAD, IN_SKP, IN_STP, IN_SDP, 
 
   initial begin
     @(posedge ENB)
-    repeat(8) @(posedge CLK_2MHz);
+    // repeat(8) @(posedge CLK_2MHz);
     DATO = 32'h01234567;
     repeat(8) @(posedge CLK_2MHz);
     DATO = 32'h89ABCDEF;
