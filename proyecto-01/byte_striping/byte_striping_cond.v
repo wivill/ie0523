@@ -29,12 +29,6 @@ module byte_striping_cond (
       counter <= 2'b11;
     end
 
-    // if (reset) begin
-    //   counter <= 2'b11;
-    // end else begin
-    //   counter <= counter + 1;
-    // end
-
     case (counter)
       2'b00: if (laneVLD) begin
         stripedLane0 <= byteStripingIN;

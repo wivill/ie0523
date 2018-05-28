@@ -48,4 +48,38 @@ module testbench;
                     .OUT_DATA     (OUT_cond_tb)
   );
 
+  pcie_synth synth( .IN_COM       (IN_COM_tb),
+                    .IN_PAD       (IN_PAD_tb),
+                    .IN_SKP       (IN_SKP_tb),
+                    .IN_STP       (IN_STP_tb),
+                    .IN_SDP       (IN_SDP_tb),
+                    .IN_END       (IN_END_tb),
+                    .IN_EDB       (IN_EDB_tb),
+                    .IN_FTS       (IN_FTS_tb),
+                    .IN_IDL       (IN_IDL_tb),
+                    .IN_TLP       (IN_TLP_tb),
+                    .IN_CTRL      (IN_CTRL_tb),
+                    .IN_CLK_2MHz  (CLK_tb),
+                    .IN_RESET_CLK (reset_tb),
+                    .IN_ENB_TX_RX (ENB_tb),
+                    .OUT_DATA     (OUT_synth_tb)
+  );
+
+  pcie_synth_delay synth_delay( .IN_COM       (IN_COM_tb),
+                                .IN_PAD       (IN_PAD_tb),
+                                .IN_SKP       (IN_SKP_tb),
+                                .IN_STP       (IN_STP_tb),
+                                .IN_SDP       (IN_SDP_tb),
+                                .IN_END       (IN_END_tb),
+                                .IN_EDB       (IN_EDB_tb),
+                                .IN_FTS       (IN_FTS_tb),
+                                .IN_IDL       (IN_IDL_tb),
+                                .IN_TLP       (IN_TLP_tb),
+                                .IN_CTRL      (IN_CTRL_tb),
+                                .IN_CLK_2MHz  (CLK_tb),
+                                .IN_RESET_CLK (reset_tb),
+                                .IN_ENB_TX_RX (ENB_tb),
+                                .OUT_DATA     (OUT_synth_delay_tb)
+  );
+
 endmodule

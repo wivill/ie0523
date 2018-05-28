@@ -1,21 +1,20 @@
 [*]
 [*] GTKWave Analyzer v3.3.89 (w)1999-2018 BSI
-[*] Mon May 28 01:28:30 2018
+[*] Mon May 28 03:34:29 2018
 [*]
 [dumpfile] "/home/wivill/git/ie0523/proyecto-01/pcie.vcd"
-[dumpfile_mtime] "Mon May 28 01:21:37 2018"
-[dumpfile_size] 348181
+[dumpfile_mtime] "Mon May 28 03:33:22 2018"
+[dumpfile_size] 344941
 [savefile] "/home/wivill/git/ie0523/proyecto-01/pcie.sav"
 [timestart] 0
 [size] 1366 697
 [pos] -1 -1
-*-21.108561 2970000 1250000 1000000 9750000 5750000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-21.135500 2970000 1250000 1000000 9750000 5750000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] testbench.
-[treeopen] testbench.cond.
 [treeopen] testbench.cond.tx_rx_cond.
 [treeopen] testbench.cond.tx_rx_cond.low_tx_cond.
 [sst_width] 213
-[signals_width] 151
+[signals_width] 158
 [sst_expanded] 1
 [sst_vpaned_height] 187
 @28
@@ -73,7 +72,6 @@ testbench.cond.tx_rx_cond.low_rx_cond.IN_LANE_s2p[3:0]
 testbench.cond.tx_rx_cond.low_rx_cond.P0_cond_s2p[7:0]
 testbench.cond.tx_rx_cond.low_rx_cond.P1_cond_s2p[7:0]
 testbench.cond.tx_rx_cond.low_rx_cond.P2_cond_s2p[7:0]
-@23
 testbench.cond.tx_rx_cond.low_rx_cond.P3_cond_s2p[7:0]
 [pattern_trace] 1
 [pattern_trace] 0

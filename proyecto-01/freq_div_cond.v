@@ -7,6 +7,12 @@ module freq_div_cond( input       CLK,
 
   // wire CLK_2_to_CLK_4, CLK_4_to_CLK_8;
 
+  always @ (~reset) begin
+    CLK_2 <= 1'b0;
+    CLK_4 <= 1'b0;
+    CLK_8 <= 1'b0;
+  end
+
   always @ (posedge CLK) begin
     if (~reset) begin
       CLK_2 <= 1'b0;

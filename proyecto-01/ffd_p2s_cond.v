@@ -4,7 +4,11 @@ module ffd_p2s_cond(input CLK,
                     input valid_in,
                     output reg Q,
                     output reg valid_out
-                    );
+  );
+
+  always @ (~ENB) begin
+    Q <= 1'bz;
+  end
 
   always @ (posedge CLK) begin
     if (ENB) begin
