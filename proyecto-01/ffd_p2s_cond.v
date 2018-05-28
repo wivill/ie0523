@@ -19,7 +19,7 @@ module ffd_p2s_cond(input CLK,
     end
   end
 
-  always @ (D) begin
+  always @ (valid_in) begin
     valid_out = 1'b1;
   end
 

@@ -18,16 +18,15 @@ module tester(      output reg  [7:0]   IN_COM, IN_PAD, IN_SKP, IN_STP, IN_SDP, 
     reset = 1'b0;
     // CTR = 3'b110;
     #500
-    repeat(2) #500 CLK_2MHz = ~CLK_2MHz;
+    repeat(2) #250 CLK_2MHz = ~CLK_2MHz;
     ENB = 1'b1;
     reset = 1'b1;
-    forever #500 CLK_2MHz = ~CLK_2MHz;
+    forever #250 CLK_2MHz = ~CLK_2MHz;
   end
 
   initial begin
     @(posedge ENB)
     // repeat(8) @(posedge CLK_2MHz);
-    #1000
     IN_CTRL = 0;      // Agarra un TLP
     IN_TLP = 8'hFF;
     IN_COM = 8'h0A;
@@ -140,10 +139,10 @@ module tester(      output reg  [7:0]   IN_COM, IN_PAD, IN_SKP, IN_STP, IN_SDP, 
     IN_SDP = 8'h0A;
     IN_END = 8'h0A;
     IN_EDB = 8'h0A;
-    IN_FTS = 8'h0A;
+    IN_FTS = 8'hA8;
     IN_IDL = 8'h0A;
     #1000
-    IN_CTRL = 8;     // Agarra un FTS
+    IN_CTRL = 9;     // Agarra un IDL
     IN_TLP = 8'h0A;
     IN_COM = 8'h0A;
     IN_PAD = 8'h0A;
@@ -154,7 +153,7 @@ module tester(      output reg  [7:0]   IN_COM, IN_PAD, IN_SKP, IN_STP, IN_SDP, 
     IN_EDB = 8'h0A;
     IN_FTS = 8'h0A;
     IN_IDL = 8'hAE;
-    #500 $finish;
+    #1000 $finish;
   end
 
 endmodule

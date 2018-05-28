@@ -87,851 +87,180 @@ module byte_joining_synth_delay(Lane_0, Lane_1, Lane_2, Lane_3, ctr_3, clk250k, 
   );
 endmodule
 
-module byte_striping_synth_delay(stripedLane0, stripedLane1, stripedLane2, stripedLane3, byteStripingVLD, byteStripingIN, laneVLD, clk250k, clk1Mhz, counter, reset);
-  wire _000_;
-  wire [1:0] _001_;
-  wire [7:0] _002_;
-  wire [7:0] _003_;
-  wire [7:0] _004_;
-  wire [7:0] _005_;
-  wire _006_;
-  wire _007_;
-  wire _008_;
-  wire _009_;
-  wire _010_;
-  wire _011_;
-  wire _012_;
-  wire _013_;
-  wire _014_;
-  wire _015_;
-  wire _016_;
-  wire _017_;
-  wire _018_;
-  wire _019_;
-  wire _020_;
-  wire _021_;
-  wire _022_;
-  wire _023_;
-  wire _024_;
-  wire _025_;
-  wire _026_;
-  wire _027_;
-  wire _028_;
-  wire _029_;
-  wire _030_;
-  wire _031_;
-  wire _032_;
-  wire _033_;
-  wire _034_;
-  wire _035_;
-  wire _036_;
-  wire _037_;
-  wire _038_;
-  wire _039_;
-  wire _040_;
-  wire _041_;
-  wire _042_;
-  wire _043_;
-  wire _044_;
-  wire _045_;
-  wire _046_;
-  wire _047_;
-  wire _048_;
-  wire _049_;
-  wire _050_;
-  wire _051_;
-  wire _052_;
-  wire _053_;
-  wire _054_;
-  wire _055_;
-  wire _056_;
-  wire _057_;
-  wire _058_;
-  wire _059_;
-  wire _060_;
-  wire _061_;
-  wire _062_;
-  wire _063_;
-  wire _064_;
-  wire _065_;
-  wire _066_;
-  wire _067_;
-  wire _068_;
-  wire _069_;
-  wire _070_;
-  wire _071_;
-  wire _072_;
-  wire _073_;
-  wire _074_;
-  wire _075_;
-  wire _076_;
-  wire _077_;
-  wire _078_;
-  wire _079_;
-  wire _080_;
-  wire _081_;
-  wire _082_;
-  wire _083_;
-  wire _084_;
-  wire _085_;
-  wire _086_;
-  wire _087_;
-  wire _088_;
-  wire _089_;
-  wire _090_;
-  wire _091_;
-  wire _092_;
-  wire _093_;
-  wire _094_;
-  wire _095_;
-  wire _096_;
-  wire _097_;
-  wire _098_;
-  wire _099_;
-  wire _100_;
-  wire _101_;
-  wire _102_;
-  wire _103_;
+module byte_striping_synth_delay(stripedLane0, stripedLane1, stripedLane2, stripedLane3, byteStripingVLD, byteStripingIN, laneVLD, clk250k, clk1Mhz, counter, reset, ENB);
+  wire [7:0] _00_;
+  wire _01_;
+  wire _02_;
+  wire _03_;
+  wire _04_;
+  wire _05_;
+  wire _06_;
+  wire _07_;
+  wire _08_;
+  wire _09_;
+  wire _10_;
+  wire _11_;
+  wire _12_;
+  wire _13_;
+  wire _14_;
+  wire _15_;
+  wire _16_;
+  wire _17_;
+  input ENB;
   input [7:0] byteStripingIN;
   output byteStripingVLD;
-  reg byteStripingVLD;
   input clk1Mhz;
   input clk250k;
   output [1:0] counter;
-  reg [1:0] counter;
   input laneVLD;
   input reset;
   output [7:0] stripedLane0;
-  reg [7:0] stripedLane0;
   output [7:0] stripedLane1;
-  reg [7:0] stripedLane1;
   output [7:0] stripedLane2;
-  reg [7:0] stripedLane2;
   output [7:0] stripedLane3;
   reg [7:0] stripedLane3;
-  NOT_delay _104_ (
-    .A(reset),
-    .Y(_088_)
-  );
-  NOR_delay _105_ (
-    .A(_088_),
-    .B(counter[0]),
-    .Y(_001_[0])
-  );
-  NOT_delay _106_ (
-    .A(counter[0]),
-    .Y(_089_)
-  );
-  NOT_delay _107_ (
-    .A(counter[1]),
-    .Y(_090_)
-  );
-  NOR_delay _108_ (
-    .A(_090_),
-    .B(_089_),
-    .Y(_091_)
-  );
-  NAND_delay _109_ (
-    .A(_090_),
-    .B(_089_),
-    .Y(_092_)
-  );
-  NAND_delay _110_ (
-    .A(_092_),
-    .B(reset),
-    .Y(_093_)
-  );
-  NOR_delay _111_ (
-    .A(_093_),
-    .B(_091_),
-    .Y(_001_[1])
-  );
-  NAND_delay _112_ (
-    .A(_091_),
-    .B(laneVLD),
-    .Y(_094_)
-  );
-  NOR_delay _113_ (
-    .A(_094_),
-    .B(byteStripingIN[0]),
-    .Y(_095_)
-  );
-  NOT_delay _114_ (
+  NAND_delay _18_ (
     .A(laneVLD),
-    .Y(_096_)
-  );
-  NAND_delay _115_ (
-    .A(counter[1]),
-    .B(counter[0]),
-    .Y(_097_)
-  );
-  NOR_delay _116_ (
-    .A(_097_),
-    .B(_096_),
-    .Y(_098_)
-  );
-  NOR_delay _117_ (
-    .A(_098_),
-    .B(stripedLane3[0]),
-    .Y(_099_)
-  );
-  NOR_delay _118_ (
-    .A(_099_),
-    .B(_095_),
-    .Y(_005_[0])
-  );
-  NAND_delay _119_ (
-    .A(_094_),
-    .B(stripedLane3[1]),
-    .Y(_100_)
-  );
-  NOT_delay _120_ (
-    .A(byteStripingIN[1]),
-    .Y(_101_)
-  );
-  NOR_delay _121_ (
-    .A(_101_),
-    .B(_096_),
-    .Y(_102_)
-  );
-  NAND_delay _122_ (
-    .A(_102_),
-    .B(_091_),
-    .Y(_103_)
-  );
-  NAND_delay _123_ (
-    .A(_103_),
-    .B(_100_),
-    .Y(_005_[1])
-  );
-  NAND_delay _124_ (
-    .A(_094_),
-    .B(stripedLane3[2]),
-    .Y(_006_)
-  );
-  NOT_delay _125_ (
-    .A(byteStripingIN[2]),
-    .Y(_007_)
-  );
-  NOR_delay _126_ (
-    .A(_007_),
-    .B(_096_),
-    .Y(_008_)
-  );
-  NAND_delay _127_ (
-    .A(_008_),
-    .B(_091_),
-    .Y(_009_)
-  );
-  NAND_delay _128_ (
-    .A(_009_),
-    .B(_006_),
-    .Y(_005_[2])
-  );
-  NAND_delay _129_ (
-    .A(_094_),
-    .B(stripedLane3[3]),
-    .Y(_010_)
-  );
-  NOT_delay _130_ (
-    .A(byteStripingIN[3]),
-    .Y(_011_)
-  );
-  NOR_delay _131_ (
-    .A(_011_),
-    .B(_096_),
-    .Y(_012_)
-  );
-  NAND_delay _132_ (
-    .A(_012_),
-    .B(_091_),
-    .Y(_013_)
-  );
-  NAND_delay _133_ (
-    .A(_013_),
-    .B(_010_),
-    .Y(_005_[3])
-  );
-  NAND_delay _134_ (
-    .A(_094_),
-    .B(stripedLane3[4]),
-    .Y(_014_)
-  );
-  NOT_delay _135_ (
-    .A(byteStripingIN[4]),
-    .Y(_015_)
-  );
-  NOR_delay _136_ (
-    .A(_015_),
-    .B(_096_),
-    .Y(_016_)
-  );
-  NAND_delay _137_ (
-    .A(_016_),
-    .B(_091_),
-    .Y(_017_)
-  );
-  NAND_delay _138_ (
-    .A(_017_),
-    .B(_014_),
-    .Y(_005_[4])
-  );
-  NAND_delay _139_ (
-    .A(_094_),
-    .B(stripedLane3[5]),
-    .Y(_018_)
-  );
-  NOT_delay _140_ (
-    .A(byteStripingIN[5]),
-    .Y(_019_)
-  );
-  NOR_delay _141_ (
-    .A(_019_),
-    .B(_096_),
-    .Y(_020_)
-  );
-  NAND_delay _142_ (
-    .A(_020_),
-    .B(_091_),
-    .Y(_021_)
-  );
-  NAND_delay _143_ (
-    .A(_021_),
-    .B(_018_),
-    .Y(_005_[5])
-  );
-  NAND_delay _144_ (
-    .A(_094_),
-    .B(stripedLane3[6]),
-    .Y(_022_)
-  );
-  NOT_delay _145_ (
-    .A(byteStripingIN[6]),
-    .Y(_023_)
-  );
-  NOR_delay _146_ (
-    .A(_023_),
-    .B(_096_),
-    .Y(_024_)
-  );
-  NAND_delay _147_ (
-    .A(_024_),
-    .B(_091_),
-    .Y(_025_)
-  );
-  NAND_delay _148_ (
-    .A(_025_),
-    .B(_022_),
-    .Y(_005_[6])
-  );
-  NAND_delay _149_ (
-    .A(_094_),
-    .B(stripedLane3[7]),
-    .Y(_026_)
-  );
-  NOT_delay _150_ (
-    .A(byteStripingIN[7]),
-    .Y(_027_)
-  );
-  NOR_delay _151_ (
-    .A(_027_),
-    .B(_096_),
-    .Y(_028_)
-  );
-  NAND_delay _152_ (
-    .A(_028_),
-    .B(_091_),
-    .Y(_029_)
-  );
-  NAND_delay _153_ (
-    .A(_029_),
-    .B(_026_),
-    .Y(_005_[7])
-  );
-  NOR_delay _154_ (
-    .A(_090_),
-    .B(counter[0]),
-    .Y(_030_)
-  );
-  NAND_delay _155_ (
-    .A(_030_),
-    .B(laneVLD),
-    .Y(_031_)
-  );
-  NAND_delay _156_ (
-    .A(_031_),
-    .B(stripedLane2[0]),
-    .Y(_032_)
-  );
-  NOT_delay _157_ (
-    .A(byteStripingIN[0]),
-    .Y(_033_)
-  );
-  NOR_delay _158_ (
-    .A(_033_),
-    .B(_096_),
-    .Y(_034_)
-  );
-  NAND_delay _159_ (
-    .A(_034_),
-    .B(_030_),
-    .Y(_035_)
-  );
-  NAND_delay _160_ (
-    .A(_035_),
-    .B(_032_),
-    .Y(_004_[0])
-  );
-  NAND_delay _161_ (
-    .A(_031_),
-    .B(stripedLane2[1]),
-    .Y(_036_)
-  );
-  NAND_delay _162_ (
-    .A(_030_),
-    .B(_102_),
-    .Y(_037_)
-  );
-  NAND_delay _163_ (
-    .A(_037_),
-    .B(_036_),
-    .Y(_004_[1])
-  );
-  NAND_delay _164_ (
-    .A(_031_),
-    .B(stripedLane2[2]),
-    .Y(_038_)
-  );
-  NAND_delay _165_ (
-    .A(_030_),
-    .B(_008_),
-    .Y(_039_)
-  );
-  NAND_delay _166_ (
-    .A(_039_),
-    .B(_038_),
-    .Y(_004_[2])
-  );
-  NAND_delay _167_ (
-    .A(_031_),
-    .B(stripedLane2[3]),
-    .Y(_040_)
-  );
-  NAND_delay _168_ (
-    .A(_030_),
-    .B(_012_),
-    .Y(_041_)
-  );
-  NAND_delay _169_ (
-    .A(_041_),
-    .B(_040_),
-    .Y(_004_[3])
-  );
-  NAND_delay _170_ (
-    .A(_031_),
-    .B(stripedLane2[4]),
-    .Y(_042_)
-  );
-  NAND_delay _171_ (
-    .A(_030_),
-    .B(_016_),
-    .Y(_043_)
-  );
-  NAND_delay _172_ (
-    .A(_043_),
-    .B(_042_),
-    .Y(_004_[4])
-  );
-  NAND_delay _173_ (
-    .A(_031_),
-    .B(stripedLane2[5]),
-    .Y(_044_)
-  );
-  NAND_delay _174_ (
-    .A(_030_),
-    .B(_020_),
-    .Y(_045_)
-  );
-  NAND_delay _175_ (
-    .A(_045_),
-    .B(_044_),
-    .Y(_004_[5])
-  );
-  NAND_delay _176_ (
-    .A(_031_),
-    .B(stripedLane2[6]),
-    .Y(_046_)
-  );
-  NAND_delay _177_ (
-    .A(_030_),
-    .B(_024_),
-    .Y(_047_)
-  );
-  NAND_delay _178_ (
-    .A(_047_),
-    .B(_046_),
-    .Y(_004_[6])
-  );
-  NAND_delay _179_ (
-    .A(_031_),
-    .B(stripedLane2[7]),
-    .Y(_048_)
-  );
-  NAND_delay _180_ (
-    .A(_030_),
-    .B(_028_),
-    .Y(_049_)
-  );
-  NAND_delay _181_ (
-    .A(_049_),
-    .B(_048_),
-    .Y(_004_[7])
-  );
-  NOR_delay _182_ (
-    .A(counter[1]),
-    .B(_089_),
-    .Y(_050_)
-  );
-  NAND_delay _183_ (
-    .A(_050_),
-    .B(laneVLD),
-    .Y(_051_)
-  );
-  NAND_delay _184_ (
-    .A(_051_),
-    .B(stripedLane1[0]),
-    .Y(_052_)
-  );
-  NAND_delay _185_ (
-    .A(_050_),
-    .B(_034_),
-    .Y(_053_)
-  );
-  NAND_delay _186_ (
-    .A(_053_),
-    .B(_052_),
-    .Y(_003_[0])
-  );
-  NAND_delay _187_ (
-    .A(_051_),
-    .B(stripedLane1[1]),
-    .Y(_054_)
-  );
-  NAND_delay _188_ (
-    .A(_050_),
-    .B(_102_),
-    .Y(_055_)
-  );
-  NAND_delay _189_ (
-    .A(_055_),
-    .B(_054_),
-    .Y(_003_[1])
-  );
-  NAND_delay _190_ (
-    .A(_051_),
-    .B(stripedLane1[2]),
-    .Y(_056_)
-  );
-  NAND_delay _191_ (
-    .A(_050_),
-    .B(_008_),
-    .Y(_057_)
-  );
-  NAND_delay _192_ (
-    .A(_057_),
-    .B(_056_),
-    .Y(_003_[2])
-  );
-  NAND_delay _193_ (
-    .A(_051_),
-    .B(stripedLane1[3]),
-    .Y(_058_)
-  );
-  NAND_delay _194_ (
-    .A(_050_),
-    .B(_012_),
-    .Y(_059_)
-  );
-  NAND_delay _195_ (
-    .A(_059_),
-    .B(_058_),
-    .Y(_003_[3])
-  );
-  NAND_delay _196_ (
-    .A(_051_),
-    .B(stripedLane1[4]),
-    .Y(_060_)
-  );
-  NAND_delay _197_ (
-    .A(_050_),
-    .B(_016_),
-    .Y(_061_)
-  );
-  NAND_delay _198_ (
-    .A(_061_),
-    .B(_060_),
-    .Y(_003_[4])
-  );
-  NAND_delay _199_ (
-    .A(_051_),
-    .B(stripedLane1[5]),
-    .Y(_062_)
-  );
-  NAND_delay _200_ (
-    .A(_050_),
-    .B(_020_),
-    .Y(_063_)
-  );
-  NAND_delay _201_ (
-    .A(_063_),
-    .B(_062_),
-    .Y(_003_[5])
-  );
-  NAND_delay _202_ (
-    .A(_051_),
-    .B(stripedLane1[6]),
-    .Y(_064_)
-  );
-  NAND_delay _203_ (
-    .A(_050_),
-    .B(_024_),
-    .Y(_065_)
-  );
-  NAND_delay _204_ (
-    .A(_065_),
-    .B(_064_),
-    .Y(_003_[6])
-  );
-  NAND_delay _205_ (
-    .A(_051_),
-    .B(stripedLane1[7]),
-    .Y(_066_)
-  );
-  NAND_delay _206_ (
-    .A(_050_),
-    .B(_028_),
-    .Y(_067_)
-  );
-  NAND_delay _207_ (
-    .A(_067_),
-    .B(_066_),
-    .Y(_003_[7])
-  );
-  NOR_delay _208_ (
-    .A(counter[1]),
-    .B(counter[0]),
-    .Y(_068_)
-  );
-  NAND_delay _209_ (
-    .A(_068_),
-    .B(laneVLD),
-    .Y(_069_)
-  );
-  NOR_delay _210_ (
-    .A(_069_),
     .B(byteStripingIN[0]),
-    .Y(_070_)
+    .Y(_01_)
   );
-  NOR_delay _211_ (
-    .A(_092_),
-    .B(_096_),
-    .Y(_071_)
+  NOT_delay _19_ (
+    .A(laneVLD),
+    .Y(_02_)
   );
-  NOR_delay _212_ (
-    .A(_071_),
-    .B(stripedLane0[0]),
-    .Y(_072_)
+  NAND_delay _20_ (
+    .A(_02_),
+    .B(stripedLane3[0]),
+    .Y(_03_)
   );
-  NOR_delay _213_ (
-    .A(_072_),
-    .B(_070_),
-    .Y(_002_[0])
+  NAND_delay _21_ (
+    .A(_03_),
+    .B(_01_),
+    .Y(_00_[0])
   );
-  NAND_delay _214_ (
-    .A(_069_),
-    .B(stripedLane0[1]),
-    .Y(_073_)
+  NAND_delay _22_ (
+    .A(byteStripingIN[1]),
+    .B(laneVLD),
+    .Y(_04_)
   );
-  NAND_delay _215_ (
-    .A(_102_),
-    .B(_068_),
-    .Y(_074_)
+  NAND_delay _23_ (
+    .A(stripedLane3[1]),
+    .B(_02_),
+    .Y(_05_)
   );
-  NAND_delay _216_ (
-    .A(_074_),
-    .B(_073_),
-    .Y(_002_[1])
+  NAND_delay _24_ (
+    .A(_05_),
+    .B(_04_),
+    .Y(_00_[1])
   );
-  NAND_delay _217_ (
-    .A(_069_),
-    .B(stripedLane0[2]),
-    .Y(_075_)
+  NAND_delay _25_ (
+    .A(byteStripingIN[2]),
+    .B(laneVLD),
+    .Y(_06_)
   );
-  NAND_delay _218_ (
-    .A(_008_),
-    .B(_068_),
-    .Y(_076_)
+  NAND_delay _26_ (
+    .A(stripedLane3[2]),
+    .B(_02_),
+    .Y(_07_)
   );
-  NAND_delay _219_ (
-    .A(_076_),
-    .B(_075_),
-    .Y(_002_[2])
+  NAND_delay _27_ (
+    .A(_07_),
+    .B(_06_),
+    .Y(_00_[2])
   );
-  NAND_delay _220_ (
-    .A(_069_),
-    .B(stripedLane0[3]),
-    .Y(_077_)
+  NAND_delay _28_ (
+    .A(byteStripingIN[3]),
+    .B(laneVLD),
+    .Y(_08_)
   );
-  NAND_delay _221_ (
-    .A(_012_),
-    .B(_068_),
-    .Y(_078_)
+  NAND_delay _29_ (
+    .A(stripedLane3[3]),
+    .B(_02_),
+    .Y(_09_)
   );
-  NAND_delay _222_ (
-    .A(_078_),
-    .B(_077_),
-    .Y(_002_[3])
+  NAND_delay _30_ (
+    .A(_09_),
+    .B(_08_),
+    .Y(_00_[3])
   );
-  NAND_delay _223_ (
-    .A(_069_),
-    .B(stripedLane0[4]),
-    .Y(_079_)
+  NAND_delay _31_ (
+    .A(byteStripingIN[4]),
+    .B(laneVLD),
+    .Y(_10_)
   );
-  NAND_delay _224_ (
-    .A(_016_),
-    .B(_068_),
-    .Y(_080_)
+  NAND_delay _32_ (
+    .A(stripedLane3[4]),
+    .B(_02_),
+    .Y(_11_)
   );
-  NAND_delay _225_ (
-    .A(_080_),
-    .B(_079_),
-    .Y(_002_[4])
+  NAND_delay _33_ (
+    .A(_11_),
+    .B(_10_),
+    .Y(_00_[4])
   );
-  NAND_delay _226_ (
-    .A(_069_),
-    .B(stripedLane0[5]),
-    .Y(_081_)
+  NAND_delay _34_ (
+    .A(byteStripingIN[5]),
+    .B(laneVLD),
+    .Y(_12_)
   );
-  NAND_delay _227_ (
-    .A(_020_),
-    .B(_068_),
-    .Y(_082_)
+  NAND_delay _35_ (
+    .A(stripedLane3[5]),
+    .B(_02_),
+    .Y(_13_)
   );
-  NAND_delay _228_ (
-    .A(_082_),
-    .B(_081_),
-    .Y(_002_[5])
+  NAND_delay _36_ (
+    .A(_13_),
+    .B(_12_),
+    .Y(_00_[5])
   );
-  NAND_delay _229_ (
-    .A(_069_),
-    .B(stripedLane0[6]),
-    .Y(_083_)
+  NAND_delay _37_ (
+    .A(byteStripingIN[6]),
+    .B(laneVLD),
+    .Y(_14_)
   );
-  NAND_delay _230_ (
-    .A(_024_),
-    .B(_068_),
-    .Y(_084_)
+  NAND_delay _38_ (
+    .A(stripedLane3[6]),
+    .B(_02_),
+    .Y(_15_)
   );
-  NAND_delay _231_ (
-    .A(_084_),
-    .B(_083_),
-    .Y(_002_[6])
+  NAND_delay _39_ (
+    .A(_15_),
+    .B(_14_),
+    .Y(_00_[6])
   );
-  NAND_delay _232_ (
-    .A(_069_),
-    .B(stripedLane0[7]),
-    .Y(_085_)
+  NAND_delay _40_ (
+    .A(byteStripingIN[7]),
+    .B(laneVLD),
+    .Y(_16_)
   );
-  NAND_delay _233_ (
-    .A(_028_),
-    .B(_068_),
-    .Y(_086_)
+  NAND_delay _41_ (
+    .A(stripedLane3[7]),
+    .B(_02_),
+    .Y(_17_)
   );
-  NAND_delay _234_ (
-    .A(_086_),
-    .B(_085_),
-    .Y(_002_[7])
-  );
-  NAND_delay _235_ (
-    .A(_096_),
-    .B(byteStripingVLD),
-    .Y(_087_)
-  );
-  NAND_delay _236_ (
-    .A(_087_),
-    .B(_094_),
-    .Y(_000_)
+  NAND_delay _42_ (
+    .A(_17_),
+    .B(_16_),
+    .Y(_00_[7])
   );
   always @(posedge clk1Mhz)
-      stripedLane0[0] <= #15  _002_[0];
+      stripedLane3[0] <= #15  _00_[0];
   always @(posedge clk1Mhz)
-      stripedLane0[1] <= #15  _002_[1];
+      stripedLane3[1] <= #15  _00_[1];
   always @(posedge clk1Mhz)
-      stripedLane0[2] <= #15  _002_[2];
+      stripedLane3[2] <= #15  _00_[2];
   always @(posedge clk1Mhz)
-      stripedLane0[3] <= #15  _002_[3];
+      stripedLane3[3] <= #15  _00_[3];
   always @(posedge clk1Mhz)
-      stripedLane0[4] <= #15  _002_[4];
+      stripedLane3[4] <= #15  _00_[4];
   always @(posedge clk1Mhz)
-      stripedLane0[5] <= #15  _002_[5];
+      stripedLane3[5] <= #15  _00_[5];
   always @(posedge clk1Mhz)
-      stripedLane0[6] <= #15  _002_[6];
+      stripedLane3[6] <= #15  _00_[6];
   always @(posedge clk1Mhz)
-      stripedLane0[7] <= #15  _002_[7];
-  always @(posedge clk1Mhz)
-      stripedLane1[0] <= #15  _003_[0];
-  always @(posedge clk1Mhz)
-      stripedLane1[1] <= #15  _003_[1];
-  always @(posedge clk1Mhz)
-      stripedLane1[2] <= #15  _003_[2];
-  always @(posedge clk1Mhz)
-      stripedLane1[3] <= #15  _003_[3];
-  always @(posedge clk1Mhz)
-      stripedLane1[4] <= #15  _003_[4];
-  always @(posedge clk1Mhz)
-      stripedLane1[5] <= #15  _003_[5];
-  always @(posedge clk1Mhz)
-      stripedLane1[6] <= #15  _003_[6];
-  always @(posedge clk1Mhz)
-      stripedLane1[7] <= #15  _003_[7];
-  always @(posedge clk1Mhz)
-      stripedLane2[0] <= #15  _004_[0];
-  always @(posedge clk1Mhz)
-      stripedLane2[1] <= #15  _004_[1];
-  always @(posedge clk1Mhz)
-      stripedLane2[2] <= #15  _004_[2];
-  always @(posedge clk1Mhz)
-      stripedLane2[3] <= #15  _004_[3];
-  always @(posedge clk1Mhz)
-      stripedLane2[4] <= #15  _004_[4];
-  always @(posedge clk1Mhz)
-      stripedLane2[5] <= #15  _004_[5];
-  always @(posedge clk1Mhz)
-      stripedLane2[6] <= #15  _004_[6];
-  always @(posedge clk1Mhz)
-      stripedLane2[7] <= #15  _004_[7];
-  always @(posedge clk1Mhz)
-      stripedLane3[0] <= #15  _005_[0];
-  always @(posedge clk1Mhz)
-      stripedLane3[1] <= #15  _005_[1];
-  always @(posedge clk1Mhz)
-      stripedLane3[2] <= #15  _005_[2];
-  always @(posedge clk1Mhz)
-      stripedLane3[3] <= #15  _005_[3];
-  always @(posedge clk1Mhz)
-      stripedLane3[4] <= #15  _005_[4];
-  always @(posedge clk1Mhz)
-      stripedLane3[5] <= #15  _005_[5];
-  always @(posedge clk1Mhz)
-      stripedLane3[6] <= #15  _005_[6];
-  always @(posedge clk1Mhz)
-      stripedLane3[7] <= #15  _005_[7];
-  always @(posedge clk1Mhz)
-      byteStripingVLD <= #15  _000_;
-  always @(posedge clk1Mhz)
-      counter[0] <= #15  _001_[0];
-  always @(posedge clk1Mhz)
-      counter[1] <= #15  _001_[1];
+      stripedLane3[7] <= #15  _00_[7];
+  assign byteStripingVLD = 1'b1;
+  assign counter = 2'b11;
 endmodule
 
 module ctr3_synth_delay(CLK, reset, CTR);
@@ -954,8 +283,8 @@ module ctr3_synth_delay(CLK, reset, CTR);
     .Y(_02_)
   );
   NAND_delay _07_ (
-    .A(_02_),
-    .B(CTR[0]),
+    .A(CTR[0]),
+    .B(_02_),
     .Y(_03_)
   );
   NAND_delay _08_ (
@@ -3273,217 +2602,217 @@ module p2s_synth_delay(IN_CLK_p2s, IN_LANE3_p2s, IN_LANE2_p2s, IN_LANE1_p2s, IN_
     .D(IN_LANE0_p2s[0]),
     .ENB(IN_ENB_p2s),
     .Q(Q0_p2s[0]),
-    .valid_in(valid_ffd)
+    .valid_in(IN_VALID_BS)
   );
   ffd_p2s_synth_delay \ffd_lane0[1]  (
     .CLK(IN_CLK_p2s),
     .D(IN_LANE0_p2s[1]),
     .ENB(IN_ENB_p2s),
     .Q(Q0_p2s[1]),
-    .valid_in(valid_ffd)
+    .valid_in(IN_VALID_BS)
   );
   ffd_p2s_synth_delay \ffd_lane0[2]  (
     .CLK(IN_CLK_p2s),
     .D(IN_LANE0_p2s[2]),
     .ENB(IN_ENB_p2s),
     .Q(Q0_p2s[2]),
-    .valid_in(valid_ffd)
+    .valid_in(IN_VALID_BS)
   );
   ffd_p2s_synth_delay \ffd_lane0[3]  (
     .CLK(IN_CLK_p2s),
     .D(IN_LANE0_p2s[3]),
     .ENB(IN_ENB_p2s),
     .Q(Q0_p2s[3]),
-    .valid_in(valid_ffd)
+    .valid_in(IN_VALID_BS)
   );
   ffd_p2s_synth_delay \ffd_lane0[4]  (
     .CLK(IN_CLK_p2s),
     .D(IN_LANE0_p2s[4]),
     .ENB(IN_ENB_p2s),
     .Q(Q0_p2s[4]),
-    .valid_in(valid_ffd)
+    .valid_in(IN_VALID_BS)
   );
   ffd_p2s_synth_delay \ffd_lane0[5]  (
     .CLK(IN_CLK_p2s),
     .D(IN_LANE0_p2s[5]),
     .ENB(IN_ENB_p2s),
     .Q(Q0_p2s[5]),
-    .valid_in(valid_ffd)
+    .valid_in(IN_VALID_BS)
   );
   ffd_p2s_synth_delay \ffd_lane0[6]  (
     .CLK(IN_CLK_p2s),
     .D(IN_LANE0_p2s[6]),
     .ENB(IN_ENB_p2s),
     .Q(Q0_p2s[6]),
-    .valid_in(valid_ffd)
+    .valid_in(IN_VALID_BS)
   );
   ffd_p2s_synth_delay \ffd_lane0[7]  (
     .CLK(IN_CLK_p2s),
     .D(IN_LANE0_p2s[7]),
     .ENB(IN_ENB_p2s),
     .Q(Q0_p2s[7]),
-    .valid_in(valid_ffd)
+    .valid_in(IN_VALID_BS)
   );
   ffd_p2s_synth_delay \ffd_lane1[0]  (
     .CLK(IN_CLK_p2s),
     .D(IN_LANE1_p2s[0]),
     .ENB(IN_ENB_p2s),
     .Q(Q1_p2s[0]),
-    .valid_in(valid_ffd)
+    .valid_in(IN_VALID_BS)
   );
   ffd_p2s_synth_delay \ffd_lane1[1]  (
     .CLK(IN_CLK_p2s),
     .D(IN_LANE1_p2s[1]),
     .ENB(IN_ENB_p2s),
     .Q(Q1_p2s[1]),
-    .valid_in(valid_ffd)
+    .valid_in(IN_VALID_BS)
   );
   ffd_p2s_synth_delay \ffd_lane1[2]  (
     .CLK(IN_CLK_p2s),
     .D(IN_LANE1_p2s[2]),
     .ENB(IN_ENB_p2s),
     .Q(Q1_p2s[2]),
-    .valid_in(valid_ffd)
+    .valid_in(IN_VALID_BS)
   );
   ffd_p2s_synth_delay \ffd_lane1[3]  (
     .CLK(IN_CLK_p2s),
     .D(IN_LANE1_p2s[3]),
     .ENB(IN_ENB_p2s),
     .Q(Q1_p2s[3]),
-    .valid_in(valid_ffd)
+    .valid_in(IN_VALID_BS)
   );
   ffd_p2s_synth_delay \ffd_lane1[4]  (
     .CLK(IN_CLK_p2s),
     .D(IN_LANE1_p2s[4]),
     .ENB(IN_ENB_p2s),
     .Q(Q1_p2s[4]),
-    .valid_in(valid_ffd)
+    .valid_in(IN_VALID_BS)
   );
   ffd_p2s_synth_delay \ffd_lane1[5]  (
     .CLK(IN_CLK_p2s),
     .D(IN_LANE1_p2s[5]),
     .ENB(IN_ENB_p2s),
     .Q(Q1_p2s[5]),
-    .valid_in(valid_ffd)
+    .valid_in(IN_VALID_BS)
   );
   ffd_p2s_synth_delay \ffd_lane1[6]  (
     .CLK(IN_CLK_p2s),
     .D(IN_LANE1_p2s[6]),
     .ENB(IN_ENB_p2s),
     .Q(Q1_p2s[6]),
-    .valid_in(valid_ffd)
+    .valid_in(IN_VALID_BS)
   );
   ffd_p2s_synth_delay \ffd_lane1[7]  (
     .CLK(IN_CLK_p2s),
     .D(IN_LANE1_p2s[7]),
     .ENB(IN_ENB_p2s),
     .Q(Q1_p2s[7]),
-    .valid_in(valid_ffd)
+    .valid_in(IN_VALID_BS)
   );
   ffd_p2s_synth_delay \ffd_lane2[0]  (
     .CLK(IN_CLK_p2s),
     .D(IN_LANE2_p2s[0]),
     .ENB(IN_ENB_p2s),
     .Q(Q2_p2s[0]),
-    .valid_in(valid_ffd)
+    .valid_in(IN_VALID_BS)
   );
   ffd_p2s_synth_delay \ffd_lane2[1]  (
     .CLK(IN_CLK_p2s),
     .D(IN_LANE2_p2s[1]),
     .ENB(IN_ENB_p2s),
     .Q(Q2_p2s[1]),
-    .valid_in(valid_ffd)
+    .valid_in(IN_VALID_BS)
   );
   ffd_p2s_synth_delay \ffd_lane2[2]  (
     .CLK(IN_CLK_p2s),
     .D(IN_LANE2_p2s[2]),
     .ENB(IN_ENB_p2s),
     .Q(Q2_p2s[2]),
-    .valid_in(valid_ffd)
+    .valid_in(IN_VALID_BS)
   );
   ffd_p2s_synth_delay \ffd_lane2[3]  (
     .CLK(IN_CLK_p2s),
     .D(IN_LANE2_p2s[3]),
     .ENB(IN_ENB_p2s),
     .Q(Q2_p2s[3]),
-    .valid_in(valid_ffd)
+    .valid_in(IN_VALID_BS)
   );
   ffd_p2s_synth_delay \ffd_lane2[4]  (
     .CLK(IN_CLK_p2s),
     .D(IN_LANE2_p2s[4]),
     .ENB(IN_ENB_p2s),
     .Q(Q2_p2s[4]),
-    .valid_in(valid_ffd)
+    .valid_in(IN_VALID_BS)
   );
   ffd_p2s_synth_delay \ffd_lane2[5]  (
     .CLK(IN_CLK_p2s),
     .D(IN_LANE2_p2s[5]),
     .ENB(IN_ENB_p2s),
     .Q(Q2_p2s[5]),
-    .valid_in(valid_ffd)
+    .valid_in(IN_VALID_BS)
   );
   ffd_p2s_synth_delay \ffd_lane2[6]  (
     .CLK(IN_CLK_p2s),
     .D(IN_LANE2_p2s[6]),
     .ENB(IN_ENB_p2s),
     .Q(Q2_p2s[6]),
-    .valid_in(valid_ffd)
+    .valid_in(IN_VALID_BS)
   );
   ffd_p2s_synth_delay \ffd_lane2[7]  (
     .CLK(IN_CLK_p2s),
     .D(IN_LANE2_p2s[7]),
     .ENB(IN_ENB_p2s),
     .Q(Q2_p2s[7]),
-    .valid_in(valid_ffd)
+    .valid_in(IN_VALID_BS)
   );
   ffd_p2s_synth_delay \ffd_lane3[0]  (
     .CLK(IN_CLK_p2s),
     .D(IN_LANE3_p2s[0]),
     .ENB(IN_ENB_p2s),
     .Q(Q3_p2s[0]),
-    .valid_in(valid_ffd)
+    .valid_in(IN_VALID_BS)
   );
   ffd_p2s_synth_delay \ffd_lane3[1]  (
     .CLK(IN_CLK_p2s),
     .D(IN_LANE3_p2s[1]),
     .ENB(IN_ENB_p2s),
     .Q(Q3_p2s[1]),
-    .valid_in(valid_ffd)
+    .valid_in(IN_VALID_BS)
   );
   ffd_p2s_synth_delay \ffd_lane3[2]  (
     .CLK(IN_CLK_p2s),
     .D(IN_LANE3_p2s[2]),
     .ENB(IN_ENB_p2s),
     .Q(Q3_p2s[2]),
-    .valid_in(valid_ffd)
+    .valid_in(IN_VALID_BS)
   );
   ffd_p2s_synth_delay \ffd_lane3[3]  (
     .CLK(IN_CLK_p2s),
     .D(IN_LANE3_p2s[3]),
     .ENB(IN_ENB_p2s),
     .Q(Q3_p2s[3]),
-    .valid_in(valid_ffd)
+    .valid_in(IN_VALID_BS)
   );
   ffd_p2s_synth_delay \ffd_lane3[4]  (
     .CLK(IN_CLK_p2s),
     .D(IN_LANE3_p2s[4]),
     .ENB(IN_ENB_p2s),
     .Q(Q3_p2s[4]),
-    .valid_in(valid_ffd)
+    .valid_in(IN_VALID_BS)
   );
   ffd_p2s_synth_delay \ffd_lane3[5]  (
     .CLK(IN_CLK_p2s),
     .D(IN_LANE3_p2s[5]),
     .ENB(IN_ENB_p2s),
     .Q(Q3_p2s[5]),
-    .valid_in(valid_ffd)
+    .valid_in(IN_VALID_BS)
   );
   ffd_p2s_synth_delay \ffd_lane3[6]  (
     .CLK(IN_CLK_p2s),
     .D(IN_LANE3_p2s[6]),
     .ENB(IN_ENB_p2s),
     .Q(Q3_p2s[6]),
-    .valid_in(valid_ffd)
+    .valid_in(IN_VALID_BS)
   );
   ffd_p2s_synth_delay ffd_valid (
     .CLK(IN_CLK_p2s),

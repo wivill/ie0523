@@ -1,16 +1,17 @@
 [*]
 [*] GTKWave Analyzer v3.3.89 (w)1999-2018 BSI
-[*] Sun May 27 23:36:23 2018
+[*] Mon May 28 01:02:46 2018
 [*]
 [dumpfile] "/home/wivill/git/ie0523/proyecto-01/pcie.vcd"
-[dumpfile_mtime] "Sun May 27 23:31:12 2018"
-[dumpfile_size] 374644
+[dumpfile_mtime] "Mon May 28 00:53:37 2018"
+[dumpfile_size] 351134
 [savefile] "/home/wivill/git/ie0523/proyecto-01/pcie.sav"
 [timestart] 0
 [size] 1366 697
-[pos] -44 -44
-*-21.234091 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[pos] -1 -1
+*-21.108561 3260000 1250000 1000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] testbench.
+[treeopen] testbench.cond.
 [sst_width] 213
 [signals_width] 140
 [sst_expanded] 1
@@ -21,20 +22,14 @@ testbench.cond.CLK_1MHz
 testbench.cond.CLK_500KHz
 testbench.cond.CLK_250KHz
 @22
-testbench.cond.OUT_DATA[7:0]
-testbench.cond.IN_COM[7:0]
-testbench.cond.IN_EDB[7:0]
-testbench.cond.S2P_LANE0[7:0]
+testbench.cond.MUX_BS[7:0]
 @28
 testbench.cond.BS_VALID
 @22
-testbench.cond.BJ_OUT[7:0]
-testbench.cond.BS_LANE0[7:0]
-testbench.cond.MUX_BS[7:0]
-@28
-testbench.cond.MUX_VALID
-testbench.cond.BS_VALID
+testbench.cond.tx_rx_cond.IN_LANE0[7:0]
+testbench.cond.tx_rx_cond.IN_LANE1[7:0]
+testbench.cond.tx_rx_cond.IN_LANE2[7:0]
 @23
-testbench.cond.BS_LANE0[7:0]
+testbench.cond.tx_rx_cond.IN_LANE3[7:0]
 [pattern_trace] 1
 [pattern_trace] 0

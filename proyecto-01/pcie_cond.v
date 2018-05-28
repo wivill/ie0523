@@ -54,7 +54,9 @@ module pcie_cond( input [7:0]   IN_COM, IN_PAD, IN_SKP, IN_STP, IN_SDP, IN_END, 
                                   .laneVLD        (MUX_VALID),
                                   .clk250k        (CLK_250KHz),
                                   .clk1Mhz        (CLK_1MHz),
-                                  .reset          (IN_RESET_CLK)
+                                  // .clk2Mhz        (IN_CLK_2MHz),
+                                  .reset          (IN_RESET_CLK),
+                                  .ENB            (IN_ENB_TX_RX)
   );
 
   wire [7:0]  S2P_LANE3, S2P_LANE2, S2P_LANE1, S2P_LANE0;
