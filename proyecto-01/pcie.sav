@@ -1,19 +1,21 @@
 [*]
 [*] GTKWave Analyzer v3.3.89 (w)1999-2018 BSI
-[*] Mon May 28 01:02:46 2018
+[*] Mon May 28 01:28:30 2018
 [*]
 [dumpfile] "/home/wivill/git/ie0523/proyecto-01/pcie.vcd"
-[dumpfile_mtime] "Mon May 28 00:53:37 2018"
-[dumpfile_size] 351134
+[dumpfile_mtime] "Mon May 28 01:21:37 2018"
+[dumpfile_size] 348181
 [savefile] "/home/wivill/git/ie0523/proyecto-01/pcie.sav"
 [timestart] 0
 [size] 1366 697
 [pos] -1 -1
-*-21.108561 3260000 1250000 1000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-21.108561 2970000 1250000 1000000 9750000 5750000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] testbench.
 [treeopen] testbench.cond.
+[treeopen] testbench.cond.tx_rx_cond.
+[treeopen] testbench.cond.tx_rx_cond.low_tx_cond.
 [sst_width] 213
-[signals_width] 140
+[signals_width] 151
 [sst_expanded] 1
 [sst_vpaned_height] 187
 @28
@@ -25,11 +27,53 @@ testbench.cond.CLK_250KHz
 testbench.cond.MUX_BS[7:0]
 @28
 testbench.cond.BS_VALID
+@c00022
+testbench.cond.tx_rx_cond.low_tx_cond.Q0_p2s[7:0]
+@28
+(0)testbench.cond.tx_rx_cond.low_tx_cond.Q0_p2s[7:0]
+(1)testbench.cond.tx_rx_cond.low_tx_cond.Q0_p2s[7:0]
+(2)testbench.cond.tx_rx_cond.low_tx_cond.Q0_p2s[7:0]
+(3)testbench.cond.tx_rx_cond.low_tx_cond.Q0_p2s[7:0]
+(4)testbench.cond.tx_rx_cond.low_tx_cond.Q0_p2s[7:0]
+(5)testbench.cond.tx_rx_cond.low_tx_cond.Q0_p2s[7:0]
+(6)testbench.cond.tx_rx_cond.low_tx_cond.Q0_p2s[7:0]
+(7)testbench.cond.tx_rx_cond.low_tx_cond.Q0_p2s[7:0]
+@1401200
+-group_end
+@c00022
+testbench.cond.tx_rx_cond.low_tx_cond.Q1_p2s[7:0]
+@28
+(0)testbench.cond.tx_rx_cond.low_tx_cond.Q1_p2s[7:0]
+(1)testbench.cond.tx_rx_cond.low_tx_cond.Q1_p2s[7:0]
+(2)testbench.cond.tx_rx_cond.low_tx_cond.Q1_p2s[7:0]
+(3)testbench.cond.tx_rx_cond.low_tx_cond.Q1_p2s[7:0]
+(4)testbench.cond.tx_rx_cond.low_tx_cond.Q1_p2s[7:0]
+(5)testbench.cond.tx_rx_cond.low_tx_cond.Q1_p2s[7:0]
+(6)testbench.cond.tx_rx_cond.low_tx_cond.Q1_p2s[7:0]
+(7)testbench.cond.tx_rx_cond.low_tx_cond.Q1_p2s[7:0]
+@1401200
+-group_end
 @22
-testbench.cond.tx_rx_cond.IN_LANE0[7:0]
-testbench.cond.tx_rx_cond.IN_LANE1[7:0]
-testbench.cond.tx_rx_cond.IN_LANE2[7:0]
+testbench.cond.tx_rx_cond.low_tx_cond.Q2_p2s[7:0]
+@c00022
+testbench.cond.tx_rx_cond.low_tx_cond.Q3_p2s[7:0]
+@28
+(0)testbench.cond.tx_rx_cond.low_tx_cond.Q3_p2s[7:0]
+(1)testbench.cond.tx_rx_cond.low_tx_cond.Q3_p2s[7:0]
+(2)testbench.cond.tx_rx_cond.low_tx_cond.Q3_p2s[7:0]
+(3)testbench.cond.tx_rx_cond.low_tx_cond.Q3_p2s[7:0]
+(4)testbench.cond.tx_rx_cond.low_tx_cond.Q3_p2s[7:0]
+(5)testbench.cond.tx_rx_cond.low_tx_cond.Q3_p2s[7:0]
+(6)testbench.cond.tx_rx_cond.low_tx_cond.Q3_p2s[7:0]
+(7)testbench.cond.tx_rx_cond.low_tx_cond.Q3_p2s[7:0]
+@1401200
+-group_end
+@22
+testbench.cond.tx_rx_cond.low_rx_cond.IN_LANE_s2p[3:0]
+testbench.cond.tx_rx_cond.low_rx_cond.P0_cond_s2p[7:0]
+testbench.cond.tx_rx_cond.low_rx_cond.P1_cond_s2p[7:0]
+testbench.cond.tx_rx_cond.low_rx_cond.P2_cond_s2p[7:0]
 @23
-testbench.cond.tx_rx_cond.IN_LANE3[7:0]
+testbench.cond.tx_rx_cond.low_rx_cond.P3_cond_s2p[7:0]
 [pattern_trace] 1
 [pattern_trace] 0

@@ -283,8 +283,8 @@ module ctr3_synth_delay(CLK, reset, CTR);
     .Y(_02_)
   );
   NAND_delay _07_ (
-    .A(CTR[0]),
-    .B(_02_),
+    .A(_02_),
+    .B(CTR[0]),
     .Y(_03_)
   );
   NAND_delay _08_ (
@@ -2019,11 +2019,11 @@ module mux4a1_synth_delay(In0, In1, In2, In3, Sel, outmux);
     .Y(outmux[1])
   );
   NOT_delay _114_ (
-    .A(In1[2]),
+    .A(In3[2]),
     .Y(_059_)
   );
   NOR_delay _115_ (
-    .A(_043_),
+    .A(_046_),
     .B(_059_),
     .Y(_060_)
   );
@@ -2042,20 +2042,20 @@ module mux4a1_synth_delay(In0, In1, In2, In3, Sel, outmux);
     .Y(_063_)
   );
   NOT_delay _119_ (
-    .A(In3[2]),
+    .A(In0[2]),
     .Y(_064_)
   );
   NOR_delay _120_ (
-    .A(_046_),
+    .A(_039_),
     .B(_064_),
     .Y(_065_)
   );
   NOT_delay _121_ (
-    .A(In0[2]),
+    .A(In1[2]),
     .Y(_066_)
   );
   NOR_delay _122_ (
-    .A(_039_),
+    .A(_043_),
     .B(_066_),
     .Y(_067_)
   );
@@ -2121,11 +2121,11 @@ module mux4a1_synth_delay(In0, In1, In2, In3, Sel, outmux);
     .Y(outmux[3])
   );
   NOT_delay _136_ (
-    .A(In1[4]),
+    .A(In0[4]),
     .Y(_079_)
   );
   NOR_delay _137_ (
-    .A(_043_),
+    .A(_039_),
     .B(_079_),
     .Y(_080_)
   );
@@ -2153,11 +2153,11 @@ module mux4a1_synth_delay(In0, In1, In2, In3, Sel, outmux);
     .Y(_085_)
   );
   NOT_delay _143_ (
-    .A(In0[4]),
+    .A(In1[4]),
     .Y(_000_)
   );
   NOR_delay _144_ (
-    .A(_039_),
+    .A(_043_),
     .B(_000_),
     .Y(_001_)
   );
@@ -2223,11 +2223,11 @@ module mux4a1_synth_delay(In0, In1, In2, In3, Sel, outmux);
     .Y(outmux[5])
   );
   NOT_delay _158_ (
-    .A(In0[6]),
+    .A(In1[6]),
     .Y(_013_)
   );
   NOR_delay _159_ (
-    .A(_039_),
+    .A(_043_),
     .B(_013_),
     .Y(_014_)
   );
@@ -2255,11 +2255,11 @@ module mux4a1_synth_delay(In0, In1, In2, In3, Sel, outmux);
     .Y(_019_)
   );
   NOT_delay _165_ (
-    .A(In1[6]),
+    .A(In0[6]),
     .Y(_020_)
   );
   NOR_delay _166_ (
-    .A(_043_),
+    .A(_039_),
     .B(_020_),
     .Y(_021_)
   );
@@ -2327,113 +2327,11 @@ module mux4a1_synth_delay(In0, In1, In2, In3, Sel, outmux);
 endmodule
 
 module mux_ctr_synth_delay(valid_count, CLK, reset, CTR);
-  wire [2:0] _00_;
-  wire _01_;
-  wire _02_;
-  wire _03_;
-  wire _04_;
-  wire _05_;
-  wire _06_;
-  wire _07_;
-  wire _08_;
-  wire _09_;
-  wire _10_;
-  wire _11_;
-  wire _12_;
-  wire _13_;
-  wire _14_;
   input CLK;
   output [2:0] CTR;
-  reg [2:0] CTR;
   input reset;
   input valid_count;
-  NAND_delay _15_ (
-    .A(valid_count),
-    .B(CTR[0]),
-    .Y(_14_)
-  );
-  NOT_delay _16_ (
-    .A(CTR[0]),
-    .Y(_01_)
-  );
-  NOT_delay _17_ (
-    .A(valid_count),
-    .Y(_02_)
-  );
-  NAND_delay _18_ (
-    .A(_02_),
-    .B(_01_),
-    .Y(_03_)
-  );
-  NAND_delay _19_ (
-    .A(_03_),
-    .B(_14_),
-    .Y(_04_)
-  );
-  NAND_delay _20_ (
-    .A(_04_),
-    .B(reset),
-    .Y(_00_[0])
-  );
-  NOR_delay _21_ (
-    .A(_02_),
-    .B(_01_),
-    .Y(_05_)
-  );
-  NAND_delay _22_ (
-    .A(_05_),
-    .B(CTR[1]),
-    .Y(_06_)
-  );
-  NOT_delay _23_ (
-    .A(CTR[1]),
-    .Y(_07_)
-  );
-  NAND_delay _24_ (
-    .A(_14_),
-    .B(_07_),
-    .Y(_08_)
-  );
-  NAND_delay _25_ (
-    .A(_08_),
-    .B(_06_),
-    .Y(_09_)
-  );
-  NAND_delay _26_ (
-    .A(_09_),
-    .B(reset),
-    .Y(_00_[1])
-  );
-  NAND_delay _27_ (
-    .A(_06_),
-    .B(CTR[2]),
-    .Y(_10_)
-  );
-  NOT_delay _28_ (
-    .A(reset),
-    .Y(_11_)
-  );
-  NOR_delay _29_ (
-    .A(_06_),
-    .B(CTR[2]),
-    .Y(_12_)
-  );
-  NOR_delay _30_ (
-    .A(_12_),
-    .B(_11_),
-    .Y(_13_)
-  );
-  NAND_delay _31_ (
-    .A(_13_),
-    .B(_10_),
-    .Y(_00_[2])
-  );
-  always @(posedge CLK)
-      CTR[0] <= #15  _00_[0];
-  always @(posedge CLK)
-      CTR[1] <= #15  _00_[1];
-  always @(posedge CLK)
-      CTR[2] <= #15  _00_[2];
+  assign CTR = 3'b111;
 endmodule
 
 module mux_p2s_synth_delay(sel, data_in, data_out);
