@@ -8,8 +8,10 @@ module s2p_reg_cond ( input   wire  [7:0] D,
   );
 
   always @ (~RESET) begin
-    Q <= 8'bz;
-    S_OUT <= 1'bz;
+    Q <= 8'b0;
+    S_OUT <= 1'b0;
+    // Q <= 8'bz;
+    // S_OUT <= 1'bz;
   end
 
   always @ (posedge CLK) begin
@@ -57,8 +59,10 @@ module s2p_reg_cond ( input   wire  [7:0] D,
 
       end //end else
     end else begin
-      Q <= 8'bz;
-      S_OUT <= 1'bz;
+      Q <= 8'b0;
+      S_OUT <= 1'b0;
+      // Q <= 8'bz;
+      // S_OUT <= 1'bz;
     end
   end //end always
 

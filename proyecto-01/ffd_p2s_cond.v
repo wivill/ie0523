@@ -7,7 +7,7 @@ module ffd_p2s_cond(input CLK,
   );
 
   always @ (~ENB) begin
-    Q <= 1'bz;
+    Q <= 1'b0;
   end
 
   always @ (posedge CLK) begin
@@ -18,7 +18,8 @@ module ffd_p2s_cond(input CLK,
         Q <= Q;
       end
     end else begin
-      Q <= 1'bz;
+      // Q <= 1'bz;
+      Q <= 1'b0;
       // Q <= Q;
     end
   end
