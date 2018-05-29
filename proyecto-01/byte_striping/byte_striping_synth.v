@@ -14,10 +14,10 @@ module byte_striping_synth (
   );
 
   always @ ( posedge clk1Mhz ) begin
-    if (~reset) begin
-      counter <= 2'b00;
-    end else begin
+    if (reset) begin
       counter <= counter + 1;
+    end else begin
+      counter <= 2'b11;
     end
 
     case (counter)

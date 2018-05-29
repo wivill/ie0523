@@ -1,5 +1,5 @@
-read_verilog byte_striping_struct.v
-hierarchy -check -top byte_striping_struct
+read_verilog byte_striping_synth.v
+hierarchy -check -top byte_striping_synth
 proc; opt; fsm; opt; memory; opt
 techmap; opt
 abc -liberty cmos_cells.lib

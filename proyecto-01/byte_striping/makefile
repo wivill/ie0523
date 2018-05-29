@@ -1,12 +1,12 @@
 yosys:
 	yosys -s yosys_synth.txt
-	iverilog -o out testbench_byte_striping.v byte_striping_conduct.v yosys_synth.v tester_byte_striping.v
+	iverilog -o out testbench_byte_striping.v byte_striping_cond.v yosys_synth.v tester_byte_striping.v
 	vvp out
 
 
 cmos:
 	yosys -s yosys_cmos_synth.txt
-	iverilog -o out testbench_byte_striping.v byte_striping_conduct.v yosys_cmos_synth.v tester_byte_striping.v cmos_cells.v
+	iverilog -o out testbench_byte_striping.v byte_striping_cond.v yosys_cmos_synth.v tester_byte_striping.v cmos_cells.v
 	vvp out
 
 ttyp:

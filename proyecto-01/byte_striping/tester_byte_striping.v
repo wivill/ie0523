@@ -6,10 +6,7 @@ module tester_byte_striping (
   input wire byteStripingVLD,
 
   output reg [7:0] byteStripingIN,
-  output reg lane0VLD,
-  output reg lane1VLD,
-  output reg lane2VLD,
-  output reg lane3VLD,
+  output reg laneVLD,
   output reg clk250k,
   output reg clk1Mhz,
   output reg conteo,
@@ -21,60 +18,33 @@ module tester_byte_striping (
     $dumpvars;
 
     #0
-    reset = 1;
-    lane0VLD = 1'b0;
-    lane1VLD = 1'b0;
-    lane2VLD = 1'b0;
-    lane3VLD = 1'b0;
+    reset = 0;
+    laneVLD = 1'b1;
 
     #1
-    reset = 0;
-    lane0VLD = 1'b1;
-    lane1VLD = 1'b0;
-    lane2VLD = 1'b0;
-    lane3VLD = 1'b0;
+    reset = 1;
+    laneVLD = 1'b1;
     byteStripingIN = 8'b00000000;
     #1
-    lane0VLD = 1'b0;
-    lane1VLD = 1'b1;
-    lane2VLD = 1'b0;
-    lane3VLD = 1'b0;
+    laneVLD = 1'b1;
     byteStripingIN = 8'b00001111;
     #1
-    lane0VLD = 1'b0;
-    lane1VLD = 1'b0;
-    lane2VLD = 1'b1;
-    lane3VLD = 1'b0;
+    laneVLD = 1'b1;
     byteStripingIN = 8'b11110000;
     #1
-    lane0VLD = 1'b0;
-    lane1VLD = 1'b0;
-    lane2VLD = 1'b0;
-    lane3VLD = 1'b1;
+    laneVLD = 1'b1;
     byteStripingIN = 8'b11111111;
     #1
-    lane0VLD = 1'b1;
-    lane1VLD = 1'b0;
-    lane2VLD = 1'b0;
-    lane3VLD = 1'b0;
+    laneVLD = 1'b1;
     byteStripingIN = 8'b11111111;
     #1
-    lane0VLD = 1'b0;
-    lane1VLD = 1'b1;
-    lane2VLD = 1'b0;
-    lane3VLD = 1'b0;
+    laneVLD = 1'b1;
     byteStripingIN = 8'b11110000;
     #1
-    lane0VLD = 1'b0;
-    lane1VLD = 1'b0;
-    lane2VLD = 1'b1;
-    lane3VLD = 1'b0;
+    laneVLD = 1'b1;
     byteStripingIN = 8'b00001111;
     #1
-    lane0VLD = 1'b0;
-    lane1VLD = 1'b0;
-    lane2VLD = 1'b0;
-    lane3VLD = 1'b1;
+    laneVLD = 1'b1;
     byteStripingIN = 8'b00000000;
     #1
 
