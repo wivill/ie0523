@@ -1,15 +1,15 @@
 [*]
-[*] GTKWave Analyzer v3.3.89 (w)1999-2018 BSI
-[*] Wed May 30 14:11:43 2018
+[*] GTKWave Analyzer v3.3.71 (w)1999-2016 BSI
+[*] Wed May 30 16:21:05 2018
 [*]
-[dumpfile] "/home/wivill/git/ie0523/proyecto-01/pcie.vcd"
-[dumpfile_mtime] "Wed May 30 14:07:57 2018"
-[dumpfile_size] 218715
-[savefile] "/home/wivill/git/ie0523/proyecto-01/pcie.sav"
+[dumpfile] "C:\Users\Jose\Documents\UCR_Electrica\I_2018\Circuitos_Digitales_II\Git\proyecto-01\pcie.vcd"
+[dumpfile_mtime] "Wed May 30 16:20:41 2018"
+[dumpfile_size] 234301
+[savefile] "C:\Users\Jose\Documents\UCR_Electrica\I_2018\Circuitos_Digitales_II\Git\proyecto-01\pcie.sav"
 [timestart] 0
 [size] 1366 697
 [pos] -1 -1
-*-22.135500 2780000 1250000 1000000 9750000 5750000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-22.135500 4600000 1250000 1000000 9750000 5750000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] testbench.
 [treeopen] testbench.cond.
 [treeopen] testbench.cond.tx_rx_cond.
@@ -25,6 +25,9 @@ testbench.cond.CLK_500KHz
 testbench.cond.CLK_250KHz
 @22
 testbench.IN_CTRL_tb[3:0]
+@23
+testbench.IN_TLP_tb[7:0]
+@22
 testbench.IN_COM_tb[7:0]
 testbench.IN_PAD_tb[7:0]
 testbench.IN_SKP_tb[7:0]
@@ -34,7 +37,6 @@ testbench.IN_END_tb[7:0]
 testbench.IN_EDB_tb[7:0]
 testbench.IN_FTS_tb[7:0]
 testbench.IN_IDL_tb[7:0]
-testbench.IN_TLP_tb[7:0]
 testbench.cond.bj_rx_cond.out[7:0]
 testbench.cond.bj_rx_cond.L0[7:0]
 [pattern_trace] 1
