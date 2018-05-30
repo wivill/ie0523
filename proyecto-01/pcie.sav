@@ -1,17 +1,18 @@
 [*]
 [*] GTKWave Analyzer v3.3.89 (w)1999-2018 BSI
-[*] Wed May 30 14:11:43 2018
+[*] Wed May 30 14:39:09 2018
 [*]
 [dumpfile] "/home/wivill/git/ie0523/proyecto-01/pcie.vcd"
-[dumpfile_mtime] "Wed May 30 14:07:57 2018"
-[dumpfile_size] 218715
+[dumpfile_mtime] "Wed May 30 14:31:42 2018"
+[dumpfile_size] 195549
 [savefile] "/home/wivill/git/ie0523/proyecto-01/pcie.sav"
 [timestart] 0
 [size] 1366 697
 [pos] -1 -1
-*-22.135500 2780000 1250000 1000000 9750000 5750000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-22.135500 6720000 1250000 1000000 9750000 5750000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] testbench.
 [treeopen] testbench.cond.
+[treeopen] testbench.cond.bj_rx_cond.
 [treeopen] testbench.cond.tx_rx_cond.
 [treeopen] testbench.cond.tx_rx_cond.low_tx_cond.
 [sst_width] 213
@@ -33,9 +34,61 @@ testbench.IN_SDP_tb[7:0]
 testbench.IN_END_tb[7:0]
 testbench.IN_EDB_tb[7:0]
 testbench.IN_FTS_tb[7:0]
-testbench.IN_IDL_tb[7:0]
 testbench.IN_TLP_tb[7:0]
+testbench.IN_IDL_tb[7:0]
+testbench.cond.tx_input_cond.muxOUT[7:0]
+testbench.cond.tx_bs_cond.stripedLane0[7:0]
+testbench.cond.tx_bs_cond.stripedLane1[7:0]
+testbench.cond.tx_bs_cond.stripedLane2[7:0]
+testbench.cond.tx_bs_cond.stripedLane3[7:0]
+@c00023
+testbench.cond.tx_rx_cond.IN_LANE0[7:0]
+@28
+(0)testbench.cond.tx_rx_cond.IN_LANE0[7:0]
+(1)testbench.cond.tx_rx_cond.IN_LANE0[7:0]
+(2)testbench.cond.tx_rx_cond.IN_LANE0[7:0]
+(3)testbench.cond.tx_rx_cond.IN_LANE0[7:0]
+(4)testbench.cond.tx_rx_cond.IN_LANE0[7:0]
+(5)testbench.cond.tx_rx_cond.IN_LANE0[7:0]
+(6)testbench.cond.tx_rx_cond.IN_LANE0[7:0]
+(7)testbench.cond.tx_rx_cond.IN_LANE0[7:0]
+@1401201
+-group_end
+@c00022
+testbench.cond.tx_rx_cond.IN_LANE1[7:0]
+@28
+(0)testbench.cond.tx_rx_cond.IN_LANE1[7:0]
+(1)testbench.cond.tx_rx_cond.IN_LANE1[7:0]
+(2)testbench.cond.tx_rx_cond.IN_LANE1[7:0]
+(3)testbench.cond.tx_rx_cond.IN_LANE1[7:0]
+(4)testbench.cond.tx_rx_cond.IN_LANE1[7:0]
+(5)testbench.cond.tx_rx_cond.IN_LANE1[7:0]
+(6)testbench.cond.tx_rx_cond.IN_LANE1[7:0]
+(7)testbench.cond.tx_rx_cond.IN_LANE1[7:0]
+@1401200
+-group_end
+@22
+testbench.cond.tx_rx_cond.IN_LANE2[7:0]
+testbench.cond.tx_rx_cond.IN_LANE3[7:0]
+@c00022
+testbench.cond.tx_rx_cond.LANE[3:0]
+@28
+(0)testbench.cond.tx_rx_cond.LANE[3:0]
+(1)testbench.cond.tx_rx_cond.LANE[3:0]
+(2)testbench.cond.tx_rx_cond.LANE[3:0]
+(3)testbench.cond.tx_rx_cond.LANE[3:0]
+@1401200
+-group_end
+@22
+testbench.cond.tx_rx_cond.OUT_LANE0[7:0]
+testbench.cond.tx_rx_cond.OUT_LANE1[7:0]
+testbench.cond.tx_rx_cond.OUT_LANE2[7:0]
+testbench.cond.tx_rx_cond.OUT_LANE3[7:0]
+testbench.cond.tx_rx_cond.low_rx_cond.P0_cond_s2p[7:0]
+testbench.cond.bj_rx_cond.mux_cond.In0[7:0]
+testbench.cond.bj_rx_cond.mux_cond.In1[7:0]
+testbench.cond.bj_rx_cond.mux_cond.In2[7:0]
+testbench.cond.bj_rx_cond.mux_cond.In3[7:0]
 testbench.cond.bj_rx_cond.out[7:0]
-testbench.cond.bj_rx_cond.L0[7:0]
 [pattern_trace] 1
 [pattern_trace] 0

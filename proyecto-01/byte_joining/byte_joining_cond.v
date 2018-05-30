@@ -10,13 +10,17 @@ module mux4a1_cond (
   end
 
   always @ ( Sel ) begin
-    case (Sel)
-      2'b00: outmux = In0;
-      2'b01: outmux = In1;
-      2'b10: outmux = In2;
-      2'b11: outmux = In3;
-      default: outmux = 8'b0;
-    endcase
+    if (ENB) begin
+      case (Sel)
+        2'b00: outmux = In0;
+        2'b01: outmux = In1;
+        2'b10: outmux = In2;
+        2'b11: outmux = In3;
+        default: outmux = 8'b0;
+      endcase
+    end else begin
+      outmux = 8'b0;
+    end
   end
 
 endmodule //mux4a1
