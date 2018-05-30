@@ -48,28 +48,28 @@ module p2s_cond(  input        IN_CLK_p2s, //2MHz
   ffd_p2s_cond ffd_lane3[6:0]( .CLK (IN_CLK_p2s),
                                .D   (IN_LANE3_p2s[6:0]),
                                .ENB (IN_ENB_p2s),
-                               .valid_in(valid_ffd),
+                               .valid_in(IN_VALID_BS),
                                .Q   (Q3_p2s[6:0])
                                );
 
   ffd_p2s_cond ffd_lane2[7:0]( .CLK (IN_CLK_p2s),
                                .D   (IN_LANE2_p2s),
                                .ENB (IN_ENB_p2s),
-                               .valid_in(valid_ffd),
+                               .valid_in(IN_VALID_BS),
                                .Q   (Q2_p2s)
                                );
 
   ffd_p2s_cond ffd_lane1[7:0]( .CLK (IN_CLK_p2s),
                                .D   (IN_LANE1_p2s),
                                .ENB (IN_ENB_p2s),
-                               .valid_in(valid_ffd),
+                               .valid_in(IN_VALID_BS),
                                .Q   (Q1_p2s)
                                );
 
   ffd_p2s_cond ffd_lane0[7:0]( .CLK (IN_CLK_p2s),
                                .D   (IN_LANE0_p2s),
                                .ENB (IN_ENB_p2s),
-                               .valid_in(valid_ffd),
+                               .valid_in(IN_VALID_BS),
                                .Q   (Q0_p2s)
                                );
 
