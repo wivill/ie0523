@@ -1,5 +1,5 @@
 `include "multiplexer/multiplexer_cond.v"
-`include "freq_div_cond.v"
+// `include "freq_div_cond.v"
 `include "byte_striping/byte_striping_cond.v"
 `include "p2s_s2p_cond.v"
 `include "byte_joining/byte_joining_cond.v"
@@ -8,19 +8,22 @@
 module pcie_cond( input [7:0]   IN_COM, IN_PAD, IN_SKP, IN_STP, IN_SDP, IN_END, IN_EDB, IN_FTS, IN_IDL, IN_TLP,
                   input [3:0]   IN_CTRL,
                   input         IN_CLK_2MHz,
+                  input         CLK_1MHz,
+                  input         CLK_500KHz,
+                  input         CLK_250KHz,
                   input         IN_RESET_CLK,
                   input         IN_ENB_TX_RX,
                   output [7:0]  OUT_DATA
   );
 
-  wire CLK_1MHz, CLK_500KHz, CLK_250KHz;
+  // wire CLK_1MHz, CLK_500KHz, CLK_250KHz;
 
-  freq_div_cond    leclock( .CLK    (IN_CLK_2MHz),
-                            .reset  (IN_RESET_CLK),
-                            .CLK_2  (CLK_1MHz),
-                            .CLK_4  (CLK_500KHz),
-                            .CLK_8  (CLK_250KHz)
-    );
+  // freq_div_cond    leclock( .CLK    (IN_CLK_2MHz),
+  //                           .reset  (IN_RESET_CLK),
+  //                           .CLK_2  (CLK_1MHz),
+  //                           .CLK_4  (CLK_500KHz),
+  //                           .CLK_8  (CLK_250KHz)
+  //   );
 
   wire [7:0] MUX_BS;
   wire       MUX_VALID;

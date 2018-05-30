@@ -1,0 +1,22 @@
+[*]
+[*] GTKWave Analyzer v3.3.89 (w)1999-2018 BSI
+[*] Wed May 30 05:12:46 2018
+[*]
+[dumpfile] "/home/wivill/git/ie0523/proyecto-01/multiplexer/multiplexer.vcd"
+[dumpfile_mtime] "Wed May 30 05:12:02 2018"
+[dumpfile_size] 75752
+[savefile] "/home/wivill/git/ie0523/proyecto-01/multiplexer/multiplexer.sav"
+[timestart] 0
+[size] 1366 697
+[pos] -44 -44
+*-22.936132 7340000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 213
+[signals_width] 166
+[sst_expanded] 1
+[sst_vpaned_height] 187
+@22
+testbench.muxOUT_synth[7:0]
+@23
+testbench.muxOUT[7:0]
+[pattern_trace] 1
+[pattern_trace] 0

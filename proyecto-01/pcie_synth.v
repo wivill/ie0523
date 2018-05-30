@@ -283,8 +283,8 @@ module ctr3_synth(CLK, reset, CTR);
     .Y(_00_[0])
   );
   NAND _07_ (
-    .A(_02_),
-    .B(CTR[0]),
+    .A(CTR[0]),
+    .B(_02_),
     .Y(_03_)
   );
   NAND _08_ (
@@ -325,17 +325,6 @@ module ffd_s2p_synth(CLK, D, ENB, Q);
   input ENB;
   output Q;
   assign Q = 1'h0;
-endmodule
-
-module freq_div_synth(CLK, reset, CLK_2, CLK_4, CLK_8);
-  input CLK;
-  output CLK_2;
-  output CLK_4;
-  output CLK_8;
-  input reset;
-  assign CLK_2 = 1'h0;
-  assign CLK_4 = 1'h0;
-  assign CLK_8 = 1'h0;
 endmodule
 
 module multiplexer_synth(muxOUT, muxVLD, TLP, COM, PAD, SKP, STP, SDP, END, EDB, FTS, IDL, muxCTRL, muxCLK, ENB);
@@ -2658,7 +2647,10 @@ module p2s_s2p_synth(IN_CLK_2MHz, IN_CLK_250KHz, IN_LANE3, IN_LANE2, IN_LANE1, I
   assign CLK_RX = { IN_CLK_250KHz, IN_CLK_2MHz };
 endmodule
 
-module pcie_synth(IN_COM, IN_PAD, IN_SKP, IN_STP, IN_SDP, IN_END, IN_EDB, IN_FTS, IN_IDL, IN_TLP, IN_CTRL, IN_CLK_2MHz, IN_RESET_CLK, IN_ENB_TX_RX, OUT_DATA);
+module pcie_synth(IN_COM, IN_PAD, IN_SKP, IN_STP, IN_SDP, IN_END, IN_EDB, IN_FTS, IN_IDL, IN_TLP, IN_CTRL, IN_CLK_2MHz, CLK_1MHz, CLK_500KHz, CLK_250KHz, IN_RESET_CLK, IN_ENB_TX_RX, OUT_DATA);
+  input CLK_1MHz;
+  input CLK_250KHz;
+  input CLK_500KHz;
   input IN_CLK_2MHz;
   input [7:0] IN_COM;
   input [3:0] IN_CTRL;
