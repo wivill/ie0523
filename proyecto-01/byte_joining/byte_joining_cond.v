@@ -1,14 +1,21 @@
 module mux4a1_cond (
   input [7:0] In0, In1, In2, In3,
   input [1:0] Sel,
+  input ENB,
   output reg [7:0] outmux
   );
+
+  always @ (~ENB) begin
+    outmux = 8'b0;
+  end
+
   always @ ( Sel ) begin
     case (Sel)
       2'b00: outmux = In0;
       2'b01: outmux = In1;
       2'b10: outmux = In2;
       2'b11: outmux = In3;
+      default: outmux = 8'b0;
     endcase
   end
 
@@ -21,6 +28,7 @@ module byte_joining_cond (
   input [7:0] Lane_3, //Entrada para la Linea 1 que viene de la etapa de serie a paralelo
   input [1:0] ctr_3, // Bus de selecion para el multiplexor que distribuye los datos de cada linea a la salida
   input clk250k, //Señal de reloj de los flops que guardan el dato que viene de la etapa de serie paralelo
+  input ENB,
   output [7:0] out
   );
 
@@ -41,6 +49,7 @@ module byte_joining_cond (
               .In1 (L1),
               .In2 (L2),
               .In3 (L3),
+              .ENB (ENB),
               .outmux (out),
               .Sel (ctr_3)
     );

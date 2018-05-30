@@ -96,6 +96,7 @@ module pcie_cond( input [7:0]   IN_COM, IN_PAD, IN_SKP, IN_STP, IN_SDP, IN_END, 
                                   .Lane_3   (S2P_LANE3),
                                   .ctr_3    (CTR_3),
                                   .clk250k  (CLK_250KHz),
+                                  .ENB      (IN_ENB_TX_RX),
                                   .out      (BJ_OUT)
   );
 
