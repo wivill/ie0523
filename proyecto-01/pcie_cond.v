@@ -38,7 +38,8 @@ module pcie_cond( input [7:0]   IN_COM, IN_PAD, IN_SKP, IN_STP, IN_SDP, IN_END, 
                                     .FTS      (IN_FTS),
                                     .IDL      (IN_IDL),
                                     .muxCTRL  (IN_CTRL),
-                                    .muxCLK   (CLK_1MHz)
+                                    .muxCLK   (CLK_1MHz),
+                                    .ENB      (IN_ENB_TX_RX)
   );
 
   wire [7:0]  BS_LANE3, BS_LANE2, BS_LANE1, BS_LANE0;
