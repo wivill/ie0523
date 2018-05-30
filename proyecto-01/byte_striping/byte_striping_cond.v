@@ -20,15 +20,11 @@ module byte_striping_cond (
 
   always @ ( posedge clk1Mhz ) begin
     if (reset) begin
-<<<<<<< HEAD
-      counter <= counter + 1;
-=======
       if (ENB) begin
         counter <= counter + 1;
       end else begin
         counter <= counter;
       end
->>>>>>> 141e83aa05694ac599eef823c633a658bc598434
     end else begin
       counter <= 2'b11;
     end
