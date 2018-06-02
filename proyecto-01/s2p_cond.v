@@ -14,7 +14,7 @@ module s2p_cond(    input [1:0]  IN_CLK_s2p, //0->2MHz, 1->250KHz
                     output [7:0] OUT_LANE0_s2p
                     );
 
-  wire [7:0]  P0_cond_s2p, P1_cond_s2p, P2_cond_s2p, P3_cond_s2p;
+  // wire [7:0]  P0_cond_s2p, P1_cond_s2p, P2_cond_s2p, P3_cond_s2p;
 
   // Conductual///////////////////////////////////////////
 
@@ -22,7 +22,7 @@ module s2p_cond(    input [1:0]  IN_CLK_s2p, //0->2MHz, 1->250KHz
                             .ENB    (IN_ENB_s2p),
                             .S_IN   (IN_LANE_s2p[3]),
                             .RESET  (IN_RESET_s2p),
-                            .Q      (P3_cond_s2p),
+                            .Q      (OUT_LANE3_s2p),
                             .MODO   (IN_MODO_s2p),
                             .DIR    (IN_DIR_s2p)
                             );
@@ -31,7 +31,7 @@ module s2p_cond(    input [1:0]  IN_CLK_s2p, //0->2MHz, 1->250KHz
                             .ENB    (IN_ENB_s2p),
                             .S_IN   (IN_LANE_s2p[2]),
                             .RESET  (IN_RESET_s2p),
-                            .Q      (P2_cond_s2p),
+                            .Q      (OUT_LANE2_s2p),
                             .MODO   (IN_MODO_s2p),
                             .DIR    (IN_DIR_s2p)
                             );
@@ -40,7 +40,7 @@ module s2p_cond(    input [1:0]  IN_CLK_s2p, //0->2MHz, 1->250KHz
                             .ENB    (IN_ENB_s2p),
                             .S_IN   (IN_LANE_s2p[1]),
                             .RESET  (IN_RESET_s2p),
-                            .Q      (P1_cond_s2p),
+                            .Q      (OUT_LANE1_s2p),
                             .MODO   (IN_MODO_s2p),
                             .DIR    (IN_DIR_s2p)
                             );
@@ -49,33 +49,69 @@ module s2p_cond(    input [1:0]  IN_CLK_s2p, //0->2MHz, 1->250KHz
                             .ENB    (IN_ENB_s2p),
                             .S_IN   (IN_LANE_s2p[0]),
                             .RESET  (IN_RESET_s2p),
-                            .Q      (P0_cond_s2p),
+                            .Q      (OUT_LANE0_s2p),
                             .MODO   (IN_MODO_s2p),
                             .DIR    (IN_DIR_s2p)
                             );
 
-  ffd_s2p_cond ffd_lane3[7:0]( .CLK (IN_CLK_s2p[1]),
-                               .D   (P3_cond_s2p),
-                               .ENB (IN_ENB_s2p),
-                               .Q   (OUT_LANE3_s2p)
-                               );
+  // s2p_reg_cond  reg_lane3(  .CLK    (IN_CLK_s2p[0]),
+  //                           .ENB    (IN_ENB_s2p),
+  //                           .S_IN   (IN_LANE_s2p[3]),
+  //                           .RESET  (IN_RESET_s2p),
+  //                           .Q      (P3_cond_s2p),
+  //                           .MODO   (IN_MODO_s2p),
+  //                           .DIR    (IN_DIR_s2p)
+  //                           );
+  //
+  // s2p_reg_cond  reg_lane2(  .CLK    (IN_CLK_s2p[0]),
+  //                           .ENB    (IN_ENB_s2p),
+  //                           .S_IN   (IN_LANE_s2p[2]),
+  //                           .RESET  (IN_RESET_s2p),
+  //                           .Q      (P2_cond_s2p),
+  //                           .MODO   (IN_MODO_s2p),
+  //                           .DIR    (IN_DIR_s2p)
+  //                           );
+  //
+  // s2p_reg_cond  reg_lane1(  .CLK    (IN_CLK_s2p[0]),
+  //                           .ENB    (IN_ENB_s2p),
+  //                           .S_IN   (IN_LANE_s2p[1]),
+  //                           .RESET  (IN_RESET_s2p),
+  //                           .Q      (P1_cond_s2p),
+  //                           .MODO   (IN_MODO_s2p),
+  //                           .DIR    (IN_DIR_s2p)
+  //                           );
+  //
+  // s2p_reg_cond  reg_lane0(  .CLK    (IN_CLK_s2p[0]),
+  //                           .ENB    (IN_ENB_s2p),
+  //                           .S_IN   (IN_LANE_s2p[0]),
+  //                           .RESET  (IN_RESET_s2p),
+  //                           .Q      (P0_cond_s2p),
+  //                           .MODO   (IN_MODO_s2p),
+  //                           .DIR    (IN_DIR_s2p)
+  //                           );
 
-  ffd_s2p_cond ffd_lane2[7:0]( .CLK (IN_CLK_s2p[1]),
-                               .D   (P2_cond_s2p),
-                               .ENB (IN_ENB_s2p),
-                               .Q   (OUT_LANE2_s2p)
-                               );
-
-  ffd_s2p_cond ffd_lane1[7:0]( .CLK (IN_CLK_s2p[1]),
-                               .D   (P1_cond_s2p),
-                               .ENB (IN_ENB_s2p),
-                               .Q   (OUT_LANE1_s2p)
-                               );
-
-  ffd_s2p_cond ffd_lane0[7:0]( .CLK (IN_CLK_s2p[1]),
-                               .D   (P0_cond_s2p),
-                               .ENB (IN_ENB_s2p),
-                               .Q   (OUT_LANE0_s2p)
-                               );
+  // ffd_s2p_cond ffd_lane3[7:0]( .CLK (IN_CLK_s2p[1]),
+  //                              .D   (P3_cond_s2p),
+  //                              .ENB (IN_ENB_s2p),
+  //                              .Q   (OUT_LANE3_s2p)
+  //                              );
+  //
+  // ffd_s2p_cond ffd_lane2[7:0]( .CLK (IN_CLK_s2p[1]),
+  //                              .D   (P2_cond_s2p),
+  //                              .ENB (IN_ENB_s2p),
+  //                              .Q   (OUT_LANE2_s2p)
+  //                              );
+  //
+  // ffd_s2p_cond ffd_lane1[7:0]( .CLK (IN_CLK_s2p[1]),
+  //                              .D   (P1_cond_s2p),
+  //                              .ENB (IN_ENB_s2p),
+  //                              .Q   (OUT_LANE1_s2p)
+  //                              );
+  //
+  // ffd_s2p_cond ffd_lane0[7:0]( .CLK (IN_CLK_s2p[1]),
+  //                              .D   (P0_cond_s2p),
+  //                              .ENB (IN_ENB_s2p),
+  //                              .Q   (OUT_LANE0_s2p)
+  //                              );
 
 endmodule

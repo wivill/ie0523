@@ -7,52 +7,70 @@ module s2p_reg_cond ( input   wire  [7:0] D,
                       output  reg         S_OUT
   );
 
+  reg [2:0] CTR;
+  reg [8:0] DATA;
+
   always @ (~RESET) begin
-    Q <= 8'b0;
+    Q <= 8'b00000000;
     S_OUT <= 1'b0;
+    CTR <= 3'b111;
     // Q <= 8'bz;
     // S_OUT <= 1'bz;
   end
 
   always @ (posedge CLK) begin
+
     if (RESET) begin
+
+      CTR <= CTR + 1;
+
       if (~ENB) begin
         Q <= Q;
       end else begin
 
+      if (CTR == 3'b001) begin
+        Q <= DATA[7:0];
+        S_OUT <= DATA[8];
+      end
+
         case (MODO)
           `PUSH:
           begin
-            if (DIR == 0) begin
-              S_OUT <= Q[7];
-              Q <= {Q[6 : 0], S_IN};
-            end else begin
-              S_OUT <= Q[0];
-              Q <= {S_IN, Q[7 : 1]};
-            end
+            // if (CTR == 3'b111) begin
+              if (DIR == 0) begin
+                DATA[8] <= DATA[7];
+                DATA[7:0] <= {DATA[6 : 0], S_IN};
+              end else begin
+                DATA[8] <= DATA[0];
+                DATA[7:0] <= {S_IN, DATA[7 : 1]};
+              end
+
+            // end
           end
         //------------------------------------------------------
           `CYCLE:
           begin
-            if (DIR == 0) begin
-                Q[7 : 0] <= {Q[6 : 0], Q[7]};
-                S_OUT <= 0;
-            end else begin
-                Q[7 : 0] <= {Q[0], Q[7 : 1]};
-                S_OUT <= 0;
-            end
+            // if (CTR == 3'b111) begin
+              if (DIR == 0) begin
+                DATA[7 : 0] <= {DATA[6 : 0], DATA[7]};
+                DATA[8] <= 0;
+              end else begin
+                DATA[7 : 0] <= {DATA[0], DATA[7 : 1]};
+                DATA[8] <= 0;
+              end
+            // end
           end
         //------------------------------------------------------
           `LOAD:
           begin
-            Q[7 : 0] <= D[7 : 0];
-            S_OUT <= 0;
+            DATA[7 : 0] <= D[7 : 0];
+            DATA[8] <= 0;
           end
         //------------------------------------------------------
           default:
           begin
-            Q[7 : 0] <= D[7 : 0];
-            S_OUT <= 0;
+            DATA[7 : 0] <= D[7 : 0];
+            DATA[8] <= 0;
           end
         //------------------------------------------------------
         endcase
@@ -61,6 +79,7 @@ module s2p_reg_cond ( input   wire  [7:0] D,
     end else begin
       Q <= 8'b0;
       S_OUT <= 1'b0;
+      CTR <= 3'b111;
       // Q <= 8'bz;
       // S_OUT <= 1'bz;
     end
