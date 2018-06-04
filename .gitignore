@@ -5,8 +5,6 @@
 *.exe
 *.bin
 *.o
-*.pdf
-*.PDF
 *.eps
 *.ps
 *.dot
