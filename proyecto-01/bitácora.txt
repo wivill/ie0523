@@ -1,0 +1,622 @@
+Author: wivill <gopwivill@gmail.com>
+Date:   Fri Jun 1 21:27:45 2018 -0600
+
+    Fix para bit desfasado en S2P. Propagación correcta y Yosys pendiente.
+
+commit ec170bf738b95c970ec5818d4cf8a1a14ea7cfeb
+Merge: 6a120b0 e2166ad
+Author: Willy <gopwivill@gmail.com>
+Date:   Wed May 30 11:45:25 2018 -0600
+
+    arreglo ctr_3
+
+commit 6a120b0bfb566e8ac42edb10dcfe1963f9640299
+Author: Willy <gopwivill@gmail.com>
+Date:   Wed May 30 11:43:04 2018 -0600
+
+    arreglo ctr_3
+
+commit e2166ad5a81efc09834da5dbe125c3348f84ccd6
+Author: Jose <jose.andres.mm.04@gmail.com>
+Date:   Wed May 30 11:34:18 2018 -0600
+
+    Prueba de sintetizado
+
+commit b7b2bee0bab04ec909f54d4385bdba83eca5c27a
+Author: Jose Matamoros <jose.andres.mm.04@gmail.com>
+Date:   Wed May 30 10:41:52 2018 -0600
+
+    Se arreglo lo del tester de las entradas del mux
+
+commit 1e49205626a12ff28bce2f1b89456afd896f1cdd
+Author: Willy <gopwivill@gmail.com>
+Date:   Wed May 30 08:14:10 2018 -0600
+
+    enable para bj
+
+commit c3ef2a3ac7a73e453d4f323ceb04e070ec9b20fb
+Author: wivill <gopwivill@gmail.com>
+Date:   Tue May 29 23:31:06 2018 -0600
+
+    mux
+
+commit 1a393ee6b1ccd970c57835f2c2d080d267df3467
+Author: wivill <gopwivill@gmail.com>
+Date:   Tue May 29 22:35:02 2018 -0600
+
+    fix merge byte striping
+
+commit e6ab561ceb185fd68daa41843355d29afb6c5cb5
+Author: wivill <gopwivill@gmail.com>
+Date:   Tue May 29 21:34:28 2018 -0600
+
+    fix merge byte striping
+
+commit 903d61c9e3717174ea0d1a4975f434328e019cc5
+Merge: d7cd9ff 141e83a
+Author: Sebastián Blanco <Sebastian>
+Date:   Tue May 29 18:56:03 2018 -0600
+
+    arreglo del merge
+
+commit 141e83aa05694ac599eef823c633a658bc598434
+Author: Willy <gopwivill@gmail.com>
+Date:   Tue May 29 10:39:28 2018 -0600
+
+    tester más largo para ver propagación de señales. Cambio Z por 0.
+
+commit d7cd9ff1d3c41377955382756fa1fd7465b6f916
+Author: Sebastián Blanco <Sebastian>
+Date:   Mon May 28 18:17:06 2018 -0600
+
+    cambios al byte stripping
+
+commit e88b411a89a87674d641cfab1d3c74a8a2d93198
+Author: wivill <gopwivill@gmail.com>
+Date:   Sun May 27 21:59:55 2018 -0600
+
+    condiciones iniciales
+
+commit 434e546e9be294972b8d22b0c6e2ced7a844c3fa
+Author: Willy <gopwivill@gmail.com>
+Date:   Sun May 27 19:49:16 2018 -0600
+
+    fix BS, p2s
+
+commit a6545aab33f472c489d729a88a53499ec6aef08a
+Author: Willy <gopwivill@gmail.com>
+Date:   Sun May 27 19:16:55 2018 -0600
+
+    fix BS, p2s
+
+commit 77936b525a8a7df0b8e22978a91857857f334c61
+Author: Willy <gopwivill@gmail.com>
+Date:   Sun May 27 17:36:53 2018 -0600
+
+    alambrado final
+
+commit 42e31dc27f5abdd04ee2d964d9817bc731aebed0
+Merge: 7c848f4 0928676
+Author: Willy <gopwivill@gmail.com>
+Date:   Sun May 27 17:06:34 2018 -0600
+
+    alambrado final
+
+commit 7c848f4233c8f070db732aa1f5eb851e3c611cfa
+Author: Willy <gopwivill@gmail.com>
+Date:   Sun May 27 17:05:37 2018 -0600
+
+    alambrado final
+
+commit 0928676036ab879355b10f9f0faf73f46190887f
+Author: Sebastián Blanco <Sebastian>
+Date:   Sun May 27 16:56:53 2018 -0600
+
+    se invirtió el funcionamiento del reset
+
+commit 44951cd13b36fe2d6f2f1732edc3269c6ff80e6b
+Author: Willy <gopwivill@gmail.com>
+Date:   Sun May 27 16:28:13 2018 -0600
+
+    alambrado final
+
+commit 695f047253162745cce02691b1962b298c91e063
+Author: Willy <gopwivill@gmail.com>
+Date:   Sun May 27 16:26:21 2018 -0600
+
+    alambrado final
+
+commit 77e209366f2ec4a3015de4ac19db4a4e40c79bd4
+Author: Willy <gopwivill@gmail.com>
+Date:   Sun May 27 16:24:46 2018 -0600
+
+    alambrado final
+
+commit 5a78b0224f63dd3acadc9d4619c2b037f8b9bea2
+Author: Willy <gopwivill@gmail.com>
+Date:   Sun May 27 16:22:50 2018 -0600
+
+    alambrado final
+
+commit 1136ca2d7d6ff73e3feb6a1a3c4bad395e26f5f1
+Author: Willy <gopwivill@gmail.com>
+Date:   Sun May 27 16:20:11 2018 -0600
+
+    alambrado final
+
+commit 55e66469c231045f262530edd4ca491d7aca7d7c
+Author: Willy <gopwivill@gmail.com>
+Date:   Sun May 27 16:13:45 2018 -0600
+
+    alambrado final
+
+commit 7f97841cc0cd7b9d7626a7aaade7a8f674b5727c
+Author: Sebastián Blanco <Sebastian>
+Date:   Sun May 27 15:22:46 2018 -0600
+
+    corrección en valid
+
+commit 6a9ac635ceadf8c6eaf53bd34bc2daaff9ecc0ea
+Author: Sebastián Blanco <Sebastian>
+Date:   Sun May 27 15:21:47 2018 -0600
+
+    corrección en el valid del BS
+
+commit bd9a238076c605e90bd41bd3f7a0c246a1ad9487
+Author: Sebastián Blanco <Sebastian>
+Date:   Sun May 27 15:14:21 2018 -0600
+
+    borrando cosas inútiles
+
+commit 90b96bcbb9a3fb49444bac9d9b4fb1a5caf0ada3
+Author: Sebastián Blanco <Sebastian>
+Date:   Sun May 27 15:13:24 2018 -0600
+
+    cambio de nombre en byte stripping
+
+commit 4c23e04b6042c6e62d6db5255c9ce3d26e78fc10
+Author: Sebastián Blanco <Sebastian>
+Date:   Sun May 27 15:00:33 2018 -0600
+
+    mux again 2.0
+
+commit 2535c1adc7e8d60873e3de82839a1f8f7b82dea9
+Author: Sebastián Blanco <Sebastian>
+Date:   Sun May 27 14:59:33 2018 -0600
+
+    mux again
+
+commit eabe2dfd57d503f56fb857ec850a84c95dd866ee
+Author: Sebastián Blanco <Sebastian>
+Date:   Sun May 27 14:58:50 2018 -0600
+
+    mux
+
+commit bd06bbb6de1337b6c08ee61bac5efa2cc90ad10a
+Author: Sebastián Blanco <Sebastian>
+Date:   Sun May 27 14:53:57 2018 -0600
+
+    mux
+
+commit ba9a5d4507b045b7c5288507c48b692e029bd67d
+Author: Sebastián Blanco <Sebastian>
+Date:   Sun May 27 14:53:46 2018 -0600
+
+    mux
+
+commit 00f3b4facf8064102f6fa2cd3cc21e29f7c75c3a
+Merge: 5a6d109 cb125b4
+Author: Sebastián Blanco <Sebastian>
+Date:   Sun May 27 14:49:37 2018 -0600
+
+    Merge branch 'master' of github.com:/wivill/ie0523
+
+commit 5a6d109ae820d2026f0273934f7c5c976be4051b
+Author: Sebastián Blanco <Sebastian>
+Date:   Sun May 27 14:49:20 2018 -0600
+
+    mux corregido
+
+commit cb125b474f54300743d55eaa141ba7b823260114
+Author: Willy <gopwivill@gmail.com>
+Date:   Sun May 27 14:17:35 2018 -0600
+
+    nomenclatura
+
+commit c2f85a12d36a52ac2fa9f5a34b19968cf61e2d41
+Author: Willy <gopwivill@gmail.com>
+Date:   Sun May 27 14:09:26 2018 -0600
+
+    synth parte baja funcionando
+
+commit 9598885e6cf266c21edd8579bbe2b117459d44f6
+Author: Willy <gopwivill@gmail.com>
+Date:   Sun May 27 12:03:25 2018 -0600
+
+    parte baja ya sirve
+
+commit 7ea890c69a3220df08deee38953fa3cb8f3c891f
+Author: Willy <gopwivill@gmail.com>
+Date:   Fri May 25 19:25:48 2018 -0600
+
+    alambrado tx_rx low
+
+commit 3172d8d196c55da9a5e68ca6bf4f5d35bf2a3140
+Author: Willy <gopwivill@gmail.com>
+Date:   Fri May 25 19:21:23 2018 -0600
+
+    alambrado tx_rx low
+
+commit ca93e2ab6093dfc3ef86f630ffa9591a7a24f6de
+Author: Willy <gopwivill@gmail.com>
+Date:   Fri May 25 19:18:14 2018 -0600
+
+    alambrado tx_rx low
+
+commit f634d8f80985118655abc563c7c1e00e9cffc852
+Author: Willy <gopwivill@gmail.com>
+Date:   Fri May 25 15:38:12 2018 -0600
+
+    alambrado p2s-s2p
+
+commit 0f10fa13470fb208c50da460902644d46fc972b7
+Author: Sebastián Blanco <Sebastian>
+Date:   Wed May 23 11:33:51 2018 -0600
+
+    tester arreglado
+
+commit 0deeb6259f69e163433b3bb137665f674541b93f
+Author: Sebastián Blanco <Sebastian>
+Date:   Wed May 23 11:32:34 2018 -0600
+
+    makefile corregido
+
+commit bec831da5f069e13cdb290d124b5634c44b83a00
+Merge: 2f13974 77cf4e2
+Author: Sebastián Blanco <Sebastian>
+Date:   Wed May 23 11:29:19 2018 -0600
+
+    Merge branch 'master' of github.com:/wivill/ie0523
+
+commit 77cf4e2f11865b06fc321db1059a02c93273ddbc
+Author: Willy <gopwivill@gmail.com>
+Date:   Wed May 23 11:10:31 2018 -0600
+
+    makefiles
+
+commit 2f13974b14e6de59468cfa889baab880ce0fa0c0
+Author: Sebastián Blanco <Sebastian>
+Date:   Wed May 23 11:09:42 2018 -0600
+
+    conductual y estructural funcan
+
+commit db16635d6659effda91bc36b91d1f06307606a4d
+Author: Willy <gopwivill@gmail.com>
+Date:   Wed May 23 11:02:34 2018 -0600
+
+    p2s corregido
+
+commit 4fdbdc68c67e21f2097039bf251546357a0d92e5
+Merge: b85c08a b3d4a13
+Author: wgvillalobosma <wgvillalobosma@Lab-Micros-01>
+Date:   Wed May 23 09:42:46 2018 -0600
+
+    Merge branch 'master' of https://www.github.com/wivill/ie0523
+
+commit b85c08a68aa97e090a50fba1ec6f5865432caed8
+Author: wgvillalobosma <wgvillalobosma@Lab-Micros-01>
+Date:   Wed May 23 09:42:12 2018 -0600
+
+    fix tester
+
+commit b3d4a13f3752c06265eac39d759be8d2669ff599
+Author: Sebastián Blanco <Sebastian>
+Date:   Wed May 23 09:28:29 2018 -0600
+
+    byte stripping funca, estructural no
+
+commit 5582f0ed5cdd2b8fff48e3e946d66e622e658734
+Author: Willy <gopwivill@gmail.com>
+Date:   Tue May 22 21:01:59 2018 -0600
+
+    módulos p2s y s2p listos para alambrar
+
+commit 3b0305b7ba044811b0ebc06111e8d832adb4d412
+Author: Jose <jose.andres.mm.04@gmail.com>
+Date:   Tue May 22 18:48:22 2018 -0600
+
+    Correcion de errores para byte stripping
+
+commit 8fd2f6d5fb127a5afca433bd4b1981d79ce67fc1
+Author: Willy <gopwivill@gmail.com>
+Date:   Tue May 22 12:35:26 2018 -0600
+
+    ensamblando parte inferior
+
+commit 39c6623056acc4bb72b4d015bca6b37183627bce
+Author: Willy <gopwivill@gmail.com>
+Date:   Tue May 22 10:56:42 2018 -0600
+
+    s2p funcionando al parecer
+
+commit 4f835a6571265a2c5a3cd4e32befc569003efa39
+Author: Willy <gopwivill@gmail.com>
+Date:   Mon May 21 18:56:35 2018 -0600
+
+    module s2p
+
+commit 7289fef4eb3b8b4d48725698c2ed758a2c3411b9
+Author: Willy <gopwivill@gmail.com>
+Date:   Mon May 21 14:35:13 2018 -0600
+
+    p2s funcionando
+
+commit 2f5b82e6548a562e848a375d0a5bff06feac84fe
+Author: Willy <gopwivill@gmail.com>
+Date:   Sun May 20 10:38:57 2018 -0600
+
+    tarea 6 ya sirve
+
+commit 8e9ff78fb9dc58003c4b93d7d767df3059679be4
+Author: wivill <gopwivill@gmail.com>
+Date:   Sat May 19 20:39:07 2018 -0600
+
+    synth sin simular
+
+commit 6e36239e78e7862627f1c36451f58228c7f634aa
+Author: wivill <gopwivill@gmail.com>
+Date:   Sat May 19 19:53:45 2018 -0600
+
+    tarea 6 sintetizado no genera nada
+
+commit 74f2c8b3083fbe5cb01f03a5ba40dbeca5ec84de
+Author: wivill <gopwivill@gmail.com>
+Date:   Sat May 19 18:56:29 2018 -0600
+
+    tarea 6 sin latches inferidos
+
+commit 07d7abedfb92b27c6579e276e8c78a9f3f2d2f8c
+Author: wivill <gopwivill@gmail.com>
+Date:   Sat May 19 18:56:18 2018 -0600
+
+    tarea 6 sin latches inferidos
+
+commit 8d630f57dd4be1a3e181ddb9e4940da745567d11
+Author: sebastianblari <37680472+sebastianblari@users.noreply.github.com>
+Date:   Fri May 18 22:53:17 2018 -0600
+
+    Corregí los tiempos de reloj que estaban mal antes
+
+commit 689a94c8cda858acf6a6e5481c25039494d5319b
+Author: Willy <gopwivill@gmail.com>
+Date:   Fri May 18 14:39:44 2018 -0600
+
+    tarea 6 condicional con errores de funcionamiento
+
+commit 67825bd6d9c1d589c654e370ea29d38398717d78
+Author: sebastianblari <37680472+sebastianblari@users.noreply.github.com>
+Date:   Thu May 17 18:53:40 2018 -0600
+
+    Modulo del Byte Striping funcionando
+    
+    Además se agrega un nuevo módulo del mux
+
+commit 044de16e5c132ca5adafaa89bd352ff249a2d5fc
+Merge: c143fe9 6a94c08
+Author: Jose <jose.andres.mm.04@gmail.com>
+Date:   Thu May 17 15:32:06 2018 -0600
+
+    Merge branch 'master' of https://github.com/wivill/ie0523
+
+commit c143fe9adf71ea979b7a4bd779b8cac2dab9a881
+Author: Jose <jose.andres.mm.04@gmail.com>
+Date:   Thu May 17 15:31:41 2018 -0600
+
+    Agregando libreria con retardos
+
+commit a7fb937761e021f627ed2b4e3d2d56773dcd7457
+Author: Jose <jose.andres.mm.04@gmail.com>
+Date:   Thu May 17 15:31:09 2018 -0600
+
+    Sintetizacion con retardos, hay errores de setup + hold
+
+commit 6a94c08986694236054e01cd6d65576b6eb66978
+Merge: 2b2d5d5 893a99f
+Author: Willy <gopwivill@gmail.com>
+Date:   Thu May 17 14:08:01 2018 -0600
+
+    Merge branch 'master' of github.com:/wivill/ie0523
+
+commit 2b2d5d52be8d9cfa7fbe8d52f0dcc0d72a85de46
+Author: Willy <gopwivill@gmail.com>
+Date:   Thu May 17 14:07:33 2018 -0600
+
+    yosys scripts tarea 06, readme y pequeños ajustes. Pendiente tester
+
+commit 893a99fc5bb36e1d6633933c6d8a1d3015efb69a
+Merge: 7d0a5bc a535b2a
+Author: Jose <jose.andres.mm.04@gmail.com>
+Date:   Thu May 17 13:48:30 2018 -0600
+
+    Merge branch 'master' of https://github.com/wivill/ie0523
+
+commit a535b2a58e0e2b0a1185f10b02ba33e53da9e8a2
+Author: Willy <gopwivill@gmail.com>
+Date:   Thu May 17 09:29:36 2018 -0600
+
+    fix readme, recetas yosys, archivos residuales. Pendiente P2S en Tx
+
+commit 7d0a5bc779cfe938f283bbf93f7d4a4d150931df
+Author: Jose <jose.andres.mm.04@gmail.com>
+Date:   Wed May 16 07:31:23 2018 -0600
+
+    Se agrego la libreria de celdas con retardos
+
+commit c45750665c14cacd39b624200be1e706ce202985
+Author: Willy <gopwivill@gmail.com>
+Date:   Tue May 15 15:30:16 2018 -0600
+
+    sintetiza pero no compila aún
+
+commit 8f9b5bce93fb25eb92273e9ab13f748ba7e1dc8a
+Author: Willy <gopwivill@gmail.com>
+Date:   Tue May 15 12:50:39 2018 -0600
+
+    p2s testbench
+
+commit 944c500f8764f5755cc918ee720c8e07a972376b
+Author: Jose <jose.andres.mm.04@gmail.com>
+Date:   Mon May 14 20:44:57 2018 -0600
+
+    le agregue comentarios
+
+commit 823f5ac5f7913e9d5d817008a41c75c1956487b7
+Author: Jose <jose.andres.mm.04@gmail.com>
+Date:   Mon May 14 20:01:17 2018 -0600
+
+    sintesis con libreria cmos
+
+commit 5f48fa94be767f409971e76bfb90feb56c5e6e3f
+Author: Jose <jose.andres.mm.04@gmail.com>
+Date:   Mon May 14 19:12:55 2018 -0600
+
+    Se agrego la descripcion sintetizada al tester
+
+commit ce353b5bcfa3280d67f393bb93cde04d9b1364fd
+Author: Jose <jose.andres.mm.04@gmail.com>
+Date:   Mon May 14 19:01:52 2018 -0600
+
+    Descripciones conductuales por yosys
+
+commit 9ce45366119ce12a5cd168c5821cb1edb2d3a6e6
+Merge: 6d11e3e 882048d
+Author: Jose <jose.andres.mm.04@gmail.com>
+Date:   Mon May 14 19:00:09 2018 -0600
+
+    Merge branch 'master' of https://github.com/wivill/ie0523
+
+commit 6d11e3e3930f320012b1315a985e345dea2535e7
+Author: Jose <jose.andres.mm.04@gmail.com>
+Date:   Mon May 14 18:59:48 2018 -0600
+
+    Se agregaron los archivos para hacer sintesis
+
+commit 882048d61c8f847d9298a64d849f9a998de18b7a
+Author: Willy <gopwivill@gmail.com>
+Date:   Mon May 14 18:46:17 2018 -0600
+
+    divisor y p2s
+
+commit 1744b19845304ebc3ab10014747d25b45d9cc763
+Author: Jose <jose.andres.mm.04@gmail.com>
+Date:   Sat May 12 19:36:13 2018 -0600
+
+    correcion de errores, se agrego el archivo de configuracion para simulaciones
+
+commit 5cc3ce4a47008212cd996c902d00f1e45e7b6b36
+Author: Jose <jose.andres.mm.04@gmail.com>
+Date:   Sat May 12 19:24:53 2018 -0600
+
+    Corriendo errores, ya hay resultados de simulacion para byte joining
+
+commit 871e81617866b74c0e33e810f0cdf5b0e3df1640
+Author: Jose <jose.andres.mm.04@gmail.com>
+Date:   Sat May 12 18:56:43 2018 -0600
+
+    Scrit para compilar en windows
+
+commit 1423cf58af58e2abdabe14bbb5aaf924293e5ad5
+Author: Jose <jose.andres.mm.04@gmail.com>
+Date:   Sat May 12 18:39:10 2018 -0600
+
+    arreglando sintaxis
+
+commit a65fe71920245ae98f1582c321376cbfa4d7021a
+Author: Jose <jose.andres.mm.04@gmail.com>
+Date:   Sat May 12 18:33:05 2018 -0600
+
+    Se agrego el testbench
+
+commit 78740d1a4b870b208a947cc763ea7b8170ed4062
+Author: Jose <jose.andres.mm.04@gmail.com>
+Date:   Sat May 12 15:22:16 2018 -0600
+
+    Se agrego el tester, cambios en formato
+
+commit 3511dc16c594ce1a4431c7e4a3f16b7223068353
+Author: Jose <jose.andres.mm.04@gmail.com>
+Date:   Sat May 12 15:15:43 2018 -0600
+
+    agregado el tester de byte joining
+
+commit f0c14d50046027bfe3a372ca301ade1201ca2b61
+Author: Jose <jose.andres.mm.04@gmail.com>
+Date:   Sat May 12 14:28:28 2018 -0600
+
+    Descripcion conductual del modulo byte joining
+
+commit 608d12c03cadf8ef57b99d5b1eb485f75fd3c10b
+Author: Jose <jose.andres.mm.04@gmail.com>
+Date:   Sat May 12 14:02:12 2018 -0600
+
+    Se creo la carpeta para el modulo de byte joining
+
+commit 76066bb064faa7fc06ec73416a7ee82cb9cf4858
+Author: Jose <jose.andres.mm.04@gmail.com>
+Date:   Sat May 12 13:58:33 2018 -0600
+
+    Se creo el archivo de byte joining con sus entradas y salidas
+
+commit 8f0c296721828a7abc756f1635580160ff2bd6e3
+Author: Willy <gopwivill@gmail.com>
+Date:   Thu May 10 14:46:26 2018 -0600
+
+    fixeando cosas
+
+commit d14966a3982f34bfd90b7d9900efe96e670f529e
+Merge: d534d23 26cf07d
+Author: Willy <gopwivill@gmail.com>
+Date:   Wed May 9 09:04:47 2018 -0600
+
+    Merge remote-tracking branch 'origin/mux'
+
+commit d534d23345de764bf3c458231a14031440d2282a
+Merge: 75c1985 9b6fc70
+Author: Willy <gopwivill@gmail.com>
+Date:   Wed May 9 09:03:59 2018 -0600
+
+    resolving merge
+
+commit 75c1985cd0c3ae2d1ba76c533ea94c7e36c225fa
+Author: Willy <gopwivill@gmail.com>
+Date:   Wed May 9 09:00:43 2018 -0600
+
+    Comportamiento conductual del MUX y pruebas
+
+commit 36502ce52ba59b6d8755fccac0131feb358bf660
+Author: Jose <jose.andres.mm.04@gmail.com>
+Date:   Tue May 8 22:29:36 2018 -0600
+
+    push de prueba a mi branch
+
+commit 9d2353df6b23098d76e76557338d75d76313fab6
+Author: Jose <jose.andres.mm.04@gmail.com>
+Date:   Tue May 8 22:20:20 2018 -0600
+
+    comentario de prueba
+
+commit 1962f0a92b19fcc4226c1594d8836119946c522d
+Author: Jose <jose.andres.mm.04@gmail.com>
+Date:   Tue May 8 21:12:12 2018 -0600
+
+    probando los commits, se añadio un comentario
+
+commit 925aa12b20ad8bc8c8fb03517b078db445bda716
+Author: wivill <gopwivill@gmail.com>
+Date:   Sun May 6 19:44:14 2018 -0600
+
+    proyecto
+
+commit b2fb8042764eda1b066f412d0ad865910a83fc39
+Author: wivill <gopwivill@gmail.com>
+Date:   Fri Apr 27 17:57:39 2018 -0600
