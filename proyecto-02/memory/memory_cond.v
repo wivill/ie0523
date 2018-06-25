@@ -4,7 +4,7 @@
 // Function    : Synchronous read write RAM
 // Coder       : Deepak Kumar Tala
 //-----------------------------------------------------
-module ram_sp_sr_sw (
+module memory_cond (
 clk         , // Clock Input
 address     , // Address Input
 data        , // Data bi-directional
