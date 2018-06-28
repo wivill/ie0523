@@ -1,0 +1,7 @@
+read_verilog fsm_cond.v
+hierarchy -check -top fsm_cond
+proc; opt; fsm; opt; memory; opt
+techmap; opt
+show -prefix fsm_synth -format eps
+clean
+write_verilog fsm_synth.v

@@ -1,8 +1,0 @@
-read_verilog byte_striping_struct.v
-hierarchy -check -top byte_striping_struct
-proc; opt; fsm; opt; memory; opt
-techmap; opt
-abc -liberty cmos_cells.lib
-show -lib cmos_cells_delay.v -prefix yosys_cmos_synth_delay -format eps
-clean
-write_verilog -noattr yosys_cmos_synth_delay.v
