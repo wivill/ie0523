@@ -1,0 +1,1 @@
+VCD info: dumpfile wrr.vcd opened for output.

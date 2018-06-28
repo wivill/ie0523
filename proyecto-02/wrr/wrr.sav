@@ -1,0 +1,40 @@
+[*]
+[*] GTKWave Analyzer v3.3.89 (w)1999-2018 BSI
+[*] Thu Jun 28 03:48:14 2018
+[*]
+[dumpfile] "/home/wivill/git/ie0523/proyecto-02/wrr/wrr.vcd"
+[dumpfile_mtime] "Thu Jun 28 03:44:08 2018"
+[dumpfile_size] 5271
+[savefile] "/home/wivill/git/ie0523/proyecto-02/wrr/wrr.sav"
+[timestart] 0
+[size] 1366 697
+[pos] -44 -44
+*-21.991877 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] testbench.
+[sst_width] 213
+[signals_width] 174
+[sst_expanded] 1
+[sst_vpaned_height] 187
+@28
+testbench.letest.CLK_2MHz
+@22
+testbench.letest.Data_Word[3:0]
+@28
+testbench.letest.edit_weight
+testbench.letest.reset
+testbench.letest.vc_assign[1:0]
+testbench.letest.weight_assign[2:0]
+testbench.table_synth.vc[1:0]
+testbench.table_cond.vc[1:0]
+testbench.table_cond.vc0[1:0]
+testbench.table_cond.vc1[1:0]
+testbench.table_cond.vc2[1:0]
+testbench.table_cond.vc3[1:0]
+testbench.table_cond.weight_vc0[2:0]
+testbench.table_cond.weight_vc1[2:0]
+testbench.table_cond.weight_vc2[2:0]
+testbench.table_cond.weight_vc3[2:0]
+@29
+testbench.table_cond.vc_assign[1:0]
+[pattern_trace] 1
+[pattern_trace] 0
