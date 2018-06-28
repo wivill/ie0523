@@ -8,7 +8,7 @@ module mux4_1_cond( input [1:0]   VC_id,
   // Data_Word corresponde a las entradas de datos
 
   // Bloque reset para tener un estado de partida y facilitar la síntesis
-  always @ ( reset ) begin
+  always @ ( ~reset ) begin
     data_out = 1'b0;
   end
   // COndiciones de salida
