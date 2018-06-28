@@ -1,5 +1,5 @@
 En este directorio se encuentra el código verilog para sintetizar
-y probar la capa física del PCIE. Para poder verificar
+y probar la capa de transacción del PCIE. Para poder verificar
 su funcionamiento, basta con utilizar el Makefile proporcionado.
 
 Las opciones disponibles son las siguientes:
