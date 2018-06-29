@@ -12,7 +12,7 @@ module mux4_1_cond( input [1:0]   VC_id,
     data_out = 1'b0;
   end
   // COndiciones de salida
-  always @ (VC_id or Data_Word) begin
+  always @ (VC_id or Data_Word or reset) begin
     case (VC_id)
       2'b00: data_out = VC_id[0];
       2'b01: data_out = VC_id[1];

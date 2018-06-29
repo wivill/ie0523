@@ -12,6 +12,8 @@ module tester(      output reg  [2:0]   weight_assign,
   end
 
   initial begin
+    vc_assign = 2'b00;
+    weight_assign = 3'b000;
     Data_Word = 4'b0000;
     CLK_2MHz = 1'b0;
     reset = 1'b0;
@@ -28,21 +30,21 @@ module tester(      output reg  [2:0]   weight_assign,
 
   initial begin
     @(posedge reset)
-    repeat(2) @(posedge CLK_2MHz);
+    repeat(4) @(posedge CLK_2MHz);
     edit_weight = 1'b1;
     vc_assign = 2'b00;
     weight_assign = 3'b011;
-    repeat(2) @(posedge CLK_2MHz);
+    repeat(4) @(posedge CLK_2MHz);
     edit_weight = 1'b1;
     vc_assign = 2'b01;
     weight_assign = 3'b100;
-    repeat(2) @(posedge CLK_2MHz);
+    repeat(4) @(posedge CLK_2MHz);
     edit_weight = 1'b1;
     vc_assign = 2'b10;
     weight_assign = 3'b001;
-    repeat(2) @(posedge CLK_2MHz);
+    repeat(4) @(posedge CLK_2MHz);
     edit_weight = 1'b1;
-    vc_assign = 2'b00;
+    vc_assign = 2'b11;
     weight_assign = 3'b010;
     repeat(8) @(posedge CLK_2MHz);
     edit_weight = 1'b0;
