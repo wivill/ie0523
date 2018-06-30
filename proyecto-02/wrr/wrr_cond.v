@@ -15,12 +15,12 @@ module wrr_cond(  input   reset,
     grant_id <= 2'b00;
     current_request_id <= 2'b00;
     weight_ctr <= 3'b111;
-    current_weight <= 3'b000;
+    current_weight <= 3'b001;
   end
 
   always @ (posedge clk) begin
-    weight_ctr <= weight_ctr + 1'b1;
-
+    if (reset) begin
+      weight_ctr <= weight_ctr + 1'b1;
       if (current_weight == weight_ctr) begin
         weight_ctr <= 3'b111;
         current_request_id <= request_id;
@@ -29,6 +29,7 @@ module wrr_cond(  input   reset,
         grant_id <= current_request_id;
       end
     end
+  end
 
 
 endmodule

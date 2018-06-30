@@ -1,35 +1,68 @@
 [*]
 [*] GTKWave Analyzer v3.3.89 (w)1999-2018 BSI
-[*] Thu Jun 28 23:19:31 2018
+[*] Sat Jun 30 03:10:39 2018
 [*]
 [dumpfile] "/home/wivill/git/ie0523/proyecto-02/wrr/wrr.vcd"
-[dumpfile_mtime] "Thu Jun 28 23:17:05 2018"
-[dumpfile_size] 5518
+[dumpfile_mtime] "Sat Jun 30 03:08:37 2018"
+[dumpfile_size] 5253
 [savefile] "/home/wivill/git/ie0523/proyecto-02/wrr/wrr.sav"
 [timestart] 0
 [size] 1366 697
 [pos] -1 -1
-*-22.126835 3430000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-20.255100 16000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] testbench.
 [sst_width] 213
-[signals_width] 185
+[signals_width] 223
 [sst_expanded] 1
 [sst_vpaned_height] 187
 @28
 testbench.letest.CLK_2MHz
+@22
+testbench.letest.Data_Word[3:0]
+@28
 testbench.letest.edit_weight
 testbench.letest.reset
 testbench.letest.vc_assign[1:0]
 testbench.letest.weight_assign[2:0]
+[color] 2
+testbench.mux_cond.VC_id[1:0]
 @22
-testbench.letest.Data_Word[3:0]
+[color] 2
+testbench.mux_cond.Data_Word[3:0]
 @28
+[color] 2
+testbench.mux_cond.data_out
+[color] 6
+testbench.table_cond.vc_assign[1:0]
+[color] 6
+testbench.table_cond.weight_assign[2:0]
+[color] 6
 testbench.table_cond.vc_id_out[1:0]
+[color] 6
 testbench.table_cond.weight[2:0]
+[color] 6
 testbench.table_cond.weight_vc0[2:0]
+[color] 6
 testbench.table_cond.weight_vc1[2:0]
+[color] 6
 testbench.table_cond.weight_vc2[2:0]
-@29
+[color] 6
 testbench.table_cond.weight_vc3[2:0]
+[color] 3
+testbench.wrr_mod_cond.request_id[1:0]
+[color] 3
+testbench.wrr_mod_cond.current_request_id[1:0]
+[color] 3
+testbench.wrr_mod_cond.weight[2:0]
+[color] 3
+testbench.wrr_mod_cond.current_weight[2:0]
+[color] 3
+testbench.wrr_mod_cond.grant_id[1:0]
+[color] 3
+testbench.wrr_mod_cond.weight_ctr[2:0]
+testbench.table_synth.vc_assign[1:0]
+testbench.table_synth.vc_id_out[1:0]
+testbench.table_synth.weight[2:0]
+testbench.table_synth.weight_assign[2:0]
 [pattern_trace] 1
 [pattern_trace] 0

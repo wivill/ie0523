@@ -68,6 +68,7 @@ module testbench;
                               .reset          (reset_tb),
                               .edit_weight    (edit_weight_tb),
                               .weight_assign  (weight_assign_tb),
+                              .vc_assign      (vc_assign_tb),
                               .weight         (weight_synth_tb),
                               .vc_id_out      (request_id_synth_tb)
   );
