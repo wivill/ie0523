@@ -5,6 +5,7 @@
 `include "mux4_1_synth.v"
 `include "wrr_synth.v"
 `include "vc_table_synth.v"
+`include "cmos_cells.v"
 
 module testbench;
 
