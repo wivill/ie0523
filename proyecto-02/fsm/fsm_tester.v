@@ -18,7 +18,7 @@ initial
 	$dumpfile("fsm_wave.vcd");
 	$dumpvars;
 
-
+  // Estado Reset
 	sReset <= 0;
 	sInit <= 1;
 	sEmpty <= 4'd0;
@@ -26,41 +26,34 @@ initial
 	sPause <= 4'd0;
 	sContinue <= 4'd0;
 	#14
-	//@(posedge CLK)
+  // Estado Init
 	sReset <= 1;
 	#10
-	//@(posedge CLK)
+
 	sInit <= 0;
+  sEmpty <= 4'd15;
+	// Estado Idle, todos los fifos vacíos
+
+	#10
+	// Estado Active
+	sEmpty <= 4'd0;
+	#10
+	// Estado Pause
+	sPause <= 4'b0110;
+	#10
+	// Vuelvo a Active
+	sContinue <= 4'b0000;
+	#10
+	// Vuelve a Active
+	sContinue <= 4'b0110;
+	#10
+  sContinue <= 4'd0;
+	// Estado Error
+	sFull <= 4'd4;
 	#10
 	//@(posedge CLK)
-	sEmpty <= 4'd15;
-	#20
-	//@(posedge CLK)
-	sEmpty <= 4'd0;
-	#20
-	//@(posedge CLK)
-	sPause <= 4'b0110;
-	#20
-	//@(posedge CLK)
-	sPause <= 4'd0;
-	#20
-	//@(posedge CLK)
-	sPause <= 4'b0110;
-	sContinue <= 4'b0100;
-	#20
-	//@(posedge CLK)
-	sPause <= 4'd0;
-	sContinue <= 4'b1010;
-	#20
-	//@(posedge CLK)
-	sContinue <= 4'd0;
-	#20
-	//@(posedge CLK)
-	sFull <= 4'd4;
-	#20
-	//@(posedge CLK)
 	sReset <= 1;
-	#40
+	#20
 	$finish;
 	end
 
