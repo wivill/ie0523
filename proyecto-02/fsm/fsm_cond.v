@@ -23,15 +23,15 @@ module fsm_cond (
   reg [7:0] state, nextState;
 
   // Declaración de los estados
-  parameter [7:0] steReset = 8'd0,
+  parameter [7:0] steReset = 8'd1,
                   steInit = 8'd2,
                   steIdle = 8'd4,
                   steActive = 8'd8,
                   stePause = 8'd16,
                   steContinue = 8'd32,
+                  steError = 8'd64;
+                  // stePauCont = 8'd64,
                   // steError = 8'd128;
-                  stePauCont = 8'd64,
-                  steError = 8'd128;
 
   // Lógica combinacional
   always @ ( * ) begin
@@ -64,9 +64,10 @@ module fsm_cond (
 
       steActive:
         begin
-          if(|sPause && |sContinue && sPause!=pausa && sContinue!=continuar) begin
-            nextState = stePauCont;
-          end else if (|sPause && sPause != pausa) begin
+          // if(|sPause && |sContinue && sPause!=pausa && sContinue!=continuar) begin
+          //   nextState = stePauCont;
+          // end else if (|sPause && sPause != pausa) begin
+          if(|sPause && sPause != pausa) begin
             nextState = stePause;
           end else if (|sPause && sPause != pausa) begin
             nextState = stePause;
@@ -85,8 +86,8 @@ module fsm_cond (
             nextState = stePause;
           end else if (|sContinue && sContinue != continuar) begin
             nextState = steContinue;
-          end else if(|sPause && |sContinue && sPause!=pausa && sContinue!=continuar) begin
-      	    nextState = stePauCont;
+          // end else if(|sPause && |sContinue && sPause!=pausa && sContinue!=continuar) begin
+      	  //   nextState = stePauCont;
           end else if (|(sFull)) begin
             nextState = steError;
           end else begin
@@ -100,8 +101,8 @@ module fsm_cond (
           nextState = stePause;
         end else if (|sContinue && sContinue != continuar) begin
           nextState = steContinue;
-        end else if(|sPause && |sContinue && sPause!=pausa && sContinue!=continuar) begin
-  			  nextState = stePauCont;
+        // end else if(|sPause && |sContinue && sPause!=pausa && sContinue!=continuar) begin
+  			//   nextState = stePauCont;
         end else if (|(sFull)) begin
           nextState = steError;
         end else begin
@@ -109,20 +110,20 @@ module fsm_cond (
         end
       end
 
-      stePauCont:
-      begin
-        if(|sPause && sPause!=pausa) begin
-          nextState = stePause;
-        end else if(|sContinue && sContinue!=continuar) begin
-          nextState = steContinue;
-        end else if(|sPause && |sContinue && sPause!=pausa && sContinue!=continuar) begin
-          nextState = stePauCont;
-        end else if(|(sFull)) begin
-          nextState = steError;
-        end else begin
-          nextState = steActive;
-        end
-      end
+      // stePauCont:
+      // begin
+      //   if(|sPause && sPause!=pausa) begin
+      //     nextState = stePause;
+      //   end else if(|sContinue && sContinue!=continuar) begin
+      //     nextState = steContinue;
+      //   end else if(|sPause && |sContinue && sPause!=pausa && sContinue!=continuar) begin
+      //     nextState = stePauCont;
+      //   end else if(|(sFull)) begin
+      //     nextState = steError;
+      //   end else begin
+      //     nextState = steActive;
+      //   end
+      // end
 
       steError:
         begin
@@ -145,7 +146,7 @@ module fsm_cond (
 // Lógica para el reset
   always @ ( posedge CLK ) begin
     if (!sReset) begin
-      state <= 8'd0;
+      state <= 8'd1;
     end
     else begin
       state <= nextState;
@@ -230,21 +231,21 @@ module fsm_cond (
             continuar <= sContinue;
           end
 
-        stePauCont:
-          begin
-            oInit <= 0;
-            oIdle <= 0;
-            oError <= 4'd0;
-            if (sContinue != continuar && sPause != continuar) begin
-              stbPause <= sPause;
-              stbContinue <= sContinue;
-              end else begin
-              stbPause <= 4'd0;
-              stbContinue <= 4'd0;
-            end
-            continuar <= sContinue;
-            pausa <= sPause;
-          end
+        // stePauCont:
+        //   begin
+        //     oInit <= 0;
+        //     oIdle <= 0;
+        //     oError <= 4'd0;
+        //     if (sContinue != continuar && sPause != continuar) begin
+        //       stbPause <= sPause;
+        //       stbContinue <= sContinue;
+        //       end else begin
+        //       stbPause <= 4'd0;
+        //       stbContinue <= 4'd0;
+        //     end
+        //     continuar <= sContinue;
+        //     pausa <= sPause;
+        //   end
 
         steError:
           begin

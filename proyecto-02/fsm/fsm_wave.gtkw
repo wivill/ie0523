@@ -1,0 +1,46 @@
+[*]
+[*] GTKWave Analyzer v3.3.66 (w)1999-2015 BSI
+[*] Sun Jul  1 01:31:06 2018
+[*]
+[dumpfile] "/home/sebastian/git/ie0523/proyecto-02/fsm/fsm_wave.vcd"
+[dumpfile_mtime] "Sun Jul  1 01:27:38 2018"
+[dumpfile_size] 10350
+[savefile] "/home/sebastian/git/ie0523/proyecto-02/fsm/fsm_wave.gtkw"
+[timestart] 0
+[size] 1920 1017
+[pos] -1 -1
+*-13.792424 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 198
+[signals_width] 206
+[sst_expanded] 1
+[sst_vpaned_height] 298
+@200
+-Entradas
+@28
+fsm_testbench.clock
+fsm_testbench.inReset
+fsm_testbench.inInit
+fsm_testbench.inEmpty[3:0]
+fsm_testbench.inPausa[3:0]
+fsm_testbench.inContinuar[3:0]
+fsm_testbench.inFull[3:0]
+@208
+-Estado Actual
+@24
+fsm_testbench.actual[7:0]
+fsm_testbench.actual_synth[7:0]
+@208
+-Salidas
+@28
+fsm_testbench.outInit
+fsm_testbench.outInit_synth
+fsm_testbench.outIdle
+fsm_testbench.outIdle_synth
+fsm_testbench.outPause[3:0]
+fsm_testbench.outPause_synth[3:0]
+fsm_testbench.outContinue[3:0]
+fsm_testbench.outContinue_synth[3:0]
+fsm_testbench.outError[3:0]
+fsm_testbench.outError_synth[3:0]
+[pattern_trace] 1
+[pattern_trace] 0

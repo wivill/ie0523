@@ -1,0 +1,7 @@
+read_verilog fifo_cond.v
+hierarchy -check -top fifo_cond
+proc; opt; fsm; opt; memory; opt
+techmap; opt
+show -prefix fifo_synth -format eps
+clean
+write_verilog fifo_synth.v
