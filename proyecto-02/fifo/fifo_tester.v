@@ -54,7 +54,7 @@ module fifo_tester #(parameter DATA_WIDTH = 8, parameter ADDRESS_WIDTH = 3, para
     ENB <= 1;
     sWrite <= 1;
     // Lleno el Fifo para tener un error de Full
-    #120;
+    #100;
 
     $finish;
   end
