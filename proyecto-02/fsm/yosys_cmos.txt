@@ -3,6 +3,6 @@ hierarchy -check -top fsm_cond
 proc; opt; fsm; opt; memory; opt
 techmap; opt
 abc -liberty cmos_cells.lib
-show -lib cmos_cells.v -prefix fsm_cmos -format eps
+show -lib cmos_cells.v -prefix fsm_synth -format eps
 clean
-write_verilog -noattr fsm_cmos.v
+write_verilog -noattr fsm_synth.v

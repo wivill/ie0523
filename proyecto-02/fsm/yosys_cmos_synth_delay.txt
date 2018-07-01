@@ -1,8 +1,0 @@
-read_verilog fsm_cond.v
-hierarchy -check -top fsm_cond
-proc; opt; fsm; opt; memory; opt
-techmap; opt
-abc -liberty cmos_cells.lib
-show -lib cmos_cells_delay.v -prefix fsm_delay -format eps
-clean
-write_verilog -noattr fsm_delay.v

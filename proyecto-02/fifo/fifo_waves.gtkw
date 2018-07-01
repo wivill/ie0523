@@ -1,0 +1,65 @@
+[*]
+[*] GTKWave Analyzer v3.3.66 (w)1999-2015 BSI
+[*] Sun Jul  1 01:25:42 2018
+[*]
+[dumpfile] "/home/sebastian/git/ie0523/proyecto-02/fifo/fifo_wave.vcd"
+[dumpfile_mtime] "Sun Jul  1 01:08:05 2018"
+[dumpfile_size] 24972
+[savefile] "/home/sebastian/git/ie0523/proyecto-02/fifo/fifo_waves.gtkw"
+[timestart] 0
+[size] 1920 1017
+[pos] -1 -1
+*-15.575976 0 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] fifo_testbench.
+[sst_width] 198
+[signals_width] 198
+[sst_expanded] 1
+[sst_vpaned_height] 298
+@200
+-Entradas
+@28
+fifo_testbench.clock
+fifo_testbench.reset
+fifo_testbench.enabler
+fifo_testbench.escritura
+fifo_testbench.lectura
+@24
+fifo_testbench.umbralLleno[2:0]
+fifo_testbench.umbralVacio[2:0]
+@22
+fifo_testbench.datoEntrada[7:0]
+@200
+-Variables internas
+@28
+fifo_testbench.FIFO_synth.ptrWr[2:0]
+fifo_testbench.FIFO_synth.ptrRd[2:0]
+fifo_testbench.FIFO_synth.cantWr[2:0]
+@22
+fifo_testbench.FIFO_synth.\buffer[0][7:0]
+fifo_testbench.FIFO_synth.\buffer[1][7:0]
+fifo_testbench.FIFO_synth.\buffer[2][7:0]
+fifo_testbench.FIFO_synth.\buffer[3][7:0]
+fifo_testbench.FIFO_synth.\buffer[4][7:0]
+fifo_testbench.FIFO_synth.\buffer[5][7:0]
+fifo_testbench.FIFO_synth.\buffer[6][7:0]
+fifo_testbench.FIFO_synth.\buffer[7][7:0]
+@200
+-Salidas
+@22
+fifo_testbench.datoSalida[7:0]
+fifo_testbench.datoSalida_synth[7:0]
+@28
+fifo_testbench.casiVacio
+fifo_testbench.casiVacio_synth
+fifo_testbench.vacio
+fifo_testbench.vacio_synth
+fifo_testbench.errorVacio
+fifo_testbench.errorVacio_synth
+fifo_testbench.casiLleno
+fifo_testbench.casiLleno_synth
+fifo_testbench.lleno
+fifo_testbench.lleno_synth
+fifo_testbench.errorLleno
+fifo_testbench.errorLleno_synth
+[pattern_trace] 1
+[pattern_trace] 0
