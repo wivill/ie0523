@@ -103,5 +103,4 @@ module fifo_cond #(parameter DATA_WIDTH = 8, parameter ADDRESS_WIDTH = 3, parame
       end
     end // fin del reset
   end // fin del always
-
 endmodule //fifo_cond

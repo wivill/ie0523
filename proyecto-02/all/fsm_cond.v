@@ -30,8 +30,6 @@ module fsm_cond (
                   stePause = 8'd16,
                   steContinue = 8'd32,
                   steError = 8'd64;
-                  // stePauCont = 8'd64,
-                  // steError = 8'd128;
 
   // Lógica combinacional
   always @ ( * ) begin
@@ -64,9 +62,6 @@ module fsm_cond (
 
       steActive:
         begin
-          // if(|sPause && |sContinue && sPause!=pausa && sContinue!=continuar) begin
-          //   nextState = stePauCont;
-          // end else if (|sPause && sPause != pausa) begin
           if(|sPause && sPause != pausa) begin
             nextState = stePause;
           end else if (|sPause && sPause != pausa) begin
@@ -86,8 +81,6 @@ module fsm_cond (
             nextState = stePause;
           end else if (|sContinue && sContinue != continuar) begin
             nextState = steContinue;
-          // end else if(|sPause && |sContinue && sPause!=pausa && sContinue!=continuar) begin
-      	  //   nextState = stePauCont;
           end else if (|(sFull)) begin
             nextState = steError;
           end else begin
@@ -101,8 +94,6 @@ module fsm_cond (
           nextState = stePause;
         end else if (|sContinue && sContinue != continuar) begin
           nextState = steContinue;
-        // end else if(|sPause && |sContinue && sPause!=pausa && sContinue!=continuar) begin
-  			//   nextState = stePauCont;
         end else if (|(sFull)) begin
           nextState = steError;
         end else begin
@@ -216,7 +207,7 @@ module fsm_cond (
             continuar <= sContinue;
           end
 
-        steError:
+          steError:
           begin
             oInit <= 0;
             oIdle <= 0;
