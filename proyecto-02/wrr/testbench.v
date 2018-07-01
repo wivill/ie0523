@@ -5,6 +5,7 @@
 `include "mux4_1_synth.v"
 `include "wrr_synth.v"
 `include "vc_table_synth.v"
+`include "cmos_cells.v"
 
 module testbench;
 
@@ -42,13 +43,13 @@ module testbench;
                         .grant_id   (VC_id_cond_tb)
   );
 
-  vc_table_cond table_cond( .clk          (clk_tb),
-                            .reset        (reset_tb),
-                            .edit_weight  (edit_weight_tb),
-                            .weight_assign(weight_assign_tb),
-                            .vc_assign    (vc_assign_tb),
-                            .weight       (weight_cond_tb),
-                            .vc           (request_id_cond_tb)
+  vc_table_cond table_cond( .clk            (clk_tb),
+                            .reset          (reset_tb),
+                            .edit_weight    (edit_weight_tb),
+                            .weight_assign  (weight_assign_tb),
+                            .vc_assign      (vc_assign_tb),
+                            .weight         (weight_cond_tb),
+                            .vc_id_out      (request_id_cond_tb)
   );
 // synth
   mux4_1_synth mux_synth( .VC_id      (VC_id_synth_tb),
@@ -64,12 +65,13 @@ module testbench;
                           .grant_id   (VC_id_synth_tb)
   );
 
-  vc_table_synth table_synth( .clk          (clk_tb),
-                            .reset        (reset_tb),
-                            .edit_weight  (edit_weight_tb),
-                            .weight_assign(weight_assign_tb),
-                            .weight       (weight_synth_tb),
-                            .vc           (request_id_synth_tb)
+  vc_table_synth table_synth( .clk            (clk_tb),
+                              .reset          (reset_tb),
+                              .edit_weight    (edit_weight_tb),
+                              .weight_assign  (weight_assign_tb),
+                              .vc_assign      (vc_assign_tb),
+                              .weight         (weight_synth_tb),
+                              .vc_id_out      (request_id_synth_tb)
   );
 
 endmodule
