@@ -104,28 +104,4 @@ module fifo_cond #(parameter DATA_WIDTH = 8, parameter ADDRESS_WIDTH = 3, parame
     end // fin del reset
   end // fin del always
 
-  // always @ ( * ) begin
-  //   if(!cantWr&&outFull) begin
-  //     outFull = 0;
-  //   end
-  //
-  //   if(!cantWr&&outEmpty) begin
-  //     outEmpty = 0;
-  //   end
-  //
-  // end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 endmodule //fifo_cond

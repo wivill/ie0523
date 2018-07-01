@@ -7,9 +7,11 @@
 
 SRC=files.txt
 EXE=wrr
-WRRYOS=wrr_synth.yos
-VCTYOS=vc_table_synth.yos
-MUXYOS=mux4_1_synth.yos
+YOS0=wrr_synth.yos
+YOS1=vc_table_synth.yos
+YOS2=mux4_1_synth.yos
+YOS3=fifo_synth.yos
+YOS4=fsm_synth.yos
 
 all: synth compile run wave
 
@@ -28,13 +30,16 @@ run:
 	vvp ${EXE}.exe > results.txt
 
 synth:
-	yosys -s ${MUXYOS}
-	sed -i 's/_cond/_synth/' mux4_1_synth.v
-	yosys -s ${WRRYOS}
+	yosys -s ${YOS0}
 	sed -i 's/_cond/_synth/' wrr_synth.v
-	yosys -s ${VCTYOS}
+	yosys -s ${YOS1}
 	sed -i 's/_cond/_synth/' vc_table_synth.v
-
+	yosys -s ${YOS2}
+	sed -i 's/_cond/_synth/' mux4_1_synth.v
+	yosys -s ${YOS3}
+	sed -i 's/_cond/_synth/' fifo_synth.v
+	yosys -s ${YOS4}
+	sed -i 's/_cond/_synth/' fsm_synth.v
 # synth_delay:
 # 	yosys -s ${FFDYOSD}
 # 	sed -i 's/_cond/_synth_delay/' ffd_s2p_synth_delay.v
@@ -68,7 +73,7 @@ synth:
 # 	sed -i 's/<=/<= #15 /' s2p_reg_synth_delay.v
 
 wave:
-	gtkwave ${EXE}.vcd wrr.sav &
+	gtkwave ${EXE}.vcd qos.sav &
 
 clean:
 	rm -rf ${EXE}.exe ${EXE}.vcd *.eps *.dot

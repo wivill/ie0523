@@ -1,10 +1,6 @@
 `include "tester.v"
-`include "mux4_1_cond.v"
-`include "wrr_cond.v"
-`include "vc_table_cond.v"
-`include "mux4_1_synth.v"
-`include "wrr_synth.v"
-`include "vc_table_synth.v"
+`include "qos_cond.v"
+`include "qos_synth.v"
 `include "cmos_cells.v"
 
 

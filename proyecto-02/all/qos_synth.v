@@ -1,1 +1,3 @@
-module();\nendmodule
+module qos_synth();
+
+endmodule
