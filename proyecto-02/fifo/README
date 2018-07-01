@@ -1,0 +1,4 @@
+Instrucciones de uso:
+  make synth: se sintetiza el código conductual del fifo.
+  make cmos: se sintetiza el código conductual usando la bilioteca CMOS.
+  make wave: se compilan todos los archivos y se visualiza las formas de onda.

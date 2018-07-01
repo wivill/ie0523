@@ -36,6 +36,7 @@ module fifo_cond #(parameter DATA_WIDTH = 8, parameter ADDRESS_WIDTH = 3, parame
       outFull <= 0;
       errorEmpty <= 0;
       errorFull <= 0;
+      outputData <= 0;
 
       ptrWr <= 0;
       ptrRd <= 0;

@@ -29,11 +29,11 @@ module fifo_synth(CLK, ENB, RST, sRead, sWrite, umbEmpty, umbFull, inputData, al
   wire [2:0] _011_;
   (* src = "fifo_synth.v:31" *)
   wire [2:0] _012_;
-  (* src = "fifo_synth.v:48" *)
+  (* src = "fifo_synth.v:49" *)
   wire [31:0] _013_;
-  (* src = "fifo_synth.v:62" *)
+  (* src = "fifo_synth.v:63" *)
   wire [31:0] _014_;
-  (* src = "fifo_synth.v:68" *)
+  (* src = "fifo_synth.v:69" *)
   wire [31:0] _015_;
   wire _016_;
   wire _017_;
@@ -64,25 +64,25 @@ module fifo_synth(CLK, ENB, RST, sRead, sWrite, umbEmpty, umbFull, inputData, al
   wire [2:0] _042_;
   wire _043_;
   wire _044_;
-  (* src = "fifo_synth.v:58" *)
+  (* src = "fifo_synth.v:59" *)
   wire _045_;
-  (* src = "fifo_synth.v:87" *)
+  (* src = "fifo_synth.v:88" *)
   wire _046_;
-  (* src = "fifo_synth.v:93" *)
+  (* src = "fifo_synth.v:94" *)
   wire _047_;
-  (* src = "fifo_synth.v:93" *)
+  (* src = "fifo_synth.v:94" *)
   wire _048_;
-  (* src = "fifo_synth.v:98" *)
+  (* src = "fifo_synth.v:99" *)
   wire _049_;
-  (* src = "fifo_synth.v:87" *)
+  (* src = "fifo_synth.v:88" *)
   wire _050_;
-  (* src = "fifo_synth.v:93" *)
+  (* src = "fifo_synth.v:94" *)
   wire _051_;
-  (* src = "fifo_synth.v:98" *)
+  (* src = "fifo_synth.v:99" *)
   wire _052_;
-  (* src = "fifo_synth.v:87" *)
+  (* src = "fifo_synth.v:88" *)
   wire _053_;
-  (* src = "fifo_synth.v:98" *)
+  (* src = "fifo_synth.v:99" *)
   wire _054_;
   wire [7:0] _055_;
   wire [7:0] _056_;
@@ -106,7 +106,7 @@ module fifo_synth(CLK, ENB, RST, sRead, sWrite, umbEmpty, umbFull, inputData, al
   wire [7:0] _074_;
   wire [7:0] _075_;
   wire [7:0] _076_;
-  (* src = "fifo_synth.v:67" *)
+  (* src = "fifo_synth.v:68" *)
   wire [7:0] _077_;
   wire _078_;
   wire _079_;
@@ -154,9 +154,9 @@ module fifo_synth(CLK, ENB, RST, sRead, sWrite, umbEmpty, umbFull, inputData, al
   wire [2:0] _121_;
   wire [7:0] _122_;
   wire [7:0] _123_;
-  (* src = "fifo_synth.v:82" *)
+  (* src = "fifo_synth.v:83" *)
   wire [31:0] _124_;
-  (* src = "fifo_synth.v:93" *)
+  (* src = "fifo_synth.v:94" *)
   wire [31:0] _125_;
   (* src = "<techmap.v>:260|<techmap.v>:203" *)
   wire [31:0] _126_;
@@ -288,10 +288,10 @@ module fifo_synth(CLK, ENB, RST, sRead, sWrite, umbEmpty, umbFull, inputData, al
   input [2:0] umbEmpty;
   (* src = "fifo_synth.v:11" *)
   input [2:0] umbFull;
-  assign _031_ = _014_[0] |(* src = "fifo_synth.v:58" *)  _042_[1];
-  assign _043_ = _031_ |(* src = "fifo_synth.v:58" *)  _033_[1];
-  assign _032_ = _014_[0] |(* src = "fifo_synth.v:78" *)  cantWr[1];
-  assign _044_ = _032_ |(* src = "fifo_synth.v:78" *)  cantWr[2];
+  assign _031_ = _014_[0] |(* src = "fifo_synth.v:59" *)  _042_[1];
+  assign _043_ = _031_ |(* src = "fifo_synth.v:59" *)  _033_[1];
+  assign _032_ = _014_[0] |(* src = "fifo_synth.v:79" *)  cantWr[1];
+  assign _044_ = _032_ |(* src = "fifo_synth.v:79" *)  cantWr[2];
   assign _034_[0] = _033_[0] & _033_[1];
   assign _035_ = _131_[0] & _132_[1];
   assign _134_ = _035_ & _132_[2];
@@ -311,10 +311,10 @@ module fifo_synth(CLK, ENB, RST, sRead, sWrite, umbEmpty, umbFull, inputData, al
   assign _041_ = _148_[0] & _149_[1];
   assign _151_ = _041_ & _149_[2];
   assign _049_ = _150_ | _151_;
-  assign _045_ = ~(* src = "fifo_synth.v:58" *) _043_;
-  assign _050_ = _053_ &(* src = "fifo_synth.v:87" *)  _046_;
-  assign _051_ = _047_ &(* src = "fifo_synth.v:93" *)  _048_;
-  assign _052_ = _049_ &(* src = "fifo_synth.v:98" *)  _054_;
+  assign _045_ = ~(* src = "fifo_synth.v:59" *) _043_;
+  assign _050_ = _053_ &(* src = "fifo_synth.v:88" *)  _046_;
+  assign _051_ = _047_ &(* src = "fifo_synth.v:94" *)  _048_;
+  assign _052_ = _049_ &(* src = "fifo_synth.v:99" *)  _054_;
   assign _071_[0] = _063_ ? _001_[0] : \buffer[2] [0];
   assign _071_[1] = _063_ ? _001_[1] : \buffer[2] [1];
   assign _071_[2] = _063_ ? _001_[2] : \buffer[2] [2];
@@ -323,24 +323,24 @@ module fifo_synth(CLK, ENB, RST, sRead, sWrite, umbEmpty, umbFull, inputData, al
   assign _071_[5] = _063_ ? _001_[5] : \buffer[2] [5];
   assign _071_[6] = _063_ ? _001_[6] : \buffer[2] [6];
   assign _071_[7] = _063_ ? _001_[7] : \buffer[2] [7];
-  assign _108_[7] = ENB ? (* src = "fifo_synth.v:45" *) sWrite : 1'b0;
+  assign _108_[7] = ENB ? (* src = "fifo_synth.v:46" *) sWrite : 1'b0;
   assign _002_[7] = RST ? (* src = "fifo_synth.v:32" *) 1'b0 : _108_[7];
-  assign _109_[0] = sWrite ? (* src = "fifo_synth.v:46" *) inputData[0] : 1'bx;
-  assign _109_[1] = sWrite ? (* src = "fifo_synth.v:46" *) inputData[1] : 1'bx;
-  assign _109_[2] = sWrite ? (* src = "fifo_synth.v:46" *) inputData[2] : 1'bx;
-  assign _109_[3] = sWrite ? (* src = "fifo_synth.v:46" *) inputData[3] : 1'bx;
-  assign _109_[4] = sWrite ? (* src = "fifo_synth.v:46" *) inputData[4] : 1'bx;
-  assign _109_[5] = sWrite ? (* src = "fifo_synth.v:46" *) inputData[5] : 1'bx;
-  assign _109_[6] = sWrite ? (* src = "fifo_synth.v:46" *) inputData[6] : 1'bx;
-  assign _109_[7] = sWrite ? (* src = "fifo_synth.v:46" *) inputData[7] : 1'bx;
-  assign _110_[0] = ENB ? (* src = "fifo_synth.v:45" *) _109_[0] : 1'bx;
-  assign _110_[1] = ENB ? (* src = "fifo_synth.v:45" *) _109_[1] : 1'bx;
-  assign _110_[2] = ENB ? (* src = "fifo_synth.v:45" *) _109_[2] : 1'bx;
-  assign _110_[3] = ENB ? (* src = "fifo_synth.v:45" *) _109_[3] : 1'bx;
-  assign _110_[4] = ENB ? (* src = "fifo_synth.v:45" *) _109_[4] : 1'bx;
-  assign _110_[5] = ENB ? (* src = "fifo_synth.v:45" *) _109_[5] : 1'bx;
-  assign _110_[6] = ENB ? (* src = "fifo_synth.v:45" *) _109_[6] : 1'bx;
-  assign _110_[7] = ENB ? (* src = "fifo_synth.v:45" *) _109_[7] : 1'bx;
+  assign _109_[0] = sWrite ? (* src = "fifo_synth.v:47" *) inputData[0] : 1'bx;
+  assign _109_[1] = sWrite ? (* src = "fifo_synth.v:47" *) inputData[1] : 1'bx;
+  assign _109_[2] = sWrite ? (* src = "fifo_synth.v:47" *) inputData[2] : 1'bx;
+  assign _109_[3] = sWrite ? (* src = "fifo_synth.v:47" *) inputData[3] : 1'bx;
+  assign _109_[4] = sWrite ? (* src = "fifo_synth.v:47" *) inputData[4] : 1'bx;
+  assign _109_[5] = sWrite ? (* src = "fifo_synth.v:47" *) inputData[5] : 1'bx;
+  assign _109_[6] = sWrite ? (* src = "fifo_synth.v:47" *) inputData[6] : 1'bx;
+  assign _109_[7] = sWrite ? (* src = "fifo_synth.v:47" *) inputData[7] : 1'bx;
+  assign _110_[0] = ENB ? (* src = "fifo_synth.v:46" *) _109_[0] : 1'bx;
+  assign _110_[1] = ENB ? (* src = "fifo_synth.v:46" *) _109_[1] : 1'bx;
+  assign _110_[2] = ENB ? (* src = "fifo_synth.v:46" *) _109_[2] : 1'bx;
+  assign _110_[3] = ENB ? (* src = "fifo_synth.v:46" *) _109_[3] : 1'bx;
+  assign _110_[4] = ENB ? (* src = "fifo_synth.v:46" *) _109_[4] : 1'bx;
+  assign _110_[5] = ENB ? (* src = "fifo_synth.v:46" *) _109_[5] : 1'bx;
+  assign _110_[6] = ENB ? (* src = "fifo_synth.v:46" *) _109_[6] : 1'bx;
+  assign _110_[7] = ENB ? (* src = "fifo_synth.v:46" *) _109_[7] : 1'bx;
   assign _001_[0] = RST ? (* src = "fifo_synth.v:32" *) 1'bx : _110_[0];
   assign _001_[1] = RST ? (* src = "fifo_synth.v:32" *) 1'bx : _110_[1];
   assign _001_[2] = RST ? (* src = "fifo_synth.v:32" *) 1'bx : _110_[2];
@@ -349,12 +349,12 @@ module fifo_synth(CLK, ENB, RST, sRead, sWrite, umbEmpty, umbFull, inputData, al
   assign _001_[5] = RST ? (* src = "fifo_synth.v:32" *) 1'bx : _110_[5];
   assign _001_[6] = RST ? (* src = "fifo_synth.v:32" *) 1'bx : _110_[6];
   assign _001_[7] = RST ? (* src = "fifo_synth.v:32" *) 1'bx : _110_[7];
-  assign _111_[0] = sWrite ? (* src = "fifo_synth.v:46" *) ptrWr[0] : 1'bx;
-  assign _111_[1] = sWrite ? (* src = "fifo_synth.v:46" *) ptrWr[1] : 1'bx;
-  assign _111_[2] = sWrite ? (* src = "fifo_synth.v:46" *) ptrWr[2] : 1'bx;
-  assign _112_[0] = ENB ? (* src = "fifo_synth.v:45" *) _111_[0] : 1'bx;
-  assign _112_[1] = ENB ? (* src = "fifo_synth.v:45" *) _111_[1] : 1'bx;
-  assign _112_[2] = ENB ? (* src = "fifo_synth.v:45" *) _111_[2] : 1'bx;
+  assign _111_[0] = sWrite ? (* src = "fifo_synth.v:47" *) ptrWr[0] : 1'bx;
+  assign _111_[1] = sWrite ? (* src = "fifo_synth.v:47" *) ptrWr[1] : 1'bx;
+  assign _111_[2] = sWrite ? (* src = "fifo_synth.v:47" *) ptrWr[2] : 1'bx;
+  assign _112_[0] = ENB ? (* src = "fifo_synth.v:46" *) _111_[0] : 1'bx;
+  assign _112_[1] = ENB ? (* src = "fifo_synth.v:46" *) _111_[1] : 1'bx;
+  assign _112_[2] = ENB ? (* src = "fifo_synth.v:46" *) _111_[2] : 1'bx;
   assign _070_[0] = _062_ ? _001_[0] : \buffer[1] [0];
   assign _070_[1] = _062_ ? _001_[1] : \buffer[1] [1];
   assign _070_[2] = _062_ ? _001_[2] : \buffer[1] [2];
@@ -366,21 +366,21 @@ module fifo_synth(CLK, ENB, RST, sRead, sWrite, umbEmpty, umbFull, inputData, al
   assign _000_[0] = RST ? (* src = "fifo_synth.v:32" *) 1'bx : _112_[0];
   assign _000_[1] = RST ? (* src = "fifo_synth.v:32" *) 1'bx : _112_[1];
   assign _000_[2] = RST ? (* src = "fifo_synth.v:32" *) 1'bx : _112_[2];
-  assign _113_[0] = sRead ? (* src = "fifo_synth.v:50" *) cantWr[0] : _014_[0];
-  assign _113_[1] = sRead ? (* src = "fifo_synth.v:50" *) cantWr[1] : _014_[1];
-  assign _113_[2] = sRead ? (* src = "fifo_synth.v:50" *) cantWr[2] : _014_[2];
-  assign _114_[0] = sWrite ? (* src = "fifo_synth.v:46" *) _113_[0] : cantWr[0];
-  assign _114_[1] = sWrite ? (* src = "fifo_synth.v:46" *) _113_[1] : cantWr[1];
-  assign _114_[2] = sWrite ? (* src = "fifo_synth.v:46" *) _113_[2] : cantWr[2];
-  assign _115_[0] = sWrite ? (* src = "fifo_synth.v:70" *) _114_[0] : _014_[0];
-  assign _115_[1] = sWrite ? (* src = "fifo_synth.v:70" *) _114_[1] : _124_[1];
-  assign _115_[2] = sWrite ? (* src = "fifo_synth.v:70" *) _114_[2] : _124_[2];
-  assign _116_[0] = sRead ? (* src = "fifo_synth.v:66" *) _115_[0] : _114_[0];
-  assign _116_[1] = sRead ? (* src = "fifo_synth.v:66" *) _115_[1] : _114_[1];
-  assign _116_[2] = sRead ? (* src = "fifo_synth.v:66" *) _115_[2] : _114_[2];
-  assign _117_[0] = ENB ? (* src = "fifo_synth.v:45" *) _116_[0] : cantWr[0];
-  assign _117_[1] = ENB ? (* src = "fifo_synth.v:45" *) _116_[1] : cantWr[1];
-  assign _117_[2] = ENB ? (* src = "fifo_synth.v:45" *) _116_[2] : cantWr[2];
+  assign _113_[0] = sRead ? (* src = "fifo_synth.v:51" *) cantWr[0] : _014_[0];
+  assign _113_[1] = sRead ? (* src = "fifo_synth.v:51" *) cantWr[1] : _014_[1];
+  assign _113_[2] = sRead ? (* src = "fifo_synth.v:51" *) cantWr[2] : _014_[2];
+  assign _114_[0] = sWrite ? (* src = "fifo_synth.v:47" *) _113_[0] : cantWr[0];
+  assign _114_[1] = sWrite ? (* src = "fifo_synth.v:47" *) _113_[1] : cantWr[1];
+  assign _114_[2] = sWrite ? (* src = "fifo_synth.v:47" *) _113_[2] : cantWr[2];
+  assign _115_[0] = sWrite ? (* src = "fifo_synth.v:71" *) _114_[0] : _014_[0];
+  assign _115_[1] = sWrite ? (* src = "fifo_synth.v:71" *) _114_[1] : _124_[1];
+  assign _115_[2] = sWrite ? (* src = "fifo_synth.v:71" *) _114_[2] : _124_[2];
+  assign _116_[0] = sRead ? (* src = "fifo_synth.v:67" *) _115_[0] : _114_[0];
+  assign _116_[1] = sRead ? (* src = "fifo_synth.v:67" *) _115_[1] : _114_[1];
+  assign _116_[2] = sRead ? (* src = "fifo_synth.v:67" *) _115_[2] : _114_[2];
+  assign _117_[0] = ENB ? (* src = "fifo_synth.v:46" *) _116_[0] : cantWr[0];
+  assign _117_[1] = ENB ? (* src = "fifo_synth.v:46" *) _116_[1] : cantWr[1];
+  assign _117_[2] = ENB ? (* src = "fifo_synth.v:46" *) _116_[2] : cantWr[2];
   assign _069_[0] = _061_ ? _001_[0] : \buffer[0] [0];
   assign _069_[1] = _061_ ? _001_[1] : \buffer[0] [1];
   assign _069_[2] = _061_ ? _001_[2] : \buffer[0] [2];
@@ -392,50 +392,50 @@ module fifo_synth(CLK, ENB, RST, sRead, sWrite, umbEmpty, umbFull, inputData, al
   assign _005_[0] = RST ? (* src = "fifo_synth.v:32" *) 1'b0 : _117_[0];
   assign _005_[1] = RST ? (* src = "fifo_synth.v:32" *) 1'b0 : _117_[1];
   assign _005_[2] = RST ? (* src = "fifo_synth.v:32" *) 1'b0 : _117_[2];
-  assign _118_[0] = sRead ? (* src = "fifo_synth.v:66" *) _015_[0] : ptrRd[0];
-  assign _118_[1] = sRead ? (* src = "fifo_synth.v:66" *) _015_[1] : ptrRd[1];
-  assign _118_[2] = sRead ? (* src = "fifo_synth.v:66" *) _015_[2] : ptrRd[2];
-  assign _119_[0] = ENB ? (* src = "fifo_synth.v:45" *) _118_[0] : ptrRd[0];
-  assign _119_[1] = ENB ? (* src = "fifo_synth.v:45" *) _118_[1] : ptrRd[1];
-  assign _119_[2] = ENB ? (* src = "fifo_synth.v:45" *) _118_[2] : ptrRd[2];
+  assign _118_[0] = sRead ? (* src = "fifo_synth.v:67" *) _015_[0] : ptrRd[0];
+  assign _118_[1] = sRead ? (* src = "fifo_synth.v:67" *) _015_[1] : ptrRd[1];
+  assign _118_[2] = sRead ? (* src = "fifo_synth.v:67" *) _015_[2] : ptrRd[2];
+  assign _119_[0] = ENB ? (* src = "fifo_synth.v:46" *) _118_[0] : ptrRd[0];
+  assign _119_[1] = ENB ? (* src = "fifo_synth.v:46" *) _118_[1] : ptrRd[1];
+  assign _119_[2] = ENB ? (* src = "fifo_synth.v:46" *) _118_[2] : ptrRd[2];
   assign _011_[0] = RST ? (* src = "fifo_synth.v:32" *) 1'b0 : _119_[0];
   assign _011_[1] = RST ? (* src = "fifo_synth.v:32" *) 1'b0 : _119_[1];
   assign _011_[2] = RST ? (* src = "fifo_synth.v:32" *) 1'b0 : _119_[2];
-  assign _120_[0] = sWrite ? (* src = "fifo_synth.v:46" *) _013_[0] : ptrWr[0];
-  assign _120_[1] = sWrite ? (* src = "fifo_synth.v:46" *) _013_[1] : ptrWr[1];
-  assign _120_[2] = sWrite ? (* src = "fifo_synth.v:46" *) _013_[2] : ptrWr[2];
-  assign _121_[0] = ENB ? (* src = "fifo_synth.v:45" *) _120_[0] : ptrWr[0];
-  assign _121_[1] = ENB ? (* src = "fifo_synth.v:45" *) _120_[1] : ptrWr[1];
-  assign _121_[2] = ENB ? (* src = "fifo_synth.v:45" *) _120_[2] : ptrWr[2];
+  assign _120_[0] = sWrite ? (* src = "fifo_synth.v:47" *) _013_[0] : ptrWr[0];
+  assign _120_[1] = sWrite ? (* src = "fifo_synth.v:47" *) _013_[1] : ptrWr[1];
+  assign _120_[2] = sWrite ? (* src = "fifo_synth.v:47" *) _013_[2] : ptrWr[2];
+  assign _121_[0] = ENB ? (* src = "fifo_synth.v:46" *) _120_[0] : ptrWr[0];
+  assign _121_[1] = ENB ? (* src = "fifo_synth.v:46" *) _120_[1] : ptrWr[1];
+  assign _121_[2] = ENB ? (* src = "fifo_synth.v:46" *) _120_[2] : ptrWr[2];
   assign _012_[0] = RST ? (* src = "fifo_synth.v:32" *) 1'b0 : _121_[0];
   assign _012_[1] = RST ? (* src = "fifo_synth.v:32" *) 1'b0 : _121_[1];
   assign _012_[2] = RST ? (* src = "fifo_synth.v:32" *) 1'b0 : _121_[2];
-  assign _122_[0] = sRead ? (* src = "fifo_synth.v:66" *) _077_[0] : outputData[0];
-  assign _122_[1] = sRead ? (* src = "fifo_synth.v:66" *) _077_[1] : outputData[1];
-  assign _122_[2] = sRead ? (* src = "fifo_synth.v:66" *) _077_[2] : outputData[2];
-  assign _122_[3] = sRead ? (* src = "fifo_synth.v:66" *) _077_[3] : outputData[3];
-  assign _122_[4] = sRead ? (* src = "fifo_synth.v:66" *) _077_[4] : outputData[4];
-  assign _122_[5] = sRead ? (* src = "fifo_synth.v:66" *) _077_[5] : outputData[5];
-  assign _122_[6] = sRead ? (* src = "fifo_synth.v:66" *) _077_[6] : outputData[6];
-  assign _122_[7] = sRead ? (* src = "fifo_synth.v:66" *) _077_[7] : outputData[7];
-  assign _123_[0] = ENB ? (* src = "fifo_synth.v:45" *) _122_[0] : outputData[0];
-  assign _123_[1] = ENB ? (* src = "fifo_synth.v:45" *) _122_[1] : outputData[1];
-  assign _123_[2] = ENB ? (* src = "fifo_synth.v:45" *) _122_[2] : outputData[2];
-  assign _123_[3] = ENB ? (* src = "fifo_synth.v:45" *) _122_[3] : outputData[3];
-  assign _123_[4] = ENB ? (* src = "fifo_synth.v:45" *) _122_[4] : outputData[4];
-  assign _123_[5] = ENB ? (* src = "fifo_synth.v:45" *) _122_[5] : outputData[5];
-  assign _123_[6] = ENB ? (* src = "fifo_synth.v:45" *) _122_[6] : outputData[6];
-  assign _123_[7] = ENB ? (* src = "fifo_synth.v:45" *) _122_[7] : outputData[7];
-  assign _010_[0] = RST ? (* src = "fifo_synth.v:32" *) outputData[0] : _123_[0];
-  assign _010_[1] = RST ? (* src = "fifo_synth.v:32" *) outputData[1] : _123_[1];
-  assign _010_[2] = RST ? (* src = "fifo_synth.v:32" *) outputData[2] : _123_[2];
-  assign _010_[3] = RST ? (* src = "fifo_synth.v:32" *) outputData[3] : _123_[3];
-  assign _010_[4] = RST ? (* src = "fifo_synth.v:32" *) outputData[4] : _123_[4];
-  assign _010_[5] = RST ? (* src = "fifo_synth.v:32" *) outputData[5] : _123_[5];
-  assign _010_[6] = RST ? (* src = "fifo_synth.v:32" *) outputData[6] : _123_[6];
-  assign _010_[7] = RST ? (* src = "fifo_synth.v:32" *) outputData[7] : _123_[7];
-  assign _078_ = outFull ? (* src = "fifo_synth.v:54" *) 1'b1 : errorFull;
-  assign _079_ = sRead ? (* src = "fifo_synth.v:50" *) errorFull : _078_;
+  assign _122_[0] = sRead ? (* src = "fifo_synth.v:67" *) _077_[0] : outputData[0];
+  assign _122_[1] = sRead ? (* src = "fifo_synth.v:67" *) _077_[1] : outputData[1];
+  assign _122_[2] = sRead ? (* src = "fifo_synth.v:67" *) _077_[2] : outputData[2];
+  assign _122_[3] = sRead ? (* src = "fifo_synth.v:67" *) _077_[3] : outputData[3];
+  assign _122_[4] = sRead ? (* src = "fifo_synth.v:67" *) _077_[4] : outputData[4];
+  assign _122_[5] = sRead ? (* src = "fifo_synth.v:67" *) _077_[5] : outputData[5];
+  assign _122_[6] = sRead ? (* src = "fifo_synth.v:67" *) _077_[6] : outputData[6];
+  assign _122_[7] = sRead ? (* src = "fifo_synth.v:67" *) _077_[7] : outputData[7];
+  assign _123_[0] = ENB ? (* src = "fifo_synth.v:46" *) _122_[0] : outputData[0];
+  assign _123_[1] = ENB ? (* src = "fifo_synth.v:46" *) _122_[1] : outputData[1];
+  assign _123_[2] = ENB ? (* src = "fifo_synth.v:46" *) _122_[2] : outputData[2];
+  assign _123_[3] = ENB ? (* src = "fifo_synth.v:46" *) _122_[3] : outputData[3];
+  assign _123_[4] = ENB ? (* src = "fifo_synth.v:46" *) _122_[4] : outputData[4];
+  assign _123_[5] = ENB ? (* src = "fifo_synth.v:46" *) _122_[5] : outputData[5];
+  assign _123_[6] = ENB ? (* src = "fifo_synth.v:46" *) _122_[6] : outputData[6];
+  assign _123_[7] = ENB ? (* src = "fifo_synth.v:46" *) _122_[7] : outputData[7];
+  assign _010_[0] = RST ? (* src = "fifo_synth.v:32" *) 1'b0 : _123_[0];
+  assign _010_[1] = RST ? (* src = "fifo_synth.v:32" *) 1'b0 : _123_[1];
+  assign _010_[2] = RST ? (* src = "fifo_synth.v:32" *) 1'b0 : _123_[2];
+  assign _010_[3] = RST ? (* src = "fifo_synth.v:32" *) 1'b0 : _123_[3];
+  assign _010_[4] = RST ? (* src = "fifo_synth.v:32" *) 1'b0 : _123_[4];
+  assign _010_[5] = RST ? (* src = "fifo_synth.v:32" *) 1'b0 : _123_[5];
+  assign _010_[6] = RST ? (* src = "fifo_synth.v:32" *) 1'b0 : _123_[6];
+  assign _010_[7] = RST ? (* src = "fifo_synth.v:32" *) 1'b0 : _123_[7];
+  assign _078_ = outFull ? (* src = "fifo_synth.v:55" *) 1'b1 : errorFull;
+  assign _079_ = sRead ? (* src = "fifo_synth.v:51" *) errorFull : _078_;
   assign _060_[0] = ptrRd[0] ? \buffer[7] [0] : \buffer[6] [0];
   assign _060_[1] = ptrRd[0] ? \buffer[7] [1] : \buffer[6] [1];
   assign _060_[2] = ptrRd[0] ? \buffer[7] [2] : \buffer[6] [2];
@@ -444,8 +444,8 @@ module fifo_synth(CLK, ENB, RST, sRead, sWrite, umbEmpty, umbFull, inputData, al
   assign _060_[5] = ptrRd[0] ? \buffer[7] [5] : \buffer[6] [5];
   assign _060_[6] = ptrRd[0] ? \buffer[7] [6] : \buffer[6] [6];
   assign _060_[7] = ptrRd[0] ? \buffer[7] [7] : \buffer[6] [7];
-  assign _080_ = sWrite ? (* src = "fifo_synth.v:46" *) _079_ : errorFull;
-  assign _081_ = ENB ? (* src = "fifo_synth.v:45" *) _080_ : errorFull;
+  assign _080_ = sWrite ? (* src = "fifo_synth.v:47" *) _079_ : errorFull;
+  assign _081_ = ENB ? (* src = "fifo_synth.v:46" *) _080_ : errorFull;
   assign _059_[0] = ptrRd[0] ? \buffer[5] [0] : \buffer[4] [0];
   assign _059_[1] = ptrRd[0] ? \buffer[5] [1] : \buffer[4] [1];
   assign _059_[2] = ptrRd[0] ? \buffer[5] [2] : \buffer[4] [2];
@@ -455,8 +455,8 @@ module fifo_synth(CLK, ENB, RST, sRead, sWrite, umbEmpty, umbFull, inputData, al
   assign _059_[6] = ptrRd[0] ? \buffer[5] [6] : \buffer[4] [6];
   assign _059_[7] = ptrRd[0] ? \buffer[5] [7] : \buffer[4] [7];
   assign _007_ = RST ? (* src = "fifo_synth.v:32" *) 1'b0 : _081_;
-  assign _082_ = outEmpty ? (* src = "fifo_synth.v:74" *) 1'b1 : errorEmpty;
-  assign _083_ = sWrite ? (* src = "fifo_synth.v:70" *) errorEmpty : _082_;
+  assign _082_ = outEmpty ? (* src = "fifo_synth.v:75" *) 1'b1 : errorEmpty;
+  assign _083_ = sWrite ? (* src = "fifo_synth.v:71" *) errorEmpty : _082_;
   assign _058_[0] = ptrRd[0] ? \buffer[3] [0] : \buffer[2] [0];
   assign _058_[1] = ptrRd[0] ? \buffer[3] [1] : \buffer[2] [1];
   assign _058_[2] = ptrRd[0] ? \buffer[3] [2] : \buffer[2] [2];
@@ -465,8 +465,8 @@ module fifo_synth(CLK, ENB, RST, sRead, sWrite, umbEmpty, umbFull, inputData, al
   assign _058_[5] = ptrRd[0] ? \buffer[3] [5] : \buffer[2] [5];
   assign _058_[6] = ptrRd[0] ? \buffer[3] [6] : \buffer[2] [6];
   assign _058_[7] = ptrRd[0] ? \buffer[3] [7] : \buffer[2] [7];
-  assign _084_ = sRead ? (* src = "fifo_synth.v:66" *) _083_ : errorEmpty;
-  assign _085_ = ENB ? (* src = "fifo_synth.v:45" *) _084_ : errorEmpty;
+  assign _084_ = sRead ? (* src = "fifo_synth.v:67" *) _083_ : errorEmpty;
+  assign _085_ = ENB ? (* src = "fifo_synth.v:46" *) _084_ : errorEmpty;
   assign _057_[0] = ptrRd[0] ? \buffer[1] [0] : \buffer[0] [0];
   assign _057_[1] = ptrRd[0] ? \buffer[1] [1] : \buffer[0] [1];
   assign _057_[2] = ptrRd[0] ? \buffer[1] [2] : \buffer[0] [2];
@@ -476,7 +476,7 @@ module fifo_synth(CLK, ENB, RST, sRead, sWrite, umbEmpty, umbFull, inputData, al
   assign _057_[6] = ptrRd[0] ? \buffer[1] [6] : \buffer[0] [6];
   assign _057_[7] = ptrRd[0] ? \buffer[1] [7] : \buffer[0] [7];
   assign _006_ = RST ? (* src = "fifo_synth.v:32" *) 1'b0 : _085_;
-  assign _086_ = outFull ? (* src = "fifo_synth.v:54" *) 1'b1 : _045_;
+  assign _086_ = outFull ? (* src = "fifo_synth.v:55" *) 1'b1 : _045_;
   assign _056_[0] = ptrRd[1] ? _060_[0] : _059_[0];
   assign _056_[1] = ptrRd[1] ? _060_[1] : _059_[1];
   assign _056_[2] = ptrRd[1] ? _060_[2] : _059_[2];
@@ -485,9 +485,9 @@ module fifo_synth(CLK, ENB, RST, sRead, sWrite, umbEmpty, umbFull, inputData, al
   assign _056_[5] = ptrRd[1] ? _060_[5] : _059_[5];
   assign _056_[6] = ptrRd[1] ? _060_[6] : _059_[6];
   assign _056_[7] = ptrRd[1] ? _060_[7] : _059_[7];
-  assign _087_ = sRead ? (* src = "fifo_synth.v:50" *) outFull : _086_;
-  assign _088_ = sWrite ? (* src = "fifo_synth.v:46" *) _087_ : outFull;
-  assign _089_ = outFull ? (* src = "fifo_synth.v:71" *) 1'b0 : _088_;
+  assign _087_ = sRead ? (* src = "fifo_synth.v:51" *) outFull : _086_;
+  assign _088_ = sWrite ? (* src = "fifo_synth.v:47" *) _087_ : outFull;
+  assign _089_ = outFull ? (* src = "fifo_synth.v:72" *) 1'b0 : _088_;
   assign _055_[0] = ptrRd[1] ? _058_[0] : _057_[0];
   assign _055_[1] = ptrRd[1] ? _058_[1] : _057_[1];
   assign _055_[2] = ptrRd[1] ? _058_[2] : _057_[2];
@@ -496,9 +496,9 @@ module fifo_synth(CLK, ENB, RST, sRead, sWrite, umbEmpty, umbFull, inputData, al
   assign _055_[5] = ptrRd[1] ? _058_[5] : _057_[5];
   assign _055_[6] = ptrRd[1] ? _058_[6] : _057_[6];
   assign _055_[7] = ptrRd[1] ? _058_[7] : _057_[7];
-  assign _090_ = sWrite ? (* src = "fifo_synth.v:70" *) _088_ : _089_;
-  assign _091_ = sRead ? (* src = "fifo_synth.v:66" *) _090_ : _088_;
-  assign _092_ = ENB ? (* src = "fifo_synth.v:45" *) _091_ : outFull;
+  assign _090_ = sWrite ? (* src = "fifo_synth.v:71" *) _088_ : _089_;
+  assign _091_ = sRead ? (* src = "fifo_synth.v:67" *) _090_ : _088_;
+  assign _092_ = ENB ? (* src = "fifo_synth.v:46" *) _091_ : outFull;
   assign _077_[0] = ptrRd[2] ? _056_[0] : _055_[0];
   assign _077_[1] = ptrRd[2] ? _056_[1] : _055_[1];
   assign _077_[2] = ptrRd[2] ? _056_[2] : _055_[2];
@@ -507,24 +507,24 @@ module fifo_synth(CLK, ENB, RST, sRead, sWrite, umbEmpty, umbFull, inputData, al
   assign _077_[5] = ptrRd[2] ? _056_[5] : _055_[5];
   assign _077_[6] = ptrRd[2] ? _056_[6] : _055_[6];
   assign _077_[7] = ptrRd[2] ? _056_[7] : _055_[7];
-  assign _093_ = _052_ ? (* src = "fifo_synth.v:98" *) 1'b0 : _092_;
+  assign _093_ = _052_ ? (* src = "fifo_synth.v:99" *) 1'b0 : _092_;
   assign _009_ = RST ? (* src = "fifo_synth.v:32" *) 1'b0 : _093_;
-  assign _094_ = sRead ? (* src = "fifo_synth.v:50" *) outEmpty : 1'b0;
-  assign _095_ = sWrite ? (* src = "fifo_synth.v:46" *) _094_ : outEmpty;
-  assign _096_ = _044_ ? (* src = "fifo_synth.v:78" *) _095_ : 1'b1;
-  assign _097_ = outEmpty ? (* src = "fifo_synth.v:74" *) _095_ : _096_;
-  assign _098_ = sWrite ? (* src = "fifo_synth.v:70" *) _095_ : _097_;
-  assign _099_ = sRead ? (* src = "fifo_synth.v:66" *) _098_ : _095_;
-  assign _100_ = ENB ? (* src = "fifo_synth.v:45" *) _099_ : outEmpty;
-  assign _101_ = _050_ ? (* src = "fifo_synth.v:87" *) 1'b0 : _100_;
+  assign _094_ = sRead ? (* src = "fifo_synth.v:51" *) outEmpty : 1'b0;
+  assign _095_ = sWrite ? (* src = "fifo_synth.v:47" *) _094_ : outEmpty;
+  assign _096_ = _044_ ? (* src = "fifo_synth.v:79" *) _095_ : 1'b1;
+  assign _097_ = outEmpty ? (* src = "fifo_synth.v:75" *) _095_ : _096_;
+  assign _098_ = sWrite ? (* src = "fifo_synth.v:71" *) _095_ : _097_;
+  assign _099_ = sRead ? (* src = "fifo_synth.v:67" *) _098_ : _095_;
+  assign _100_ = ENB ? (* src = "fifo_synth.v:46" *) _099_ : outEmpty;
+  assign _101_ = _050_ ? (* src = "fifo_synth.v:88" *) 1'b0 : _100_;
   assign _008_ = RST ? (* src = "fifo_synth.v:32" *) 1'b1 : _101_;
-  assign _102_ = _050_ ? (* src = "fifo_synth.v:87" *) 1'b0 : almostFull;
-  assign _103_ = _051_ ? (* src = "fifo_synth.v:93" *) 1'b0 : _102_;
-  assign _104_ = _052_ ? (* src = "fifo_synth.v:98" *) 1'b1 : _103_;
+  assign _102_ = _050_ ? (* src = "fifo_synth.v:88" *) 1'b0 : almostFull;
+  assign _103_ = _051_ ? (* src = "fifo_synth.v:94" *) 1'b0 : _102_;
+  assign _104_ = _052_ ? (* src = "fifo_synth.v:99" *) 1'b1 : _103_;
   assign _004_ = RST ? (* src = "fifo_synth.v:32" *) 1'b0 : _104_;
-  assign _105_ = _050_ ? (* src = "fifo_synth.v:87" *) 1'b1 : almostEmpty;
-  assign _106_ = _051_ ? (* src = "fifo_synth.v:93" *) 1'b0 : _105_;
-  assign _107_ = _052_ ? (* src = "fifo_synth.v:98" *) 1'b0 : _106_;
+  assign _105_ = _050_ ? (* src = "fifo_synth.v:88" *) 1'b1 : almostEmpty;
+  assign _106_ = _051_ ? (* src = "fifo_synth.v:94" *) 1'b0 : _105_;
+  assign _107_ = _052_ ? (* src = "fifo_synth.v:99" *) 1'b0 : _106_;
   assign _003_ = RST ? (* src = "fifo_synth.v:32" *) 1'b0 : _107_;
   assign _072_[0] = _064_ ? _001_[0] : \buffer[3] [0];
   assign _072_[1] = _064_ ? _001_[1] : \buffer[3] [1];
