@@ -18,9 +18,9 @@ module mux4_1_synth(VC_id, Data_Word, reset, data_out);
   input [1:0] VC_id;
   output data_out;
   input reset;
-<<<<<<< HEAD
+// <<<<<<< HEAD
   assign data_out = 1'b0;
-=======
+// =======
   NOT _13_ (
     .A(reset),
     .Y(_12_)
@@ -87,5 +87,5 @@ module mux4_1_synth(VC_id, Data_Word, reset, data_out);
     .B(_11_),
     .Y(data_out)
   );
->>>>>>> eeb24d5af44f2a2f740465f22e4430c73a66e3c0
+// >>>>>>> eeb24d5af44f2a2f740465f22e4430c73a66e3c0
 endmodule
