@@ -525,7 +525,7 @@ module fifo_synth(CLK, ENB, RST, sRead, sWrite, umbEmpty, umbFull, inputData, al
   assign _105_ = _050_ ? (* src = "fifo_synth.v:88" *) 1'b1 : almostEmpty;
   assign _106_ = _051_ ? (* src = "fifo_synth.v:94" *) 1'b0 : _105_;
   assign _107_ = _052_ ? (* src = "fifo_synth.v:99" *) 1'b0 : _106_;
-  assign _003_ = RST ? (* src = "fifo_synth.v:32" *) 1'b0 : _107_;
+  assign _003_ = RST ? (* src = "fifo_synth.v:32" *) 1'b1 : _107_;
   assign _072_[0] = _064_ ? _001_[0] : \buffer[3] [0];
   assign _072_[1] = _064_ ? _001_[1] : \buffer[3] [1];
   assign _072_[2] = _064_ ? _001_[2] : \buffer[3] [2];

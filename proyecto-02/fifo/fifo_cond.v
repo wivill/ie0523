@@ -30,7 +30,7 @@ module fifo_cond #(parameter DATA_WIDTH = 8, parameter ADDRESS_WIDTH = 3, parame
 
   always @ ( posedge CLK ) begin
     if (RST) begin  // Todas las salidas a cero
-      almostEmpty <= 0;
+      almostEmpty <= 1;
       almostFull <= 0;
       outEmpty <= 1;
       outFull <= 0;
