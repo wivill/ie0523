@@ -110,21 +110,6 @@ module fsm_cond (
         end
       end
 
-      // stePauCont:
-      // begin
-      //   if(|sPause && sPause!=pausa) begin
-      //     nextState = stePause;
-      //   end else if(|sContinue && sContinue!=continuar) begin
-      //     nextState = steContinue;
-      //   end else if(|sPause && |sContinue && sPause!=pausa && sContinue!=continuar) begin
-      //     nextState = stePauCont;
-      //   end else if(|(sFull)) begin
-      //     nextState = steError;
-      //   end else begin
-      //     nextState = steActive;
-      //   end
-      // end
-
       steError:
         begin
           if (!sReset) begin
@@ -230,22 +215,6 @@ module fsm_cond (
             pausa <= sPause;
             continuar <= sContinue;
           end
-
-        // stePauCont:
-        //   begin
-        //     oInit <= 0;
-        //     oIdle <= 0;
-        //     oError <= 4'd0;
-        //     if (sContinue != continuar && sPause != continuar) begin
-        //       stbPause <= sPause;
-        //       stbContinue <= sContinue;
-        //       end else begin
-        //       stbPause <= 4'd0;
-        //       stbContinue <= 4'd0;
-        //     end
-        //     continuar <= sContinue;
-        //     pausa <= sPause;
-        //   end
 
         steError:
           begin
