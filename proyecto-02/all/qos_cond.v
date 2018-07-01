@@ -11,7 +11,17 @@ module qos_cond(  input       clk,
                   input       edit_weight,
                   input [1:0] vc_assign,
                   input [2:0] weight_assign,
-                  input       sInit
+                  input       sInit,
+                  // input FIFOs
+                  input [3:0] lectura, escritura,
+                  input [2:0] umbralVacio0, umbralLleno0,
+                  input [2:0] umbralVacio1, umbralLleno1,
+                  input [2:0] umbralVacio2, umbralLleno2,
+                  input [2:0] umbralVacio3, umbralLleno3,
+                  output      oInit,
+                  output      oIdle,
+                  output [3:0]oError, stbPause, stbContinue,
+                  output [7:0]State, nState
 );
 
 // FSM
@@ -25,22 +35,13 @@ fsm_cond FSM_cond (
     .sFull      (lleno),
     .sPause     (casiLleno),
     .sContinue  (casiVacio),
-    .oInit      (outInit),
-    .oIdle      (outIdle),
-    .oError     (outError),
-    .stbPause   (outPause),
-    .stbContinue (outContinue),
-    .State (actual)
+    .oInit      (oInit),
+    .oIdle      (oIdle),
+    .oError     (oError),
+    .stbPause   (stbPause),
+    .stbContinue (stbContinue),
+    .State (State)
     );
-
-// flags FIFOs
-
-// input FIFOs
-wire [3:0] lectura, escritura;
-wire [2:0] umbralVacio0, umbralLleno0;
-wire [2:0] umbralVacio1, umbralLleno1;
-wire [2:0] umbralVacio2, umbralLleno2;
-wire [2:0] umbralVacio3, umbralLleno3;
 
 // FIFOs
 fifo_cond #(1,3,8) FIFO_vc0_cond (
@@ -55,9 +56,10 @@ fifo_cond #(1,3,8) FIFO_vc0_cond (
     .almostEmpty  (casiVacio[0]),
     .almostFull   (casiLleno[0]),
     .outEmpty     (vacio[0]),
-    .outFull      (lleno[0]),
+    // .outFull      (lleno[0]),
     .errorEmpty   (errorVacio[0]),
-    .errorFull    (errorLleno[0]),
+    // .errorFull    (errorLleno[0]),
+    .errorFull    (lleno[0]),
     .outputData   (fifo_mux[0])
     );
 
@@ -75,7 +77,8 @@ fifo_cond #(1,3,8) FIFO_vc1_cond (
     .outEmpty     (vacio[1]),
     .outFull      (lleno[1]),
     .errorEmpty   (errorVacio[1]),
-    .errorFull    (errorLleno[1]),
+    // .errorFull    (errorLleno[1]),
+    .errorFull    (lleno[1]),
     .outputData   (fifo_mux[1])
 );
 
@@ -93,7 +96,8 @@ fifo_cond #(1,3,8) FIFO_vc2_cond (
     .outEmpty     (vacio[2]),
     .outFull      (lleno[2]),
     .errorEmpty   (errorVacio[2]),
-    .errorFull    (errorLleno[2]),
+    // .errorFull    (errorLleno[2]),
+    .errorFull    (lleno[2]),
     .outputData   (fifo_mux[2])
     );
 
@@ -111,7 +115,8 @@ fifo_cond #(1,3,8) FIFO_vc3_cond (
     .outEmpty     (vacio[3]),
     .outFull      (lleno[3]),
     .errorEmpty   (errorVacio[3]),
-    .errorFull    (errorLleno[3]),
+    // .errorFull    (errorLleno[3]),
+    .errorFull    (lleno[3]),
     .outputData   (fifo_mux[3])
     );
 
