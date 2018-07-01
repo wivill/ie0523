@@ -1,0 +1,46 @@
+[*]
+[*] GTKWave Analyzer v3.3.66 (w)1999-2015 BSI
+[*] Sun Jul  1 03:56:43 2018
+[*]
+[dumpfile] "/home/sebastian/git/ie0523/proyecto-02/memory/memory_wave.vcd"
+[dumpfile_mtime] "Sun Jul  1 03:55:01 2018"
+[dumpfile_size] 5285
+[savefile] "/home/sebastian/git/ie0523/proyecto-02/memory/memory.gtkw"
+[timestart] 0
+[size] 1920 1017
+[pos] -1 -1
+*-13.406066 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] memory_testbench.
+[sst_width] 198
+[signals_width] 198
+[sst_expanded] 1
+[sst_vpaned_height] 298
+@200
+-Entradas
+@28
+memory_testbench.clock
+memory_testbench.enable
+memory_testbench.lectura
+memory_testbench.escritura
+memory_testbench.dicEscritura[2:0]
+memory_testbench.dirLectura[2:0]
+@22
+memory_testbench.datoEntrada[7:0]
+@200
+-Estado de memoria
+@22
+memory_testbench.MEM_synth.\memoria[0][7:0]
+memory_testbench.MEM_synth.\memoria[1][7:0]
+memory_testbench.MEM_synth.\memoria[2][7:0]
+memory_testbench.MEM_synth.\memoria[3][7:0]
+memory_testbench.MEM_synth.\memoria[4][7:0]
+memory_testbench.MEM_synth.\memoria[5][7:0]
+memory_testbench.MEM_synth.\memoria[6][7:0]
+memory_testbench.MEM_synth.\memoria[7][7:0]
+@200
+-Salidas
+@22
+memory_testbench.datoSalida[7:0]
+memory_testbench.datoSalida_synth[7:0]
+[pattern_trace] 1
+[pattern_trace] 0

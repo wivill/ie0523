@@ -1,0 +1,7 @@
+read_verilog memory_cond.v
+hierarchy -check -top memory_cond
+proc; opt; fsm; opt; memory; opt
+techmap; opt
+show -prefix memory_synth -format eps
+clean
+write_verilog memory_synth.v
