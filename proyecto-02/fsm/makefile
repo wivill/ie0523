@@ -9,7 +9,7 @@ cmos:
 wave:
 	iverilog -o out fsm_testbench.v
 	vvp out
-	gtkwave fsm_wave.vcd
+	gtkwave fsm_wave.vcd fsm.sav &
 
 clean:
 	rm -rf out *.vcd *.dot *.eps

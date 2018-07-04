@@ -9,7 +9,7 @@ cmos:
 wave:
 	iverilog -o out fifo_testbench.v
 	vvp out
-	gtkwave fifo_wave.vcd
+	gtkwave fifo_wave.vcd fifo.sav &
 
 clean:
 	rm -rf out *.vcd *.dot *.eps

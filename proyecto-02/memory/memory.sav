@@ -1,0 +1,50 @@
+[*]
+[*] GTKWave Analyzer v3.3.89 (w)1999-2018 BSI
+[*] Wed Jul  4 13:50:12 2018
+[*]
+[dumpfile] "/home/wivill/git/ie0523/proyecto-02/memory/memory_wave.vcd"
+[dumpfile_mtime] "Wed Jul  4 13:48:14 2018"
+[dumpfile_size] 5285
+[savefile] "/home/wivill/git/ie0523/proyecto-02/memory/memory.sav"
+[timestart] 0
+[size] 1366 697
+[pos] -94 -94
+*-14.059681 18950 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] memory_testbench.
+[sst_width] 213
+[signals_width] 176
+[sst_expanded] 1
+[sst_vpaned_height] 187
+@28
+memory_testbench.clock
+@22
+memory_testbench.datoEntrada[7:0]
+memory_testbench.datoSalida[7:0]
+@28
+memory_testbench.dicEscritura[2:0]
+memory_testbench.dirLectura[2:0]
+memory_testbench.enable
+memory_testbench.escritura
+memory_testbench.lectura
+@22
+[color] 5
+memory_testbench.datoSalida_synth[7:0]
+@23
+[color] 7
+memory_testbench.MEM_synth.\memoria[0][7:0]
+[color] 7
+memory_testbench.MEM_synth.\memoria[1][7:0]
+[color] 7
+memory_testbench.MEM_synth.\memoria[2][7:0]
+[color] 7
+memory_testbench.MEM_synth.\memoria[3][7:0]
+[color] 7
+memory_testbench.MEM_synth.\memoria[4][7:0]
+[color] 7
+memory_testbench.MEM_synth.\memoria[5][7:0]
+[color] 7
+memory_testbench.MEM_synth.\memoria[6][7:0]
+[color] 7
+memory_testbench.MEM_synth.\memoria[7][7:0]
+[pattern_trace] 1
+[pattern_trace] 0

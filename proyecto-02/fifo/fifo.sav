@@ -1,0 +1,51 @@
+[*]
+[*] GTKWave Analyzer v3.3.89 (w)1999-2018 BSI
+[*] Wed Jul  4 13:40:58 2018
+[*]
+[dumpfile] "/home/wivill/git/ie0523/proyecto-02/fifo/fifo_wave.vcd"
+[dumpfile_mtime] "Wed Jul  4 13:38:01 2018"
+[dumpfile_size] 24107
+[savefile] "/home/wivill/git/ie0523/proyecto-02/fifo/fifo.sav"
+[timestart] 0
+[size] 1366 697
+[pos] -94 -94
+*-16.027514 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 213
+[signals_width] 146
+[sst_expanded] 1
+[sst_vpaned_height] 187
+@28
+fifo_testbench.clock
+fifo_testbench.enabler
+fifo_testbench.reset
+fifo_testbench.casiLleno
+fifo_testbench.casiVacio
+@22
+fifo_testbench.datoEntrada[7:0]
+fifo_testbench.datoSalida[7:0]
+@28
+fifo_testbench.errorLleno
+fifo_testbench.escritura
+fifo_testbench.lectura
+fifo_testbench.lleno
+fifo_testbench.vacio
+@800028
+fifo_testbench.umbralLleno[2:0]
+@28
+(0)fifo_testbench.umbralLleno[2:0]
+(1)fifo_testbench.umbralLleno[2:0]
+(2)fifo_testbench.umbralLleno[2:0]
+@1001200
+-group_end
+@800028
+fifo_testbench.umbralVacio[2:0]
+@28
+(0)fifo_testbench.umbralVacio[2:0]
+(1)fifo_testbench.umbralVacio[2:0]
+(2)fifo_testbench.umbralVacio[2:0]
+@29
+fifo_testbench.lleno_synth
+@1001200
+-group_end
+[pattern_trace] 1
+[pattern_trace] 0

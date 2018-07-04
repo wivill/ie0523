@@ -1,0 +1,53 @@
+[*]
+[*] GTKWave Analyzer v3.3.89 (w)1999-2018 BSI
+[*] Wed Jul  4 13:46:24 2018
+[*]
+[dumpfile] "/home/wivill/git/ie0523/proyecto-02/fsm/fsm_wave.vcd"
+[dumpfile_mtime] "Wed Jul  4 13:42:27 2018"
+[dumpfile_size] 10350
+[savefile] "/home/wivill/git/ie0523/proyecto-02/fsm/fsm.sav"
+[timestart] 0
+[size] 1366 697
+[pos] -94 -94
+*-14.294679 31000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 213
+[signals_width] 189
+[sst_expanded] 1
+[sst_vpaned_height] 187
+@28
+fsm_testbench.clock
+@22
+fsm_testbench.actual[7:0]
+fsm_testbench.inContinuar[3:0]
+fsm_testbench.inEmpty[3:0]
+fsm_testbench.inFull[3:0]
+@28
+fsm_testbench.inInit
+@22
+fsm_testbench.inPausa[3:0]
+@28
+fsm_testbench.inReset
+@22
+fsm_testbench.outContinue[3:0]
+fsm_testbench.outError[3:0]
+@28
+fsm_testbench.outIdle
+fsm_testbench.outInit
+@22
+fsm_testbench.outPause[3:0]
+[color] 2
+fsm_testbench.actual_synth[7:0]
+[color] 2
+fsm_testbench.outContinue_synth[3:0]
+[color] 2
+fsm_testbench.outError_synth[3:0]
+@28
+[color] 2
+fsm_testbench.outIdle_synth
+[color] 2
+fsm_testbench.outInit_synth
+@22
+[color] 2
+fsm_testbench.outPause_synth[3:0]
+[pattern_trace] 1
+[pattern_trace] 0
